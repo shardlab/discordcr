@@ -678,7 +678,7 @@ module Discord
     def modify_guild(guild_id : UInt64 | Snowflake, name : String? = nil, region : String? = nil,
                      verification_level : UInt8? = nil, afk_channel_id : UInt64 | Snowflake | Nil = nil,
                      afk_timeout : Int32? = nil, icon : String? = nil, owner_id : UInt64 | Snowflake | Nil = nil,
-                     splash : String? = nil)
+                     splash : String? = nil, reason : String? = nil)
       json = encode_tuple(
         name: name,
         region: region,
@@ -695,7 +695,7 @@ module Discord
         guild_id,
         "PATCH",
         "/guilds/#{guild_id}",
-        HTTP::Headers{"Content-Type" => "application/json"},
+        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
         json
       )
 
@@ -823,7 +823,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#create-guild-channel)
     def create_guild_channel(guild_id : UInt64 | Snowflake, name : String, type : ChannelType, topic : String?,
                              bitrate : UInt32?, user_limit : UInt32?, rate_limit_per_user : Int32?,
-                             position : UInt32?, parent_id : UInt64? | Snowflake?, nsfw : Bool?)
+                             position : UInt32?, parent_id : UInt64? | Snowflake?, nsfw : Bool?, reason : String? = nil)
       json = encode_tuple(
         name: name,
         type: type,
@@ -841,7 +841,7 @@ module Discord
         guild_id,
         "POST",
         "/guilds/#{guild_id}/channels",
-        HTTP::Headers{"Content-Type" => "application/json"},
+        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
         json
       )
 
@@ -995,7 +995,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#modify-guild-member)
     def modify_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, nick : String? = nil,
                             roles : Array(UInt64 | Snowflake)? = nil, mute : Bool? = nil, deaf : Bool? = nil,
-                            channel_id : UInt64 | Snowflake | Nil = nil)
+                            channel_id : UInt64 | Snowflake | Nil = nil, reason : String? = nil)
       json = encode_tuple(
         nick: nick,
         roles: roles,
@@ -1009,7 +1009,7 @@ module Discord
         guild_id,
         "PATCH",
         "/guilds/#{guild_id}/members/#{user_id}",
-        HTTP::Headers{"Content-Type" => "application/json"},
+        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
         json
       )
     end
@@ -1033,13 +1033,13 @@ module Discord
     # Kicks a member from the server. Requires the "Kick Members" permission.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#remove-guild-member)
-    def remove_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+    def remove_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = nil)
       request(
         :guilds_gid_members_uid,
         guild_id,
         "DELETE",
         "/guilds/#{guild_id}/members/#{user_id}",
-        HTTP::Headers.new,
+        HTTP::Headers{"X-Audit-Log-Reason" => reason},
         nil
       )
     end
@@ -1093,13 +1093,13 @@ module Discord
     # permission.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#get-guild-ban)
-    def get_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+    def get_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = nil)
       response = request(
         :guilds_gid_bans_uid,
         guild_id,
         "GET",
         "/guilds/#{guild_id}/bans/#{user_id}",
-        HTTP::Headers.new,
+        HTTP::Headers{"X-Audit-Log-Reason" => reason},
         nil
       )
 
@@ -1129,13 +1129,13 @@ module Discord
     # Unbans a member from the guild. Requires the "Ban Members" permission.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#remove-guild-ban)
-    def remove_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+    def remove_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = nil)
       request(
         :guilds_gid_bans_uid,
         guild_id,
         "DELETE",
         "/guilds/#{guild_id}/bans/#{user_id}",
-        HTTP::Headers.new,
+        HTTP::Headers{"X-Audit-Log-Reason" => reason},
         nil
       )
     end
@@ -1161,7 +1161,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#create-guild-role)
     def create_guild_role(guild_id : UInt64 | Snowflake, name : String? = nil,
                           permissions : Permissions? = nil, colour : UInt32 = 0_u32,
-                          hoist : Bool = false, mentionable : Bool = false)
+                          hoist : Bool = false, mentionable : Bool = false, reason : String? = nil)
       json = encode_tuple(
         name: name,
         permissions: permissions,
@@ -1175,7 +1175,7 @@ module Discord
         guild_id,
         "POST",
         "/guilds/#{guild_id}/roles",
-        HTTP::Headers{"Content-Type" => "application/json"},
+        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
         json
       )
 
@@ -1188,7 +1188,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#modify-guild-role)
     def modify_guild_role(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake, name : String? = nil,
                           permissions : Permissions? = nil, colour : UInt32? = nil,
-                          position : Int32? = nil, hoist : Bool? = nil)
+                          position : Int32? = nil, hoist : Bool? = nil, reason : String? = nil)
       json = encode_tuple(
         name: name,
         permissions: permissions,
@@ -1202,7 +1202,7 @@ module Discord
         guild_id,
         "PATCH",
         "/guilds/#{guild_id}/roles/#{role_id}",
-        HTTP::Headers{"Content-Type" => "application/json"},
+        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
         json
       )
 
@@ -1231,13 +1231,13 @@ module Discord
     # to be lower than the bot's highest role.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#delete-guild-role)
-    def delete_guild_role(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake)
+    def delete_guild_role(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake, reason : String? = nil)
       request(
         :guilds_gid_roles_rid,
         guild_id,
         "DELETE",
         "/guilds/#{guild_id}/roles/#{role_id}",
-        HTTP::Headers.new,
+        HTTP::Headers{"X-Audit-Log-Reason" => reason},
         nil
       )
     end
@@ -1263,13 +1263,13 @@ module Discord
     # *days* days. Requires the "Kick Members" permission.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#begin-guild-prune)
-    def begin_guild_prune(guild_id : UInt64 | Snowflake, days : UInt32)
+    def begin_guild_prune(guild_id : UInt64 | Snowflake, days : UInt32, reason : String? = nil)
       response = request(
         :guilds_gid_prune,
         guild_id,
         "POST",
         "/guilds/#{guild_id}/prune?days=#{days}",
-        HTTP::Headers{"Content-Type" => "application/json"},
+        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
         nil
       )
 
@@ -1607,13 +1607,13 @@ module Discord
     # server.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/invite#delete-invite)
-    def delete_invite(code : String)
+    def delete_invite(code : String, reason : String? = nil)
       response = request(
         :invites_code,
         nil,
         "DELETE",
         "/invites/#{code}",
-        HTTP::Headers.new,
+        HTTP::Headers{"X-Audit-Log-Reason" => reason},
         nil
       )
 
