@@ -374,7 +374,8 @@ module Discord
         game: GamePlaying?,
         nick: String?,
         guild_id: Snowflake,
-        status: String
+        status: String,
+        activities: Array(GamePlaying)
       )
     end
 

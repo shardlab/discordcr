@@ -187,12 +187,12 @@ module Discord
 
   struct Emoji
     JSON.mapping(
-      id: Snowflake,
+      id: Snowflake?,
       name: String,
-      roles: Array(Snowflake),
-      require_colons: Bool,
-      managed: Bool,
-      animated: Bool
+      roles: Array(Snowflake)?,
+      require_colons: Bool?,
+      managed: Bool?,
+      animated: Bool?
     )
 
     # Produces a CDN URL to this emoji's image in the given `size`. Will return
@@ -252,7 +252,7 @@ module Discord
   end
 
   struct GamePlaying
-    def initialize(@name = nil, @type : Type? = nil, @url = nil)
+    def initialize(@name = nil, @type : Type? = nil, @url = nil, @state = nil, @emoji = nil)
     end
 
     enum Type : UInt8
@@ -266,7 +266,9 @@ module Discord
     JSON.mapping(
       name: String?,
       type: Type?,
-      url: String?
+      url: String?,
+      state: String?,
+      emoji: Emoji?
     )
   end
 
@@ -274,7 +276,8 @@ module Discord
     JSON.mapping(
       user: PartialUser,
       game: GamePlaying?,
-      status: String
+      status: String,
+      activities: Array(GamePlaying)
     )
   end
 end
