@@ -43,6 +43,7 @@ module Discord
     property nonce : String | Int64?
     property activity : Activity?
     property webhook_id : Snowflake?
+    property stickers : Array(Sticker)?
   end
 
   enum ActivityType : UInt8
@@ -277,5 +278,28 @@ module Discord
     property proxy_url : String
     property height : UInt32?
     property width : UInt32?
+  end
+
+  enum StickerFormatType : UInt8
+    Png    = 1
+    Apng   = 2
+    Lottie = 3
+
+    def self.new(pull : JSON::PullParser)
+      StickerFormatType.new(pull.read_int.to_u8)
+    end
+  end
+
+  struct Sticker
+    include JSON::Serializable
+
+    property id : Snowflake
+    property pack_id : Snowflake
+    property name : String
+    property description : String
+    property tags : String?
+    property asset : String
+    property preview_asset : String?
+    property format_type : StickerFormatType
   end
 end
