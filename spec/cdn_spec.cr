@@ -136,7 +136,8 @@ describe Discord::Guild do
     "emojis": [],
     "features": [],
     "default_message_notifications": 1,
-    "explicit_content_filter": 1
+    "explicit_content_filter": 1,
+    "premium_tier": 0
   }
   JSON
 
@@ -176,13 +177,13 @@ describe Discord::Emoji do
 
   describe "#image_url" do
     it "returns an image URL with given format and size" do
-      emoji.image_url(:png, 16).should eq Discord::CDN.custom_emoji(emoji.id, :png, 16)
+      emoji.image_url(:png, 16).should eq Discord::CDN.custom_emoji(emoji.id.not_nil!, :png, 16)
     end
 
     context "without format" do
       it "returns a webp, or gif if animated" do
-        emoji.image_url.should eq Discord::CDN.custom_emoji(emoji.id, :png, 128)
-        animated_emoji.image_url.should eq Discord::CDN.custom_emoji(animated_emoji.id, :gif, 128)
+        emoji.image_url.should eq Discord::CDN.custom_emoji(emoji.id.not_nil!, :png, 128)
+        animated_emoji.image_url.should eq Discord::CDN.custom_emoji(animated_emoji.id.not_nil!, :gif, 128)
       end
     end
   end

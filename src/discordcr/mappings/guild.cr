@@ -206,8 +206,11 @@ module Discord
     end
 
     # Produces a CDN URL to this emoji's image in the given `format` and `size`
+    # or `nil` if the emoji has no id.
     def image_url(format : CDN::CustomEmojiFormat, size : Int32 = 128)
-      CDN.custom_emoji(id, format, size)
+      if emoji_id = id
+        CDN.custom_emoji(emoji_id, format, size)
+      end
     end
 
     # Produces a string to mention this emoji in a message
