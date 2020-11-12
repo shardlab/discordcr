@@ -1,4 +1,13 @@
-[![docs](https://img.shields.io/badge/docs-latest-green.svg?style=flat-square)](https://discordcr.github.io/discordcr/doc/v0.4.0/)
+[![docs](https://img.shields.io/badge/docs-latest-green.svg?style=flat-square)](https://shardlab.github.io/discordcr/doc/v0.4.0/)
+
+### Important Notice
+This is the **new official source of discordcr**!\
+The [old repo](https://github.com/discordcr/discordcr) has not been updated for countless months
+and new features, along with library breaking changes, are coming fast.\
+There is no guarantee any code/updates will be pushed to the old repo again, so as it stands,\
+this will be where all new code will be pushed and where all new PRs and Issues should be created.
+
+Thanks!
 
 # discordcr
 
@@ -6,13 +15,13 @@
 
 discordcr is a minimalist [Discord](https://discord.com/) API library for
 [Crystal](https://crystal-lang.org/), designed to be a complement to
-[discordrb](https://github.com/discordrb/discordrb) for users who want more control
+[discordrb](https://github.com/shardlab/discordrb) for users who want more control
 and performance and who care less about ease-of-use.
 
 discordcr isn't designed for beginners to the Discord API - while experience
 with making bots isn't *required*, it's certainly recommended. If you feel
 overwhelmed by the complex documentation, try
-[discordrb](https://github.com/discordrb/discordrb) first and then check back.
+[discordrb](https://github.com/shardlab/discordrb) first and then check back.
 
 Unlike many other libs which handle a lot of stuff, like caching or resolving,
 themselves automatically, discordcr requires the user to do such things
@@ -29,13 +38,13 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   discordcr:
-    github: discordcr/discordcr
+    github: shardlab/discordcr
 ```
 
 ## Usage
 
 An example bot can be found
-[here](https://github.com/discordcr/discordcr/blob/master/examples/ping.cr). More
+[here](https://github.com/shardlab/discordcr/blob/master/examples/ping.cr). More
 examples will come in the future.
 
 A short overview of library structure: the `Client` class includes the `REST`
@@ -72,11 +81,11 @@ puts user.username
 ```
 
 Apart from this, API documentation is also available, at
-https://discordcr.github.io/discordcr/doc/v0.4.0/.
+https://shardlab.github.io/discordcr/doc/v0.4.0/.
 
 ## Contributing
 
-1. Fork it (https://github.com/discordcr/discordcr/fork)
+1. Fork it (https://github.com/shardlab/discordcr/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
