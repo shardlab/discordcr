@@ -9,22 +9,22 @@ module Discord
         @d = IdentifyPayload.new(server_id, user_id, session_id, token)
       end
 
-      JSON.mapping(
-        op: Int32,
-        d: IdentifyPayload
-      )
+      include JSON::Serializable
+
+      property op : Int32
+      property d : IdentifyPayload
     end
 
     struct IdentifyPayload
       def initialize(@server_id, @user_id, @session_id, @token)
       end
 
-      JSON.mapping(
-        server_id: UInt64,
-        user_id: UInt64,
-        session_id: String,
-        token: String
-      )
+      include JSON::Serializable
+
+      property server_id : UInt64
+      property user_id : UInt64
+      property session_id : String
+      property token : String
     end
 
     struct SelectProtocolPacket
@@ -33,47 +33,47 @@ module Discord
         @d = SelectProtocolPayload.new(protocol, data)
       end
 
-      JSON.mapping(
-        op: Int32,
-        d: SelectProtocolPayload
-      )
+      include JSON::Serializable
+
+      property op : Int32
+      property d : SelectProtocolPayload
     end
 
     struct SelectProtocolPayload
       def initialize(@protocol, @data)
       end
 
-      JSON.mapping(
-        protocol: String,
-        data: ProtocolData
-      )
+      include JSON::Serializable
+
+      property protocol : String
+      property data : ProtocolData
     end
 
     struct ProtocolData
       def initialize(@address, @port, @mode)
       end
 
-      JSON.mapping(
-        address: String,
-        port: UInt16,
-        mode: String
-      )
+      include JSON::Serializable
+
+      property address : String
+      property port : UInt16
+      property mode : String
     end
 
     struct ReadyPayload
-      JSON.mapping(
-        ssrc: Int32,
-        port: Int32,
-        modes: Array(String),
-        ip: String
-      )
+      include JSON::Serializable
+
+      property ssrc : Int32
+      property port : Int32
+      property modes : Array(String)
+      property ip : String
     end
 
     struct SessionDescriptionPayload
-      JSON.mapping(
-        secret_key: Array(UInt8),
-        mode: String
-      )
+      include JSON::Serializable
+
+      property secret_key : Array(UInt8)
+      property mode : String
     end
 
     struct SpeakingPacket
@@ -82,26 +82,26 @@ module Discord
         @d = SpeakingPayload.new(speaking, delay)
       end
 
-      JSON.mapping(
-        op: Int32,
-        d: SpeakingPayload
-      )
+      include JSON::Serializable
+
+      property op : Int32
+      property d : SpeakingPayload
     end
 
     struct SpeakingPayload
       def initialize(@speaking, @delay)
       end
 
-      JSON.mapping(
-        speaking: Bool,
-        delay: Int32
-      )
+      include JSON::Serializable
+
+      property speaking : Bool
+      property delay : Int32
     end
 
     struct HelloPayload
-      JSON.mapping(
-        heartbeat_interval: Float32
-      )
+      include JSON::Serializable
+
+      property heartbeat_interval : Float32
     end
   end
 end
