@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/meew0/discordcr">
+  <title>Discord::Cache - github.com/meew0/discordcr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/meew0/discordcr/Discord" data-name="discord">
+      <a href="../Discord.html">Discord</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Activity" data-name="discord::activity">
+      <a href="../Discord/Activity.html">Activity</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ActivityType" data-name="discord::activitytype">
+      <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/APIError" data-name="discord::apierror">
+      <a href="../Discord/APIError.html">APIError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Attachment" data-name="discord::attachment">
+      <a href="../Discord/Attachment.html">Attachment</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/meew0/discordcr/Discord/Cache" data-name="discord::cache">
+      <a href="../Discord/Cache.html">Cache</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Channel" data-name="discord::channel">
+      <a href="../Discord/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ChannelType" data-name="discord::channeltype">
+      <a href="../Discord/ChannelType.html">ChannelType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Client" data-name="discord::client">
+      <a href="../Discord/Client.html">Client</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/CodeException" data-name="discord::codeexception">
+      <a href="../Discord/CodeException.html">CodeException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Connection" data-name="discord::connection">
+      <a href="../Discord/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings" data-name="discord::dca1mappings">
+      <a href="../Discord/DCA1Mappings.html">DCA1Mappings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/DCA" data-name="discord::dca1mappings::dca">
+      <a href="../Discord/DCA1Mappings/DCA.html">DCA</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Info" data-name="discord::dca1mappings::info">
+      <a href="../Discord/DCA1Mappings/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Metadata" data-name="discord::dca1mappings::metadata">
+      <a href="../Discord/DCA1Mappings/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Opus" data-name="discord::dca1mappings::opus">
+      <a href="../Discord/DCA1Mappings/Opus.html">Opus</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Origin" data-name="discord::dca1mappings::origin">
+      <a href="../Discord/DCA1Mappings/Origin.html">Origin</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Tool" data-name="discord::dca1mappings::tool">
+      <a href="../Discord/DCA1Mappings/Tool.html">Tool</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCAParser" data-name="discord::dcaparser">
+      <a href="../Discord/DCAParser.html">DCAParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Embed" data-name="discord::embed">
+      <a href="../Discord/Embed.html">Embed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
+      <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedField" data-name="discord::embedfield">
+      <a href="../Discord/EmbedField.html">EmbedField</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedFooter" data-name="discord::embedfooter">
+      <a href="../Discord/EmbedFooter.html">EmbedFooter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedImage" data-name="discord::embedimage">
+      <a href="../Discord/EmbedImage.html">EmbedImage</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedProvider" data-name="discord::embedprovider">
+      <a href="../Discord/EmbedProvider.html">EmbedProvider</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedThumbnail" data-name="discord::embedthumbnail">
+      <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedVideo" data-name="discord::embedvideo">
+      <a href="../Discord/EmbedVideo.html">EmbedVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Emoji" data-name="discord::emoji">
+      <a href="../Discord/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GamePlaying" data-name="discord::gameplaying">
+      <a href="../Discord/GamePlaying.html">GamePlaying</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/Gateway" data-name="discord::gateway">
+      <a href="../Discord/Gateway.html">Gateway</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ChannelPinsUpdatePayload" data-name="discord::gateway::channelpinsupdatepayload">
+      <a href="../Discord/Gateway/ChannelPinsUpdatePayload.html">ChannelPinsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildBanPayload" data-name="discord::gateway::guildbanpayload">
+      <a href="../Discord/Gateway/GuildBanPayload.html">GuildBanPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildCreatePayload" data-name="discord::gateway::guildcreatepayload">
+      <a href="../Discord/Gateway/GuildCreatePayload.html">GuildCreatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildDeletePayload" data-name="discord::gateway::guilddeletepayload">
+      <a href="../Discord/Gateway/GuildDeletePayload.html">GuildDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildEmojiUpdatePayload" data-name="discord::gateway::guildemojiupdatepayload">
+      <a href="../Discord/Gateway/GuildEmojiUpdatePayload.html">GuildEmojiUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildIntegrationsUpdatePayload" data-name="discord::gateway::guildintegrationsupdatepayload">
+      <a href="../Discord/Gateway/GuildIntegrationsUpdatePayload.html">GuildIntegrationsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberAddPayload" data-name="discord::gateway::guildmemberaddpayload">
+      <a href="../Discord/Gateway/GuildMemberAddPayload.html">GuildMemberAddPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberRemovePayload" data-name="discord::gateway::guildmemberremovepayload">
+      <a href="../Discord/Gateway/GuildMemberRemovePayload.html">GuildMemberRemovePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMembersChunkPayload" data-name="discord::gateway::guildmemberschunkpayload">
+      <a href="../Discord/Gateway/GuildMembersChunkPayload.html">GuildMembersChunkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberUpdatePayload" data-name="discord::gateway::guildmemberupdatepayload">
+      <a href="../Discord/Gateway/GuildMemberUpdatePayload.html">GuildMemberUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildRoleDeletePayload" data-name="discord::gateway::guildroledeletepayload">
+      <a href="../Discord/Gateway/GuildRoleDeletePayload.html">GuildRoleDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildRolePayload" data-name="discord::gateway::guildrolepayload">
+      <a href="../Discord/Gateway/GuildRolePayload.html">GuildRolePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/HelloPayload" data-name="discord::gateway::hellopayload">
+      <a href="../Discord/Gateway/HelloPayload.html">HelloPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyPacket" data-name="discord::gateway::identifypacket">
+      <a href="../Discord/Gateway/IdentifyPacket.html">IdentifyPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyPayload" data-name="discord::gateway::identifypayload">
+      <a href="../Discord/Gateway/IdentifyPayload.html">IdentifyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyProperties" data-name="discord::gateway::identifyproperties">
+      <a href="../Discord/Gateway/IdentifyProperties.html">IdentifyProperties</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageDeleteBulkPayload" data-name="discord::gateway::messagedeletebulkpayload">
+      <a href="../Discord/Gateway/MessageDeleteBulkPayload.html">MessageDeleteBulkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageDeletePayload" data-name="discord::gateway::messagedeletepayload">
+      <a href="../Discord/Gateway/MessageDeletePayload.html">MessageDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageReactionPayload" data-name="discord::gateway::messagereactionpayload">
+      <a href="../Discord/Gateway/MessageReactionPayload.html">MessageReactionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageReactionRemoveAllPayload" data-name="discord::gateway::messagereactionremoveallpayload">
+      <a href="../Discord/Gateway/MessageReactionRemoveAllPayload.html">MessageReactionRemoveAllPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageUpdatePayload" data-name="discord::gateway::messageupdatepayload">
+      <a href="../Discord/Gateway/MessageUpdatePayload.html">MessageUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/PresenceUpdatePayload" data-name="discord::gateway::presenceupdatepayload">
+      <a href="../Discord/Gateway/PresenceUpdatePayload.html">PresenceUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ReadyPayload" data-name="discord::gateway::readypayload">
+      <a href="../Discord/Gateway/ReadyPayload.html">ReadyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/RequestGuildMembersPacket" data-name="discord::gateway::requestguildmemberspacket">
+      <a href="../Discord/Gateway/RequestGuildMembersPacket.html">RequestGuildMembersPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ResumedPayload" data-name="discord::gateway::resumedpayload">
+      <a href="../Discord/Gateway/ResumedPayload.html">ResumedPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ResumePacket" data-name="discord::gateway::resumepacket">
+      <a href="../Discord/Gateway/ResumePacket.html">ResumePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/Session" data-name="discord::gateway::session">
+      <a href="../Discord/Gateway/Session.html">Session</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ShardKey" data-name="discord::gateway::shardkey">
+      <a href="../Discord/Gateway/ShardKey.html">ShardKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/StatusUpdatePacket" data-name="discord::gateway::statusupdatepacket">
+      <a href="../Discord/Gateway/StatusUpdatePacket.html">StatusUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/TypingStartPayload" data-name="discord::gateway::typingstartpayload">
+      <a href="../Discord/Gateway/TypingStartPayload.html">TypingStartPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/VoiceServerUpdatePayload" data-name="discord::gateway::voiceserverupdatepayload">
+      <a href="../Discord/Gateway/VoiceServerUpdatePayload.html">VoiceServerUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/VoiceStateUpdatePacket" data-name="discord::gateway::voicestateupdatepacket">
+      <a href="../Discord/Gateway/VoiceStateUpdatePacket.html">VoiceStateUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/WebhooksUpdatePayload" data-name="discord::gateway::webhooksupdatepayload">
+      <a href="../Discord/Gateway/WebhooksUpdatePayload.html">WebhooksUpdatePayload</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Guild" data-name="discord::guild">
+      <a href="../Discord/Guild.html">Guild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildBan" data-name="discord::guildban">
+      <a href="../Discord/GuildBan.html">GuildBan</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+      <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildMember" data-name="discord::guildmember">
+      <a href="../Discord/GuildMember.html">GuildMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Integration" data-name="discord::integration">
+      <a href="../Discord/Integration.html">Integration</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/IntegrationAccount" data-name="discord::integrationaccount">
+      <a href="../Discord/IntegrationAccount.html">IntegrationAccount</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Invite" data-name="discord::invite">
+      <a href="../Discord/Invite.html">Invite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteChannel" data-name="discord::invitechannel">
+      <a href="../Discord/InviteChannel.html">InviteChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteGuild" data-name="discord::inviteguild">
+      <a href="../Discord/InviteGuild.html">InviteGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteMetadata" data-name="discord::invitemetadata">
+      <a href="../Discord/InviteMetadata.html">InviteMetadata</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/Mention" data-name="discord::mention">
+      <a href="../Discord/Mention.html">Mention</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Channel" data-name="discord::mention::channel">
+      <a href="../Discord/Mention/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Emoji" data-name="discord::mention::emoji">
+      <a href="../Discord/Mention/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Everyone" data-name="discord::mention::everyone">
+      <a href="../Discord/Mention/Everyone.html">Everyone</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Here" data-name="discord::mention::here">
+      <a href="../Discord/Mention/Here.html">Here</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/MentionType" data-name="discord::mention::mentiontype">
+      <a href="../Discord/Mention/MentionType.html">MentionType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Role" data-name="discord::mention::role">
+      <a href="../Discord/Mention/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/User" data-name="discord::mention::user">
+      <a href="../Discord/Mention/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Message" data-name="discord::message">
+      <a href="../Discord/Message.html">Message</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/MessageType" data-name="discord::messagetype">
+      <a href="../Discord/MessageType.html">MessageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/OAuth2Application" data-name="discord::oauth2application">
+      <a href="../Discord/OAuth2Application.html">OAuth2Application</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Overwrite" data-name="discord::overwrite">
+      <a href="../Discord/Overwrite.html">Overwrite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/PartialUser" data-name="discord::partialuser">
+      <a href="../Discord/PartialUser.html">PartialUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Permissions" data-name="discord::permissions">
+      <a href="../Discord/Permissions.html">Permissions</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Presence" data-name="discord::presence">
+      <a href="../Discord/Presence.html">Presence</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/PrivateChannel" data-name="discord::privatechannel">
+      <a href="../Discord/PrivateChannel.html">PrivateChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Reaction" data-name="discord::reaction">
+      <a href="../Discord/Reaction.html">Reaction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ReactionEmoji" data-name="discord::reactionemoji">
+      <a href="../Discord/ReactionEmoji.html">ReactionEmoji</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/REST" data-name="discord::rest">
+      <a href="../Discord/REST.html">REST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/ChannelParent" data-name="discord::rest::channelparent">
+      <a href="../Discord/REST/ChannelParent.html">ChannelParent</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GatewayBotResponse" data-name="discord::rest::gatewaybotresponse">
+      <a href="../Discord/REST/GatewayBotResponse.html">GatewayBotResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GatewayResponse" data-name="discord::rest::gatewayresponse">
+      <a href="../Discord/REST/GatewayResponse.html">GatewayResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GuildVanityURLResponse" data-name="discord::rest::guildvanityurlresponse">
+      <a href="../Discord/REST/GuildVanityURLResponse.html">GuildVanityURLResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/ModifyChannelPositionPayload" data-name="discord::rest::modifychannelpositionpayload">
+      <a href="../Discord/REST/ModifyChannelPositionPayload.html">ModifyChannelPositionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/PruneCountResponse" data-name="discord::rest::prunecountresponse">
+      <a href="../Discord/REST/PruneCountResponse.html">PruneCountResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/RateLimitKey" data-name="discord::rest::ratelimitkey">
+      <a href="../Discord/REST/RateLimitKey.html">RateLimitKey</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Role" data-name="discord::role">
+      <a href="../Discord/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Snowflake" data-name="discord::snowflake">
+      <a href="../Discord/Snowflake.html">Snowflake</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/StatusException" data-name="discord::statusexception">
+      <a href="../Discord/StatusException.html">StatusException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/UnavailableGuild" data-name="discord::unavailableguild">
+      <a href="../Discord/UnavailableGuild.html">UnavailableGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/User" data-name="discord::user">
+      <a href="../Discord/User.html">User</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/UserGuild" data-name="discord::userguild">
+      <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceClient" data-name="discord::voiceclient">
+      <a href="../Discord/VoiceClient.html">VoiceClient</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceRegion" data-name="discord::voiceregion">
+      <a href="../Discord/VoiceRegion.html">VoiceRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceState" data-name="discord::voicestate">
+      <a href="../Discord/VoiceState.html">VoiceState</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceUDP" data-name="discord::voiceudp">
+      <a href="../Discord/VoiceUDP.html">VoiceUDP</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Webhook" data-name="discord::webhook">
+      <a href="../Discord/Webhook.html">Webhook</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/WebSocket" data-name="discord::websocket">
+      <a href="../Discord/WebSocket.html">WebSocket</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Discord::Cache
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/Cache.html">Discord::Cache</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>A cache is a utility class that stores various kinds of Discord objects,
+like <code><a href="../Discord/User.html">User</a></code>s, <code><a href="../Discord/Role.html">Role</a></code>s etc. Its purpose is to reduce both the load on
+Discord's servers and reduce the latency caused by having to do an API call.
+It is recommended to use caching for bots that interact heavily with
+Discord-provided data, like for example administration bots, as opposed to
+bots that only interact by sending and receiving messages. For that latter
+kind, caching is usually even counter-productive as it only unnecessarily
+increases memory usage.</p>
+
+<p>Caching can either be used standalone, in a purely REST-based way:</p>
+
+<pre><code>client <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span>(token: <span class="s">&quot;Bot token&quot;</span>, client_id: <span class="n">123_u64</span>)
+cache <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Cache</span>.<span class="k">new</span>(client)
+
+puts cache.resolve_user(<span class="n">66237334693085184</span>) <span class="c"># will perform API call</span>
+puts cache.resolve_user(<span class="n">66237334693085184</span>) <span class="c"># will not perform an API call, as the data is now cached</span></code></pre>
+
+<p>It can also be integrated more deeply into a <code><a href="../Discord/Client.html">Client</a></code> (specifically one that
+uses a gateway connection) to reduce cache misses even more by automatically
+caching data received over the gateway:</p>
+
+<pre><code>client <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span>(token: <span class="s">&quot;Bot token&quot;</span>, client_id: <span class="n">123_u64</span>)
+cache <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Cache</span>.<span class="k">new</span>(client)
+client.cache <span class="o">=</span> cache <span class="c"># Integrate the cache into the client</span></code></pre>
+
+<p>Note that if a cache is <em>not</em> used this way, its data will slowly go out of
+sync with Discord, and unless it is used in an environment with few changes
+likely to occur, a client without a gateway connection should probably
+refrain from caching at all.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L35" target="_blank">discordcr/cache.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28client%3AClient%29-class-method" class="signature"><strong>.new</strong>(client : Client)</a>
+        
+          <div class="summary"><p>Creates a new cache with a <em>client</em> that requests (in case of cache misses) should be done on.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_guild_channel%28guild_id%3AUInt64%7CSnowflake%2Cchannel_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#add_guild_channel</strong>(guild_id : UInt64 | Snowflake, channel_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Marks a channel, identified by the <em>channel_id</em>, as belonging to a particular guild, identified by the <em>guild_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_guild_role%28guild_id%3AUInt64%7CSnowflake%2Crole_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#add_guild_role</strong>(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Marks a role, identified by the <em>role_id</em>, as belonging to a particular guild, identified by the <em>guild_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache%28member%3AGuildMember%2Cguild_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#cache</strong>(member : GuildMember, guild_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Adds a specific <em>member</em> to the cache, given the <em>guild_id</em> it is on.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache%28user%3AUser%29-instance-method" class="signature"><strong>#cache</strong>(user : User)</a>
+        
+          <div class="summary"><p>Adds a specific <em>user</em> to the cache.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache%28channel%3AChannel%29-instance-method" class="signature"><strong>#cache</strong>(channel : Channel)</a>
+        
+          <div class="summary"><p>Adds a specific <em>channel</em> to the cache.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache%28guild%3AGuild%29-instance-method" class="signature"><strong>#cache</strong>(guild : Guild)</a>
+        
+          <div class="summary"><p>Adds a specific <em>guild</em> to the cache.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache%28role%3ARole%29-instance-method" class="signature"><strong>#cache</strong>(role : Role)</a>
+        
+          <div class="summary"><p>Adds a specific <em>role</em> to the cache.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache_current_user%28current_user%3AUser%29-instance-method" class="signature"><strong>#cache_current_user</strong>(current_user : User)</a>
+        
+          <div class="summary"><p>Caches the current user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache_dm_channel%28channel_id%3AUInt64%7CSnowflake%2Crecipient_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#cache_dm_channel</strong>(channel_id : UInt64 | Snowflake, recipient_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Adds a particular DM channel to the cache, given the <em>channel_id</em> and the <em>recipient_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache_multiple_members%28members%3AArray%28GuildMember%29%2Cguild_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#cache_multiple_members</strong>(members : Array(GuildMember), guild_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Adds multiple <em>members</em> at once to the cache, given the <em>guild_id</em> they all share.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channels%3AHash%28UInt64%2CDiscord%3A%3AChannel%29-instance-method" class="signature"><strong>#channels</strong> : Hash(UInt64, Discord::Channel)</a>
+        
+          <div class="summary"><p>A map of cached channels, i.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_channel%28id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#delete_channel</strong>(id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes a channel from the cache given its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_current_user-instance-method" class="signature"><strong>#delete_current_user</strong></a>
+        
+          <div class="summary"><p>Deletes the current user from the cache, if that will ever be necessary.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_dm_channel%28recipient_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#delete_dm_channel</strong>(recipient_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes a DM channel with a particular user given the <em>recipient_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_guild%28id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#delete_guild</strong>(id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes a guild from the cache given its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_member%28guild_id%3AUInt64%7CSnowflake%2Cuser_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#delete_member</strong>(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes a member from the cache given its <em>user_id</em> and the <em>guild_id</em> it is on.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_role%28id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#delete_role</strong>(id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes a role from the cache given its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_user%28id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#delete_user</strong>(id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes a user from the cache given its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dm_channels%3AHash%28UInt64%2CUInt64%29-instance-method" class="signature"><strong>#dm_channels</strong> : Hash(UInt64, UInt64)</a>
+        
+          <div class="summary"><p>Mapping of users to the respective DM channels the bot has open with them, represented as {user ID => channel ID}.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_channels%28guild_id%3AUInt64%7CSnowflake%29%3AArray%28UInt64%29-instance-method" class="signature"><strong>#guild_channels</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
+        
+          <div class="summary"><p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_channels%3AHash%28UInt64%2CArray%28UInt64%29%29-instance-method" class="signature"><strong>#guild_channels</strong> : Hash(UInt64, Array(UInt64))</a>
+        
+          <div class="summary"><p>Mapping of guilds to the channels on them, represented as {guild ID => [channel IDs]}.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_roles%28guild_id%3AUInt64%7CSnowflake%29%3AArray%28UInt64%29-instance-method" class="signature"><strong>#guild_roles</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
+        
+          <div class="summary"><p>Returns all roles of a guild, identified by its <em>guild_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_roles%3AHash%28UInt64%2CArray%28UInt64%29%29-instance-method" class="signature"><strong>#guild_roles</strong> : Hash(UInt64, Array(UInt64))</a>
+        
+          <div class="summary"><p>Mapping of guilds to the roles on them, represented as {guild ID => [role IDs]}.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guilds%3AHash%28UInt64%2CDiscord%3A%3AGuild%29-instance-method" class="signature"><strong>#guilds</strong> : Hash(UInt64, Discord::Guild)</a>
+        
+          <div class="summary"><p>A map of guilds (servers) the bot is on.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#members%3AHash%28UInt64%2CHash%28UInt64%2CDiscord%3A%3AGuildMember%29%29-instance-method" class="signature"><strong>#members</strong> : Hash(UInt64, Hash(UInt64, Discord::GuildMember))</a>
+        
+          <div class="summary"><p>A double map of members on servers, represented as {guild ID => {user ID => member}}.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove_guild_channel%28guild_id%3AUInt64%7CSnowflake%2Cchannel_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#remove_guild_channel</strong>(guild_id : UInt64 | Snowflake, channel_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Marks a channel as not belonging to a particular guild anymore.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove_guild_role%28guild_id%3AUInt64%7CSnowflake%2Crole_id%3AUInt64%7CSnowflake%29-instance-method" class="signature"><strong>#remove_guild_role</strong>(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Marks a role as not belonging to a particular guild anymore.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolve_channel%28id%3AUInt64%7CSnowflake%29%3AChannel-instance-method" class="signature"><strong>#resolve_channel</strong>(id : UInt64 | Snowflake) : Channel</a>
+        
+          <div class="summary"><p>Resolves a channel by its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolve_current_user%3AUser-instance-method" class="signature"><strong>#resolve_current_user</strong> : User</a>
+        
+          <div class="summary"><p>Resolves the current user's profile.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolve_dm_channel%28recipient_id%3AUInt64%7CSnowflake%29%3AUInt64-instance-method" class="signature"><strong>#resolve_dm_channel</strong>(recipient_id : UInt64 | Snowflake) : UInt64</a>
+        
+          <div class="summary"><p>Resolves the ID of a DM channel with a particular user by the recipient's <em>recipient_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolve_guild%28id%3AUInt64%7CSnowflake%29%3AGuild-instance-method" class="signature"><strong>#resolve_guild</strong>(id : UInt64 | Snowflake) : Guild</a>
+        
+          <div class="summary"><p>Resolves a guild by its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolve_member%28guild_id%3AUInt64%7CSnowflake%2Cuser_id%3AUInt64%7CSnowflake%29%3AGuildMember-instance-method" class="signature"><strong>#resolve_member</strong>(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake) : GuildMember</a>
+        
+          <div class="summary"><p>Resolves a member by the <em>guild_id</em> of the guild the member is on, and the <em>user_id</em> of the member itself.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolve_role%28id%3AUInt64%7CSnowflake%29%3ARole-instance-method" class="signature"><strong>#resolve_role</strong>(id : UInt64 | Snowflake) : Role</a>
+        
+          <div class="summary"><p>Resolves a role by its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolve_user%28id%3AUInt64%7CSnowflake%29%3AUser-instance-method" class="signature"><strong>#resolve_user</strong>(id : UInt64 | Snowflake) : User</a>
+        
+          <div class="summary"><p>Resolves a user by its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#roles%3AHash%28UInt64%2CDiscord%3A%3ARole%29-instance-method" class="signature"><strong>#roles</strong> : Hash(UInt64, Discord::Role)</a>
+        
+          <div class="summary"><p>A map of all roles on servers the bot is on.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#users%3AHash%28UInt64%2CDiscord%3A%3AUser%29-instance-method" class="signature"><strong>#users</strong> : Hash(UInt64, Discord::User)</a>
+        
+          <div class="summary"><p>A map of cached users.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(client:Client)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(client : <a href="../Discord/Client.html">Client</a>)
+
+        <a class="method-permalink" href="#new%28client%3AClient%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new cache with a <em>client</em> that requests (in case of cache
+misses) should be done on.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L74" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="add_guild_channel(guild_id:UInt64|Snowflake,channel_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_guild_channel</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>, channel_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#add_guild_channel%28guild_id%3AUInt64%7CSnowflake%2Cchannel_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Marks a channel, identified by the <em>channel_id</em>, as belonging to a particular
+guild, identified by the <em>guild_id</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L258" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_guild_role(guild_id:UInt64|Snowflake,role_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_guild_role</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>, role_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#add_guild_role%28guild_id%3AUInt64%7CSnowflake%2Crole_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Marks a role, identified by the <em>role_id</em>, as belonging to a particular
+guild, identified by the <em>guild_id</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L237" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(member:GuildMember,guild_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(member : <a href="../Discord/GuildMember.html">GuildMember</a>, guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#cache%28member%3AGuildMember%2Cguild_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a specific <em>member</em> to the cache, given the <em>guild_id</em> it is on.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L197" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(user:User)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(user : <a href="../Discord/User.html">User</a>)
+
+        <a class="method-permalink" href="#cache%28user%3AUser%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a specific <em>user</em> to the cache.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L182" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(channel:Channel)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(channel : <a href="../Discord/Channel.html">Channel</a>)
+
+        <a class="method-permalink" href="#cache%28channel%3AChannel%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a specific <em>channel</em> to the cache.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L187" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(guild:Guild)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(guild : <a href="../Discord/Guild.html">Guild</a>)
+
+        <a class="method-permalink" href="#cache%28guild%3AGuild%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a specific <em>guild</em> to the cache.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L192" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(role:Role)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(role : <a href="../Discord/Role.html">Role</a>)
+
+        <a class="method-permalink" href="#cache%28role%3ARole%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a specific <em>role</em> to the cache.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L204" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache_current_user(current_user:User)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache_current_user</strong>(current_user : <a href="../Discord/User.html">User</a>)
+
+        <a class="method-permalink" href="#cache_current_user%28current_user%3AUser%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Caches the current user.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L217" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache_dm_channel(channel_id:UInt64|Snowflake,recipient_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache_dm_channel</strong>(channel_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>, recipient_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#cache_dm_channel%28channel_id%3AUInt64%7CSnowflake%2Crecipient_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a particular DM channel to the cache, given the <em>channel_id</em> and the
+<em>recipient_id</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L210" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache_multiple_members(members:Array(GuildMember),guild_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache_multiple_members</strong>(members : Array(<a href="../Discord/GuildMember.html">GuildMember</a>), guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#cache_multiple_members%28members%3AArray%28GuildMember%29%2Cguild_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds multiple <em>members</em> at once to the cache, given the <em>guild_id</em> they
+all share. This method exists to slightly reduce the overhead of
+processing chunks; outside of that it is likely not of much use.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L222" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channels:Hash(UInt64,Discord::Channel)-instance-method">
+      <div class="signature">
+        
+        def <strong>channels</strong> : Hash(UInt64, <a href="../Discord/Channel.html">Discord::Channel</a>)
+
+        <a class="method-permalink" href="#channels%3AHash%28UInt64%2CDiscord%3A%3AChannel%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A map of cached channels, i. e. all channels on all servers the bot is on,
+as well as all DM channels.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_channel(id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_channel</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_channel%28id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes a channel from the cache given its <em>ID</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L149" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_current_user-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_current_user</strong>
+
+        <a class="method-permalink" href="#delete_current_user-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes the current user from the cache, if that will ever be necessary.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L177" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_dm_channel(recipient_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_dm_channel</strong>(recipient_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_dm_channel%28recipient_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes a DM channel with a particular user given the <em>recipient_id</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L172" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_guild(id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_guild</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_guild%28id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes a guild from the cache given its <em>ID</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L154" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_member(guild_id:UInt64|Snowflake,user_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_member</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>, user_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_member%28guild_id%3AUInt64%7CSnowflake%2Cuser_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes a member from the cache given its <em>user_id</em> and the <em>guild_id</em> it
+is on.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L160" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_role(id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_role</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_role%28id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes a role from the cache given its <em>ID</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L167" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_user(id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_user</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_user%28id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes a user from the cache given its <em>ID</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L144" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dm_channels:Hash(UInt64,UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>dm_channels</strong> : Hash(UInt64, UInt64)
+
+        <a class="method-permalink" href="#dm_channels%3AHash%28UInt64%2CUInt64%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Mapping of users to the respective DM channels the bot has open with them,
+represented as {user ID => channel ID}.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L62" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_channels(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_channels</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(UInt64)
+
+        <a class="method-permalink" href="#guild_channels%28guild_id%3AUInt64%7CSnowflake%29%3AArray%28UInt64%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L252" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_channels:Hash(UInt64,Array(UInt64))-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_channels</strong> : Hash(UInt64, Array(UInt64))
+
+        <a class="method-permalink" href="#guild_channels%3AHash%28UInt64%2CArray%28UInt64%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Mapping of guilds to the channels on them, represented as {guild ID =>
+[channel IDs]}.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_roles(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_roles</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(UInt64)
+
+        <a class="method-permalink" href="#guild_roles%28guild_id%3AUInt64%7CSnowflake%29%3AArray%28UInt64%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns all roles of a guild, identified by its <em>guild_id</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L231" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_roles:Hash(UInt64,Array(UInt64))-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_roles</strong> : Hash(UInt64, Array(UInt64))
+
+        <a class="method-permalink" href="#guild_roles%3AHash%28UInt64%2CArray%28UInt64%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Mapping of guilds to the roles on them, represented as {guild ID =>
+[role IDs]}.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guilds:Hash(UInt64,Discord::Guild)-instance-method">
+      <div class="signature">
+        
+        def <strong>guilds</strong> : Hash(UInt64, <a href="../Discord/Guild.html">Discord::Guild</a>)
+
+        <a class="method-permalink" href="#guilds%3AHash%28UInt64%2CDiscord%3A%3AGuild%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A map of guilds (servers) the bot is on. Doesn't ignore guilds temporarily
+deleted due to an outage; so if an outage is going on right now the
+affected guilds would be missing here too.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="members:Hash(UInt64,Hash(UInt64,Discord::GuildMember))-instance-method">
+      <div class="signature">
+        
+        def <strong>members</strong> : Hash(UInt64, Hash(UInt64, <a href="../Discord/GuildMember.html">Discord::GuildMember</a>))
+
+        <a class="method-permalink" href="#members%3AHash%28UInt64%2CHash%28UInt64%2CDiscord%3A%3AGuildMember%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A double map of members on servers, represented as {guild ID => {user ID
+=> member}}. Will only contain previously and currently online members as
+well as all members that have been chunked (see
+<code><a href="../Discord/Client.html#request_guild_members%28guild_id%3AUInt64%2Cquery%3AString%3D%26quot%3B%26quot%3B%2Climit%3AInt32%3D0%29-instance-method">Client#request_guild_members</a></code>).</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_guild_channel(guild_id:UInt64|Snowflake,channel_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_guild_channel</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>, channel_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#remove_guild_channel%28guild_id%3AUInt64%7CSnowflake%2Cchannel_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Marks a channel as not belonging to a particular guild anymore.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L266" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_guild_role(guild_id:UInt64|Snowflake,role_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_guild_role</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>, role_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#remove_guild_role%28guild_id%3AUInt64%7CSnowflake%2Crole_id%3AUInt64%7CSnowflake%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Marks a role as not belonging to a particular guild anymore.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L245" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_channel(id:UInt64|Snowflake):Channel-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_channel</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : <a href="../Discord/Channel.html">Channel</a>
+
+        <a class="method-permalink" href="#resolve_channel%28id%3AUInt64%7CSnowflake%29%3AChannel-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resolves a channel by its <em>ID</em>. If the requested object is not cached, it
+will do an API call.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L96" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_current_user:User-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_current_user</strong> : <a href="../Discord/User.html">User</a>
+
+        <a class="method-permalink" href="#resolve_current_user%3AUser-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resolves the current user's profile. Requires no parameters since the
+endpoint has none either. If there is a gateway connection this should
+always be cached.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L139" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_dm_channel(recipient_id:UInt64|Snowflake):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_dm_channel</strong>(recipient_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : UInt64
+
+        <a class="method-permalink" href="#resolve_dm_channel%28recipient_id%3AUInt64%7CSnowflake%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resolves the ID of a DM channel with a particular user by the recipient's
+<em>recipient_id</em>. If there is no such channel cached, one will be created.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_guild(id:UInt64|Snowflake):Guild-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_guild</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : <a href="../Discord/Guild.html">Guild</a>
+
+        <a class="method-permalink" href="#resolve_guild%28id%3AUInt64%7CSnowflake%29%3AGuild-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resolves a guild by its <em>ID</em>. If the requested object is not cached, it
+will do an API call.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L103" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_member(guild_id:UInt64|Snowflake,user_id:UInt64|Snowflake):GuildMember-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_member</strong>(guild_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>, user_id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : <a href="../Discord/GuildMember.html">GuildMember</a>
+
+        <a class="method-permalink" href="#resolve_member%28guild_id%3AUInt64%7CSnowflake%2Cuser_id%3AUInt64%7CSnowflake%29%3AGuildMember-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resolves a member by the <em>guild_id</em> of the guild the member is on, and the
+<em>user_id</em> of the member itself. An API request will be performed if the
+object is not cached.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L111" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_role(id:UInt64|Snowflake):Role-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_role</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : <a href="../Discord/Role.html">Role</a>
+
+        <a class="method-permalink" href="#resolve_role%28id%3AUInt64%7CSnowflake%29%3ARole-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resolves a role by its <em>ID</em>. No API request will be performed if the role
+is not cached, because there is no endpoint for individual roles; however
+all roles should be cached at all times so it won't be a problem.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L121" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_user(id:UInt64|Snowflake):User-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_user</strong>(id : UInt64 | <a href="../Discord/Snowflake.html">Snowflake</a>) : <a href="../Discord/User.html">User</a>
+
+        <a class="method-permalink" href="#resolve_user%28id%3AUInt64%7CSnowflake%29%3AUser-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resolves a user by its <em>ID</em>. If the requested object is not cached, it
+will do an API call.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="roles:Hash(UInt64,Discord::Role)-instance-method">
+      <div class="signature">
+        
+        def <strong>roles</strong> : Hash(UInt64, <a href="../Discord/Role.html">Discord::Role</a>)
+
+        <a class="method-permalink" href="#roles%3AHash%28UInt64%2CDiscord%3A%3ARole%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A map of all roles on servers the bot is on. Does not discriminate by
+guild, as role IDs are unique even across guilds.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="users:Hash(UInt64,Discord::User)-instance-method">
+      <div class="signature">
+        
+        def <strong>users</strong> : Hash(UInt64, <a href="../Discord/User.html">Discord::User</a>)
+
+        <a class="method-permalink" href="#users%3AHash%28UInt64%2CDiscord%3A%3AUser%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A map of cached users. These aren't necessarily all the users in servers
+the bot has access to, but rather all the users that have been seen by
+the bot in the past (and haven't been deleted by means of <code><a href="../Discord/Cache.html#delete_user%28id%3AUInt64%7CSnowflake%29-instance-method">#delete_user</a></code>).</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/cache.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

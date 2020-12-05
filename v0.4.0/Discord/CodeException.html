@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/meew0/discordcr">
+  <title>Discord::CodeException - github.com/meew0/discordcr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/meew0/discordcr/Discord" data-name="discord">
+      <a href="../Discord.html">Discord</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Activity" data-name="discord::activity">
+      <a href="../Discord/Activity.html">Activity</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ActivityType" data-name="discord::activitytype">
+      <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/APIError" data-name="discord::apierror">
+      <a href="../Discord/APIError.html">APIError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Attachment" data-name="discord::attachment">
+      <a href="../Discord/Attachment.html">Attachment</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Cache" data-name="discord::cache">
+      <a href="../Discord/Cache.html">Cache</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Channel" data-name="discord::channel">
+      <a href="../Discord/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ChannelType" data-name="discord::channeltype">
+      <a href="../Discord/ChannelType.html">ChannelType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Client" data-name="discord::client">
+      <a href="../Discord/Client.html">Client</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/meew0/discordcr/Discord/CodeException" data-name="discord::codeexception">
+      <a href="../Discord/CodeException.html">CodeException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Connection" data-name="discord::connection">
+      <a href="../Discord/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings" data-name="discord::dca1mappings">
+      <a href="../Discord/DCA1Mappings.html">DCA1Mappings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/DCA" data-name="discord::dca1mappings::dca">
+      <a href="../Discord/DCA1Mappings/DCA.html">DCA</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Info" data-name="discord::dca1mappings::info">
+      <a href="../Discord/DCA1Mappings/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Metadata" data-name="discord::dca1mappings::metadata">
+      <a href="../Discord/DCA1Mappings/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Opus" data-name="discord::dca1mappings::opus">
+      <a href="../Discord/DCA1Mappings/Opus.html">Opus</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Origin" data-name="discord::dca1mappings::origin">
+      <a href="../Discord/DCA1Mappings/Origin.html">Origin</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Tool" data-name="discord::dca1mappings::tool">
+      <a href="../Discord/DCA1Mappings/Tool.html">Tool</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCAParser" data-name="discord::dcaparser">
+      <a href="../Discord/DCAParser.html">DCAParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Embed" data-name="discord::embed">
+      <a href="../Discord/Embed.html">Embed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
+      <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedField" data-name="discord::embedfield">
+      <a href="../Discord/EmbedField.html">EmbedField</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedFooter" data-name="discord::embedfooter">
+      <a href="../Discord/EmbedFooter.html">EmbedFooter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedImage" data-name="discord::embedimage">
+      <a href="../Discord/EmbedImage.html">EmbedImage</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedProvider" data-name="discord::embedprovider">
+      <a href="../Discord/EmbedProvider.html">EmbedProvider</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedThumbnail" data-name="discord::embedthumbnail">
+      <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedVideo" data-name="discord::embedvideo">
+      <a href="../Discord/EmbedVideo.html">EmbedVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Emoji" data-name="discord::emoji">
+      <a href="../Discord/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GamePlaying" data-name="discord::gameplaying">
+      <a href="../Discord/GamePlaying.html">GamePlaying</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/Gateway" data-name="discord::gateway">
+      <a href="../Discord/Gateway.html">Gateway</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ChannelPinsUpdatePayload" data-name="discord::gateway::channelpinsupdatepayload">
+      <a href="../Discord/Gateway/ChannelPinsUpdatePayload.html">ChannelPinsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildBanPayload" data-name="discord::gateway::guildbanpayload">
+      <a href="../Discord/Gateway/GuildBanPayload.html">GuildBanPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildCreatePayload" data-name="discord::gateway::guildcreatepayload">
+      <a href="../Discord/Gateway/GuildCreatePayload.html">GuildCreatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildDeletePayload" data-name="discord::gateway::guilddeletepayload">
+      <a href="../Discord/Gateway/GuildDeletePayload.html">GuildDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildEmojiUpdatePayload" data-name="discord::gateway::guildemojiupdatepayload">
+      <a href="../Discord/Gateway/GuildEmojiUpdatePayload.html">GuildEmojiUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildIntegrationsUpdatePayload" data-name="discord::gateway::guildintegrationsupdatepayload">
+      <a href="../Discord/Gateway/GuildIntegrationsUpdatePayload.html">GuildIntegrationsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberAddPayload" data-name="discord::gateway::guildmemberaddpayload">
+      <a href="../Discord/Gateway/GuildMemberAddPayload.html">GuildMemberAddPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberRemovePayload" data-name="discord::gateway::guildmemberremovepayload">
+      <a href="../Discord/Gateway/GuildMemberRemovePayload.html">GuildMemberRemovePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMembersChunkPayload" data-name="discord::gateway::guildmemberschunkpayload">
+      <a href="../Discord/Gateway/GuildMembersChunkPayload.html">GuildMembersChunkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberUpdatePayload" data-name="discord::gateway::guildmemberupdatepayload">
+      <a href="../Discord/Gateway/GuildMemberUpdatePayload.html">GuildMemberUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildRoleDeletePayload" data-name="discord::gateway::guildroledeletepayload">
+      <a href="../Discord/Gateway/GuildRoleDeletePayload.html">GuildRoleDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildRolePayload" data-name="discord::gateway::guildrolepayload">
+      <a href="../Discord/Gateway/GuildRolePayload.html">GuildRolePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/HelloPayload" data-name="discord::gateway::hellopayload">
+      <a href="../Discord/Gateway/HelloPayload.html">HelloPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyPacket" data-name="discord::gateway::identifypacket">
+      <a href="../Discord/Gateway/IdentifyPacket.html">IdentifyPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyPayload" data-name="discord::gateway::identifypayload">
+      <a href="../Discord/Gateway/IdentifyPayload.html">IdentifyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyProperties" data-name="discord::gateway::identifyproperties">
+      <a href="../Discord/Gateway/IdentifyProperties.html">IdentifyProperties</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageDeleteBulkPayload" data-name="discord::gateway::messagedeletebulkpayload">
+      <a href="../Discord/Gateway/MessageDeleteBulkPayload.html">MessageDeleteBulkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageDeletePayload" data-name="discord::gateway::messagedeletepayload">
+      <a href="../Discord/Gateway/MessageDeletePayload.html">MessageDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageReactionPayload" data-name="discord::gateway::messagereactionpayload">
+      <a href="../Discord/Gateway/MessageReactionPayload.html">MessageReactionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageReactionRemoveAllPayload" data-name="discord::gateway::messagereactionremoveallpayload">
+      <a href="../Discord/Gateway/MessageReactionRemoveAllPayload.html">MessageReactionRemoveAllPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageUpdatePayload" data-name="discord::gateway::messageupdatepayload">
+      <a href="../Discord/Gateway/MessageUpdatePayload.html">MessageUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/PresenceUpdatePayload" data-name="discord::gateway::presenceupdatepayload">
+      <a href="../Discord/Gateway/PresenceUpdatePayload.html">PresenceUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ReadyPayload" data-name="discord::gateway::readypayload">
+      <a href="../Discord/Gateway/ReadyPayload.html">ReadyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/RequestGuildMembersPacket" data-name="discord::gateway::requestguildmemberspacket">
+      <a href="../Discord/Gateway/RequestGuildMembersPacket.html">RequestGuildMembersPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ResumedPayload" data-name="discord::gateway::resumedpayload">
+      <a href="../Discord/Gateway/ResumedPayload.html">ResumedPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ResumePacket" data-name="discord::gateway::resumepacket">
+      <a href="../Discord/Gateway/ResumePacket.html">ResumePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/Session" data-name="discord::gateway::session">
+      <a href="../Discord/Gateway/Session.html">Session</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ShardKey" data-name="discord::gateway::shardkey">
+      <a href="../Discord/Gateway/ShardKey.html">ShardKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/StatusUpdatePacket" data-name="discord::gateway::statusupdatepacket">
+      <a href="../Discord/Gateway/StatusUpdatePacket.html">StatusUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/TypingStartPayload" data-name="discord::gateway::typingstartpayload">
+      <a href="../Discord/Gateway/TypingStartPayload.html">TypingStartPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/VoiceServerUpdatePayload" data-name="discord::gateway::voiceserverupdatepayload">
+      <a href="../Discord/Gateway/VoiceServerUpdatePayload.html">VoiceServerUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/VoiceStateUpdatePacket" data-name="discord::gateway::voicestateupdatepacket">
+      <a href="../Discord/Gateway/VoiceStateUpdatePacket.html">VoiceStateUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/WebhooksUpdatePayload" data-name="discord::gateway::webhooksupdatepayload">
+      <a href="../Discord/Gateway/WebhooksUpdatePayload.html">WebhooksUpdatePayload</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Guild" data-name="discord::guild">
+      <a href="../Discord/Guild.html">Guild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildBan" data-name="discord::guildban">
+      <a href="../Discord/GuildBan.html">GuildBan</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+      <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildMember" data-name="discord::guildmember">
+      <a href="../Discord/GuildMember.html">GuildMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Integration" data-name="discord::integration">
+      <a href="../Discord/Integration.html">Integration</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/IntegrationAccount" data-name="discord::integrationaccount">
+      <a href="../Discord/IntegrationAccount.html">IntegrationAccount</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Invite" data-name="discord::invite">
+      <a href="../Discord/Invite.html">Invite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteChannel" data-name="discord::invitechannel">
+      <a href="../Discord/InviteChannel.html">InviteChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteGuild" data-name="discord::inviteguild">
+      <a href="../Discord/InviteGuild.html">InviteGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteMetadata" data-name="discord::invitemetadata">
+      <a href="../Discord/InviteMetadata.html">InviteMetadata</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/Mention" data-name="discord::mention">
+      <a href="../Discord/Mention.html">Mention</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Channel" data-name="discord::mention::channel">
+      <a href="../Discord/Mention/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Emoji" data-name="discord::mention::emoji">
+      <a href="../Discord/Mention/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Everyone" data-name="discord::mention::everyone">
+      <a href="../Discord/Mention/Everyone.html">Everyone</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Here" data-name="discord::mention::here">
+      <a href="../Discord/Mention/Here.html">Here</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/MentionType" data-name="discord::mention::mentiontype">
+      <a href="../Discord/Mention/MentionType.html">MentionType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Role" data-name="discord::mention::role">
+      <a href="../Discord/Mention/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/User" data-name="discord::mention::user">
+      <a href="../Discord/Mention/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Message" data-name="discord::message">
+      <a href="../Discord/Message.html">Message</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/MessageType" data-name="discord::messagetype">
+      <a href="../Discord/MessageType.html">MessageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/OAuth2Application" data-name="discord::oauth2application">
+      <a href="../Discord/OAuth2Application.html">OAuth2Application</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Overwrite" data-name="discord::overwrite">
+      <a href="../Discord/Overwrite.html">Overwrite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/PartialUser" data-name="discord::partialuser">
+      <a href="../Discord/PartialUser.html">PartialUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Permissions" data-name="discord::permissions">
+      <a href="../Discord/Permissions.html">Permissions</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Presence" data-name="discord::presence">
+      <a href="../Discord/Presence.html">Presence</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/PrivateChannel" data-name="discord::privatechannel">
+      <a href="../Discord/PrivateChannel.html">PrivateChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Reaction" data-name="discord::reaction">
+      <a href="../Discord/Reaction.html">Reaction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ReactionEmoji" data-name="discord::reactionemoji">
+      <a href="../Discord/ReactionEmoji.html">ReactionEmoji</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/REST" data-name="discord::rest">
+      <a href="../Discord/REST.html">REST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/ChannelParent" data-name="discord::rest::channelparent">
+      <a href="../Discord/REST/ChannelParent.html">ChannelParent</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GatewayBotResponse" data-name="discord::rest::gatewaybotresponse">
+      <a href="../Discord/REST/GatewayBotResponse.html">GatewayBotResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GatewayResponse" data-name="discord::rest::gatewayresponse">
+      <a href="../Discord/REST/GatewayResponse.html">GatewayResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GuildVanityURLResponse" data-name="discord::rest::guildvanityurlresponse">
+      <a href="../Discord/REST/GuildVanityURLResponse.html">GuildVanityURLResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/ModifyChannelPositionPayload" data-name="discord::rest::modifychannelpositionpayload">
+      <a href="../Discord/REST/ModifyChannelPositionPayload.html">ModifyChannelPositionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/PruneCountResponse" data-name="discord::rest::prunecountresponse">
+      <a href="../Discord/REST/PruneCountResponse.html">PruneCountResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/RateLimitKey" data-name="discord::rest::ratelimitkey">
+      <a href="../Discord/REST/RateLimitKey.html">RateLimitKey</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Role" data-name="discord::role">
+      <a href="../Discord/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Snowflake" data-name="discord::snowflake">
+      <a href="../Discord/Snowflake.html">Snowflake</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/StatusException" data-name="discord::statusexception">
+      <a href="../Discord/StatusException.html">StatusException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/UnavailableGuild" data-name="discord::unavailableguild">
+      <a href="../Discord/UnavailableGuild.html">UnavailableGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/User" data-name="discord::user">
+      <a href="../Discord/User.html">User</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/UserGuild" data-name="discord::userguild">
+      <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceClient" data-name="discord::voiceclient">
+      <a href="../Discord/VoiceClient.html">VoiceClient</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceRegion" data-name="discord::voiceregion">
+      <a href="../Discord/VoiceRegion.html">VoiceRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceState" data-name="discord::voicestate">
+      <a href="../Discord/VoiceState.html">VoiceState</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceUDP" data-name="discord::voiceudp">
+      <a href="../Discord/VoiceUDP.html">VoiceUDP</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Webhook" data-name="discord::webhook">
+      <a href="../Discord/Webhook.html">Webhook</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/WebSocket" data-name="discord::websocket">
+      <a href="../Discord/WebSocket.html">WebSocket</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Discord::CodeException
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/CodeException.html">Discord::CodeException</a></li><li class="superclass"><a href="../Discord/StatusException.html">Discord::StatusException</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>This exception is raised in <code><a href="../Discord/REST.html#request%28route_key%3ASymbol%2Cmajor_parameter%3ASnowflake%7CUInt64%7CNil%2Cmethod%3AString%2Cpath%3AString%2Cheaders%3AHTTP%3A%3AHeaders%2Cbody%3AString%3F%29-instance-method">REST#request</a></code> when a request fails with an
+API error response that has a code and a descriptive message.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/errors.cr#L44" target="_blank">discordcr/errors.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%2Cerror%3AAPIError%29-class-method" class="signature"><strong>.new</strong>(response : HTTP::Client::Response, error : APIError)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#error%3AAPIError-instance-method" class="signature"><strong>#error</strong> : APIError</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#error_code%3AInt32-instance-method" class="signature"><strong>#error_code</strong> : Int32</a>
+        
+          <div class="summary"><p>The API error code that was returned by Discord, for example 20001 or 50016.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#error_message%3AString-instance-method" class="signature"><strong>#error_message</strong> : String</a>
+        
+          <div class="summary"><p>The API error message that was returned by Discord, for example "Bots cannot use this endpoint" or "Provided too few or too many messages to delete.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#message-instance-method" class="signature"><strong>#message</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28io%29-instance-method" class="signature"><strong>#to_s</strong>(io)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Discord/StatusException.html">Discord::StatusException</a></code></h3>
+  
+  
+    <a href="../Discord/StatusException.html#message-instance-method" class="tooltip">
+      <span>message</span>
+    message</a>, 
+    
+  
+    <a href="../Discord/StatusException.html#response%3AHTTP%3A%3AClient%3A%3AResponse-instance-method" class="tooltip">
+      <span>response : HTTP::Client::Response</span>
+    response</a>, 
+    
+  
+    <a href="../Discord/StatusException.html#status_code%3AInt32-instance-method" class="tooltip">
+      <span>status_code : Int32</span>
+    status_code</a>, 
+    
+  
+    <a href="../Discord/StatusException.html#status_message%3AString-instance-method" class="tooltip">
+      <span>status_message : String</span>
+    status_message</a>, 
+    
+  
+    <a href="../Discord/StatusException.html#to_s%28io%29-instance-method" class="tooltip">
+      <span>to_s(io)</span>
+    to_s</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../Discord/StatusException.html">Discord::StatusException</a></code></h3>
+  
+  
+    <a href="../Discord/StatusException.html#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%29-class-method" class="tooltip">
+      <span>new(response : HTTP::Client::Response)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(response:HTTP::Client::Response,error:APIError)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(response : HTTP::Client::Response, error : <a href="../Discord/APIError.html">APIError</a>)
+
+        <a class="method-permalink" href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%2Cerror%3AAPIError%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/errors.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="error:APIError-instance-method">
+      <div class="signature">
+        
+        def <strong>error</strong> : <a href="../Discord/APIError.html">APIError</a>
+
+        <a class="method-permalink" href="#error%3AAPIError-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/errors.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="error_code:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>error_code</strong> : Int32
+
+        <a class="method-permalink" href="#error_code%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The API error code that was returned by Discord, for example 20001 or</p>
+
+<ol><li></li></ol></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/errors.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="error_message:String-instance-method">
+      <div class="signature">
+        
+        def <strong>error_message</strong> : String
+
+        <a class="method-permalink" href="#error_message%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The API error message that was returned by Discord, for example "Bots
+cannot use this endpoint" or "Provided too few or too many messages to
+delete. Must provide at least 2 and fewer than 100 messages to delete.".</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/errors.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="message-instance-method">
+      <div class="signature">
+        
+        def <strong>message</strong>
+
+        <a class="method-permalink" href="#message-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/errors.cr#L63" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io)
+
+        <a class="method-permalink" href="#to_s%28io%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/errors.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

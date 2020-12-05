@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/meew0/discordcr">
+  <title>Discord::Channel - github.com/meew0/discordcr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/meew0/discordcr/Discord" data-name="discord">
+      <a href="../Discord.html">Discord</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Activity" data-name="discord::activity">
+      <a href="../Discord/Activity.html">Activity</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ActivityType" data-name="discord::activitytype">
+      <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/APIError" data-name="discord::apierror">
+      <a href="../Discord/APIError.html">APIError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Attachment" data-name="discord::attachment">
+      <a href="../Discord/Attachment.html">Attachment</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Cache" data-name="discord::cache">
+      <a href="../Discord/Cache.html">Cache</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/meew0/discordcr/Discord/Channel" data-name="discord::channel">
+      <a href="../Discord/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ChannelType" data-name="discord::channeltype">
+      <a href="../Discord/ChannelType.html">ChannelType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Client" data-name="discord::client">
+      <a href="../Discord/Client.html">Client</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/CodeException" data-name="discord::codeexception">
+      <a href="../Discord/CodeException.html">CodeException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Connection" data-name="discord::connection">
+      <a href="../Discord/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings" data-name="discord::dca1mappings">
+      <a href="../Discord/DCA1Mappings.html">DCA1Mappings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/DCA" data-name="discord::dca1mappings::dca">
+      <a href="../Discord/DCA1Mappings/DCA.html">DCA</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Info" data-name="discord::dca1mappings::info">
+      <a href="../Discord/DCA1Mappings/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Metadata" data-name="discord::dca1mappings::metadata">
+      <a href="../Discord/DCA1Mappings/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Opus" data-name="discord::dca1mappings::opus">
+      <a href="../Discord/DCA1Mappings/Opus.html">Opus</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Origin" data-name="discord::dca1mappings::origin">
+      <a href="../Discord/DCA1Mappings/Origin.html">Origin</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCA1Mappings/Tool" data-name="discord::dca1mappings::tool">
+      <a href="../Discord/DCA1Mappings/Tool.html">Tool</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/DCAParser" data-name="discord::dcaparser">
+      <a href="../Discord/DCAParser.html">DCAParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Embed" data-name="discord::embed">
+      <a href="../Discord/Embed.html">Embed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
+      <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedField" data-name="discord::embedfield">
+      <a href="../Discord/EmbedField.html">EmbedField</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedFooter" data-name="discord::embedfooter">
+      <a href="../Discord/EmbedFooter.html">EmbedFooter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedImage" data-name="discord::embedimage">
+      <a href="../Discord/EmbedImage.html">EmbedImage</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedProvider" data-name="discord::embedprovider">
+      <a href="../Discord/EmbedProvider.html">EmbedProvider</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedThumbnail" data-name="discord::embedthumbnail">
+      <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/EmbedVideo" data-name="discord::embedvideo">
+      <a href="../Discord/EmbedVideo.html">EmbedVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Emoji" data-name="discord::emoji">
+      <a href="../Discord/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GamePlaying" data-name="discord::gameplaying">
+      <a href="../Discord/GamePlaying.html">GamePlaying</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/Gateway" data-name="discord::gateway">
+      <a href="../Discord/Gateway.html">Gateway</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ChannelPinsUpdatePayload" data-name="discord::gateway::channelpinsupdatepayload">
+      <a href="../Discord/Gateway/ChannelPinsUpdatePayload.html">ChannelPinsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildBanPayload" data-name="discord::gateway::guildbanpayload">
+      <a href="../Discord/Gateway/GuildBanPayload.html">GuildBanPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildCreatePayload" data-name="discord::gateway::guildcreatepayload">
+      <a href="../Discord/Gateway/GuildCreatePayload.html">GuildCreatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildDeletePayload" data-name="discord::gateway::guilddeletepayload">
+      <a href="../Discord/Gateway/GuildDeletePayload.html">GuildDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildEmojiUpdatePayload" data-name="discord::gateway::guildemojiupdatepayload">
+      <a href="../Discord/Gateway/GuildEmojiUpdatePayload.html">GuildEmojiUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildIntegrationsUpdatePayload" data-name="discord::gateway::guildintegrationsupdatepayload">
+      <a href="../Discord/Gateway/GuildIntegrationsUpdatePayload.html">GuildIntegrationsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberAddPayload" data-name="discord::gateway::guildmemberaddpayload">
+      <a href="../Discord/Gateway/GuildMemberAddPayload.html">GuildMemberAddPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberRemovePayload" data-name="discord::gateway::guildmemberremovepayload">
+      <a href="../Discord/Gateway/GuildMemberRemovePayload.html">GuildMemberRemovePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMembersChunkPayload" data-name="discord::gateway::guildmemberschunkpayload">
+      <a href="../Discord/Gateway/GuildMembersChunkPayload.html">GuildMembersChunkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildMemberUpdatePayload" data-name="discord::gateway::guildmemberupdatepayload">
+      <a href="../Discord/Gateway/GuildMemberUpdatePayload.html">GuildMemberUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildRoleDeletePayload" data-name="discord::gateway::guildroledeletepayload">
+      <a href="../Discord/Gateway/GuildRoleDeletePayload.html">GuildRoleDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/GuildRolePayload" data-name="discord::gateway::guildrolepayload">
+      <a href="../Discord/Gateway/GuildRolePayload.html">GuildRolePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/HelloPayload" data-name="discord::gateway::hellopayload">
+      <a href="../Discord/Gateway/HelloPayload.html">HelloPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyPacket" data-name="discord::gateway::identifypacket">
+      <a href="../Discord/Gateway/IdentifyPacket.html">IdentifyPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyPayload" data-name="discord::gateway::identifypayload">
+      <a href="../Discord/Gateway/IdentifyPayload.html">IdentifyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/IdentifyProperties" data-name="discord::gateway::identifyproperties">
+      <a href="../Discord/Gateway/IdentifyProperties.html">IdentifyProperties</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageDeleteBulkPayload" data-name="discord::gateway::messagedeletebulkpayload">
+      <a href="../Discord/Gateway/MessageDeleteBulkPayload.html">MessageDeleteBulkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageDeletePayload" data-name="discord::gateway::messagedeletepayload">
+      <a href="../Discord/Gateway/MessageDeletePayload.html">MessageDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageReactionPayload" data-name="discord::gateway::messagereactionpayload">
+      <a href="../Discord/Gateway/MessageReactionPayload.html">MessageReactionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageReactionRemoveAllPayload" data-name="discord::gateway::messagereactionremoveallpayload">
+      <a href="../Discord/Gateway/MessageReactionRemoveAllPayload.html">MessageReactionRemoveAllPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/MessageUpdatePayload" data-name="discord::gateway::messageupdatepayload">
+      <a href="../Discord/Gateway/MessageUpdatePayload.html">MessageUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/PresenceUpdatePayload" data-name="discord::gateway::presenceupdatepayload">
+      <a href="../Discord/Gateway/PresenceUpdatePayload.html">PresenceUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ReadyPayload" data-name="discord::gateway::readypayload">
+      <a href="../Discord/Gateway/ReadyPayload.html">ReadyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/RequestGuildMembersPacket" data-name="discord::gateway::requestguildmemberspacket">
+      <a href="../Discord/Gateway/RequestGuildMembersPacket.html">RequestGuildMembersPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ResumedPayload" data-name="discord::gateway::resumedpayload">
+      <a href="../Discord/Gateway/ResumedPayload.html">ResumedPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ResumePacket" data-name="discord::gateway::resumepacket">
+      <a href="../Discord/Gateway/ResumePacket.html">ResumePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/Session" data-name="discord::gateway::session">
+      <a href="../Discord/Gateway/Session.html">Session</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/ShardKey" data-name="discord::gateway::shardkey">
+      <a href="../Discord/Gateway/ShardKey.html">ShardKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/StatusUpdatePacket" data-name="discord::gateway::statusupdatepacket">
+      <a href="../Discord/Gateway/StatusUpdatePacket.html">StatusUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/TypingStartPayload" data-name="discord::gateway::typingstartpayload">
+      <a href="../Discord/Gateway/TypingStartPayload.html">TypingStartPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/VoiceServerUpdatePayload" data-name="discord::gateway::voiceserverupdatepayload">
+      <a href="../Discord/Gateway/VoiceServerUpdatePayload.html">VoiceServerUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/VoiceStateUpdatePacket" data-name="discord::gateway::voicestateupdatepacket">
+      <a href="../Discord/Gateway/VoiceStateUpdatePacket.html">VoiceStateUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Gateway/WebhooksUpdatePayload" data-name="discord::gateway::webhooksupdatepayload">
+      <a href="../Discord/Gateway/WebhooksUpdatePayload.html">WebhooksUpdatePayload</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Guild" data-name="discord::guild">
+      <a href="../Discord/Guild.html">Guild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildBan" data-name="discord::guildban">
+      <a href="../Discord/GuildBan.html">GuildBan</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+      <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/GuildMember" data-name="discord::guildmember">
+      <a href="../Discord/GuildMember.html">GuildMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Integration" data-name="discord::integration">
+      <a href="../Discord/Integration.html">Integration</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/IntegrationAccount" data-name="discord::integrationaccount">
+      <a href="../Discord/IntegrationAccount.html">IntegrationAccount</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Invite" data-name="discord::invite">
+      <a href="../Discord/Invite.html">Invite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteChannel" data-name="discord::invitechannel">
+      <a href="../Discord/InviteChannel.html">InviteChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteGuild" data-name="discord::inviteguild">
+      <a href="../Discord/InviteGuild.html">InviteGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/InviteMetadata" data-name="discord::invitemetadata">
+      <a href="../Discord/InviteMetadata.html">InviteMetadata</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/Mention" data-name="discord::mention">
+      <a href="../Discord/Mention.html">Mention</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Channel" data-name="discord::mention::channel">
+      <a href="../Discord/Mention/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Emoji" data-name="discord::mention::emoji">
+      <a href="../Discord/Mention/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Everyone" data-name="discord::mention::everyone">
+      <a href="../Discord/Mention/Everyone.html">Everyone</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Here" data-name="discord::mention::here">
+      <a href="../Discord/Mention/Here.html">Here</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/MentionType" data-name="discord::mention::mentiontype">
+      <a href="../Discord/Mention/MentionType.html">MentionType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/Role" data-name="discord::mention::role">
+      <a href="../Discord/Mention/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Mention/User" data-name="discord::mention::user">
+      <a href="../Discord/Mention/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Message" data-name="discord::message">
+      <a href="../Discord/Message.html">Message</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/MessageType" data-name="discord::messagetype">
+      <a href="../Discord/MessageType.html">MessageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/OAuth2Application" data-name="discord::oauth2application">
+      <a href="../Discord/OAuth2Application.html">OAuth2Application</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Overwrite" data-name="discord::overwrite">
+      <a href="../Discord/Overwrite.html">Overwrite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/PartialUser" data-name="discord::partialuser">
+      <a href="../Discord/PartialUser.html">PartialUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Permissions" data-name="discord::permissions">
+      <a href="../Discord/Permissions.html">Permissions</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Presence" data-name="discord::presence">
+      <a href="../Discord/Presence.html">Presence</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/PrivateChannel" data-name="discord::privatechannel">
+      <a href="../Discord/PrivateChannel.html">PrivateChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Reaction" data-name="discord::reaction">
+      <a href="../Discord/Reaction.html">Reaction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/ReactionEmoji" data-name="discord::reactionemoji">
+      <a href="../Discord/ReactionEmoji.html">ReactionEmoji</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/meew0/discordcr/Discord/REST" data-name="discord::rest">
+      <a href="../Discord/REST.html">REST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/ChannelParent" data-name="discord::rest::channelparent">
+      <a href="../Discord/REST/ChannelParent.html">ChannelParent</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GatewayBotResponse" data-name="discord::rest::gatewaybotresponse">
+      <a href="../Discord/REST/GatewayBotResponse.html">GatewayBotResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GatewayResponse" data-name="discord::rest::gatewayresponse">
+      <a href="../Discord/REST/GatewayResponse.html">GatewayResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/GuildVanityURLResponse" data-name="discord::rest::guildvanityurlresponse">
+      <a href="../Discord/REST/GuildVanityURLResponse.html">GuildVanityURLResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/ModifyChannelPositionPayload" data-name="discord::rest::modifychannelpositionpayload">
+      <a href="../Discord/REST/ModifyChannelPositionPayload.html">ModifyChannelPositionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/PruneCountResponse" data-name="discord::rest::prunecountresponse">
+      <a href="../Discord/REST/PruneCountResponse.html">PruneCountResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/REST/RateLimitKey" data-name="discord::rest::ratelimitkey">
+      <a href="../Discord/REST/RateLimitKey.html">RateLimitKey</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Role" data-name="discord::role">
+      <a href="../Discord/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Snowflake" data-name="discord::snowflake">
+      <a href="../Discord/Snowflake.html">Snowflake</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/StatusException" data-name="discord::statusexception">
+      <a href="../Discord/StatusException.html">StatusException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/UnavailableGuild" data-name="discord::unavailableguild">
+      <a href="../Discord/UnavailableGuild.html">UnavailableGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/User" data-name="discord::user">
+      <a href="../Discord/User.html">User</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/UserGuild" data-name="discord::userguild">
+      <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceClient" data-name="discord::voiceclient">
+      <a href="../Discord/VoiceClient.html">VoiceClient</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceRegion" data-name="discord::voiceregion">
+      <a href="../Discord/VoiceRegion.html">VoiceRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceState" data-name="discord::voicestate">
+      <a href="../Discord/VoiceState.html">VoiceState</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/VoiceUDP" data-name="discord::voiceudp">
+      <a href="../Discord/VoiceUDP.html">VoiceUDP</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/Webhook" data-name="discord::webhook">
+      <a href="../Discord/Webhook.html">Webhook</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/meew0/discordcr/Discord/WebSocket" data-name="discord::websocket">
+      <a href="../Discord/WebSocket.html">WebSocket</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Discord::Channel
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/Channel.html">Discord::Channel</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/meew0/discordcr/blob/dac5d8f5db0770f36531350ea3f77bebaa506ca0/src/discordcr/mappings/channel.cr#L56" target="_blank">discordcr/mappings/channel.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28__temp_76%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(__temp_76 : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#application_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method" class="signature"><strong>#application_id</strong> : ::Union(Snowflake, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#application_id%3D%28_application_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method" class="signature"><strong>#application_id=</strong>(_application_id : ::Union(Snowflake, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bitrate%3A%3A%3AUnion%28UInt32%2CNil%29-instance-method" class="signature"><strong>#bitrate</strong> : ::Union(UInt32, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bitrate%3D%28_bitrate%3A%3A%3AUnion%28UInt32%2CNil%29%29-instance-method" class="signature"><strong>#bitrate=</strong>(_bitrate : ::Union(UInt32, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method" class="signature"><strong>#guild_id</strong> : ::Union(Snowflake, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_id%3D%28_guild_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method" class="signature"><strong>#guild_id=</strong>(_guild_id : ::Union(Snowflake, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#icon%3A%3A%3AUnion%28Bool%2CNil%29-instance-method" class="signature"><strong>#icon</strong> : ::Union(Bool, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#icon%3D%28_icon%3A%3A%3AUnion%28Bool%2CNil%29%29-instance-method" class="signature"><strong>#icon=</strong>(_icon : ::Union(Bool, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3ASnowflake-instance-method" class="signature"><strong>#id</strong> : Snowflake</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28_id%3ASnowflake%29-instance-method" class="signature"><strong>#id=</strong>(_id : Snowflake)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_message_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method" class="signature"><strong>#last_message_id</strong> : ::Union(Snowflake, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_message_id%3D%28_last_message_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method" class="signature"><strong>#last_message_id=</strong>(_last_message_id : ::Union(Snowflake, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3A%3A%3AUnion%28String%2CNil%29-instance-method" class="signature"><strong>#name</strong> : ::Union(String, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3D%28_name%3A%3A%3AUnion%28String%2CNil%29%29-instance-method" class="signature"><strong>#name=</strong>(_name : ::Union(String, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nsfw%3A%3A%3AUnion%28Bool%2CNil%29-instance-method" class="signature"><strong>#nsfw</strong> : ::Union(Bool, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nsfw%3D%28_nsfw%3A%3A%3AUnion%28Bool%2CNil%29%29-instance-method" class="signature"><strong>#nsfw=</strong>(_nsfw : ::Union(Bool, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#owner_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method" class="signature"><strong>#owner_id</strong> : ::Union(Snowflake, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#owner_id%3D%28_owner_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method" class="signature"><strong>#owner_id=</strong>(_owner_id : ::Union(Snowflake, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method" class="signature"><strong>#parent_id</strong> : ::Union(Snowflake, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent_id%3D%28_parent_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method" class="signature"><strong>#parent_id=</strong>(_parent_id : ::Union(Snowflake, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#permission_overwrites%3A%3A%3AUnion%28Array%28Overwrite%29%2CNil%29-instance-method" class="signature"><strong>#permission_overwrites</strong> : ::Union(Array(Overwrite), Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#permission_overwrites%3D%28_permission_overwrites%3A%3A%3AUnion%28Array%28Overwrite%29%2CNil%29%29-instance-method" class="signature"><strong>#permission_overwrites=</strong>(_permission_overwrites : ::Union(Array(Overwrite), Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position%3A%3A%3AUnion%28Int32%2CNil%29-instance-method" class="signature"><strong>#position</strong> : ::Union(Int32, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position%3D%28_position%3A%3A%3AUnion%28Int32%2CNil%29%29-instance-method" class="signature"><strong>#position=</strong>(_position : ::Union(Int32, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#recipients%3A%3A%3AUnion%28Array%28User%29%2CNil%29-instance-method" class="signature"><strong>#recipients</strong> : ::Union(Array(User), Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#recipients%3D%28_recipients%3A%3A%3AUnion%28Array%28User%29%2CNil%29%29-instance-method" class="signature"><strong>#recipients=</strong>(_recipients : ::Union(Array(User), Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#topic%3A%3A%3AUnion%28String%2CNil%29-instance-method" class="signature"><strong>#topic</strong> : ::Union(String, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#topic%3D%28_topic%3A%3A%3AUnion%28String%2CNil%29%29-instance-method" class="signature"><strong>#topic=</strong>(_topic : ::Union(String, Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type%3AChannelType-instance-method" class="signature"><strong>#type</strong> : ChannelType</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type%3D%28_type%3AChannelType%29-instance-method" class="signature"><strong>#type=</strong>(_type : ChannelType)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_limit%3A%3A%3AUnion%28UInt32%2CNil%29-instance-method" class="signature"><strong>#user_limit</strong> : ::Union(UInt32, Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_limit%3D%28_user_limit%3A%3A%3AUnion%28UInt32%2CNil%29%29-instance-method" class="signature"><strong>#user_limit=</strong>(_user_limit : ::Union(UInt32, Nil))</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(__temp_76:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(__temp_76 : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28__temp_76%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="application_id:::Union(Snowflake,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>application_id</strong> : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+
+        <a class="method-permalink" href="#application_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="application_id=(_application_id:::Union(Snowflake,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>application_id=</strong>(_application_id : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+
+        <a class="method-permalink" href="#application_id%3D%28_application_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bitrate:::Union(UInt32,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>bitrate</strong> : ::Union(UInt32, Nil)
+
+        <a class="method-permalink" href="#bitrate%3A%3A%3AUnion%28UInt32%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bitrate=(_bitrate:::Union(UInt32,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>bitrate=</strong>(_bitrate : ::Union(UInt32, Nil))
+
+        <a class="method-permalink" href="#bitrate%3D%28_bitrate%3A%3A%3AUnion%28UInt32%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_id:::Union(Snowflake,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_id</strong> : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+
+        <a class="method-permalink" href="#guild_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_id=(_guild_id:::Union(Snowflake,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_id=</strong>(_guild_id : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+
+        <a class="method-permalink" href="#guild_id%3D%28_guild_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="icon:::Union(Bool,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>icon</strong> : ::Union(Bool, Nil)
+
+        <a class="method-permalink" href="#icon%3A%3A%3AUnion%28Bool%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="icon=(_icon:::Union(Bool,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>icon=</strong>(_icon : ::Union(Bool, Nil))
+
+        <a class="method-permalink" href="#icon%3D%28_icon%3A%3A%3AUnion%28Bool%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:Snowflake-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>
+
+        <a class="method-permalink" href="#id%3ASnowflake-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(_id:Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(_id : <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#id%3D%28_id%3ASnowflake%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_message_id:::Union(Snowflake,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>last_message_id</strong> : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+
+        <a class="method-permalink" href="#last_message_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_message_id=(_last_message_id:::Union(Snowflake,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>last_message_id=</strong>(_last_message_id : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+
+        <a class="method-permalink" href="#last_message_id%3D%28_last_message_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:::Union(String,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : ::Union(String, Nil)
+
+        <a class="method-permalink" href="#name%3A%3A%3AUnion%28String%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name=(_name:::Union(String,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>name=</strong>(_name : ::Union(String, Nil))
+
+        <a class="method-permalink" href="#name%3D%28_name%3A%3A%3AUnion%28String%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nsfw:::Union(Bool,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>nsfw</strong> : ::Union(Bool, Nil)
+
+        <a class="method-permalink" href="#nsfw%3A%3A%3AUnion%28Bool%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nsfw=(_nsfw:::Union(Bool,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>nsfw=</strong>(_nsfw : ::Union(Bool, Nil))
+
+        <a class="method-permalink" href="#nsfw%3D%28_nsfw%3A%3A%3AUnion%28Bool%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="owner_id:::Union(Snowflake,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>owner_id</strong> : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+
+        <a class="method-permalink" href="#owner_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="owner_id=(_owner_id:::Union(Snowflake,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>owner_id=</strong>(_owner_id : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+
+        <a class="method-permalink" href="#owner_id%3D%28_owner_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent_id:::Union(Snowflake,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>parent_id</strong> : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+
+        <a class="method-permalink" href="#parent_id%3A%3A%3AUnion%28Snowflake%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent_id=(_parent_id:::Union(Snowflake,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>parent_id=</strong>(_parent_id : ::Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+
+        <a class="method-permalink" href="#parent_id%3D%28_parent_id%3A%3A%3AUnion%28Snowflake%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="permission_overwrites:::Union(Array(Overwrite),Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>permission_overwrites</strong> : ::Union(Array(<a href="../Discord/Overwrite.html">Overwrite</a>), Nil)
+
+        <a class="method-permalink" href="#permission_overwrites%3A%3A%3AUnion%28Array%28Overwrite%29%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="permission_overwrites=(_permission_overwrites:::Union(Array(Overwrite),Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>permission_overwrites=</strong>(_permission_overwrites : ::Union(Array(<a href="../Discord/Overwrite.html">Overwrite</a>), Nil))
+
+        <a class="method-permalink" href="#permission_overwrites%3D%28_permission_overwrites%3A%3A%3AUnion%28Array%28Overwrite%29%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position:::Union(Int32,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>position</strong> : ::Union(Int32, Nil)
+
+        <a class="method-permalink" href="#position%3A%3A%3AUnion%28Int32%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position=(_position:::Union(Int32,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>position=</strong>(_position : ::Union(Int32, Nil))
+
+        <a class="method-permalink" href="#position%3D%28_position%3A%3A%3AUnion%28Int32%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="recipients:::Union(Array(User),Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>recipients</strong> : ::Union(Array(<a href="../Discord/User.html">User</a>), Nil)
+
+        <a class="method-permalink" href="#recipients%3A%3A%3AUnion%28Array%28User%29%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="recipients=(_recipients:::Union(Array(User),Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>recipients=</strong>(_recipients : ::Union(Array(<a href="../Discord/User.html">User</a>), Nil))
+
+        <a class="method-permalink" href="#recipients%3D%28_recipients%3A%3A%3AUnion%28Array%28User%29%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>(json : JSON::Builder)
+
+        <a class="method-permalink" href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="topic:::Union(String,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>topic</strong> : ::Union(String, Nil)
+
+        <a class="method-permalink" href="#topic%3A%3A%3AUnion%28String%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="topic=(_topic:::Union(String,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>topic=</strong>(_topic : ::Union(String, Nil))
+
+        <a class="method-permalink" href="#topic%3D%28_topic%3A%3A%3AUnion%28String%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type:ChannelType-instance-method">
+      <div class="signature">
+        
+        def <strong>type</strong> : <a href="../Discord/ChannelType.html">ChannelType</a>
+
+        <a class="method-permalink" href="#type%3AChannelType-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type=(_type:ChannelType)-instance-method">
+      <div class="signature">
+        
+        def <strong>type=</strong>(_type : <a href="../Discord/ChannelType.html">ChannelType</a>)
+
+        <a class="method-permalink" href="#type%3D%28_type%3AChannelType%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_limit:::Union(UInt32,Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>user_limit</strong> : ::Union(UInt32, Nil)
+
+        <a class="method-permalink" href="#user_limit%3A%3A%3AUnion%28UInt32%2CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_limit=(_user_limit:::Union(UInt32,Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>user_limit=</strong>(_user_limit : ::Union(UInt32, Nil))
+
+        <a class="method-permalink" href="#user_limit%3D%28_user_limit%3A%3A%3AUnion%28UInt32%2CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
