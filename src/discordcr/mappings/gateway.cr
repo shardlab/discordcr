@@ -207,6 +207,8 @@ module Discord
       property afk_channel_id : Snowflake?
       property afk_timeout : Int32?
       property verification_level : UInt8
+      property premium_tier : UInt8
+      property premium_subscription_count : UInt8?
       property roles : Array(Role)
       @[JSON::Field(key: "emojis")]
       property emoji : Array(Emoji)
