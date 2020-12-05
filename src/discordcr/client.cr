@@ -817,7 +817,7 @@ module Discord
     #
     # [API docs for this event](https://discordapp.com/developers/docs/topics/gateway#invite-create)
     event invite_create, Gateway::InviteCreatePayload
-    
+
     # Called when an invite is deleted.
     #
     # [API docs for this event](https://discordapp.com/developers/docs/topics/gateway#invite-delete)
