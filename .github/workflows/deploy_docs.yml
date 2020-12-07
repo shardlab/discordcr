@@ -6,6 +6,8 @@ on:
       - master
     tags:
       - v*
+    paths-ignore:
+      - "CHANGELOG.md"
 jobs:
   deploy:
     runs-on: ubuntu-16.04
