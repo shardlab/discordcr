@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+    paths-ignore:
+      - "**.md"
+    pull_request:
+      branches:
+        - master
+      paths-ignore:
+        - "**.md"
+jobs:
+  deploy:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: MeilCli/setup-crystal-action@v4.0.1
+        with:
+          crystal_version: 0.35.1
+          shards_version: 0.12.0
+      - name: Install dependencies
+        run: shards install
+      - name: Run tests
+        run: crystal spec
+      - name: Run crystal tool format
+        run: crystal tool format --check
+      - name: Build examples
+        run: find examples -name "*.cr" | xargs -L 1 crystal build --no-codegen
