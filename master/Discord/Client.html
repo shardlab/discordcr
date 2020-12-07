@@ -1,0 +1,3123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="discordcr">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="discordcr">
+  <title>Discord::Client - discordcr master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          discordcr
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="discordcr/Discord" data-name="discord">
+      <a href="../Discord.html">Discord</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Activity" data-name="discord::activity">
+      <a href="../Discord/Activity.html">Activity</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
+      <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/APIError" data-name="discord::apierror">
+      <a href="../Discord/APIError.html">APIError</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Attachment" data-name="discord::attachment">
+      <a href="../Discord/Attachment.html">Attachment</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Cache" data-name="discord::cache">
+      <a href="../Discord/Cache.html">Cache</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/CDN" data-name="discord::cdn">
+      <a href="../Discord/CDN.html">CDN</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/ApplicationAssetFormat" data-name="discord::cdn::applicationassetformat">
+      <a href="../Discord/CDN/ApplicationAssetFormat.html">ApplicationAssetFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/ApplicationIconFormat" data-name="discord::cdn::applicationiconformat">
+      <a href="../Discord/CDN/ApplicationIconFormat.html">ApplicationIconFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/CustomEmojiFormat" data-name="discord::cdn::customemojiformat">
+      <a href="../Discord/CDN/CustomEmojiFormat.html">CustomEmojiFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/GuildIconFormat" data-name="discord::cdn::guildiconformat">
+      <a href="../Discord/CDN/GuildIconFormat.html">GuildIconFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/GuildSplashFormat" data-name="discord::cdn::guildsplashformat">
+      <a href="../Discord/CDN/GuildSplashFormat.html">GuildSplashFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/UserAvatarFormat" data-name="discord::cdn::useravatarformat">
+      <a href="../Discord/CDN/UserAvatarFormat.html">UserAvatarFormat</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Channel" data-name="discord::channel">
+      <a href="../Discord/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ChannelType" data-name="discord::channeltype">
+      <a href="../Discord/ChannelType.html">ChannelType</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="discordcr/Discord/Client" data-name="discord::client">
+      <a href="../Discord/Client.html">Client</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Client/CompressMode" data-name="discord::client::compressmode">
+      <a href="../Discord/Client/CompressMode.html">CompressMode</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CodeException" data-name="discord::codeexception">
+      <a href="../Discord/CodeException.html">CodeException</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Connection" data-name="discord::connection">
+      <a href="../Discord/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/DCA1Mappings" data-name="discord::dca1mappings">
+      <a href="../Discord/DCA1Mappings.html">DCA1Mappings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/DCA" data-name="discord::dca1mappings::dca">
+      <a href="../Discord/DCA1Mappings/DCA.html">DCA</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Info" data-name="discord::dca1mappings::info">
+      <a href="../Discord/DCA1Mappings/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Metadata" data-name="discord::dca1mappings::metadata">
+      <a href="../Discord/DCA1Mappings/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Opus" data-name="discord::dca1mappings::opus">
+      <a href="../Discord/DCA1Mappings/Opus.html">Opus</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Origin" data-name="discord::dca1mappings::origin">
+      <a href="../Discord/DCA1Mappings/Origin.html">Origin</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Tool" data-name="discord::dca1mappings::tool">
+      <a href="../Discord/DCA1Mappings/Tool.html">Tool</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCAParser" data-name="discord::dcaparser">
+      <a href="../Discord/DCAParser.html">DCAParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Embed" data-name="discord::embed">
+      <a href="../Discord/Embed.html">Embed</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
+      <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedField" data-name="discord::embedfield">
+      <a href="../Discord/EmbedField.html">EmbedField</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedFooter" data-name="discord::embedfooter">
+      <a href="../Discord/EmbedFooter.html">EmbedFooter</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedImage" data-name="discord::embedimage">
+      <a href="../Discord/EmbedImage.html">EmbedImage</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedProvider" data-name="discord::embedprovider">
+      <a href="../Discord/EmbedProvider.html">EmbedProvider</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedThumbnail" data-name="discord::embedthumbnail">
+      <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedVideo" data-name="discord::embedvideo">
+      <a href="../Discord/EmbedVideo.html">EmbedVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Emoji" data-name="discord::emoji">
+      <a href="../Discord/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/GamePlaying" data-name="discord::gameplaying">
+      <a href="../Discord/GamePlaying.html">GamePlaying</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/GamePlaying/Type" data-name="discord::gameplaying::type">
+      <a href="../Discord/GamePlaying/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/Gateway" data-name="discord::gateway">
+      <a href="../Discord/Gateway.html">Gateway</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ChannelPinsUpdatePayload" data-name="discord::gateway::channelpinsupdatepayload">
+      <a href="../Discord/Gateway/ChannelPinsUpdatePayload.html">ChannelPinsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildBanPayload" data-name="discord::gateway::guildbanpayload">
+      <a href="../Discord/Gateway/GuildBanPayload.html">GuildBanPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildCreatePayload" data-name="discord::gateway::guildcreatepayload">
+      <a href="../Discord/Gateway/GuildCreatePayload.html">GuildCreatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildDeletePayload" data-name="discord::gateway::guilddeletepayload">
+      <a href="../Discord/Gateway/GuildDeletePayload.html">GuildDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildEmojiUpdatePayload" data-name="discord::gateway::guildemojiupdatepayload">
+      <a href="../Discord/Gateway/GuildEmojiUpdatePayload.html">GuildEmojiUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildIntegrationsUpdatePayload" data-name="discord::gateway::guildintegrationsupdatepayload">
+      <a href="../Discord/Gateway/GuildIntegrationsUpdatePayload.html">GuildIntegrationsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMemberAddPayload" data-name="discord::gateway::guildmemberaddpayload">
+      <a href="../Discord/Gateway/GuildMemberAddPayload.html">GuildMemberAddPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMemberRemovePayload" data-name="discord::gateway::guildmemberremovepayload">
+      <a href="../Discord/Gateway/GuildMemberRemovePayload.html">GuildMemberRemovePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMembersChunkPayload" data-name="discord::gateway::guildmemberschunkpayload">
+      <a href="../Discord/Gateway/GuildMembersChunkPayload.html">GuildMembersChunkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMemberUpdatePayload" data-name="discord::gateway::guildmemberupdatepayload">
+      <a href="../Discord/Gateway/GuildMemberUpdatePayload.html">GuildMemberUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildRoleDeletePayload" data-name="discord::gateway::guildroledeletepayload">
+      <a href="../Discord/Gateway/GuildRoleDeletePayload.html">GuildRoleDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildRolePayload" data-name="discord::gateway::guildrolepayload">
+      <a href="../Discord/Gateway/GuildRolePayload.html">GuildRolePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/HelloPayload" data-name="discord::gateway::hellopayload">
+      <a href="../Discord/Gateway/HelloPayload.html">HelloPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/IdentifyPacket" data-name="discord::gateway::identifypacket">
+      <a href="../Discord/Gateway/IdentifyPacket.html">IdentifyPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/IdentifyPayload" data-name="discord::gateway::identifypayload">
+      <a href="../Discord/Gateway/IdentifyPayload.html">IdentifyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/IdentifyProperties" data-name="discord::gateway::identifyproperties">
+      <a href="../Discord/Gateway/IdentifyProperties.html">IdentifyProperties</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/Intents" data-name="discord::gateway::intents">
+      <a href="../Discord/Gateway/Intents.html">Intents</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/InviteCreatePayload" data-name="discord::gateway::invitecreatepayload">
+      <a href="../Discord/Gateway/InviteCreatePayload.html">InviteCreatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/InviteDeletePayload" data-name="discord::gateway::invitedeletepayload">
+      <a href="../Discord/Gateway/InviteDeletePayload.html">InviteDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageDeleteBulkPayload" data-name="discord::gateway::messagedeletebulkpayload">
+      <a href="../Discord/Gateway/MessageDeleteBulkPayload.html">MessageDeleteBulkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageDeletePayload" data-name="discord::gateway::messagedeletepayload">
+      <a href="../Discord/Gateway/MessageDeletePayload.html">MessageDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageReactionPayload" data-name="discord::gateway::messagereactionpayload">
+      <a href="../Discord/Gateway/MessageReactionPayload.html">MessageReactionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageReactionRemoveAllPayload" data-name="discord::gateway::messagereactionremoveallpayload">
+      <a href="../Discord/Gateway/MessageReactionRemoveAllPayload.html">MessageReactionRemoveAllPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageReactionRemoveEmojiPayload" data-name="discord::gateway::messagereactionremoveemojipayload">
+      <a href="../Discord/Gateway/MessageReactionRemoveEmojiPayload.html">MessageReactionRemoveEmojiPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageUpdatePayload" data-name="discord::gateway::messageupdatepayload">
+      <a href="../Discord/Gateway/MessageUpdatePayload.html">MessageUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/PresenceUpdatePayload" data-name="discord::gateway::presenceupdatepayload">
+      <a href="../Discord/Gateway/PresenceUpdatePayload.html">PresenceUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ReadyPayload" data-name="discord::gateway::readypayload">
+      <a href="../Discord/Gateway/ReadyPayload.html">ReadyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/RequestGuildMembersPacket" data-name="discord::gateway::requestguildmemberspacket">
+      <a href="../Discord/Gateway/RequestGuildMembersPacket.html">RequestGuildMembersPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ResumedPayload" data-name="discord::gateway::resumedpayload">
+      <a href="../Discord/Gateway/ResumedPayload.html">ResumedPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ResumePacket" data-name="discord::gateway::resumepacket">
+      <a href="../Discord/Gateway/ResumePacket.html">ResumePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/Session" data-name="discord::gateway::session">
+      <a href="../Discord/Gateway/Session.html">Session</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ShardKey" data-name="discord::gateway::shardkey">
+      <a href="../Discord/Gateway/ShardKey.html">ShardKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/StatusUpdatePacket" data-name="discord::gateway::statusupdatepacket">
+      <a href="../Discord/Gateway/StatusUpdatePacket.html">StatusUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/TypingStartPayload" data-name="discord::gateway::typingstartpayload">
+      <a href="../Discord/Gateway/TypingStartPayload.html">TypingStartPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/VoiceServerUpdatePayload" data-name="discord::gateway::voiceserverupdatepayload">
+      <a href="../Discord/Gateway/VoiceServerUpdatePayload.html">VoiceServerUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/VoiceStateUpdatePacket" data-name="discord::gateway::voicestateupdatepacket">
+      <a href="../Discord/Gateway/VoiceStateUpdatePacket.html">VoiceStateUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/WebhooksUpdatePayload" data-name="discord::gateway::webhooksupdatepayload">
+      <a href="../Discord/Gateway/WebhooksUpdatePayload.html">WebhooksUpdatePayload</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Guild" data-name="discord::guild">
+      <a href="../Discord/Guild.html">Guild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/GuildBan" data-name="discord::guildban">
+      <a href="../Discord/GuildBan.html">GuildBan</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+      <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/GuildMember" data-name="discord::guildmember">
+      <a href="../Discord/GuildMember.html">GuildMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Integration" data-name="discord::integration">
+      <a href="../Discord/Integration.html">Integration</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/IntegrationAccount" data-name="discord::integrationaccount">
+      <a href="../Discord/IntegrationAccount.html">IntegrationAccount</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Invite" data-name="discord::invite">
+      <a href="../Discord/Invite.html">Invite</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/InviteChannel" data-name="discord::invitechannel">
+      <a href="../Discord/InviteChannel.html">InviteChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/InviteGuild" data-name="discord::inviteguild">
+      <a href="../Discord/InviteGuild.html">InviteGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/InviteMetadata" data-name="discord::invitemetadata">
+      <a href="../Discord/InviteMetadata.html">InviteMetadata</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/Mention" data-name="discord::mention">
+      <a href="../Discord/Mention.html">Mention</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Channel" data-name="discord::mention::channel">
+      <a href="../Discord/Mention/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Emoji" data-name="discord::mention::emoji">
+      <a href="../Discord/Mention/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Everyone" data-name="discord::mention::everyone">
+      <a href="../Discord/Mention/Everyone.html">Everyone</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Here" data-name="discord::mention::here">
+      <a href="../Discord/Mention/Here.html">Here</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/MentionType" data-name="discord::mention::mentiontype">
+      <a href="../Discord/Mention/MentionType.html">MentionType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Role" data-name="discord::mention::role">
+      <a href="../Discord/Mention/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/User" data-name="discord::mention::user">
+      <a href="../Discord/Mention/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Message" data-name="discord::message">
+      <a href="../Discord/Message.html">Message</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/MessageType" data-name="discord::messagetype">
+      <a href="../Discord/MessageType.html">MessageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/OAuth2Application" data-name="discord::oauth2application">
+      <a href="../Discord/OAuth2Application.html">OAuth2Application</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Overwrite" data-name="discord::overwrite">
+      <a href="../Discord/Overwrite.html">Overwrite</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/Paginator" data-name="discord::paginator(t)">
+      <a href="../Discord/Paginator.html">Paginator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Paginator/Direction" data-name="discord::paginator::direction">
+      <a href="../Discord/Paginator/Direction.html">Direction</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/PartialGuildMember" data-name="discord::partialguildmember">
+      <a href="../Discord/PartialGuildMember.html">PartialGuildMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/PartialUser" data-name="discord::partialuser">
+      <a href="../Discord/PartialUser.html">PartialUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Permissions" data-name="discord::permissions">
+      <a href="../Discord/Permissions.html">Permissions</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Presence" data-name="discord::presence">
+      <a href="../Discord/Presence.html">Presence</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/PrivateChannel" data-name="discord::privatechannel">
+      <a href="../Discord/PrivateChannel.html">PrivateChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Reaction" data-name="discord::reaction">
+      <a href="../Discord/Reaction.html">Reaction</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ReactionEmoji" data-name="discord::reactionemoji">
+      <a href="../Discord/ReactionEmoji.html">ReactionEmoji</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/REST" data-name="discord::rest">
+      <a href="../Discord/REST.html">REST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/REST/ChannelParent" data-name="discord::rest::channelparent">
+      <a href="../Discord/REST/ChannelParent.html">ChannelParent</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/GatewayBotResponse" data-name="discord::rest::gatewaybotresponse">
+      <a href="../Discord/REST/GatewayBotResponse.html">GatewayBotResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/GatewayResponse" data-name="discord::rest::gatewayresponse">
+      <a href="../Discord/REST/GatewayResponse.html">GatewayResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/GuildVanityURLResponse" data-name="discord::rest::guildvanityurlresponse">
+      <a href="../Discord/REST/GuildVanityURLResponse.html">GuildVanityURLResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/ModifyChannelPositionPayload" data-name="discord::rest::modifychannelpositionpayload">
+      <a href="../Discord/REST/ModifyChannelPositionPayload.html">ModifyChannelPositionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/ModifyRolePositionPayload" data-name="discord::rest::modifyrolepositionpayload">
+      <a href="../Discord/REST/ModifyRolePositionPayload.html">ModifyRolePositionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/PruneCountResponse" data-name="discord::rest::prunecountresponse">
+      <a href="../Discord/REST/PruneCountResponse.html">PruneCountResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/RateLimitKey" data-name="discord::rest::ratelimitkey">
+      <a href="../Discord/REST/RateLimitKey.html">RateLimitKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/SessionStartLimit" data-name="discord::rest::sessionstartlimit">
+      <a href="../Discord/REST/SessionStartLimit.html">SessionStartLimit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Role" data-name="discord::role">
+      <a href="../Discord/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
+      <a href="../Discord/Snowflake.html">Snowflake</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/StatusException" data-name="discord::statusexception">
+      <a href="../Discord/StatusException.html">StatusException</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Team" data-name="discord::team">
+      <a href="../Discord/Team.html">Team</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/TeamMember" data-name="discord::teammember">
+      <a href="../Discord/TeamMember.html">TeamMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/TeamMembershipState" data-name="discord::teammembershipstate">
+      <a href="../Discord/TeamMembershipState.html">TeamMembershipState</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/UnavailableGuild" data-name="discord::unavailableguild">
+      <a href="../Discord/UnavailableGuild.html">UnavailableGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/User" data-name="discord::user">
+      <a href="../Discord/User.html">User</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/UserFlags" data-name="discord::userflags">
+      <a href="../Discord/UserFlags.html">UserFlags</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
+      <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceClient" data-name="discord::voiceclient">
+      <a href="../Discord/VoiceClient.html">VoiceClient</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceRegion" data-name="discord::voiceregion">
+      <a href="../Discord/VoiceRegion.html">VoiceRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceState" data-name="discord::voicestate">
+      <a href="../Discord/VoiceState.html">VoiceState</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceUDP" data-name="discord::voiceudp">
+      <a href="../Discord/VoiceUDP.html">VoiceUDP</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Webhook" data-name="discord::webhook">
+      <a href="../Discord/Webhook.html">Webhook</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/WebSocket" data-name="discord::websocket">
+      <a href="../Discord/WebSocket.html">WebSocket</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/UInt64" data-name="uint64">
+      <a href="../UInt64.html">UInt64</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Discord::Client
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/Client.html">Discord::Client</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>The basic client class that is used to connect to Discord, send REST
+requests, or send or receive gateway messages. It is required for doing any
+sort of interaction with Discord.</p>
+
+<p>A new simple client that does nothing yet can be created like this:</p>
+
+<pre><code>client <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span>(token: <span class="s">&quot;Bot token&quot;</span>, client_id: <span class="n">123_u64</span>)</code></pre>
+
+<p>With this client, REST requests can now be sent. (See the <code><a href="../Discord/REST.html">Discord::REST</a></code>
+module.) A gateway connection can also be started using the <code><a href="../Discord/Client.html#run-instance-method">#run</a></code> method.</p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Discord/REST.html">Discord::REST</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L24" target="_blank">
+        discordcr/client.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DEFAULT_PROPERTIES">
+        <strong>DEFAULT_PROPERTIES</strong> = <code><span class="t">Gateway</span><span class="t">::</span><span class="t">IdentifyProperties</span>.<span class="k">new</span>(os: <span class="s">&quot;Crystal&quot;</span>, browser: <span class="s">&quot;discordcr&quot;</span>, device: <span class="s">&quot;discordcr&quot;</span>, referrer: <span class="s">&quot;&quot;</span>, referring_domain: <span class="s">&quot;&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Default analytics properties sent in IDENTIFY</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Log">
+        <strong>Log</strong> = <code><span class="t">Discord</span><span class="t">::</span><span class="t">Log</span>.<span class="k">for</span>(<span class="s">&quot;client&quot;</span>)</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_DISPATCH">
+        <strong>OP_DISPATCH</strong> = <code><span class="n">0</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_HEARTBEAT">
+        <strong>OP_HEARTBEAT</strong> = <code><span class="n">1</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_HEARTBEAT_ACK">
+        <strong>OP_HEARTBEAT_ACK</strong> = <code><span class="n">11</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_HELLO">
+        <strong>OP_HELLO</strong> = <code><span class="n">10</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_IDENTIFY">
+        <strong>OP_IDENTIFY</strong> = <code><span class="n">2</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_INVALID_SESSION">
+        <strong>OP_INVALID_SESSION</strong> = <code><span class="n">9</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_RECONNECT">
+        <strong>OP_RECONNECT</strong> = <code><span class="n">7</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_REQUEST_GUILD_MEMBERS">
+        <strong>OP_REQUEST_GUILD_MEMBERS</strong> = <code><span class="n">8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_RESUME">
+        <strong>OP_RESUME</strong> = <code><span class="n">6</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_STATUS_UPDATE">
+        <strong>OP_STATUS_UPDATE</strong> = <code><span class="n">3</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_VOICE_SERVER_PING">
+        <strong>OP_VOICE_SERVER_PING</strong> = <code><span class="n">5</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OP_VOICE_STATE_UPDATE">
+        <strong>OP_VOICE_STATE_UPDATE</strong> = <code><span class="n">4</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(token:String,client_id:UInt64%7CSnowflake%7CNil=nil,shard:Gateway::ShardKey?=nil,large_threshold:Int32=100,compress:CompressMode=CompressMode::Stream,zlib_buffer_size:Int32=(10*1024)*1024,properties:Gateway::IdentifyProperties=DEFAULT_PROPERTIES,intents:Gateway::Intents?=nil)-class-method" class="signature"><strong>.new</strong>(token : String, client_id : UInt64 | Snowflake | Nil = <span class="n">nil</span>, shard : Gateway::ShardKey? = <span class="n">nil</span>, large_threshold : Int32 = <span class="n">100</span>, compress : CompressMode = <span class="t">CompressMode</span><span class="t">::</span><span class="t">Stream</span>, zlib_buffer_size : Int32 = (<span class="n">10</span> <span class="o">*</span> <span class="n">1024</span>) <span class="o">*</span> <span class="n">1024</span>, properties : Gateway::IdentifyProperties = <span class="t">DEFAULT_PROPERTIES</span>, intents : Gateway::Intents? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a new bot with the given <em>token</em> and optionally the <em>client_id</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cache:Cache?-instance-method" class="signature"><strong>#cache</strong> : Cache?</a>
+        
+          <div class="summary"><p>If this is set to any <code><a href="../Discord/Cache.html">Cache</a></code>, the data in the cache will be updated as the client receives the corresponding gateway dispatches.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache=(cache:Cache?)-instance-method" class="signature"><strong>#cache=</strong>(cache : Cache?)</a>
+        
+          <div class="summary"><p>If this is set to any <code><a href="../Discord/Cache.html">Cache</a></code>, the data in the cache will be updated as the client receives the corresponding gateway dispatches.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#client_id-instance-method" class="signature"><strong>#client_id</strong></a>
+        
+          <div class="summary"><p>Returns this client's ID as provided in its associated Oauth2 application.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inject(packet:Discord::WebSocket::Packet)-instance-method" class="signature"><strong>#inject</strong>(packet : Discord::WebSocket::Packet)</a>
+        
+          <div class="summary"><p>Injects a <em>packet</em> into the packet handler.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_channel_create(&handler:Channel-%3E)-instance-method" class="signature"><strong>#on_channel_create</strong>(&handler : Channel -> )</a>
+        
+          <div class="summary"><p>Called when a channel has been created on a server the bot has access to, or when somebody has started a DM channel with the bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_channel_delete(&handler:Channel-%3E)-instance-method" class="signature"><strong>#on_channel_delete</strong>(&handler : Channel -> )</a>
+        
+          <div class="summary"><p>Called when a channel the bot has access to is deleted.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_channel_pins_update(&handler:Gateway::ChannelPinsUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_channel_pins_update</strong>(&handler : Gateway::ChannelPinsUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Called when a channel's pinned messages are updated, where a pin was either added or removed.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_channel_update(&handler:Channel-%3E)-instance-method" class="signature"><strong>#on_channel_update</strong>(&handler : Channel -> )</a>
+        
+          <div class="summary"><p>Called when a channel's properties are updated, like the name or permission overwrites.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_dispatch(&handler:Tuple(String,IO::Memory)-%3E)-instance-method" class="signature"><strong>#on_dispatch</strong>(&handler : Tuple(String, IO::Memory) -> )</a>
+        
+          <div class="summary"><p>Called when the bot receives any kind of dispatch at all, even one that is otherwise unsupported.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_ban_add(&handler:Gateway::GuildBanPayload-%3E)-instance-method" class="signature"><strong>#on_guild_ban_add</strong>(&handler : Gateway::GuildBanPayload -> )</a>
+        
+          <div class="summary"><p>Called when somebody is banned from a guild.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_ban_remove(&handler:Gateway::GuildBanPayload-%3E)-instance-method" class="signature"><strong>#on_guild_ban_remove</strong>(&handler : Gateway::GuildBanPayload -> )</a>
+        
+          <div class="summary"><p>Called when somebody is unbanned from a guild.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_create(&handler:Gateway::GuildCreatePayload-%3E)-instance-method" class="signature"><strong>#on_guild_create</strong>(&handler : Gateway::GuildCreatePayload -> )</a>
+        
+          <div class="summary"><p>Called when the bot is added to a guild, a guild unavailable due to an outage becomes available again, or the guild is streamed after READY.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_delete(&handler:Gateway::GuildDeletePayload-%3E)-instance-method" class="signature"><strong>#on_guild_delete</strong>(&handler : Gateway::GuildDeletePayload -> )</a>
+        
+          <div class="summary"><p>Called when the bot leaves a guild or a guild becomes unavailable due to an outage.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_emoji_update(&handler:Gateway::GuildEmojiUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_guild_emoji_update</strong>(&handler : Gateway::GuildEmojiUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Called when a guild's emoji are updated.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_integrations_update(&handler:Gateway::GuildIntegrationsUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_guild_integrations_update</strong>(&handler : Gateway::GuildIntegrationsUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Called when a guild's integrations (Twitch, YouTube) are updated.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_member_add(&handler:Gateway::GuildMemberAddPayload-%3E)-instance-method" class="signature"><strong>#on_guild_member_add</strong>(&handler : Gateway::GuildMemberAddPayload -> )</a>
+        
+          <div class="summary"><p>Called when somebody other than the bot joins a guild.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_member_remove(&handler:Gateway::GuildMemberRemovePayload-%3E)-instance-method" class="signature"><strong>#on_guild_member_remove</strong>(&handler : Gateway::GuildMemberRemovePayload -> )</a>
+        
+          <div class="summary"><p>Called when somebody other than the bot leaves a guild.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_member_update(&handler:Gateway::GuildMemberUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_guild_member_update</strong>(&handler : Gateway::GuildMemberUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Called when a member object is updated.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_members_chunk(&handler:Gateway::GuildMembersChunkPayload-%3E)-instance-method" class="signature"><strong>#on_guild_members_chunk</strong>(&handler : Gateway::GuildMembersChunkPayload -> )</a>
+        
+          <div class="summary"><p>Called when Discord sends a chunk of member objects after a <code><a href="../Discord/Client.html#request_guild_members(guild_id:UInt64,query:String=&quot;&quot;,limit:Int32=0)-instance-method">#request_guild_members</a></code> call.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_role_create(&handler:Gateway::GuildRolePayload-%3E)-instance-method" class="signature"><strong>#on_guild_role_create</strong>(&handler : Gateway::GuildRolePayload -> )</a>
+        
+          <div class="summary"><p>Called when a role is created on a guild.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_role_delete(&handler:Gateway::GuildRoleDeletePayload-%3E)-instance-method" class="signature"><strong>#on_guild_role_delete</strong>(&handler : Gateway::GuildRoleDeletePayload -> )</a>
+        
+          <div class="summary"><p>Called when a role is deleted.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_role_update(&handler:Gateway::GuildRolePayload-%3E)-instance-method" class="signature"><strong>#on_guild_role_update</strong>(&handler : Gateway::GuildRolePayload -> )</a>
+        
+          <div class="summary"><p>Called when a role's properties are updated, for example name or colour.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_guild_update(&handler:Guild-%3E)-instance-method" class="signature"><strong>#on_guild_update</strong>(&handler : Guild -> )</a>
+        
+          <div class="summary"><p>Called when a guild's properties, like name or verification level, are updated.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_invite_create(&handler:Gateway::InviteCreatePayload-%3E)-instance-method" class="signature"><strong>#on_invite_create</strong>(&handler : Gateway::InviteCreatePayload -> )</a>
+        
+          <div class="summary"><p>Called when an invite is created on a guild.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_invite_delete(&handler:Gateway::InviteDeletePayload-%3E)-instance-method" class="signature"><strong>#on_invite_delete</strong>(&handler : Gateway::InviteDeletePayload -> )</a>
+        
+          <div class="summary"><p>Called when an invite is deleted.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_create(&handler:Message-%3E)-instance-method" class="signature"><strong>#on_message_create</strong>(&handler : Message -> )</a>
+        
+          <div class="summary"><p>Called when a message is sent to a channel the bot has access to.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_delete(&handler:Gateway::MessageDeletePayload-%3E)-instance-method" class="signature"><strong>#on_message_delete</strong>(&handler : Gateway::MessageDeletePayload -> )</a>
+        
+          <div class="summary"><p>Called when a single message is deleted.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_delete_bulk(&handler:Gateway::MessageDeleteBulkPayload-%3E)-instance-method" class="signature"><strong>#on_message_delete_bulk</strong>(&handler : Gateway::MessageDeleteBulkPayload -> )</a>
+        
+          <div class="summary"><p>Called when multiple messages are deleted at once, due to a bot using the bulk-delete endpoint, or other actions.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_reaction_add(&handler:Gateway::MessageReactionPayload-%3E)-instance-method" class="signature"><strong>#on_message_reaction_add</strong>(&handler : Gateway::MessageReactionPayload -> )</a>
+        
+          <div class="summary"><p>Called when a reaction is added to a message.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_reaction_remove(&handler:Gateway::MessageReactionPayload-%3E)-instance-method" class="signature"><strong>#on_message_reaction_remove</strong>(&handler : Gateway::MessageReactionPayload -> )</a>
+        
+          <div class="summary"><p>Called when a reaction is removed from a message.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_reaction_remove_all(&handler:Gateway::MessageReactionRemoveAllPayload-%3E)-instance-method" class="signature"><strong>#on_message_reaction_remove_all</strong>(&handler : Gateway::MessageReactionRemoveAllPayload -> )</a>
+        
+          <div class="summary"><p>Called when all reactions are removed at once from a message.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_reaction_remove_emoji(&handler:Gateway::MessageReactionRemoveEmojiPayload-%3E)-instance-method" class="signature"><strong>#on_message_reaction_remove_emoji</strong>(&handler : Gateway::MessageReactionRemoveEmojiPayload -> )</a>
+        
+          <div class="summary"><p>Called when all reactions of a single emoji are removed at once from a message.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_message_update(&handler:Gateway::MessageUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_message_update</strong>(&handler : Gateway::MessageUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Called when a message is updated.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_presence_update(&handler:Gateway::PresenceUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_presence_update</strong>(&handler : Gateway::PresenceUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Called when a user updates their status (online/idle/offline), the game they are playing, or their streaming status.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_ready(&handler:Gateway::ReadyPayload-%3E)-instance-method" class="signature"><strong>#on_ready</strong>(&handler : Gateway::ReadyPayload -> )</a>
+        
+          <div class="summary"><p>Called when the bot has successfully initiated a session with Discord.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_resumed(&handler:Gateway::ResumedPayload-%3E)-instance-method" class="signature"><strong>#on_resumed</strong>(&handler : Gateway::ResumedPayload -> )</a>
+        
+          <div class="summary"><p>Called when the client has successfully resumed an existing connection after reconnecting.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_typing_start(&handler:Gateway::TypingStartPayload-%3E)-instance-method" class="signature"><strong>#on_typing_start</strong>(&handler : Gateway::TypingStartPayload -> )</a>
+        
+          <div class="summary"><p>Called when somebody starts typing in a channel the bot has access to.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_user_update(&handler:User-%3E)-instance-method" class="signature"><strong>#on_user_update</strong>(&handler : User -> )</a>
+        
+          <div class="summary"><p>Called when the user properties of the bot itself are changed.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_voice_server_update(&handler:Gateway::VoiceServerUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_voice_server_update</strong>(&handler : Gateway::VoiceServerUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Called when a guild's voice server changes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_voice_state_update(&handler:VoiceState-%3E)-instance-method" class="signature"><strong>#on_voice_state_update</strong>(&handler : VoiceState -> )</a>
+        
+          <div class="summary"><p>Called when somebody joins or leaves a voice channel, moves to a different one, or is muted/unmuted/deafened/undeafened.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_webhooks_update(&handler:Gateway::WebhooksUpdatePayload-%3E)-instance-method" class="signature"><strong>#on_webhooks_update</strong>(&handler : Gateway::WebhooksUpdatePayload -> )</a>
+        
+          <div class="summary"><p>Sent when a guild channel's webhook is created, updated, or deleted.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reconnect(should_resume=false,backoff_override=nil)-instance-method" class="signature"><strong>#reconnect</strong>(should_resume = <span class="n">false</span>, backoff_override = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Reconnects the websocket connection entirely.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#request_guild_members(guild_id:UInt64,query:String=&quot;&quot;,limit:Int32=0)-instance-method" class="signature"><strong>#request_guild_members</strong>(guild_id : UInt64, query : String = <span class="s">&quot;&quot;</span>, limit : Int32 = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Requests a full list of members to be sent for a specific guild.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resume(sequence:Int64?=nil)-instance-method" class="signature"><strong>#resume</strong>(sequence : Int64? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Sends a resume packet from the given <em>sequence</em> number, or alternatively the current session's last received sequence if none is given.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#run-instance-method" class="signature"><strong>#run</strong></a>
+        
+          <div class="summary"><p>Connects this client to the gateway.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#session:Gateway::Session?-instance-method" class="signature"><strong>#session</strong> : Gateway::Session?</a>
+        
+          <div class="summary"><p>The internal <em>session</em> the client is currently using, necessary to create a voice client, for example</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#status_update(status:String?=nil,game:GamePlaying?=nil,afk:Bool=false,since:Int64?=nil)-instance-method" class="signature"><strong>#status_update</strong>(status : String? = <span class="n">nil</span>, game : GamePlaying? = <span class="n">nil</span>, afk : Bool = <span class="n">false</span>, since : Int64? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Sends a status update to Discord.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop(code:HTTP::WebSocket::CloseCode=HTTP::WebSocket::CloseCode::NormalClosure)-instance-method" class="signature"><strong>#stop</strong>(code : HTTP::WebSocket::CloseCode = <span class="t">HTTP</span><span class="t">::</span><span class="t">WebSocket</span><span class="t">::</span><span class="t">CloseCode</span><span class="t">::</span><span class="t">NormalClosure</span>)</a>
+        
+          <div class="summary"><p>Closes the gateway connection permanently</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#voice_state_update(guild_id:UInt64,channel_id:UInt64?,self_mute:Bool,self_deaf:Bool)-instance-method" class="signature"><strong>#voice_state_update</strong>(guild_id : UInt64, channel_id : UInt64?, self_mute : Bool, self_deaf : Bool)</a>
+        
+          <div class="summary"><p>Sends a voice state update to Discord.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#wait_for_reconnect-instance-method" class="signature"><strong>#wait_for_reconnect</strong></a>
+        
+          <div class="summary"><p>Separate method to wait an ever-increasing amount of time before reconnecting after being disconnected in an unexpected way</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#websocket-instance-method" class="signature"><strong>#websocket</strong></a>
+        
+          <div class="summary"><p>The internal websocket the client is currently using</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Discord/REST.html">Discord::REST</a></code></h3>
+  
+  
+    <a href="../Discord/REST.html#add_guild_member(guild_id:UInt64,user_id:UInt64,access_token:String,nick:String?=nil,roles:Array(UInt64)?=nil,mute:Bool?=nil,deaf:Bool?=nil)-instance-method" class="tooltip">
+      <span>add_guild_member(guild_id : UInt64, user_id : UInt64, access_token : String, nick : String? = <span class="n">nil</span>, roles : Array(UInt64)? = <span class="n">nil</span>, mute : Bool? = <span class="n">nil</span>, deaf : Bool? = <span class="n">nil</span>)</span>
+    add_guild_member</a>, 
+    
+  
+    <a href="../Discord/REST.html#add_guild_member_role(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake,role_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>add_guild_member_role(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake)</span>
+    add_guild_member_role</a>, 
+    
+  
+    <a href="../Discord/REST.html#add_pinned_channel_message(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>add_pinned_channel_message(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake)</span>
+    add_pinned_channel_message</a>, 
+    
+  
+    <a href="../Discord/REST.html#begin_guild_prune(guild_id:UInt64%7CSnowflake,days:UInt32,reason:String?=nil)-instance-method" class="tooltip">
+      <span>begin_guild_prune(guild_id : UInt64 | Snowflake, days : UInt32, reason : String? = <span class="n">nil</span>)</span>
+    begin_guild_prune</a>, 
+    
+  
+    <a href="../Discord/REST.html#bulk_delete_messages(channel_id:UInt64%7CSnowflake,message_ids:Array(UInt64%7CSnowflake))-instance-method" class="tooltip">
+      <span>bulk_delete_messages(channel_id : UInt64 | Snowflake, message_ids : Array(UInt64 | Snowflake))</span>
+    bulk_delete_messages</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_channel_invite(channel_id:UInt64%7CSnowflake,max_age:UInt32=0_u32,max_uses:UInt32=0_u32,temporary:Bool=false)-instance-method" class="tooltip">
+      <span>create_channel_invite(channel_id : UInt64 | Snowflake, max_age : UInt32 = <span class="n">0_u32</span>, max_uses : UInt32 = <span class="n">0_u32</span>, temporary : Bool = <span class="n">false</span>)</span>
+    create_channel_invite</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_channel_webhook(channel_id:UInt64%7CSnowflake,name:String,avatar:String)-instance-method" class="tooltip">
+      <span>create_channel_webhook(channel_id : UInt64 | Snowflake, name : String, avatar : String)</span>
+    create_channel_webhook</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_dm(recipient_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>create_dm(recipient_id : UInt64 | Snowflake)</span>
+    create_dm</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_guild_ban(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake,delete_message_days:Int32?=nil,reason:String?=nil)-instance-method" class="tooltip">
+      <span>create_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, delete_message_days : Int32? = <span class="n">nil</span>, reason : String? = <span class="n">nil</span>)</span>
+    create_guild_ban</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_guild_channel(guild_id:UInt64%7CSnowflake,name:String,type:ChannelType,topic:String?,bitrate:UInt32?,user_limit:UInt32?,rate_limit_per_user:Int32?,position:UInt32?,parent_id:UInt64?%7CSnowflake?,nsfw:Bool?,reason:String?=nil)-instance-method" class="tooltip">
+      <span>create_guild_channel(guild_id : UInt64 | Snowflake, name : String, type : ChannelType, topic : String?, bitrate : UInt32?, user_limit : UInt32?, rate_limit_per_user : Int32?, position : UInt32?, parent_id : UInt64? | Snowflake?, nsfw : Bool?, reason : String? = <span class="n">nil</span>)</span>
+    create_guild_channel</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_guild_emoji(guild_id:UInt64%7CSnowflake,name:String,image:String)-instance-method" class="tooltip">
+      <span>create_guild_emoji(guild_id : UInt64 | Snowflake, name : String, image : String)</span>
+    create_guild_emoji</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_guild_integration(guild_id:UInt64%7CSnowflake,type:String,id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>create_guild_integration(guild_id : UInt64 | Snowflake, type : String, id : UInt64 | Snowflake)</span>
+    create_guild_integration</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_guild_role(guild_id:UInt64%7CSnowflake,name:String?=nil,permissions:Permissions?=nil,colour:UInt32=0_u32,hoist:Bool=false,mentionable:Bool=false,reason:String?=nil)-instance-method" class="tooltip">
+      <span>create_guild_role(guild_id : UInt64 | Snowflake, name : String? = <span class="n">nil</span>, permissions : Permissions? = <span class="n">nil</span>, colour : UInt32 = <span class="n">0_u32</span>, hoist : Bool = <span class="n">false</span>, mentionable : Bool = <span class="n">false</span>, reason : String? = <span class="n">nil</span>)</span>
+    create_guild_role</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_message(channel_id:UInt64%7CSnowflake,content:String,embed:Embed?=nil,tts:Bool=false,nonce:Int64%7CString?=nil)-instance-method" class="tooltip">
+      <span>create_message(channel_id : UInt64 | Snowflake, content : String, embed : Embed? = <span class="n">nil</span>, tts : Bool = <span class="n">false</span>, nonce : Int64 | String? = <span class="n">nil</span>)</span>
+    create_message</a>, 
+    
+  
+    <a href="../Discord/REST.html#create_reaction(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake,emoji:String)-instance-method" class="tooltip">
+      <span>create_reaction(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, emoji : String)</span>
+    create_reaction</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_all_reactions(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_all_reactions(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake)</span>
+    delete_all_reactions</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_channel(channel_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_channel(channel_id : UInt64 | Snowflake)</span>
+    delete_channel</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_channel_permission(channel_id:UInt64%7CSnowflake,overwrite_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_channel_permission(channel_id : UInt64 | Snowflake, overwrite_id : UInt64 | Snowflake)</span>
+    delete_channel_permission</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_guild(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_guild(guild_id : UInt64 | Snowflake)</span>
+    delete_guild</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_guild_emoji(guild_id:UInt64%7CSnowflake,emoji_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_guild_emoji(guild_id : UInt64 | Snowflake, emoji_id : UInt64 | Snowflake)</span>
+    delete_guild_emoji</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_guild_integration(guild_id:UInt64%7CSnowflake,integration_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_guild_integration(guild_id : UInt64 | Snowflake, integration_id : UInt64 | Snowflake)</span>
+    delete_guild_integration</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_guild_role(guild_id:UInt64%7CSnowflake,role_id:UInt64%7CSnowflake,reason:String?=nil)-instance-method" class="tooltip">
+      <span>delete_guild_role(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake, reason : String? = <span class="n">nil</span>)</span>
+    delete_guild_role</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_invite(code:String,reason:String?=nil)-instance-method" class="tooltip">
+      <span>delete_invite(code : String, reason : String? = <span class="n">nil</span>)</span>
+    delete_invite</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_message(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_message(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake)</span>
+    delete_message</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_own_reaction(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake,emoji:String)-instance-method" class="tooltip">
+      <span>delete_own_reaction(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, emoji : String)</span>
+    delete_own_reaction</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_pinned_channel_message(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_pinned_channel_message(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake)</span>
+    delete_pinned_channel_message</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_reaction(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake,emoji:String)-instance-method" class="tooltip">
+      <span>delete_reaction(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, emoji : String)</span>
+    delete_reaction</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_user_reaction(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake,emoji:String,user_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>delete_user_reaction(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, emoji : String, user_id : UInt64 | Snowflake)</span>
+    delete_user_reaction</a>, 
+    
+  
+    <a href="../Discord/REST.html#delete_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method" class="tooltip">
+      <span>delete_webhook(webhook_id : UInt64 | Snowflake, token : String)<br/>delete_webhook(webhook_id : UInt64 | Snowflake)</span>
+    delete_webhook</a>, 
+    
+  
+    <a href="../Discord/REST.html#edit_channel_permissions(channel_id:UInt64%7CSnowflake,overwrite_id:UInt64%7CSnowflake,type:String,allow:Permissions,deny:Permissions)-instance-method" class="tooltip">
+      <span>edit_channel_permissions(channel_id : UInt64 | Snowflake, overwrite_id : UInt64 | Snowflake, type : String, allow : Permissions, deny : Permissions)</span>
+    edit_channel_permissions</a>, 
+    
+  
+    <a href="../Discord/REST.html#edit_message(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake,content:String,embed:Embed?=nil)-instance-method" class="tooltip">
+      <span>edit_message(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, content : String, embed : Embed? = <span class="n">nil</span>)</span>
+    edit_message</a>, 
+    
+  
+    <a href="../Discord/REST.html#execute_webhook(webhook_id:UInt64%7CSnowflake,token:String,content:String?=nil,file:String?=nil,embeds:Array(Embed)?=nil,tts:Bool?=nil,avatar_url:String?=nil,username:String?=nil,wait:Bool?=false)-instance-method" class="tooltip">
+      <span>execute_webhook(webhook_id : UInt64 | Snowflake, token : String, content : String? = <span class="n">nil</span>, file : String? = <span class="n">nil</span>, embeds : Array(Embed)? = <span class="n">nil</span>, tts : Bool? = <span class="n">nil</span>, avatar_url : String? = <span class="n">nil</span>, username : String? = <span class="n">nil</span>, wait : Bool? = <span class="n">false</span>)</span>
+    execute_webhook</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_channel(channel_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_channel(channel_id : UInt64 | Snowflake)</span>
+    get_channel</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_channel_invites(channel_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_channel_invites(channel_id : UInt64 | Snowflake)</span>
+    get_channel_invites</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_channel_message(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_channel_message(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake)</span>
+    get_channel_message</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_channel_messages(channel_id:UInt64%7CSnowflake,limit:Int32=50,before:UInt64%7CSnowflake%7CNil=nil,after:UInt64%7CSnowflake%7CNil=nil,around:UInt64%7CSnowflake%7CNil=nil)-instance-method" class="tooltip">
+      <span>get_channel_messages(channel_id : UInt64 | Snowflake, limit : Int32 = <span class="n">50</span>, before : UInt64 | Snowflake | Nil = <span class="n">nil</span>, after : UInt64 | Snowflake | Nil = <span class="n">nil</span>, around : UInt64 | Snowflake | Nil = <span class="n">nil</span>)</span>
+    get_channel_messages</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_channel_webhooks(channel_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_channel_webhooks(channel_id : UInt64 | Snowflake)</span>
+    get_channel_webhooks</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_current_user-instance-method" class="tooltip">
+      <span>get_current_user</span>
+    get_current_user</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_current_user_guilds(limit:Int32=100,before:UInt64%7CSnowflake=0_u64,after:UInt64%7CSnowflake=0_u64)-instance-method" class="tooltip">
+      <span>get_current_user_guilds(limit : Int32 = <span class="n">100</span>, before : UInt64 | Snowflake = <span class="n">0_u64</span>, after : UInt64 | Snowflake = <span class="n">0_u64</span>)</span>
+    get_current_user_guilds</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_gateway-instance-method" class="tooltip">
+      <span>get_gateway</span>
+    get_gateway</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_gateway_bot-instance-method" class="tooltip">
+      <span>get_gateway_bot</span>
+    get_gateway_bot</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild(guild_id : UInt64 | Snowflake)</span>
+    get_guild</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_ban(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake,reason:String?=nil)-instance-method" class="tooltip">
+      <span>get_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = <span class="n">nil</span>)</span>
+    get_guild_ban</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_bans(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_bans(guild_id : UInt64 | Snowflake)</span>
+    get_guild_bans</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_channels(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_channels(guild_id : UInt64 | Snowflake)</span>
+    get_guild_channels</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_embed(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_embed(guild_id : UInt64 | Snowflake)</span>
+    get_guild_embed</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_emoji(guild_id:UInt64%7CSnowflake,emoji_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_emoji(guild_id : UInt64 | Snowflake, emoji_id : UInt64 | Snowflake)</span>
+    get_guild_emoji</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_integrations(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_integrations(guild_id : UInt64 | Snowflake)</span>
+    get_guild_integrations</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_member(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)</span>
+    get_guild_member</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_prune_count(guild_id:UInt64%7CSnowflake,days:UInt32)-instance-method" class="tooltip">
+      <span>get_guild_prune_count(guild_id : UInt64 | Snowflake, days : UInt32)</span>
+    get_guild_prune_count</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_roles(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_roles(guild_id : UInt64 | Snowflake)</span>
+    get_guild_roles</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_vanity_url(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_vanity_url(guild_id : UInt64 | Snowflake)</span>
+    get_guild_vanity_url</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_voice_regions(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_voice_regions(guild_id : UInt64 | Snowflake)</span>
+    get_guild_voice_regions</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_guild_webhooks(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_guild_webhooks(guild_id : UInt64 | Snowflake)</span>
+    get_guild_webhooks</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_invite(code:String)-instance-method" class="tooltip">
+      <span>get_invite(code : String)</span>
+    get_invite</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_oauth2_application-instance-method" class="tooltip">
+      <span>get_oauth2_application</span>
+    get_oauth2_application</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_pinned_messages(channel_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_pinned_messages(channel_id : UInt64 | Snowflake)</span>
+    get_pinned_messages</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_reactions(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake,emoji:String)-instance-method" class="tooltip">
+      <span>get_reactions(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, emoji : String)</span>
+    get_reactions</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_user(user_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>get_user(user_id : UInt64 | Snowflake)</span>
+    get_user</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_user_connections-instance-method" class="tooltip">
+      <span>get_user_connections</span>
+    get_user_connections</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_user_dms-instance-method" class="tooltip">
+      <span>get_user_dms</span>
+    get_user_dms</a>, 
+    
+  
+    <a href="../Discord/REST.html#get_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method" class="tooltip">
+      <span>get_webhook(webhook_id : UInt64 | Snowflake, token : String)<br/>get_webhook(webhook_id : UInt64 | Snowflake)</span>
+    get_webhook</a>, 
+    
+  
+    <a href="../Discord/REST.html#leave_guild(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>leave_guild(guild_id : UInt64 | Snowflake)</span>
+    leave_guild</a>, 
+    
+  
+    <a href="../Discord/REST.html#list_guild_emojis(guild_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>list_guild_emojis(guild_id : UInt64 | Snowflake)</span>
+    list_guild_emojis</a>, 
+    
+  
+    <a href="../Discord/REST.html#list_guild_members(guild_id:UInt64%7CSnowflake,limit:Int32=1000,after:UInt64%7CSnowflake=0_u64)-instance-method" class="tooltip">
+      <span>list_guild_members(guild_id : UInt64 | Snowflake, limit : Int32 = <span class="n">1000</span>, after : UInt64 | Snowflake = <span class="n">0_u64</span>)</span>
+    list_guild_members</a>, 
+    
+  
+    <a href="../Discord/REST.html#list_voice_regions-instance-method" class="tooltip">
+      <span>list_voice_regions</span>
+    list_voice_regions</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_channel(channel_id:UInt64%7CSnowflake,name:String?=nil,position:UInt32?=nil,topic:String?=nil,bitrate:UInt32?=nil,user_limit:UInt32?=nil,nsfw:Bool?=nil,rate_limit_per_user:Int32?=nil)-instance-method" class="tooltip">
+      <span>modify_channel(channel_id : UInt64 | Snowflake, name : String? = <span class="n">nil</span>, position : UInt32? = <span class="n">nil</span>, topic : String? = <span class="n">nil</span>, bitrate : UInt32? = <span class="n">nil</span>, user_limit : UInt32? = <span class="n">nil</span>, nsfw : Bool? = <span class="n">nil</span>, rate_limit_per_user : Int32? = <span class="n">nil</span>)</span>
+    modify_channel</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_current_user(username:String?=nil,avatar:String?=nil)-instance-method" class="tooltip">
+      <span>modify_current_user(username : String? = <span class="n">nil</span>, avatar : String? = <span class="n">nil</span>)</span>
+    modify_current_user</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_current_user_nick(guild_id:UInt64,nick:String)-instance-method" class="tooltip">
+      <span>modify_current_user_nick(guild_id : UInt64, nick : String)</span>
+    modify_current_user_nick</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild(guild_id:UInt64%7CSnowflake,name:String?=nil,region:String?=nil,verification_level:UInt8?=nil,afk_channel_id:UInt64%7CSnowflake%7CNil=nil,afk_timeout:Int32?=nil,icon:String?=nil,owner_id:UInt64%7CSnowflake%7CNil=nil,splash:String?=nil,reason:String?=nil)-instance-method" class="tooltip">
+      <span>modify_guild(guild_id : UInt64 | Snowflake, name : String? = <span class="n">nil</span>, region : String? = <span class="n">nil</span>, verification_level : UInt8? = <span class="n">nil</span>, afk_channel_id : UInt64 | Snowflake | Nil = <span class="n">nil</span>, afk_timeout : Int32? = <span class="n">nil</span>, icon : String? = <span class="n">nil</span>, owner_id : UInt64 | Snowflake | Nil = <span class="n">nil</span>, splash : String? = <span class="n">nil</span>, reason : String? = <span class="n">nil</span>)</span>
+    modify_guild</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_channel_positions(guild_id:UInt64%7CSnowflake,positions:Array(ModifyChannelPositionPayload))-instance-method" class="tooltip">
+      <span>modify_guild_channel_positions(guild_id : UInt64 | Snowflake, positions : Array(ModifyChannelPositionPayload))</span>
+    modify_guild_channel_positions</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_embed(guild_id:UInt64%7CSnowflake,enabled:Bool,channel_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>modify_guild_embed(guild_id : UInt64 | Snowflake, enabled : Bool, channel_id : UInt64 | Snowflake)</span>
+    modify_guild_embed</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_emoji(guild_id:UInt64%7CSnowflake,emoji_id:UInt64%7CSnowflake,name:String)-instance-method" class="tooltip">
+      <span>modify_guild_emoji(guild_id : UInt64 | Snowflake, emoji_id : UInt64 | Snowflake, name : String)</span>
+    modify_guild_emoji</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_integration(guild_id:UInt64%7CSnowflake,integration_id:UInt64%7CSnowflake,expire_behaviour:UInt8,expire_grace_period:Int32,enable_emoticons:Bool)-instance-method" class="tooltip">
+      <span>modify_guild_integration(guild_id : UInt64 | Snowflake, integration_id : UInt64 | Snowflake, expire_behaviour : UInt8, expire_grace_period : Int32, enable_emoticons : Bool)</span>
+    modify_guild_integration</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_member(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake,nick:String?=nil,roles:Array(UInt64%7CSnowflake)?=nil,mute:Bool?=nil,deaf:Bool?=nil,channel_id:UInt64%7CSnowflake%7CNil=nil,reason:String?=nil)-instance-method" class="tooltip">
+      <span>modify_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, nick : String? = <span class="n">nil</span>, roles : Array(UInt64 | Snowflake)? = <span class="n">nil</span>, mute : Bool? = <span class="n">nil</span>, deaf : Bool? = <span class="n">nil</span>, channel_id : UInt64 | Snowflake | Nil = <span class="n">nil</span>, reason : String? = <span class="n">nil</span>)</span>
+    modify_guild_member</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_role(guild_id:UInt64%7CSnowflake,role_id:UInt64%7CSnowflake,name:String?=nil,permissions:Permissions?=nil,colour:UInt32?=nil,position:Int32?=nil,hoist:Bool?=nil,reason:String?=nil)-instance-method" class="tooltip">
+      <span>modify_guild_role(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake, name : String? = <span class="n">nil</span>, permissions : Permissions? = <span class="n">nil</span>, colour : UInt32? = <span class="n">nil</span>, position : Int32? = <span class="n">nil</span>, hoist : Bool? = <span class="n">nil</span>, reason : String? = <span class="n">nil</span>)</span>
+    modify_guild_role</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_role_positions(guild_id:UInt64%7CSnowflake,positions:Array(ModifyRolePositionPayload))-instance-method" class="tooltip">
+      <span>modify_guild_role_positions(guild_id : UInt64 | Snowflake, positions : Array(ModifyRolePositionPayload))</span>
+    modify_guild_role_positions</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_guild_vanity_url(guild_id:UInt64%7CSnowflake,code:String)-instance-method" class="tooltip">
+      <span>modify_guild_vanity_url(guild_id : UInt64 | Snowflake, code : String)</span>
+    modify_guild_vanity_url</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_webhook(webhook_id:UInt64%7CSnowflake,name:String?=nil,avatar:String?=nil,channel_id:UInt64%7CSnowflake%7CNil=nil)-instance-method" class="tooltip">
+      <span>modify_webhook(webhook_id : UInt64 | Snowflake, name : String? = <span class="n">nil</span>, avatar : String? = <span class="n">nil</span>, channel_id : UInt64 | Snowflake | Nil = <span class="n">nil</span>)</span>
+    modify_webhook</a>, 
+    
+  
+    <a href="../Discord/REST.html#modify_webhook_with_token(webhook_id:UInt64%7CSnowflake,token:String,name:String?=nil,avatar:String?=nil)-instance-method" class="tooltip">
+      <span>modify_webhook_with_token(webhook_id : UInt64 | Snowflake, token : String, name : String? = <span class="n">nil</span>, avatar : String? = <span class="n">nil</span>)</span>
+    modify_webhook_with_token</a>, 
+    
+  
+    <a href="../Discord/REST.html#page_channel_messages(channel_id:UInt64%7CSnowflake,start_id:UInt64%7CSnowflake=0_u64,limit:Int32?=100,direction:Paginator::Direction=Paginator::Direction::Down,page_size:Int32=100)-instance-method" class="tooltip">
+      <span>page_channel_messages(channel_id : UInt64 | Snowflake, start_id : UInt64 | Snowflake = <span class="n">0_u64</span>, limit : Int32? = <span class="n">100</span>, direction : Paginator::Direction = <span class="t">Paginator</span><span class="t">::</span><span class="t">Direction</span><span class="t">::</span><span class="t">Down</span>, page_size : Int32 = <span class="n">100</span>)</span>
+    page_channel_messages</a>, 
+    
+  
+    <a href="../Discord/REST.html#page_current_user_guilds(start_id:UInt64%7CSnowflake=0_u64,limit:Int32?=100,direction:Paginator::Direction=Paginator::Direction::Down,page_size:Int32=100)-instance-method" class="tooltip">
+      <span>page_current_user_guilds(start_id : UInt64 | Snowflake = <span class="n">0_u64</span>, limit : Int32? = <span class="n">100</span>, direction : Paginator::Direction = <span class="t">Paginator</span><span class="t">::</span><span class="t">Direction</span><span class="t">::</span><span class="t">Down</span>, page_size : Int32 = <span class="n">100</span>)</span>
+    page_current_user_guilds</a>, 
+    
+  
+    <a href="../Discord/REST.html#page_guild_members(guild_id:UInt64%7CSnowflake,start_id:UInt64%7CSnowflake=0_u64,limit:Int32?=1000,page_size:Int32=1000)-instance-method" class="tooltip">
+      <span>page_guild_members(guild_id : UInt64 | Snowflake, start_id : UInt64 | Snowflake = <span class="n">0_u64</span>, limit : Int32? = <span class="n">1000</span>, page_size : Int32 = <span class="n">1000</span>)</span>
+    page_guild_members</a>, 
+    
+  
+    <a href="../Discord/REST.html#raw_request(route_key:Symbol,major_parameter:Snowflake%7CUInt64%7CNil,method:String,path:String,headers:HTTP::Headers,body:String?)-instance-method" class="tooltip">
+      <span>raw_request(route_key : Symbol, major_parameter : Snowflake | UInt64 | Nil, method : String, path : String, headers : HTTP::Headers, body : String?)</span>
+    raw_request</a>, 
+    
+  
+    <a href="../Discord/REST.html#remove_guild_ban(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake,reason:String?=nil)-instance-method" class="tooltip">
+      <span>remove_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = <span class="n">nil</span>)</span>
+    remove_guild_ban</a>, 
+    
+  
+    <a href="../Discord/REST.html#remove_guild_member(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake,reason:String?=nil)-instance-method" class="tooltip">
+      <span>remove_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = <span class="n">nil</span>)</span>
+    remove_guild_member</a>, 
+    
+  
+    <a href="../Discord/REST.html#remove_guild_member_role(guild_id:UInt64,user_id:UInt64,role_id:UInt64)-instance-method" class="tooltip">
+      <span>remove_guild_member_role(guild_id : UInt64, user_id : UInt64, role_id : UInt64)</span>
+    remove_guild_member_role</a>, 
+    
+  
+    <a href="../Discord/REST.html#request(route_key:Symbol,major_parameter:Snowflake%7CUInt64%7CNil,method:String,path:String,headers:HTTP::Headers,body:String?)-instance-method" class="tooltip">
+      <span>request(route_key : Symbol, major_parameter : Snowflake | UInt64 | Nil, method : String, path : String, headers : HTTP::Headers, body : String?)</span>
+    request</a>, 
+    
+  
+    <a href="../Discord/REST.html#sync_guild_integration(guild_id:UInt64%7CSnowflake,integration_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>sync_guild_integration(guild_id : UInt64 | Snowflake, integration_id : UInt64 | Snowflake)</span>
+    sync_guild_integration</a>, 
+    
+  
+    <a href="../Discord/REST.html#trigger_typing_indicator(channel_id:UInt64%7CSnowflake)-instance-method" class="tooltip">
+      <span>trigger_typing_indicator(channel_id : UInt64 | Snowflake)</span>
+    trigger_typing_indicator</a>, 
+    
+  
+    <a href="../Discord/REST.html#upload_file(channel_id:UInt64%7CSnowflake,content:String?,file:IO,filename:String?=nil,spoiler:Bool=false)-instance-method" class="tooltip">
+      <span>upload_file(channel_id : UInt64 | Snowflake, content : String?, file : IO, filename : String? = <span class="n">nil</span>, spoiler : Bool = <span class="n">false</span>)</span>
+    upload_file</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(token:String,client_id:UInt64|Snowflake|Nil=nil,shard:Gateway::ShardKey?=nil,large_threshold:Int32=100,compress:CompressMode=CompressMode::Stream,zlib_buffer_size:Int32=(10*1024)*1024,properties:Gateway::IdentifyProperties=DEFAULT_PROPERTIES,intents:Gateway::Intents?=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(token : String, client_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a> | Nil = <span class="n">nil</span>, shard : <a href="../Discord/Gateway/ShardKey.html">Gateway::ShardKey</a>? = <span class="n">nil</span>, large_threshold : Int32 = <span class="n">100</span>, compress : <a href="../Discord/Client/CompressMode.html">CompressMode</a> = <span class="t">CompressMode</span><span class="t">::</span><span class="t">Stream</span>, zlib_buffer_size : Int32 = (<span class="n">10</span> <span class="o">*</span> <span class="n">1024</span>) <span class="o">*</span> <span class="n">1024</span>, properties : <a href="../Discord/Gateway/IdentifyProperties.html">Gateway::IdentifyProperties</a> = <span class="t">DEFAULT_PROPERTIES</span>, intents : <a href="../Discord/Gateway/Intents.html">Gateway::Intents</a>? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new(token:String,client_id:UInt64%7CSnowflake%7CNil=nil,shard:Gateway::ShardKey?=nil,large_threshold:Int32=100,compress:CompressMode=CompressMode::Stream,zlib_buffer_size:Int32=(10*1024)*1024,properties:Gateway::IdentifyProperties=DEFAULT_PROPERTIES,intents:Gateway::Intents?=nil)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new bot with the given <em>token</em> and optionally the <em>client_id</em>.
+Both of these things can be found on a bot's application page; the token
+will need to be revealed using the "click to reveal" thing on the token
+(<strong>not</strong> the OAuth2 secret!)</p>
+
+<p>If the <em>shard</em> key is set, the gateway will operate in sharded mode. This
+means that this client's gateway connection will only receive packets from
+a part of the guilds the bot is connected to. See
+<a href="https://discord.com/developers/docs/topics/gateway#sharding" target="_blank">here</a>
+for more information.</p>
+
+<p>The <em>large_threshold</em> defines the minimum member count that, if a guild
+has at least that many members, the client will only receive online
+members in GUILD_CREATE. The default value 100 is what the Discord client
+uses; the maximum value is 250. To get a list of offline members as well,
+the <code><a href="../Discord/Client.html#request_guild_members(guild_id:UInt64,query:String=&quot;&quot;,limit:Int32=0)-instance-method">#request_guild_members</a></code> method can be used.</p>
+
+<p><code>compress</code> can be set to any value of <code><a href="../Discord/Client/CompressMode.html">CompressMode</a></code>. <code><a href="../Discord/Client/CompressMode.html#Stream">CompressMode::Stream</a></code>
+is the default and will save the most bandwidth. You can optionally change
+this to <code><a href="../Discord/Client/CompressMode.html#Large">CompressMode::Large</a></code> to request that only large payloads be received
+compressed. Compression can be disabled with <code><a href="../Discord/Client/CompressMode.html#None">CompressMode::None</a></code>, but this
+is not recommended for production bots.</p>
+
+<p>When using <code>Compress::Stream</code> compression, the buffer size can be configured
+by passing <code>zlib_buffer_size</code>.</p>
+
+<p>The <em>properties</em> define what values are sent to Discord as analytics
+properties. It's not recommended to change these from the default values,
+but if you desire to do so, you can.</p>
+
+<p>The <em>intents</em> value is used to request that only specific events are sent
+to this client for the current session. For details on what <code>Intents</code> values
+correspond to which gateway events, see the <a href="https://discord.com/developers/docs/topics/gateway#gateway-intents" target="_blank">API docs</a>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L98" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="cache:Cache?-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong> : <a href="../Discord/Cache.html">Cache</a>?
+
+        <a class="method-permalink" href="#cache:Cache?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If this is set to any <code><a href="../Discord/Cache.html">Cache</a></code>, the data in the cache will be updated as
+the client receives the corresponding gateway dispatches.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache=(cache:Cache?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache=</strong>(cache : <a href="../Discord/Cache.html">Cache</a>?)
+
+        <a class="method-permalink" href="#cache=(cache:Cache?)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If this is set to any <code><a href="../Discord/Cache.html">Cache</a></code>, the data in the cache will be updated as
+the client receives the corresponding gateway dispatches.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="client_id-instance-method">
+      <div class="signature">
+        
+        def <strong>client_id</strong>
+
+        <a class="method-permalink" href="#client_id-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns this client's ID as provided in its associated Oauth2 application.
+A getter for @client_id, this will make a REST call to obtain it
+if it was not provided in the initializer.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inject(packet:Discord::WebSocket::Packet)-instance-method">
+      <div class="signature">
+        
+        def <strong>inject</strong>(packet : Discord::WebSocket::Packet)
+
+        <a class="method-permalink" href="#inject(packet:Discord::WebSocket::Packet)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Injects a <em>packet</em> into the packet handler.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L268" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_channel_create(&handler:Channel->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_channel_create</strong>(&handler : <a href="../Discord/Channel.html">Channel</a> -> )
+
+        <a class="method-permalink" href="#on_channel_create(&handler:Channel-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a channel has been created on a server the bot has access to,
+or when somebody has started a DM channel with the bot.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-create" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L715" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_channel_delete(&handler:Channel->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_channel_delete</strong>(&handler : <a href="../Discord/Channel.html">Channel</a> -> )
+
+        <a class="method-permalink" href="#on_channel_delete(&handler:Channel-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a channel the bot has access to is deleted. This is not called
+for other users closing the DM channel with the bot, only for the bot
+closing the DM channel with a user.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-delete" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L728" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_channel_pins_update(&handler:Gateway::ChannelPinsUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_channel_pins_update</strong>(&handler : <a href="../Discord/Gateway/ChannelPinsUpdatePayload.html">Gateway::ChannelPinsUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_channel_pins_update(&handler:Gateway::ChannelPinsUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a channel's pinned messages are updated, where a pin was
+either added or removed.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-pins-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L734" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_channel_update(&handler:Channel->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_channel_update</strong>(&handler : <a href="../Discord/Channel.html">Channel</a> -> )
+
+        <a class="method-permalink" href="#on_channel_update(&handler:Channel-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a channel's properties are updated, like the name or
+permission overwrites.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L721" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_dispatch(&handler:Tuple(String,IO::Memory)->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_dispatch</strong>(&handler : Tuple(String, IO::Memory) -> )
+
+        <a class="method-permalink" href="#on_dispatch(&handler:Tuple(String,IO::Memory)-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when the bot receives any kind of dispatch at all, even one that
+is otherwise unsupported. This can be useful for statistics, e. g. how
+many gateway events are received per second. It can also be useful to
+handle new API changes not yet supported by the lib.</p>
+
+<p>The parameter passed to the event will be a tuple of <code>{type, data}</code>, where
+<code>type</code> is the event type (e.g. "MESSAGE_CREATE") and <code>data</code> is the
+unprocessed JSON event data.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L693" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_ban_add(&handler:Gateway::GuildBanPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_ban_add</strong>(&handler : <a href="../Discord/Gateway/GuildBanPayload.html">Gateway::GuildBanPayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_ban_add(&handler:Gateway::GuildBanPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when somebody is banned from a guild. A <code><a href="../Discord/Client.html#on_guild_member_remove(&handler:Gateway::GuildMemberRemovePayload-%3E)-instance-method">#on_guild_member_remove</a></code>
+event is also called.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-ban-add" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L761" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_ban_remove(&handler:Gateway::GuildBanPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_ban_remove</strong>(&handler : <a href="../Discord/Gateway/GuildBanPayload.html">Gateway::GuildBanPayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_ban_remove(&handler:Gateway::GuildBanPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when somebody is unbanned from a guild.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-ban-remove" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L766" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_create(&handler:Gateway::GuildCreatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_create</strong>(&handler : <a href="../Discord/Gateway/GuildCreatePayload.html">Gateway::GuildCreatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_create(&handler:Gateway::GuildCreatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when the bot is added to a guild, a guild unavailable due to an
+outage becomes available again, or the guild is streamed after READY.
+To verify that it is the first case, you can check the <code>unavailable</code>
+property in <code><a href="../Discord/Gateway/GuildCreatePayload.html">Gateway::GuildCreatePayload</a></code>.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-create" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L742" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_delete(&handler:Gateway::GuildDeletePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_delete</strong>(&handler : <a href="../Discord/Gateway/GuildDeletePayload.html">Gateway::GuildDeletePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_delete(&handler:Gateway::GuildDeletePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when the bot leaves a guild or a guild becomes unavailable due to
+an outage. To verify that it is the former case, you can check the
+<code>unavailable</code> property.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-delete" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L755" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_emoji_update(&handler:Gateway::GuildEmojiUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_emoji_update</strong>(&handler : <a href="../Discord/Gateway/GuildEmojiUpdatePayload.html">Gateway::GuildEmojiUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_emoji_update(&handler:Gateway::GuildEmojiUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a guild's emoji are updated.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-emoji-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L771" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_integrations_update(&handler:Gateway::GuildIntegrationsUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_integrations_update</strong>(&handler : <a href="../Discord/Gateway/GuildIntegrationsUpdatePayload.html">Gateway::GuildIntegrationsUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_integrations_update(&handler:Gateway::GuildIntegrationsUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a guild's integrations (Twitch, YouTube) are updated.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-integrations-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L776" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_member_add(&handler:Gateway::GuildMemberAddPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_member_add</strong>(&handler : <a href="../Discord/Gateway/GuildMemberAddPayload.html">Gateway::GuildMemberAddPayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_member_add(&handler:Gateway::GuildMemberAddPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when somebody other than the bot joins a guild.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-add" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L781" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_member_remove(&handler:Gateway::GuildMemberRemovePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_member_remove</strong>(&handler : <a href="../Discord/Gateway/GuildMemberRemovePayload.html">Gateway::GuildMemberRemovePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_member_remove(&handler:Gateway::GuildMemberRemovePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when somebody other than the bot leaves a guild.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-remove" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L792" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_member_update(&handler:Gateway::GuildMemberUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_member_update</strong>(&handler : <a href="../Discord/Gateway/GuildMemberUpdatePayload.html">Gateway::GuildMemberUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_member_update(&handler:Gateway::GuildMemberUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a member object is updated. This happens when somebody
+changes their nickname or has their roles changed.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L787" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_members_chunk(&handler:Gateway::GuildMembersChunkPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_members_chunk</strong>(&handler : <a href="../Discord/Gateway/GuildMembersChunkPayload.html">Gateway::GuildMembersChunkPayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_members_chunk(&handler:Gateway::GuildMembersChunkPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when Discord sends a chunk of member objects after a
+<code><a href="../Discord/Client.html#request_guild_members(guild_id:UInt64,query:String=&quot;&quot;,limit:Int32=0)-instance-method">#request_guild_members</a></code> call. If a <code><a href="../Discord/Cache.html">Cache</a></code> is set up, this is handled
+automatically.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-members-chunk" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L799" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_role_create(&handler:Gateway::GuildRolePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_role_create</strong>(&handler : <a href="../Discord/Gateway/GuildRolePayload.html">Gateway::GuildRolePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_role_create(&handler:Gateway::GuildRolePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a role is created on a guild.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-create" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L804" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_role_delete(&handler:Gateway::GuildRoleDeletePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_role_delete</strong>(&handler : <a href="../Discord/Gateway/GuildRoleDeletePayload.html">Gateway::GuildRoleDeletePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_role_delete(&handler:Gateway::GuildRoleDeletePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a role is deleted.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-delete" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L814" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_role_update(&handler:Gateway::GuildRolePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_role_update</strong>(&handler : <a href="../Discord/Gateway/GuildRolePayload.html">Gateway::GuildRolePayload</a> -> )
+
+        <a class="method-permalink" href="#on_guild_role_update(&handler:Gateway::GuildRolePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a role's properties are updated, for example name or colour.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L809" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_guild_update(&handler:Guild->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_guild_update</strong>(&handler : <a href="../Discord/Guild.html">Guild</a> -> )
+
+        <a class="method-permalink" href="#on_guild_update(&handler:Guild-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a guild's properties, like name or verification level, are
+updated.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L748" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_invite_create(&handler:Gateway::InviteCreatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_invite_create</strong>(&handler : <a href="../Discord/Gateway/InviteCreatePayload.html">Gateway::InviteCreatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_invite_create(&handler:Gateway::InviteCreatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when an invite is created on a guild.</p>
+
+<p><a href="https://discordapp.com/developers/docs/topics/gateway#invite-create" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L819" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_invite_delete(&handler:Gateway::InviteDeletePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_invite_delete</strong>(&handler : <a href="../Discord/Gateway/InviteDeletePayload.html">Gateway::InviteDeletePayload</a> -> )
+
+        <a class="method-permalink" href="#on_invite_delete(&handler:Gateway::InviteDeletePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when an invite is deleted.</p>
+
+<p><a href="https://discordapp.com/developers/docs/topics/gateway#invite-delete" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L824" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_create(&handler:Message->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_create</strong>(&handler : <a href="../Discord/Message.html">Message</a> -> )
+
+        <a class="method-permalink" href="#on_message_create(&handler:Message-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a message is sent to a channel the bot has access to. This
+may be any sort of text channel, no matter private or guild.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-create" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L830" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_delete(&handler:Gateway::MessageDeletePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_delete</strong>(&handler : <a href="../Discord/Gateway/MessageDeletePayload.html">Gateway::MessageDeletePayload</a> -> )
+
+        <a class="method-permalink" href="#on_message_delete(&handler:Gateway::MessageDeletePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a single message is deleted.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-delete" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L854" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_delete_bulk(&handler:Gateway::MessageDeleteBulkPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_delete_bulk</strong>(&handler : <a href="../Discord/Gateway/MessageDeleteBulkPayload.html">Gateway::MessageDeleteBulkPayload</a> -> )
+
+        <a class="method-permalink" href="#on_message_delete_bulk(&handler:Gateway::MessageDeleteBulkPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when multiple messages are deleted at once, due to a bot using the
+bulk-delete endpoint, or other actions.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-delete-bulk" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L860" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_reaction_add(&handler:Gateway::MessageReactionPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_reaction_add</strong>(&handler : <a href="../Discord/Gateway/MessageReactionPayload.html">Gateway::MessageReactionPayload</a> -> )
+
+        <a class="method-permalink" href="#on_message_reaction_add(&handler:Gateway::MessageReactionPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a reaction is added to a message.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L833" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_reaction_remove(&handler:Gateway::MessageReactionPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_reaction_remove</strong>(&handler : <a href="../Discord/Gateway/MessageReactionPayload.html">Gateway::MessageReactionPayload</a> -> )
+
+        <a class="method-permalink" href="#on_message_reaction_remove(&handler:Gateway::MessageReactionPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a reaction is removed from a message.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L836" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_reaction_remove_all(&handler:Gateway::MessageReactionRemoveAllPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_reaction_remove_all</strong>(&handler : <a href="../Discord/Gateway/MessageReactionRemoveAllPayload.html">Gateway::MessageReactionRemoveAllPayload</a> -> )
+
+        <a class="method-permalink" href="#on_message_reaction_remove_all(&handler:Gateway::MessageReactionRemoveAllPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when all reactions are removed at once from a message.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L839" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_reaction_remove_emoji(&handler:Gateway::MessageReactionRemoveEmojiPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_reaction_remove_emoji</strong>(&handler : <a href="../Discord/Gateway/MessageReactionRemoveEmojiPayload.html">Gateway::MessageReactionRemoveEmojiPayload</a> -> )
+
+        <a class="method-permalink" href="#on_message_reaction_remove_emoji(&handler:Gateway::MessageReactionRemoveEmojiPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when all reactions of a single emoji are removed at once from a message.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L842" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_message_update(&handler:Gateway::MessageUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_message_update</strong>(&handler : <a href="../Discord/Gateway/MessageUpdatePayload.html">Gateway::MessageUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_message_update(&handler:Gateway::MessageUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a message is updated. Most commonly this is done for edited
+messages, but the event is also sent when embed information for an
+existing message is updated.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L849" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_presence_update(&handler:Gateway::PresenceUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_presence_update</strong>(&handler : <a href="../Discord/Gateway/PresenceUpdatePayload.html">Gateway::PresenceUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_presence_update(&handler:Gateway::PresenceUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a user updates their status (online/idle/offline), the game
+they are playing, or their streaming status. Also called when a user's
+properties (user/avatar/discriminator) are changed.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#presence-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L867" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_ready(&handler:Gateway::ReadyPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_ready</strong>(&handler : <a href="../Discord/Gateway/ReadyPayload.html">Gateway::ReadyPayload</a> -> )
+
+        <a class="method-permalink" href="#on_ready(&handler:Gateway::ReadyPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when the bot has successfully initiated a session with Discord. It
+marks the point when gateway packets can be set (e. g. <code><a href="../Discord/Client.html#status_update(status:String?=nil,game:GamePlaying?=nil,afk:Bool=false,since:Int64?=nil)-instance-method">#status_update</a></code>).</p>
+
+<p>Note that this event may be called multiple times over the course of a
+bot lifetime, as it is also called when the client reconnects with a new
+session.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#ready" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L703" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_resumed(&handler:Gateway::ResumedPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_resumed</strong>(&handler : <a href="../Discord/Gateway/ResumedPayload.html">Gateway::ResumedPayload</a> -> )
+
+        <a class="method-permalink" href="#on_resumed(&handler:Gateway::ResumedPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when the client has successfully resumed an existing connection
+after reconnecting.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#resumed" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L709" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_typing_start(&handler:Gateway::TypingStartPayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_typing_start</strong>(&handler : <a href="../Discord/Gateway/TypingStartPayload.html">Gateway::TypingStartPayload</a> -> )
+
+        <a class="method-permalink" href="#on_typing_start(&handler:Gateway::TypingStartPayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when somebody starts typing in a channel the bot has access to.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#typing-start" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L872" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_user_update(&handler:User->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_user_update</strong>(&handler : <a href="../Discord/User.html">User</a> -> )
+
+        <a class="method-permalink" href="#on_user_update(&handler:User-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when the user properties of the bot itself are changed.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#user-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L877" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_voice_server_update(&handler:Gateway::VoiceServerUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_voice_server_update</strong>(&handler : <a href="../Discord/Gateway/VoiceServerUpdatePayload.html">Gateway::VoiceServerUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_voice_server_update(&handler:Gateway::VoiceServerUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when a guild's voice server changes. This event is called with
+the current voice server when initially connecting to voice, and it is
+called again with the new voice server when the current server fails over
+to a new one, or when the guild's voice region changes.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#voice-server-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L891" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_voice_state_update(&handler:VoiceState->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_voice_state_update</strong>(&handler : <a href="../Discord/VoiceState.html">VoiceState</a> -> )
+
+        <a class="method-permalink" href="#on_voice_state_update(&handler:VoiceState-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Called when somebody joins or leaves a voice channel, moves to a different
+one, or is muted/unmuted/deafened/undeafened.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#voice-state-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L883" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_webhooks_update(&handler:Gateway::WebhooksUpdatePayload->)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_webhooks_update</strong>(&handler : <a href="../Discord/Gateway/WebhooksUpdatePayload.html">Gateway::WebhooksUpdatePayload</a> -> )
+
+        <a class="method-permalink" href="#on_webhooks_update(&handler:Gateway::WebhooksUpdatePayload-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sent when a guild channel's webhook is created, updated, or deleted.</p>
+
+<p><a href="https://discord.com/developers/docs/topics/gateway#webhooks-update" target="_blank">API docs for this event</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L896" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reconnect(should_resume=false,backoff_override=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>reconnect</strong>(should_resume = <span class="n">false</span>, backoff_override = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#reconnect(should_resume=false,backoff_override=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Reconnects the websocket connection entirely. If <em>should_resume</em> is set,
+the session will be suspended, which means (unless other factors prevent
+this) that the session will be resumed after reconnection. If
+<em>backoff_override</em> is set to anything other than <code>nil</code>, the reconnection
+backoff will not use the standard formula and instead wait the value
+provided; use <code>0.0</code> to skip waiting entirely.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L345" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="request_guild_members(guild_id:UInt64,query:String=&quot;&quot;,limit:Int32=0)-instance-method">
+      <div class="signature">
+        
+        def <strong>request_guild_members</strong>(guild_id : <a href="../UInt64.html">UInt64</a>, query : String = <span class="s">&quot;&quot;</span>, limit : Int32 = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#request_guild_members(guild_id:UInt64,query:String=&quot;&quot;,limit:Int32=0)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Requests a full list of members to be sent for a specific guild. This is
+necessary to get the entire members list for guilds considered large (what
+is considered large can be changed using the large_threshold parameter
+in <code>#initialize</code>).</p>
+
+<p>The list will arrive in the form of GUILD_MEMBERS_CHUNK dispatch events,
+which can be listened to using <code><a href="../Discord/Client.html#on_guild_members_chunk(&handler:Gateway::GuildMembersChunkPayload-%3E)-instance-method">#on_guild_members_chunk</a></code>. If a cache
+is set up, arriving members will be cached automatically.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L392" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resume(sequence:Int64?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>resume</strong>(sequence : Int64? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#resume(sequence:Int64?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sends a resume packet from the given <em>sequence</em> number, or alternatively
+the current session's last received sequence if none is given. This will
+make Discord replay all events since that sequence.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L331" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="run-instance-method">
+      <div class="signature">
+        
+        def <strong>run</strong>
+
+        <a class="method-permalink" href="#run-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Connects this client to the gateway. This is required if the bot needs to
+do anything beyond making REST API calls. Calling this method will block
+execution until the bot is forcibly stopped.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L134" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="session:Gateway::Session?-instance-method">
+      <div class="signature">
+        
+        def <strong>session</strong> : <a href="../Discord/Gateway/Session.html">Gateway::Session</a>?
+
+        <a class="method-permalink" href="#session:Gateway::Session?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The internal <em>session</em> the client is currently using, necessary to create
+a voice client, for example</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="status_update(status:String?=nil,game:GamePlaying?=nil,afk:Bool=false,since:Int64?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>status_update</strong>(status : String? = <span class="n">nil</span>, game : <a href="../Discord/GamePlaying.html">GamePlaying</a>? = <span class="n">nil</span>, afk : Bool = <span class="n">false</span>, since : Int64? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#status_update(status:String?=nil,game:GamePlaying?=nil,afk:Bool=false,since:Int64?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sends a status update to Discord. The <em>status</em> can be <code>"online"</code>,
+<code>"idle"</code>, <code>"dnd"</code>, or <code>"invisible"</code>. Setting the <em>game</em> to a <code><a href="../Discord/GamePlaying.html">GamePlaying</a></code>
+object makes the bot appear as playing some game on Discord. <em>since</em> and
+<em>afk</em> can be used in conjunction to signify to Discord that the status
+change is due to inactivity on the bot's part – this fulfills no cosmetic
+purpose.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L367" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop(code:HTTP::WebSocket::CloseCode=HTTP::WebSocket::CloseCode::NormalClosure)-instance-method">
+      <div class="signature">
+        
+        def <strong>stop</strong>(code : HTTP::WebSocket::CloseCode = <span class="t">HTTP</span><span class="t">::</span><span class="t">WebSocket</span><span class="t">::</span><span class="t">CloseCode</span><span class="t">::</span><span class="t">NormalClosure</span>)
+
+        <a class="method-permalink" href="#stop(code:HTTP::WebSocket::CloseCode=HTTP::WebSocket::CloseCode::NormalClosure)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Closes the gateway connection permanently</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L156" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="voice_state_update(guild_id:UInt64,channel_id:UInt64?,self_mute:Bool,self_deaf:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>voice_state_update</strong>(guild_id : <a href="../UInt64.html">UInt64</a>, channel_id : <a href="../UInt64.html">UInt64</a>?, self_mute : Bool, self_deaf : Bool)
+
+        <a class="method-permalink" href="#voice_state_update(guild_id:UInt64,channel_id:UInt64?,self_mute:Bool,self_deaf:Bool)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sends a voice state update to Discord. This will create a new voice
+connection on the given <em>guild_id</em> and <em>channel_id</em>, update an existing
+one with new <em>self_mute</em> and <em>self_deaf</em> status, or disconnect from voice
+if the <em>channel_id</em> is <code>nil</code>.</p>
+
+<p>discordcr doesn't support sending or receiving any data from voice
+connections yet - this will have to be done externally until that happens.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L379" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="wait_for_reconnect-instance-method">
+      <div class="signature">
+        
+        def <strong>wait_for_reconnect</strong>
+
+        <a class="method-permalink" href="#wait_for_reconnect-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Separate method to wait an ever-increasing amount of time before reconnecting after being disconnected in an
+unexpected way</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L163" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="websocket-instance-method">
+      <div class="signature">
+        
+        def <strong>websocket</strong>
+
+        <a class="method-permalink" href="#websocket-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The internal websocket the client is currently using</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/client.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
