@@ -21,26 +21,27 @@ module Discord
   end
 
   struct Message
-    JSON.mapping(
-      type: MessageType,
-      content: String,
-      id: Snowflake,
-      channel_id: Snowflake,
-      guild_id: Snowflake?,
-      author: User,
-      member: PartialGuildMember?,
-      timestamp: {type: Time, converter: TimestampConverter},
-      tts: Bool,
-      mention_everyone: Bool,
-      mentions: Array(User),
-      mention_roles: Array(Snowflake),
-      attachments: Array(Attachment),
-      embeds: Array(Embed),
-      pinned: Bool?,
-      reactions: Array(Reaction)?,
-      nonce: String | Int64?,
-      activity: Activity?
-    )
+    include JSON::Serializable
+
+    property type : MessageType
+    property content : String
+    property id : Snowflake
+    property channel_id : Snowflake
+    property guild_id : Snowflake?
+    property author : User
+    property member : PartialGuildMember?
+    @[JSON::Field(converter: Discord::TimestampConverter)]
+    property timestamp : Time
+    property tts : Bool
+    property mention_everyone : Bool
+    property mentions : Array(User)
+    property mention_roles : Array(Snowflake)
+    property attachments : Array(Attachment)
+    property embeds : Array(Embed)
+    property pinned : Bool?
+    property reactions : Array(Reaction)?
+    property nonce : String | Int64?
+    property activity : Activity?
   end
 
   enum ActivityType : UInt8
@@ -55,10 +56,10 @@ module Discord
   end
 
   struct Activity
-    JSON.mapping(
-      type: ActivityType,
-      party_id: String?
-    )
+    include JSON::Serializable
+
+    property type : ActivityType
+    property party_id : String?
   end
 
   enum ChannelType : UInt8
@@ -76,6 +77,26 @@ module Discord
   end
 
   struct Channel
+    include JSON::Serializable
+
+    property id : Snowflake
+    property type : ChannelType
+    property guild_id : Snowflake?
+    property name : String?
+    property permission_overwrites : Array(Overwrite)?
+    property topic : String?
+    property last_message_id : Snowflake?
+    property bitrate : UInt32?
+    property user_limit : UInt32?
+    property recipients : Array(User)?
+    property nsfw : Bool?
+    property icon : String?
+    property owner_id : Snowflake?
+    property application_id : Snowflake?
+    property position : Int32?
+    property parent_id : Snowflake?
+    property rate_limit_per_user : Int32?
+
     # :nodoc:
     def initialize(private_channel : PrivateChannel)
       @id = private_channel.id
@@ -84,26 +105,6 @@ module Discord
       @last_message_id = private_channel.last_message_id
     end
 
-    JSON.mapping(
-      id: Snowflake,
-      type: ChannelType,
-      guild_id: Snowflake?,
-      name: String?,
-      permission_overwrites: Array(Overwrite)?,
-      topic: String?,
-      last_message_id: Snowflake?,
-      bitrate: UInt32?,
-      user_limit: UInt32?,
-      recipients: Array(User)?,
-      nsfw: Bool?,
-      icon: String?,
-      owner_id: Snowflake?,
-      application_id: Snowflake?,
-      position: Int32?,
-      parent_id: Snowflake?,
-      rate_limit_per_user: Int32?
-    )
-
     # Produces a string to mention this channel in a message
     def mention
       "<##{id}>"
@@ -111,39 +112,57 @@ module Discord
   end
 
   struct PrivateChannel
-    JSON.mapping(
-      id: Snowflake,
-      type: ChannelType,
-      recipients: Array(User),
-      last_message_id: Snowflake?
-    )
+    include JSON::Serializable
+
+    property id : Snowflake
+    property type : ChannelType
+    property recipients : Array(User)
+    property last_message_id : Snowflake?
   end
 
   struct Overwrite
-    JSON.mapping(
-      id: Snowflake,
-      type: String,
-      allow: Permissions,
-      deny: Permissions
-    )
+    include JSON::Serializable
+
+    property id : Snowflake
+    property type : String
+    property allow : Permissions
+    property deny : Permissions
   end
 
   struct Reaction
-    JSON.mapping(
-      emoji: ReactionEmoji,
-      count: UInt32,
-      me: Bool
-    )
+    include JSON::Serializable
+
+    property emoji : ReactionEmoji
+    property count : UInt32
+    property me : Bool
   end
 
   struct ReactionEmoji
-    JSON.mapping(
-      id: Snowflake?,
-      name: String
-    )
+    include JSON::Serializable
+
+    property id : Snowflake?
+    property name : String
   end
 
   struct Embed
+    include JSON::Serializable
+
+    property title : String?
+    property type : String
+    property description : String?
+    property url : String?
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property timestamp : Time?
+    @[JSON::Field(key: "color")]
+    property colour : UInt32?
+    property footer : EmbedFooter?
+    property image : EmbedImage?
+    property thumbnail : EmbedThumbnail?
+    property video : EmbedVideo?
+    property provider : EmbedProvider?
+    property author : EmbedAuthor?
+    property fields : Array(EmbedField)?
+
     def initialize(@title : String? = nil, @type : String = "rich",
                    @description : String? = nil, @url : String? = nil,
                    @timestamp : Time? = nil, @colour : UInt32? = nil,
@@ -151,22 +170,6 @@ module Discord
                    @thumbnail : EmbedThumbnail? = nil, @author : EmbedAuthor? = nil,
                    @fields : Array(EmbedField)? = nil)
     end
-
-    JSON.mapping(
-      title: String?,
-      type: String,
-      description: String?,
-      url: String?,
-      timestamp: {type: Time?, converter: MaybeTimestampConverter},
-      colour: {type: UInt32?, key: "color"},
-      footer: EmbedFooter?,
-      image: EmbedImage?,
-      thumbnail: EmbedThumbnail?,
-      video: EmbedVideo?,
-      provider: EmbedProvider?,
-      author: EmbedAuthor?,
-      fields: Array(EmbedField)?
-    )
 
     {% unless flag?(:correct_english) %}
       def color
@@ -176,87 +179,98 @@ module Discord
   end
 
   struct EmbedThumbnail
+    include JSON::Serializable
+
+    property url : String
+    property proxy_url : String?
+    property height : UInt32?
+    property width : UInt32?
+
     def initialize(@url : String)
     end
-
-    JSON.mapping(
-      url: String,
-      proxy_url: String?,
-      height: UInt32?,
-      width: UInt32?
-    )
   end
 
   struct EmbedVideo
-    JSON.mapping(
-      url: String,
-      height: UInt32,
-      width: UInt32
-    )
+    include JSON::Serializable
+
+    property url : String
+    property height : UInt32
+    property width : UInt32
   end
 
   struct EmbedImage
+    include JSON::Serializable
+
+    property url : String
+    property proxy_url : String?
+    property height : UInt32?
+    property width : UInt32?
+
     def initialize(@url : String)
     end
-
-    JSON.mapping(
-      url: String,
-      proxy_url: String?,
-      height: UInt32?,
-      width: UInt32?
-    )
   end
 
   struct EmbedProvider
-    JSON.mapping(
-      name: String,
-      url: String?
-    )
+    include JSON::Serializable
+
+    property name : String
+    property url : String?
   end
 
   struct EmbedAuthor
-    def initialize(@name : String? = nil, @url : String? = nil, @icon_url : String? = nil)
-    end
+    include JSON::Serializable
 
-    JSON.mapping(
-      name: String?,
-      url: String?,
-      icon_url: String?,
-      proxy_icon_url: String?
+    property name : String?
+    property url : String?
+    property icon_url : String?
+    property proxy_icon_url : String?
+
+    def initialize(
+      @name : String? = nil,
+      @url : String? = nil,
+      @icon_url : String? = nil
     )
+    end
   end
 
   struct EmbedFooter
-    def initialize(@text : String? = nil, @icon_url : String? = nil)
-    end
+    include JSON::Serializable
 
-    JSON.mapping(
-      text: String?,
-      icon_url: String?,
-      proxy_icon_url: String?
+    property text : String?
+    property icon_url : String?
+    property proxy_icon_url : String?
+
+    def initialize(
+      @text : String? = nil,
+      @icon_url : String? = nil
     )
+    end
   end
 
   struct EmbedField
-    def initialize(@name : String, @value : String, @inline : Bool = false)
-    end
+    include JSON::Serializable
 
-    JSON.mapping(
-      name: String,
-      value: String,
-      inline: Bool
+    property name : String
+    property value : String
+    property inline : Bool
+
+    def initialize(
+      @name : String,
+      @value : String,
+      @inline : Bool = false
     )
+    end
   end
 
   struct Attachment
-    JSON.mapping(
-      id: Snowflake,
-      filename: String,
-      size: UInt32,
-      url: String,
-      proxy_url: String,
-      height: UInt32?,
-      width: UInt32?
-    )
+    include JSON::Serializable
+
+    property id : Snowflake
+    property filename : String
+    property size : UInt32
+    property url : String
+    property proxy_url : String
+    property height : UInt32?
+    property width : UInt32?
   end
 end
