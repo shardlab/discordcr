@@ -498,6 +498,11 @@ module Discord
           @cache.try &.cache(member, guild.id)
         end
 
+        payload.voice_states.each do |voice_state|
+          voice_state.guild_id = guild.id
+          cache voice_state
+        end
+
         call_event guild_create, payload
       when "GUILD_UPDATE"
         payload = Guild.from_json(data)
@@ -642,6 +647,13 @@ module Discord
         payload = VoiceState.from_json(data)
 
         guild_id = payload.guild_id
+
+        if guild_id && payload.channel_id.nil?
+          @cache.try &.delete_voice_state(guild_id, payload.user_id)
+        else
+          @cache.try &.cache(payload)
+        end
+
         member = payload.member
         if guild_id && member
           @cache.try &.cache(member, guild_id)
