@@ -789,6 +789,20 @@
 
 
 
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
 
 
 
@@ -808,7 +822,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/invite.cr#L13" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L13" target="_blank">
         discordcr/mappings/invite.cr
       </a>
     
@@ -830,7 +844,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(__temp_1002:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(__temp_1002 : JSON::PullParser)</a>
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -856,7 +870,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#channel=(_channel:InviteChannel)-instance-method" class="signature"><strong>#channel=</strong>(_channel : InviteChannel)</a>
+        <a href="#channel=(channel:InviteChannel)-instance-method" class="signature"><strong>#channel=</strong>(channel : InviteChannel)</a>
         
       </li>
     
@@ -866,7 +880,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#code=(_code:String)-instance-method" class="signature"><strong>#code=</strong>(_code : String)</a>
+        <a href="#code=(code:String)-instance-method" class="signature"><strong>#code=</strong>(code : String)</a>
         
       </li>
     
@@ -876,7 +890,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#created_at=(_created_at:Time)-instance-method" class="signature"><strong>#created_at=</strong>(_created_at : Time)</a>
+        <a href="#created_at=(created_at:Time)-instance-method" class="signature"><strong>#created_at=</strong>(created_at : Time)</a>
         
       </li>
     
@@ -886,7 +900,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#guild=(_guild:InviteGuild)-instance-method" class="signature"><strong>#guild=</strong>(_guild : InviteGuild)</a>
+        <a href="#guild=(guild:InviteGuild)-instance-method" class="signature"><strong>#guild=</strong>(guild : InviteGuild)</a>
         
       </li>
     
@@ -896,7 +910,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#inviter=(_inviter:User)-instance-method" class="signature"><strong>#inviter=</strong>(_inviter : User)</a>
+        <a href="#inviter=(inviter:User)-instance-method" class="signature"><strong>#inviter=</strong>(inviter : User)</a>
         
       </li>
     
@@ -906,7 +920,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#max_age=(_max_age:UInt32)-instance-method" class="signature"><strong>#max_age=</strong>(_max_age : UInt32)</a>
+        <a href="#max_age=(max_age:UInt32)-instance-method" class="signature"><strong>#max_age=</strong>(max_age : UInt32)</a>
         
       </li>
     
@@ -916,7 +930,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#max_uses=(_max_uses:UInt32)-instance-method" class="signature"><strong>#max_uses=</strong>(_max_uses : UInt32)</a>
+        <a href="#max_uses=(max_uses:UInt32)-instance-method" class="signature"><strong>#max_uses=</strong>(max_uses : UInt32)</a>
         
       </li>
     
@@ -926,7 +940,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#revoked=(_revoked:Bool)-instance-method" class="signature"><strong>#revoked=</strong>(_revoked : Bool)</a>
+        <a href="#revoked=(revoked:Bool)-instance-method" class="signature"><strong>#revoked=</strong>(revoked : Bool)</a>
         
       </li>
     
@@ -936,12 +950,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#temporary=(_temporary:Bool)-instance-method" class="signature"><strong>#temporary=</strong>(_temporary : Bool)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#temporary=(temporary:Bool)-instance-method" class="signature"><strong>#temporary=</strong>(temporary : Bool)</a>
         
       </li>
     
@@ -951,7 +960,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#users=(_users:UInt32)-instance-method" class="signature"><strong>#users=</strong>(_users : UInt32)</a>
+        <a href="#users=(users:UInt32)-instance-method" class="signature"><strong>#users=</strong>(users : UInt32)</a>
         
       </li>
     
@@ -962,6 +971,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -1005,16 +1024,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(__temp_1002:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(__temp_1002 : JSON::PullParser)
+        def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(__temp_1002:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1044,19 +1065,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L18" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="channel=(_channel:InviteChannel)-instance-method">
+    <div class="entry-detail" id="channel=(channel:InviteChannel)-instance-method">
       <div class="signature">
         
-        def <strong>channel=</strong>(_channel : <a href="../Discord/InviteChannel.html">InviteChannel</a>)
+        def <strong>channel=</strong>(channel : <a href="../Discord/InviteChannel.html">InviteChannel</a>)
 
-        <a class="method-permalink" href="#channel=(_channel:InviteChannel)-instance-method">#</a>
+        <a class="method-permalink" href="#channel=(channel:InviteChannel)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1072,19 +1097,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L16" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="code=(_code:String)-instance-method">
+    <div class="entry-detail" id="code=(code:String)-instance-method">
       <div class="signature">
         
-        def <strong>code=</strong>(_code : String)
+        def <strong>code=</strong>(code : String)
 
-        <a class="method-permalink" href="#code=(_code:String)-instance-method">#</a>
+        <a class="method-permalink" href="#code=(code:String)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1100,19 +1129,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="created_at=(_created_at:Time)-instance-method">
+    <div class="entry-detail" id="created_at=(created_at:Time)-instance-method">
       <div class="signature">
         
-        def <strong>created_at=</strong>(_created_at : Time)
+        def <strong>created_at=</strong>(created_at : Time)
 
-        <a class="method-permalink" href="#created_at=(_created_at:Time)-instance-method">#</a>
+        <a class="method-permalink" href="#created_at=(created_at:Time)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1128,19 +1161,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L17" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="guild=(_guild:InviteGuild)-instance-method">
+    <div class="entry-detail" id="guild=(guild:InviteGuild)-instance-method">
       <div class="signature">
         
-        def <strong>guild=</strong>(_guild : <a href="../Discord/InviteGuild.html">InviteGuild</a>)
+        def <strong>guild=</strong>(guild : <a href="../Discord/InviteGuild.html">InviteGuild</a>)
 
-        <a class="method-permalink" href="#guild=(_guild:InviteGuild)-instance-method">#</a>
+        <a class="method-permalink" href="#guild=(guild:InviteGuild)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1156,19 +1193,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L19" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="inviter=(_inviter:User)-instance-method">
+    <div class="entry-detail" id="inviter=(inviter:User)-instance-method">
       <div class="signature">
         
-        def <strong>inviter=</strong>(_inviter : <a href="../Discord/User.html">User</a>)
+        def <strong>inviter=</strong>(inviter : <a href="../Discord/User.html">User</a>)
 
-        <a class="method-permalink" href="#inviter=(_inviter:User)-instance-method">#</a>
+        <a class="method-permalink" href="#inviter=(inviter:User)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1184,19 +1225,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L22" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="max_age=(_max_age:UInt32)-instance-method">
+    <div class="entry-detail" id="max_age=(max_age:UInt32)-instance-method">
       <div class="signature">
         
-        def <strong>max_age=</strong>(_max_age : UInt32)
+        def <strong>max_age=</strong>(max_age : UInt32)
 
-        <a class="method-permalink" href="#max_age=(_max_age:UInt32)-instance-method">#</a>
+        <a class="method-permalink" href="#max_age=(max_age:UInt32)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1212,19 +1257,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L21" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="max_uses=(_max_uses:UInt32)-instance-method">
+    <div class="entry-detail" id="max_uses=(max_uses:UInt32)-instance-method">
       <div class="signature">
         
-        def <strong>max_uses=</strong>(_max_uses : UInt32)
+        def <strong>max_uses=</strong>(max_uses : UInt32)
 
-        <a class="method-permalink" href="#max_uses=(_max_uses:UInt32)-instance-method">#</a>
+        <a class="method-permalink" href="#max_uses=(max_uses:UInt32)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1240,19 +1289,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L26" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="revoked=(_revoked:Bool)-instance-method">
+    <div class="entry-detail" id="revoked=(revoked:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>revoked=</strong>(_revoked : Bool)
+        def <strong>revoked=</strong>(revoked : Bool)
 
-        <a class="method-permalink" href="#revoked=(_revoked:Bool)-instance-method">#</a>
+        <a class="method-permalink" href="#revoked=(revoked:Bool)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1268,33 +1321,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L23" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="temporary=(_temporary:Bool)-instance-method">
+    <div class="entry-detail" id="temporary=(temporary:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>temporary=</strong>(_temporary : Bool)
+        def <strong>temporary=</strong>(temporary : Bool)
 
-        <a class="method-permalink" href="#temporary=(_temporary:Bool)-instance-method">#</a>
+        <a class="method-permalink" href="#temporary=(temporary:Bool)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
-      <div class="signature">
-        
-        def <strong>to_json</strong>(json : JSON::Builder)
-
-        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1310,19 +1353,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L20" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="users=(_users:UInt32)-instance-method">
+    <div class="entry-detail" id="users=(users:UInt32)-instance-method">
       <div class="signature">
         
-        def <strong>users=</strong>(_users : UInt32)
+        def <strong>users=</strong>(users : UInt32)
 
-        <a class="method-permalink" href="#users=(_users:UInt32)-instance-method">#</a>
+        <a class="method-permalink" href="#users=(users:UInt32)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/invite.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>

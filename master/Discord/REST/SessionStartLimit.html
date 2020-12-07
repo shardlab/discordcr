@@ -800,6 +800,20 @@
 
 
 
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
 
 
 
@@ -819,7 +833,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/rest.cr#L22" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L22" target="_blank">
         discordcr/mappings/rest.cr
       </a>
     
@@ -841,7 +855,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(__temp_1112:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(__temp_1112 : JSON::PullParser)</a>
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -867,7 +881,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#remaining=(_remaining:Int32)-instance-method" class="signature"><strong>#remaining=</strong>(_remaining : Int32)</a>
+        <a href="#remaining=(remaining:Int32)-instance-method" class="signature"><strong>#remaining=</strong>(remaining : Int32)</a>
         
       </li>
     
@@ -877,12 +891,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#reset_after=(_reset_after:Time::Span)-instance-method" class="signature"><strong>#reset_after=</strong>(_reset_after : Time::Span)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#reset_after=(reset_after:Time::Span)-instance-method" class="signature"><strong>#reset_after=</strong>(reset_after : Time::Span)</a>
         
       </li>
     
@@ -892,7 +901,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#total=(_total:Int32)-instance-method" class="signature"><strong>#total=</strong>(_total : Int32)</a>
+        <a href="#total=(total:Int32)-instance-method" class="signature"><strong>#total=</strong>(total : Int32)</a>
         
       </li>
     
@@ -903,6 +912,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -946,16 +965,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(__temp_1112:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(__temp_1112 : JSON::PullParser)
+        def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(__temp_1112:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -985,19 +1006,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L26" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="remaining=(_remaining:Int32)-instance-method">
+    <div class="entry-detail" id="remaining=(remaining:Int32)-instance-method">
       <div class="signature">
         
-        def <strong>remaining=</strong>(_remaining : Int32)
+        def <strong>remaining=</strong>(remaining : Int32)
 
-        <a class="method-permalink" href="#remaining=(_remaining:Int32)-instance-method">#</a>
+        <a class="method-permalink" href="#remaining=(remaining:Int32)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1013,33 +1038,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L28" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="reset_after=(_reset_after:Time::Span)-instance-method">
+    <div class="entry-detail" id="reset_after=(reset_after:Time::Span)-instance-method">
       <div class="signature">
         
-        def <strong>reset_after=</strong>(_reset_after : Time::Span)
+        def <strong>reset_after=</strong>(reset_after : Time::Span)
 
-        <a class="method-permalink" href="#reset_after=(_reset_after:Time::Span)-instance-method">#</a>
+        <a class="method-permalink" href="#reset_after=(reset_after:Time::Span)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
-      <div class="signature">
-        
-        def <strong>to_json</strong>(json : JSON::Builder)
-
-        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1055,19 +1070,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="total=(_total:Int32)-instance-method">
+    <div class="entry-detail" id="total=(total:Int32)-instance-method">
       <div class="signature">
         
-        def <strong>total=</strong>(_total : Int32)
+        def <strong>total=</strong>(total : Int32)
 
-        <a class="method-permalink" href="#total=(_total:Int32)-instance-method">#</a>
+        <a class="method-permalink" href="#total=(total:Int32)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/rest.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>

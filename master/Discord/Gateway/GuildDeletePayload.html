@@ -789,6 +789,20 @@
 
 
 
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
 
 
 
@@ -808,7 +822,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/gateway.cr#L225" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L235" target="_blank">
         discordcr/mappings/gateway.cr
       </a>
     
@@ -830,7 +844,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(__temp_744:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(__temp_744 : JSON::PullParser)</a>
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -856,22 +870,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#id=(_id:Snowflake)-instance-method" class="signature"><strong>#id=</strong>(_id : Snowflake)</a>
+        <a href="#id=(id:Snowflake)-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#unavailable:Bool?-instance-method" class="signature"><strong>#unavailable</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unavailable:Union(Bool,Nil)-instance-method" class="signature"><strong>#unavailable</strong> : Union(Bool, Nil)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#unavailable=(_unavailable:Union(Bool,Nil))-instance-method" class="signature"><strong>#unavailable=</strong>(_unavailable : Union(Bool, Nil))</a>
+        <a href="#unavailable=(unavailable:Bool?)-instance-method" class="signature"><strong>#unavailable=</strong>(unavailable : Bool?)</a>
         
       </li>
     
@@ -882,6 +891,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -925,16 +944,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(__temp_744:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(__temp_744 : JSON::PullParser)
+        def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(__temp_744:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L236" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -964,61 +985,55 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L238" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="id=(_id:Snowflake)-instance-method">
+    <div class="entry-detail" id="id=(id:Snowflake)-instance-method">
       <div class="signature">
         
-        def <strong>id=</strong>(_id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
+        def <strong>id=</strong>(id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#id=(_id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#id=(id:Snowflake)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L238" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
+    <div class="entry-detail" id="unavailable:Bool?-instance-method">
       <div class="signature">
         
-        def <strong>to_json</strong>(json : JSON::Builder)
+        def <strong>unavailable</strong> : Bool?
 
-        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
+        <a class="method-permalink" href="#unavailable:Bool?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L239" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="unavailable:Union(Bool,Nil)-instance-method">
+    <div class="entry-detail" id="unavailable=(unavailable:Bool?)-instance-method">
       <div class="signature">
         
-        def <strong>unavailable</strong> : Union(Bool, Nil)
+        def <strong>unavailable=</strong>(unavailable : Bool?)
 
-        <a class="method-permalink" href="#unavailable:Union(Bool,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#unavailable=(unavailable:Bool?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="unavailable=(_unavailable:Union(Bool,Nil))-instance-method">
-      <div class="signature">
-        
-        def <strong>unavailable=</strong>(_unavailable : Union(Bool, Nil))
-
-        <a class="method-permalink" href="#unavailable=(_unavailable:Union(Bool,Nil))-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L239" target="_blank">View source</a>]
         
       </div>
     </div>

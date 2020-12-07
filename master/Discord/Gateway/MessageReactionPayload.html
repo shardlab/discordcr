@@ -789,6 +789,20 @@
 
 
 
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
 
 
 
@@ -808,7 +822,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/gateway.cr#L330" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L344" target="_blank">
         discordcr/mappings/gateway.cr
       </a>
     
@@ -830,7 +844,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(__temp_858:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(__temp_858 : JSON::PullParser)</a>
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -856,7 +870,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#channel_id=(_channel_id:Snowflake)-instance-method" class="signature"><strong>#channel_id=</strong>(_channel_id : Snowflake)</a>
+        <a href="#channel_id=(channel_id:Snowflake)-instance-method" class="signature"><strong>#channel_id=</strong>(channel_id : Snowflake)</a>
         
       </li>
     
@@ -866,17 +880,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#emoji=(_emoji:ReactionEmoji)-instance-method" class="signature"><strong>#emoji=</strong>(_emoji : ReactionEmoji)</a>
+        <a href="#emoji=(emoji:ReactionEmoji)-instance-method" class="signature"><strong>#emoji=</strong>(emoji : ReactionEmoji)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_id:Union(Snowflake,Nil)-instance-method" class="signature"><strong>#guild_id</strong> : Union(Snowflake, Nil)</a>
+        <a href="#guild_id:Snowflake?-instance-method" class="signature"><strong>#guild_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_id=(_guild_id:Union(Snowflake,Nil))-instance-method" class="signature"><strong>#guild_id=</strong>(_guild_id : Union(Snowflake, Nil))</a>
+        <a href="#guild_id=(guild_id:Snowflake?)-instance-method" class="signature"><strong>#guild_id=</strong>(guild_id : Snowflake?)</a>
         
       </li>
     
@@ -886,12 +900,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#message_id=(_message_id:Snowflake)-instance-method" class="signature"><strong>#message_id=</strong>(_message_id : Snowflake)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#message_id=(message_id:Snowflake)-instance-method" class="signature"><strong>#message_id=</strong>(message_id : Snowflake)</a>
         
       </li>
     
@@ -901,7 +910,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#user_id=(_user_id:Snowflake)-instance-method" class="signature"><strong>#user_id=</strong>(_user_id : Snowflake)</a>
+        <a href="#user_id=(user_id:Snowflake)-instance-method" class="signature"><strong>#user_id=</strong>(user_id : Snowflake)</a>
         
       </li>
     
@@ -912,6 +921,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -955,16 +974,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(__temp_858:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(__temp_858 : JSON::PullParser)
+        def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(__temp_858:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L345" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -994,19 +1015,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L348" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="channel_id=(_channel_id:Snowflake)-instance-method">
+    <div class="entry-detail" id="channel_id=(channel_id:Snowflake)-instance-method">
       <div class="signature">
         
-        def <strong>channel_id=</strong>(_channel_id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
+        def <strong>channel_id=</strong>(channel_id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#channel_id=(_channel_id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#channel_id=(channel_id:Snowflake)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L348" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1022,47 +1047,55 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L351" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="emoji=(_emoji:ReactionEmoji)-instance-method">
+    <div class="entry-detail" id="emoji=(emoji:ReactionEmoji)-instance-method">
       <div class="signature">
         
-        def <strong>emoji=</strong>(_emoji : <a href="../../Discord/ReactionEmoji.html">ReactionEmoji</a>)
+        def <strong>emoji=</strong>(emoji : <a href="../../Discord/ReactionEmoji.html">ReactionEmoji</a>)
 
-        <a class="method-permalink" href="#emoji=(_emoji:ReactionEmoji)-instance-method">#</a>
+        <a class="method-permalink" href="#emoji=(emoji:ReactionEmoji)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L351" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="guild_id:Union(Snowflake,Nil)-instance-method">
+    <div class="entry-detail" id="guild_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>guild_id</strong> : Union(<a href="../../Discord/Snowflake.html">Snowflake</a>, Nil)
+        def <strong>guild_id</strong> : <a href="../../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#guild_id:Union(Snowflake,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#guild_id:Snowflake?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L350" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="guild_id=(_guild_id:Union(Snowflake,Nil))-instance-method">
+    <div class="entry-detail" id="guild_id=(guild_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>guild_id=</strong>(_guild_id : Union(<a href="../../Discord/Snowflake.html">Snowflake</a>, Nil))
+        def <strong>guild_id=</strong>(guild_id : <a href="../../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#guild_id=(_guild_id:Union(Snowflake,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#guild_id=(guild_id:Snowflake?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L350" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1078,33 +1111,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L349" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="message_id=(_message_id:Snowflake)-instance-method">
+    <div class="entry-detail" id="message_id=(message_id:Snowflake)-instance-method">
       <div class="signature">
         
-        def <strong>message_id=</strong>(_message_id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
+        def <strong>message_id=</strong>(message_id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#message_id=(_message_id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#message_id=(message_id:Snowflake)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
-      <div class="signature">
-        
-        def <strong>to_json</strong>(json : JSON::Builder)
-
-        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L349" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1120,19 +1143,23 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L347" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="user_id=(_user_id:Snowflake)-instance-method">
+    <div class="entry-detail" id="user_id=(user_id:Snowflake)-instance-method">
       <div class="signature">
         
-        def <strong>user_id=</strong>(_user_id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
+        def <strong>user_id=</strong>(user_id : <a href="../../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#user_id=(_user_id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#user_id=(user_id:Snowflake)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/gateway.cr#L347" target="_blank">View source</a>]
         
       </div>
     </div>

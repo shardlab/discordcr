@@ -789,6 +789,20 @@
 
 
 
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
 
 
 
@@ -808,7 +822,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/channel.cr#L146" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L147" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -830,12 +844,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(title:String?=nil,type:String=&quot;rich&quot;,description:String?=nil,url:String?=nil,timestamp:Time?=nil,colour:UInt32?=nil,footer:EmbedFooter?=nil,image:EmbedImage?=nil,thumbnail:EmbedThumbnail?=nil,author:EmbedAuthor?=nil,fields:Array(EmbedField)?=nil)-class-method" class="signature"><strong>.new</strong>(title : String? = <span class="n">nil</span>, type : String = <span class="s">&quot;rich&quot;</span>, description : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, timestamp : Time? = <span class="n">nil</span>, colour : UInt32? = <span class="n">nil</span>, footer : EmbedFooter? = <span class="n">nil</span>, image : EmbedImage? = <span class="n">nil</span>, thumbnail : EmbedThumbnail? = <span class="n">nil</span>, author : EmbedAuthor? = <span class="n">nil</span>, fields : Array(EmbedField)? = <span class="n">nil</span>)</a>
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(__temp_158:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(__temp_158 : JSON::PullParser)</a>
+        <a href="#new(title:String?=nil,type:String=&quot;rich&quot;,description:String?=nil,url:String?=nil,timestamp:Time?=nil,colour:UInt32?=nil,footer:EmbedFooter?=nil,image:EmbedImage?=nil,thumbnail:EmbedThumbnail?=nil,author:EmbedAuthor?=nil,fields:Array(EmbedField)?=nil)-class-method" class="signature"><strong>.new</strong>(title : String? = <span class="n">nil</span>, type : String = <span class="s">&quot;rich&quot;</span>, description : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, timestamp : Time? = <span class="n">nil</span>, colour : UInt32? = <span class="n">nil</span>, footer : EmbedFooter? = <span class="n">nil</span>, image : EmbedImage? = <span class="n">nil</span>, thumbnail : EmbedThumbnail? = <span class="n">nil</span>, author : EmbedAuthor? = <span class="n">nil</span>, fields : Array(EmbedField)? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -856,12 +870,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#author:Union(EmbedAuthor,Nil)-instance-method" class="signature"><strong>#author</strong> : Union(EmbedAuthor, Nil)</a>
+        <a href="#author:EmbedAuthor?-instance-method" class="signature"><strong>#author</strong> : EmbedAuthor?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#author=(_author:Union(EmbedAuthor,Nil))-instance-method" class="signature"><strong>#author=</strong>(_author : Union(EmbedAuthor, Nil))</a>
+        <a href="#author=(author:EmbedAuthor?)-instance-method" class="signature"><strong>#author=</strong>(author : EmbedAuthor?)</a>
         
       </li>
     
@@ -871,97 +885,92 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#colour:Union(UInt32,Nil)-instance-method" class="signature"><strong>#colour</strong> : Union(UInt32, Nil)</a>
+        <a href="#colour:UInt32?-instance-method" class="signature"><strong>#colour</strong> : UInt32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#colour=(_colour:Union(UInt32,Nil))-instance-method" class="signature"><strong>#colour=</strong>(_colour : Union(UInt32, Nil))</a>
+        <a href="#colour=(colour:UInt32?)-instance-method" class="signature"><strong>#colour=</strong>(colour : UInt32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#description:Union(String,Nil)-instance-method" class="signature"><strong>#description</strong> : Union(String, Nil)</a>
+        <a href="#description:String?-instance-method" class="signature"><strong>#description</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#description=(_description:Union(String,Nil))-instance-method" class="signature"><strong>#description=</strong>(_description : Union(String, Nil))</a>
+        <a href="#description=(description:String?)-instance-method" class="signature"><strong>#description=</strong>(description : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fields:Union(Array(EmbedField),Nil)-instance-method" class="signature"><strong>#fields</strong> : Union(Array(EmbedField), Nil)</a>
+        <a href="#fields:Array(EmbedField)?-instance-method" class="signature"><strong>#fields</strong> : Array(EmbedField)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fields=(_fields:Union(Array(EmbedField),Nil))-instance-method" class="signature"><strong>#fields=</strong>(_fields : Union(Array(EmbedField), Nil))</a>
+        <a href="#fields=(fields:Array(EmbedField)?)-instance-method" class="signature"><strong>#fields=</strong>(fields : Array(EmbedField)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#footer:Union(EmbedFooter,Nil)-instance-method" class="signature"><strong>#footer</strong> : Union(EmbedFooter, Nil)</a>
+        <a href="#footer:EmbedFooter?-instance-method" class="signature"><strong>#footer</strong> : EmbedFooter?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#footer=(_footer:Union(EmbedFooter,Nil))-instance-method" class="signature"><strong>#footer=</strong>(_footer : Union(EmbedFooter, Nil))</a>
+        <a href="#footer=(footer:EmbedFooter?)-instance-method" class="signature"><strong>#footer=</strong>(footer : EmbedFooter?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image:Union(EmbedImage,Nil)-instance-method" class="signature"><strong>#image</strong> : Union(EmbedImage, Nil)</a>
+        <a href="#image:EmbedImage?-instance-method" class="signature"><strong>#image</strong> : EmbedImage?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image=(_image:Union(EmbedImage,Nil))-instance-method" class="signature"><strong>#image=</strong>(_image : Union(EmbedImage, Nil))</a>
+        <a href="#image=(image:EmbedImage?)-instance-method" class="signature"><strong>#image=</strong>(image : EmbedImage?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#provider:Union(EmbedProvider,Nil)-instance-method" class="signature"><strong>#provider</strong> : Union(EmbedProvider, Nil)</a>
+        <a href="#provider:EmbedProvider?-instance-method" class="signature"><strong>#provider</strong> : EmbedProvider?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#provider=(_provider:Union(EmbedProvider,Nil))-instance-method" class="signature"><strong>#provider=</strong>(_provider : Union(EmbedProvider, Nil))</a>
+        <a href="#provider=(provider:EmbedProvider?)-instance-method" class="signature"><strong>#provider=</strong>(provider : EmbedProvider?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#thumbnail:Union(EmbedThumbnail,Nil)-instance-method" class="signature"><strong>#thumbnail</strong> : Union(EmbedThumbnail, Nil)</a>
+        <a href="#thumbnail:EmbedThumbnail?-instance-method" class="signature"><strong>#thumbnail</strong> : EmbedThumbnail?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#thumbnail=(_thumbnail:Union(EmbedThumbnail,Nil))-instance-method" class="signature"><strong>#thumbnail=</strong>(_thumbnail : Union(EmbedThumbnail, Nil))</a>
+        <a href="#thumbnail=(thumbnail:EmbedThumbnail?)-instance-method" class="signature"><strong>#thumbnail=</strong>(thumbnail : EmbedThumbnail?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamp:Union(Time,Nil)-instance-method" class="signature"><strong>#timestamp</strong> : Union(Time, Nil)</a>
+        <a href="#timestamp:Time?-instance-method" class="signature"><strong>#timestamp</strong> : Time?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamp=(_timestamp:Union(Time,Nil))-instance-method" class="signature"><strong>#timestamp=</strong>(_timestamp : Union(Time, Nil))</a>
+        <a href="#timestamp=(timestamp:Time?)-instance-method" class="signature"><strong>#timestamp=</strong>(timestamp : Time?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#title:Union(String,Nil)-instance-method" class="signature"><strong>#title</strong> : Union(String, Nil)</a>
+        <a href="#title:String?-instance-method" class="signature"><strong>#title</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#title=(_title:Union(String,Nil))-instance-method" class="signature"><strong>#title=</strong>(_title : Union(String, Nil))</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#title=(title:String?)-instance-method" class="signature"><strong>#title=</strong>(title : String?)</a>
         
       </li>
     
@@ -971,27 +980,27 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#type=(_type:String)-instance-method" class="signature"><strong>#type=</strong>(_type : String)</a>
+        <a href="#type=(type:String)-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#url:Union(String,Nil)-instance-method" class="signature"><strong>#url</strong> : Union(String, Nil)</a>
+        <a href="#url:String?-instance-method" class="signature"><strong>#url</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#url=(_url:Union(String,Nil))-instance-method" class="signature"><strong>#url=</strong>(_url : Union(String, Nil))</a>
+        <a href="#url=(url:String?)-instance-method" class="signature"><strong>#url=</strong>(url : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#video:Union(EmbedVideo,Nil)-instance-method" class="signature"><strong>#video</strong> : Union(EmbedVideo, Nil)</a>
+        <a href="#video:EmbedVideo?-instance-method" class="signature"><strong>#video</strong> : EmbedVideo?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#video=(_video:Union(EmbedVideo,Nil))-instance-method" class="signature"><strong>#video=</strong>(_video : Union(EmbedVideo, Nil))</a>
+        <a href="#video=(video:EmbedVideo?)-instance-method" class="signature"><strong>#video=</strong>(video : EmbedVideo?)</a>
         
       </li>
     
@@ -1002,6 +1011,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -1045,6 +1064,22 @@
     Constructor Detail
   </h2>
   
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L148" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="new(title:String?=nil,type:String=&quot;rich&quot;,description:String?=nil,url:String?=nil,timestamp:Time?=nil,colour:UInt32?=nil,footer:EmbedFooter?=nil,image:EmbedImage?=nil,thumbnail:EmbedThumbnail?=nil,author:EmbedAuthor?=nil,fields:Array(EmbedField)?=nil)-class-method">
       <div class="signature">
         
@@ -1056,21 +1091,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/channel.cr#L147" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(__temp_158:JSON::PullParser)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(__temp_158 : JSON::PullParser)
-
-        <a class="method-permalink" href="#new(__temp_158:JSON::PullParser)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L166" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1089,30 +1110,34 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="author:Union(EmbedAuthor,Nil)-instance-method">
+    <div class="entry-detail" id="author:EmbedAuthor?-instance-method">
       <div class="signature">
         
-        def <strong>author</strong> : Union(<a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>, Nil)
+        def <strong>author</strong> : <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>?
 
-        <a class="method-permalink" href="#author:Union(EmbedAuthor,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#author:EmbedAuthor?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="author=(_author:Union(EmbedAuthor,Nil))-instance-method">
+    <div class="entry-detail" id="author=(author:EmbedAuthor?)-instance-method">
       <div class="signature">
         
-        def <strong>author=</strong>(_author : Union(<a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>, Nil))
+        def <strong>author=</strong>(author : <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>?)
 
-        <a class="method-permalink" href="#author=(_author:Union(EmbedAuthor,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#author=(author:EmbedAuthor?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1128,273 +1153,295 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/channel.cr#L171" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L174" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="colour:Union(UInt32,Nil)-instance-method">
+    <div class="entry-detail" id="colour:UInt32?-instance-method">
       <div class="signature">
         
-        def <strong>colour</strong> : Union(UInt32, Nil)
+        def <strong>colour</strong> : UInt32?
 
-        <a class="method-permalink" href="#colour:Union(UInt32,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#colour:UInt32?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L157" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="colour=(_colour:Union(UInt32,Nil))-instance-method">
+    <div class="entry-detail" id="colour=(colour:UInt32?)-instance-method">
       <div class="signature">
         
-        def <strong>colour=</strong>(_colour : Union(UInt32, Nil))
+        def <strong>colour=</strong>(colour : UInt32?)
 
-        <a class="method-permalink" href="#colour=(_colour:Union(UInt32,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#colour=(colour:UInt32?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L157" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="description:Union(String,Nil)-instance-method">
+    <div class="entry-detail" id="description:String?-instance-method">
       <div class="signature">
         
-        def <strong>description</strong> : Union(String, Nil)
+        def <strong>description</strong> : String?
 
-        <a class="method-permalink" href="#description:Union(String,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#description:String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L152" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="description=(_description:Union(String,Nil))-instance-method">
+    <div class="entry-detail" id="description=(description:String?)-instance-method">
       <div class="signature">
         
-        def <strong>description=</strong>(_description : Union(String, Nil))
+        def <strong>description=</strong>(description : String?)
 
-        <a class="method-permalink" href="#description=(_description:Union(String,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#description=(description:String?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L152" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="fields:Union(Array(EmbedField),Nil)-instance-method">
+    <div class="entry-detail" id="fields:Array(EmbedField)?-instance-method">
       <div class="signature">
         
-        def <strong>fields</strong> : Union(Array(<a href="../Discord/EmbedField.html">EmbedField</a>), Nil)
+        def <strong>fields</strong> : Array(<a href="../Discord/EmbedField.html">EmbedField</a>)?
 
-        <a class="method-permalink" href="#fields:Union(Array(EmbedField),Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#fields:Array(EmbedField)?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L164" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="fields=(_fields:Union(Array(EmbedField),Nil))-instance-method">
+    <div class="entry-detail" id="fields=(fields:Array(EmbedField)?)-instance-method">
       <div class="signature">
         
-        def <strong>fields=</strong>(_fields : Union(Array(<a href="../Discord/EmbedField.html">EmbedField</a>), Nil))
+        def <strong>fields=</strong>(fields : Array(<a href="../Discord/EmbedField.html">EmbedField</a>)?)
 
-        <a class="method-permalink" href="#fields=(_fields:Union(Array(EmbedField),Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#fields=(fields:Array(EmbedField)?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L164" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="footer:Union(EmbedFooter,Nil)-instance-method">
+    <div class="entry-detail" id="footer:EmbedFooter?-instance-method">
       <div class="signature">
         
-        def <strong>footer</strong> : Union(<a href="../Discord/EmbedFooter.html">EmbedFooter</a>, Nil)
+        def <strong>footer</strong> : <a href="../Discord/EmbedFooter.html">EmbedFooter</a>?
 
-        <a class="method-permalink" href="#footer:Union(EmbedFooter,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#footer:EmbedFooter?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L158" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="footer=(_footer:Union(EmbedFooter,Nil))-instance-method">
+    <div class="entry-detail" id="footer=(footer:EmbedFooter?)-instance-method">
       <div class="signature">
         
-        def <strong>footer=</strong>(_footer : Union(<a href="../Discord/EmbedFooter.html">EmbedFooter</a>, Nil))
+        def <strong>footer=</strong>(footer : <a href="../Discord/EmbedFooter.html">EmbedFooter</a>?)
 
-        <a class="method-permalink" href="#footer=(_footer:Union(EmbedFooter,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#footer=(footer:EmbedFooter?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L158" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="image:Union(EmbedImage,Nil)-instance-method">
+    <div class="entry-detail" id="image:EmbedImage?-instance-method">
       <div class="signature">
         
-        def <strong>image</strong> : Union(<a href="../Discord/EmbedImage.html">EmbedImage</a>, Nil)
+        def <strong>image</strong> : <a href="../Discord/EmbedImage.html">EmbedImage</a>?
 
-        <a class="method-permalink" href="#image:Union(EmbedImage,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#image:EmbedImage?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L159" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="image=(_image:Union(EmbedImage,Nil))-instance-method">
+    <div class="entry-detail" id="image=(image:EmbedImage?)-instance-method">
       <div class="signature">
         
-        def <strong>image=</strong>(_image : Union(<a href="../Discord/EmbedImage.html">EmbedImage</a>, Nil))
+        def <strong>image=</strong>(image : <a href="../Discord/EmbedImage.html">EmbedImage</a>?)
 
-        <a class="method-permalink" href="#image=(_image:Union(EmbedImage,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#image=(image:EmbedImage?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L159" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="provider:Union(EmbedProvider,Nil)-instance-method">
+    <div class="entry-detail" id="provider:EmbedProvider?-instance-method">
       <div class="signature">
         
-        def <strong>provider</strong> : Union(<a href="../Discord/EmbedProvider.html">EmbedProvider</a>, Nil)
+        def <strong>provider</strong> : <a href="../Discord/EmbedProvider.html">EmbedProvider</a>?
 
-        <a class="method-permalink" href="#provider:Union(EmbedProvider,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#provider:EmbedProvider?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L162" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="provider=(_provider:Union(EmbedProvider,Nil))-instance-method">
+    <div class="entry-detail" id="provider=(provider:EmbedProvider?)-instance-method">
       <div class="signature">
         
-        def <strong>provider=</strong>(_provider : Union(<a href="../Discord/EmbedProvider.html">EmbedProvider</a>, Nil))
+        def <strong>provider=</strong>(provider : <a href="../Discord/EmbedProvider.html">EmbedProvider</a>?)
 
-        <a class="method-permalink" href="#provider=(_provider:Union(EmbedProvider,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#provider=(provider:EmbedProvider?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L162" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="thumbnail:Union(EmbedThumbnail,Nil)-instance-method">
+    <div class="entry-detail" id="thumbnail:EmbedThumbnail?-instance-method">
       <div class="signature">
         
-        def <strong>thumbnail</strong> : Union(<a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>, Nil)
+        def <strong>thumbnail</strong> : <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>?
 
-        <a class="method-permalink" href="#thumbnail:Union(EmbedThumbnail,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#thumbnail:EmbedThumbnail?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L160" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="thumbnail=(_thumbnail:Union(EmbedThumbnail,Nil))-instance-method">
+    <div class="entry-detail" id="thumbnail=(thumbnail:EmbedThumbnail?)-instance-method">
       <div class="signature">
         
-        def <strong>thumbnail=</strong>(_thumbnail : Union(<a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>, Nil))
+        def <strong>thumbnail=</strong>(thumbnail : <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>?)
 
-        <a class="method-permalink" href="#thumbnail=(_thumbnail:Union(EmbedThumbnail,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#thumbnail=(thumbnail:EmbedThumbnail?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L160" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="timestamp:Union(Time,Nil)-instance-method">
+    <div class="entry-detail" id="timestamp:Time?-instance-method">
       <div class="signature">
         
-        def <strong>timestamp</strong> : Union(Time, Nil)
+        def <strong>timestamp</strong> : Time?
 
-        <a class="method-permalink" href="#timestamp:Union(Time,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#timestamp:Time?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L155" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="timestamp=(_timestamp:Union(Time,Nil))-instance-method">
+    <div class="entry-detail" id="timestamp=(timestamp:Time?)-instance-method">
       <div class="signature">
         
-        def <strong>timestamp=</strong>(_timestamp : Union(Time, Nil))
+        def <strong>timestamp=</strong>(timestamp : Time?)
 
-        <a class="method-permalink" href="#timestamp=(_timestamp:Union(Time,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#timestamp=(timestamp:Time?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L155" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="title:Union(String,Nil)-instance-method">
+    <div class="entry-detail" id="title:String?-instance-method">
       <div class="signature">
         
-        def <strong>title</strong> : Union(String, Nil)
+        def <strong>title</strong> : String?
 
-        <a class="method-permalink" href="#title:Union(String,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#title:String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L150" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="title=(_title:Union(String,Nil))-instance-method">
+    <div class="entry-detail" id="title=(title:String?)-instance-method">
       <div class="signature">
         
-        def <strong>title=</strong>(_title : Union(String, Nil))
+        def <strong>title=</strong>(title : String?)
 
-        <a class="method-permalink" href="#title=(_title:Union(String,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#title=(title:String?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
-      <div class="signature">
-        
-        def <strong>to_json</strong>(json : JSON::Builder)
-
-        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1410,75 +1457,87 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L151" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="type=(_type:String)-instance-method">
+    <div class="entry-detail" id="type=(type:String)-instance-method">
       <div class="signature">
         
-        def <strong>type=</strong>(_type : String)
+        def <strong>type=</strong>(type : String)
 
-        <a class="method-permalink" href="#type=(_type:String)-instance-method">#</a>
+        <a class="method-permalink" href="#type=(type:String)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L151" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="url:Union(String,Nil)-instance-method">
+    <div class="entry-detail" id="url:String?-instance-method">
       <div class="signature">
         
-        def <strong>url</strong> : Union(String, Nil)
+        def <strong>url</strong> : String?
 
-        <a class="method-permalink" href="#url:Union(String,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#url:String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L153" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="url=(_url:Union(String,Nil))-instance-method">
+    <div class="entry-detail" id="url=(url:String?)-instance-method">
       <div class="signature">
         
-        def <strong>url=</strong>(_url : Union(String, Nil))
+        def <strong>url=</strong>(url : String?)
 
-        <a class="method-permalink" href="#url=(_url:Union(String,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#url=(url:String?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L153" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="video:Union(EmbedVideo,Nil)-instance-method">
+    <div class="entry-detail" id="video:EmbedVideo?-instance-method">
       <div class="signature">
         
-        def <strong>video</strong> : Union(<a href="../Discord/EmbedVideo.html">EmbedVideo</a>, Nil)
+        def <strong>video</strong> : <a href="../Discord/EmbedVideo.html">EmbedVideo</a>?
 
-        <a class="method-permalink" href="#video:Union(EmbedVideo,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#video:EmbedVideo?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L161" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="video=(_video:Union(EmbedVideo,Nil))-instance-method">
+    <div class="entry-detail" id="video=(video:EmbedVideo?)-instance-method">
       <div class="signature">
         
-        def <strong>video=</strong>(_video : Union(<a href="../Discord/EmbedVideo.html">EmbedVideo</a>, Nil))
+        def <strong>video=</strong>(video : <a href="../Discord/EmbedVideo.html">EmbedVideo</a>?)
 
-        <a class="method-permalink" href="#video=(_video:Union(EmbedVideo,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#video=(video:EmbedVideo?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L161" target="_blank">View source</a>]
         
       </div>
     </div>

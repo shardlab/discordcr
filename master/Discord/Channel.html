@@ -789,6 +789,20 @@
 
 
 
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
 
 
 
@@ -808,7 +822,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/channel.cr#L78" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L79" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -830,7 +844,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(__temp_83:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(__temp_83 : JSON::PullParser)</a>
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -851,42 +865,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#application_id:Union(Snowflake,Nil)-instance-method" class="signature"><strong>#application_id</strong> : Union(Snowflake, Nil)</a>
+        <a href="#application_id:Snowflake?-instance-method" class="signature"><strong>#application_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#application_id=(_application_id:Union(Snowflake,Nil))-instance-method" class="signature"><strong>#application_id=</strong>(_application_id : Union(Snowflake, Nil))</a>
+        <a href="#application_id=(application_id:Snowflake?)-instance-method" class="signature"><strong>#application_id=</strong>(application_id : Snowflake?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bitrate:Union(UInt32,Nil)-instance-method" class="signature"><strong>#bitrate</strong> : Union(UInt32, Nil)</a>
+        <a href="#bitrate:UInt32?-instance-method" class="signature"><strong>#bitrate</strong> : UInt32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bitrate=(_bitrate:Union(UInt32,Nil))-instance-method" class="signature"><strong>#bitrate=</strong>(_bitrate : Union(UInt32, Nil))</a>
+        <a href="#bitrate=(bitrate:UInt32?)-instance-method" class="signature"><strong>#bitrate=</strong>(bitrate : UInt32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_id:Union(Snowflake,Nil)-instance-method" class="signature"><strong>#guild_id</strong> : Union(Snowflake, Nil)</a>
+        <a href="#guild_id:Snowflake?-instance-method" class="signature"><strong>#guild_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_id=(_guild_id:Union(Snowflake,Nil))-instance-method" class="signature"><strong>#guild_id=</strong>(_guild_id : Union(Snowflake, Nil))</a>
+        <a href="#guild_id=(guild_id:Snowflake?)-instance-method" class="signature"><strong>#guild_id=</strong>(guild_id : Snowflake?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#icon:Union(String,Nil)-instance-method" class="signature"><strong>#icon</strong> : Union(String, Nil)</a>
+        <a href="#icon:String?-instance-method" class="signature"><strong>#icon</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#icon=(_icon:Union(String,Nil))-instance-method" class="signature"><strong>#icon=</strong>(_icon : Union(String, Nil))</a>
+        <a href="#icon=(icon:String?)-instance-method" class="signature"><strong>#icon=</strong>(icon : String?)</a>
         
       </li>
     
@@ -896,17 +910,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#id=(_id:Snowflake)-instance-method" class="signature"><strong>#id=</strong>(_id : Snowflake)</a>
+        <a href="#id=(id:Snowflake)-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#last_message_id:Union(Snowflake,Nil)-instance-method" class="signature"><strong>#last_message_id</strong> : Union(Snowflake, Nil)</a>
+        <a href="#last_message_id:Snowflake?-instance-method" class="signature"><strong>#last_message_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#last_message_id=(_last_message_id:Union(Snowflake,Nil))-instance-method" class="signature"><strong>#last_message_id=</strong>(_last_message_id : Union(Snowflake, Nil))</a>
+        <a href="#last_message_id=(last_message_id:Snowflake?)-instance-method" class="signature"><strong>#last_message_id=</strong>(last_message_id : Snowflake?)</a>
         
       </li>
     
@@ -918,97 +932,92 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#name:Union(String,Nil)-instance-method" class="signature"><strong>#name</strong> : Union(String, Nil)</a>
+        <a href="#name:String?-instance-method" class="signature"><strong>#name</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#name=(_name:Union(String,Nil))-instance-method" class="signature"><strong>#name=</strong>(_name : Union(String, Nil))</a>
+        <a href="#name=(name:String?)-instance-method" class="signature"><strong>#name=</strong>(name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#nsfw:Union(Bool,Nil)-instance-method" class="signature"><strong>#nsfw</strong> : Union(Bool, Nil)</a>
+        <a href="#nsfw:Bool?-instance-method" class="signature"><strong>#nsfw</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#nsfw=(_nsfw:Union(Bool,Nil))-instance-method" class="signature"><strong>#nsfw=</strong>(_nsfw : Union(Bool, Nil))</a>
+        <a href="#nsfw=(nsfw:Bool?)-instance-method" class="signature"><strong>#nsfw=</strong>(nsfw : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#owner_id:Union(Snowflake,Nil)-instance-method" class="signature"><strong>#owner_id</strong> : Union(Snowflake, Nil)</a>
+        <a href="#owner_id:Snowflake?-instance-method" class="signature"><strong>#owner_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#owner_id=(_owner_id:Union(Snowflake,Nil))-instance-method" class="signature"><strong>#owner_id=</strong>(_owner_id : Union(Snowflake, Nil))</a>
+        <a href="#owner_id=(owner_id:Snowflake?)-instance-method" class="signature"><strong>#owner_id=</strong>(owner_id : Snowflake?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parent_id:Union(Snowflake,Nil)-instance-method" class="signature"><strong>#parent_id</strong> : Union(Snowflake, Nil)</a>
+        <a href="#parent_id:Snowflake?-instance-method" class="signature"><strong>#parent_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parent_id=(_parent_id:Union(Snowflake,Nil))-instance-method" class="signature"><strong>#parent_id=</strong>(_parent_id : Union(Snowflake, Nil))</a>
+        <a href="#parent_id=(parent_id:Snowflake?)-instance-method" class="signature"><strong>#parent_id=</strong>(parent_id : Snowflake?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#permission_overwrites:Union(Array(Overwrite),Nil)-instance-method" class="signature"><strong>#permission_overwrites</strong> : Union(Array(Overwrite), Nil)</a>
+        <a href="#permission_overwrites:Array(Overwrite)?-instance-method" class="signature"><strong>#permission_overwrites</strong> : Array(Overwrite)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#permission_overwrites=(_permission_overwrites:Union(Array(Overwrite),Nil))-instance-method" class="signature"><strong>#permission_overwrites=</strong>(_permission_overwrites : Union(Array(Overwrite), Nil))</a>
+        <a href="#permission_overwrites=(permission_overwrites:Array(Overwrite)?)-instance-method" class="signature"><strong>#permission_overwrites=</strong>(permission_overwrites : Array(Overwrite)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#position:Union(Int32,Nil)-instance-method" class="signature"><strong>#position</strong> : Union(Int32, Nil)</a>
+        <a href="#position:Int32?-instance-method" class="signature"><strong>#position</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#position=(_position:Union(Int32,Nil))-instance-method" class="signature"><strong>#position=</strong>(_position : Union(Int32, Nil))</a>
+        <a href="#position=(position:Int32?)-instance-method" class="signature"><strong>#position=</strong>(position : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rate_limit_per_user:Union(Int32,Nil)-instance-method" class="signature"><strong>#rate_limit_per_user</strong> : Union(Int32, Nil)</a>
+        <a href="#rate_limit_per_user:Int32?-instance-method" class="signature"><strong>#rate_limit_per_user</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rate_limit_per_user=(_rate_limit_per_user:Union(Int32,Nil))-instance-method" class="signature"><strong>#rate_limit_per_user=</strong>(_rate_limit_per_user : Union(Int32, Nil))</a>
+        <a href="#rate_limit_per_user=(rate_limit_per_user:Int32?)-instance-method" class="signature"><strong>#rate_limit_per_user=</strong>(rate_limit_per_user : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#recipients:Union(Array(User),Nil)-instance-method" class="signature"><strong>#recipients</strong> : Union(Array(User), Nil)</a>
+        <a href="#recipients:Array(User)?-instance-method" class="signature"><strong>#recipients</strong> : Array(User)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#recipients=(_recipients:Union(Array(User),Nil))-instance-method" class="signature"><strong>#recipients=</strong>(_recipients : Union(Array(User), Nil))</a>
+        <a href="#recipients=(recipients:Array(User)?)-instance-method" class="signature"><strong>#recipients=</strong>(recipients : Array(User)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#topic:String?-instance-method" class="signature"><strong>#topic</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#topic:Union(String,Nil)-instance-method" class="signature"><strong>#topic</strong> : Union(String, Nil)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#topic=(_topic:Union(String,Nil))-instance-method" class="signature"><strong>#topic=</strong>(_topic : Union(String, Nil))</a>
+        <a href="#topic=(topic:String?)-instance-method" class="signature"><strong>#topic=</strong>(topic : String?)</a>
         
       </li>
     
@@ -1018,17 +1027,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#type=(_type:ChannelType)-instance-method" class="signature"><strong>#type=</strong>(_type : ChannelType)</a>
+        <a href="#type=(type:ChannelType)-instance-method" class="signature"><strong>#type=</strong>(type : ChannelType)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user_limit:Union(UInt32,Nil)-instance-method" class="signature"><strong>#user_limit</strong> : Union(UInt32, Nil)</a>
+        <a href="#user_limit:UInt32?-instance-method" class="signature"><strong>#user_limit</strong> : UInt32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user_limit=(_user_limit:Union(UInt32,Nil))-instance-method" class="signature"><strong>#user_limit=</strong>(_user_limit : Union(UInt32, Nil))</a>
+        <a href="#user_limit=(user_limit:UInt32?)-instance-method" class="signature"><strong>#user_limit=</strong>(user_limit : UInt32?)</a>
         
       </li>
     
@@ -1039,6 +1048,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -1082,16 +1101,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(__temp_83:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(__temp_83 : JSON::PullParser)
+        def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(__temp_83:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L80" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1110,114 +1131,130 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="application_id:Union(Snowflake,Nil)-instance-method">
+    <div class="entry-detail" id="application_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>application_id</strong> : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+        def <strong>application_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#application_id:Union(Snowflake,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#application_id:Snowflake?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L95" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="application_id=(_application_id:Union(Snowflake,Nil))-instance-method">
+    <div class="entry-detail" id="application_id=(application_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>application_id=</strong>(_application_id : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+        def <strong>application_id=</strong>(application_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#application_id=(_application_id:Union(Snowflake,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#application_id=(application_id:Snowflake?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L95" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="bitrate:Union(UInt32,Nil)-instance-method">
+    <div class="entry-detail" id="bitrate:UInt32?-instance-method">
       <div class="signature">
         
-        def <strong>bitrate</strong> : Union(UInt32, Nil)
+        def <strong>bitrate</strong> : UInt32?
 
-        <a class="method-permalink" href="#bitrate:Union(UInt32,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#bitrate:UInt32?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="bitrate=(_bitrate:Union(UInt32,Nil))-instance-method">
+    <div class="entry-detail" id="bitrate=(bitrate:UInt32?)-instance-method">
       <div class="signature">
         
-        def <strong>bitrate=</strong>(_bitrate : Union(UInt32, Nil))
+        def <strong>bitrate=</strong>(bitrate : UInt32?)
 
-        <a class="method-permalink" href="#bitrate=(_bitrate:Union(UInt32,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#bitrate=(bitrate:UInt32?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="guild_id:Union(Snowflake,Nil)-instance-method">
+    <div class="entry-detail" id="guild_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>guild_id</strong> : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+        def <strong>guild_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#guild_id:Union(Snowflake,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#guild_id:Snowflake?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L84" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="guild_id=(_guild_id:Union(Snowflake,Nil))-instance-method">
+    <div class="entry-detail" id="guild_id=(guild_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>guild_id=</strong>(_guild_id : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+        def <strong>guild_id=</strong>(guild_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#guild_id=(_guild_id:Union(Snowflake,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#guild_id=(guild_id:Snowflake?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L84" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="icon:Union(String,Nil)-instance-method">
+    <div class="entry-detail" id="icon:String?-instance-method">
       <div class="signature">
         
-        def <strong>icon</strong> : Union(String, Nil)
+        def <strong>icon</strong> : String?
 
-        <a class="method-permalink" href="#icon:Union(String,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#icon:String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="icon=(_icon:Union(String,Nil))-instance-method">
+    <div class="entry-detail" id="icon=(icon:String?)-instance-method">
       <div class="signature">
         
-        def <strong>icon=</strong>(_icon : Union(String, Nil))
+        def <strong>icon=</strong>(icon : String?)
 
-        <a class="method-permalink" href="#icon=(_icon:Union(String,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#icon=(icon:String?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1233,47 +1270,55 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L82" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="id=(_id:Snowflake)-instance-method">
+    <div class="entry-detail" id="id=(id:Snowflake)-instance-method">
       <div class="signature">
         
-        def <strong>id=</strong>(_id : <a href="../Discord/Snowflake.html">Snowflake</a>)
+        def <strong>id=</strong>(id : <a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#id=(_id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#id=(id:Snowflake)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L82" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="last_message_id:Union(Snowflake,Nil)-instance-method">
+    <div class="entry-detail" id="last_message_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>last_message_id</strong> : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+        def <strong>last_message_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#last_message_id:Union(Snowflake,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#last_message_id:Snowflake?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L88" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="last_message_id=(_last_message_id:Union(Snowflake,Nil))-instance-method">
+    <div class="entry-detail" id="last_message_id=(last_message_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>last_message_id=</strong>(_last_message_id : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+        def <strong>last_message_id=</strong>(last_message_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#last_message_id=(_last_message_id:Union(Snowflake,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#last_message_id=(last_message_id:Snowflake?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1294,273 +1339,295 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/5cea883ad800e8fc456b40965d1d573ff6c3ca02/src/discordcr/mappings/channel.cr#L108" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L109" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="name:Union(String,Nil)-instance-method">
+    <div class="entry-detail" id="name:String?-instance-method">
       <div class="signature">
         
-        def <strong>name</strong> : Union(String, Nil)
+        def <strong>name</strong> : String?
 
-        <a class="method-permalink" href="#name:Union(String,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#name:String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L85" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="name=(_name:Union(String,Nil))-instance-method">
+    <div class="entry-detail" id="name=(name:String?)-instance-method">
       <div class="signature">
         
-        def <strong>name=</strong>(_name : Union(String, Nil))
+        def <strong>name=</strong>(name : String?)
 
-        <a class="method-permalink" href="#name=(_name:Union(String,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#name=(name:String?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L85" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="nsfw:Union(Bool,Nil)-instance-method">
+    <div class="entry-detail" id="nsfw:Bool?-instance-method">
       <div class="signature">
         
-        def <strong>nsfw</strong> : Union(Bool, Nil)
+        def <strong>nsfw</strong> : Bool?
 
-        <a class="method-permalink" href="#nsfw:Union(Bool,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#nsfw:Bool?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L92" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="nsfw=(_nsfw:Union(Bool,Nil))-instance-method">
+    <div class="entry-detail" id="nsfw=(nsfw:Bool?)-instance-method">
       <div class="signature">
         
-        def <strong>nsfw=</strong>(_nsfw : Union(Bool, Nil))
+        def <strong>nsfw=</strong>(nsfw : Bool?)
 
-        <a class="method-permalink" href="#nsfw=(_nsfw:Union(Bool,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#nsfw=(nsfw:Bool?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L92" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="owner_id:Union(Snowflake,Nil)-instance-method">
+    <div class="entry-detail" id="owner_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>owner_id</strong> : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+        def <strong>owner_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#owner_id:Union(Snowflake,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#owner_id:Snowflake?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L94" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="owner_id=(_owner_id:Union(Snowflake,Nil))-instance-method">
+    <div class="entry-detail" id="owner_id=(owner_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>owner_id=</strong>(_owner_id : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+        def <strong>owner_id=</strong>(owner_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#owner_id=(_owner_id:Union(Snowflake,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#owner_id=(owner_id:Snowflake?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L94" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="parent_id:Union(Snowflake,Nil)-instance-method">
+    <div class="entry-detail" id="parent_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>parent_id</strong> : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil)
+        def <strong>parent_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#parent_id:Union(Snowflake,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#parent_id:Snowflake?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L97" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="parent_id=(_parent_id:Union(Snowflake,Nil))-instance-method">
+    <div class="entry-detail" id="parent_id=(parent_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>parent_id=</strong>(_parent_id : Union(<a href="../Discord/Snowflake.html">Snowflake</a>, Nil))
+        def <strong>parent_id=</strong>(parent_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#parent_id=(_parent_id:Union(Snowflake,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#parent_id=(parent_id:Snowflake?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L97" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="permission_overwrites:Union(Array(Overwrite),Nil)-instance-method">
+    <div class="entry-detail" id="permission_overwrites:Array(Overwrite)?-instance-method">
       <div class="signature">
         
-        def <strong>permission_overwrites</strong> : Union(Array(<a href="../Discord/Overwrite.html">Overwrite</a>), Nil)
+        def <strong>permission_overwrites</strong> : Array(<a href="../Discord/Overwrite.html">Overwrite</a>)?
 
-        <a class="method-permalink" href="#permission_overwrites:Union(Array(Overwrite),Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#permission_overwrites:Array(Overwrite)?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L86" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="permission_overwrites=(_permission_overwrites:Union(Array(Overwrite),Nil))-instance-method">
+    <div class="entry-detail" id="permission_overwrites=(permission_overwrites:Array(Overwrite)?)-instance-method">
       <div class="signature">
         
-        def <strong>permission_overwrites=</strong>(_permission_overwrites : Union(Array(<a href="../Discord/Overwrite.html">Overwrite</a>), Nil))
+        def <strong>permission_overwrites=</strong>(permission_overwrites : Array(<a href="../Discord/Overwrite.html">Overwrite</a>)?)
 
-        <a class="method-permalink" href="#permission_overwrites=(_permission_overwrites:Union(Array(Overwrite),Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#permission_overwrites=(permission_overwrites:Array(Overwrite)?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L86" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="position:Union(Int32,Nil)-instance-method">
+    <div class="entry-detail" id="position:Int32?-instance-method">
       <div class="signature">
         
-        def <strong>position</strong> : Union(Int32, Nil)
+        def <strong>position</strong> : Int32?
 
-        <a class="method-permalink" href="#position:Union(Int32,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#position:Int32?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L96" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="position=(_position:Union(Int32,Nil))-instance-method">
+    <div class="entry-detail" id="position=(position:Int32?)-instance-method">
       <div class="signature">
         
-        def <strong>position=</strong>(_position : Union(Int32, Nil))
+        def <strong>position=</strong>(position : Int32?)
 
-        <a class="method-permalink" href="#position=(_position:Union(Int32,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#position=(position:Int32?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L96" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="rate_limit_per_user:Union(Int32,Nil)-instance-method">
+    <div class="entry-detail" id="rate_limit_per_user:Int32?-instance-method">
       <div class="signature">
         
-        def <strong>rate_limit_per_user</strong> : Union(Int32, Nil)
+        def <strong>rate_limit_per_user</strong> : Int32?
 
-        <a class="method-permalink" href="#rate_limit_per_user:Union(Int32,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#rate_limit_per_user:Int32?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L98" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="rate_limit_per_user=(_rate_limit_per_user:Union(Int32,Nil))-instance-method">
+    <div class="entry-detail" id="rate_limit_per_user=(rate_limit_per_user:Int32?)-instance-method">
       <div class="signature">
         
-        def <strong>rate_limit_per_user=</strong>(_rate_limit_per_user : Union(Int32, Nil))
+        def <strong>rate_limit_per_user=</strong>(rate_limit_per_user : Int32?)
 
-        <a class="method-permalink" href="#rate_limit_per_user=(_rate_limit_per_user:Union(Int32,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#rate_limit_per_user=(rate_limit_per_user:Int32?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L98" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="recipients:Union(Array(User),Nil)-instance-method">
+    <div class="entry-detail" id="recipients:Array(User)?-instance-method">
       <div class="signature">
         
-        def <strong>recipients</strong> : Union(Array(<a href="../Discord/User.html">User</a>), Nil)
+        def <strong>recipients</strong> : Array(<a href="../Discord/User.html">User</a>)?
 
-        <a class="method-permalink" href="#recipients:Union(Array(User),Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#recipients:Array(User)?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L91" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="recipients=(_recipients:Union(Array(User),Nil))-instance-method">
+    <div class="entry-detail" id="recipients=(recipients:Array(User)?)-instance-method">
       <div class="signature">
         
-        def <strong>recipients=</strong>(_recipients : Union(Array(<a href="../Discord/User.html">User</a>), Nil))
+        def <strong>recipients=</strong>(recipients : Array(<a href="../Discord/User.html">User</a>)?)
 
-        <a class="method-permalink" href="#recipients=(_recipients:Union(Array(User),Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#recipients=(recipients:Array(User)?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L91" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
+    <div class="entry-detail" id="topic:String?-instance-method">
       <div class="signature">
         
-        def <strong>to_json</strong>(json : JSON::Builder)
+        def <strong>topic</strong> : String?
 
-        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
+        <a class="method-permalink" href="#topic:String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L87" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="topic:Union(String,Nil)-instance-method">
+    <div class="entry-detail" id="topic=(topic:String?)-instance-method">
       <div class="signature">
         
-        def <strong>topic</strong> : Union(String, Nil)
+        def <strong>topic=</strong>(topic : String?)
 
-        <a class="method-permalink" href="#topic:Union(String,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#topic=(topic:String?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="topic=(_topic:Union(String,Nil))-instance-method">
-      <div class="signature">
-        
-        def <strong>topic=</strong>(_topic : Union(String, Nil))
-
-        <a class="method-permalink" href="#topic=(_topic:Union(String,Nil))-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1576,47 +1643,55 @@
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L83" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="type=(_type:ChannelType)-instance-method">
+    <div class="entry-detail" id="type=(type:ChannelType)-instance-method">
       <div class="signature">
         
-        def <strong>type=</strong>(_type : <a href="../Discord/ChannelType.html">ChannelType</a>)
+        def <strong>type=</strong>(type : <a href="../Discord/ChannelType.html">ChannelType</a>)
 
-        <a class="method-permalink" href="#type=(_type:ChannelType)-instance-method">#</a>
+        <a class="method-permalink" href="#type=(type:ChannelType)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L83" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="user_limit:Union(UInt32,Nil)-instance-method">
+    <div class="entry-detail" id="user_limit:UInt32?-instance-method">
       <div class="signature">
         
-        def <strong>user_limit</strong> : Union(UInt32, Nil)
+        def <strong>user_limit</strong> : UInt32?
 
-        <a class="method-permalink" href="#user_limit:Union(UInt32,Nil)-instance-method">#</a>
+        <a class="method-permalink" href="#user_limit:UInt32?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L90" target="_blank">View source</a>]
+        
       </div>
     </div>
   
-    <div class="entry-detail" id="user_limit=(_user_limit:Union(UInt32,Nil))-instance-method">
+    <div class="entry-detail" id="user_limit=(user_limit:UInt32?)-instance-method">
       <div class="signature">
         
-        def <strong>user_limit=</strong>(_user_limit : Union(UInt32, Nil))
+        def <strong>user_limit=</strong>(user_limit : UInt32?)
 
-        <a class="method-permalink" href="#user_limit=(_user_limit:Union(UInt32,Nil))-instance-method">#</a>
+        <a class="method-permalink" href="#user_limit=(user_limit:UInt32?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/mappings/channel.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
