@@ -4,60 +4,60 @@ module Discord
   # :nodoc:
   module VWS
     struct IdentifyPacket
-      def initialize(server_id, user_id, session_id, token)
-        @op = Discord::VoiceClient::OP_IDENTIFY
-        @d = IdentifyPayload.new(server_id, user_id, session_id, token)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : IdentifyPayload
+
+      def initialize(server_id, user_id, session_id, token)
+        @op = Discord::VoiceClient::OP_IDENTIFY
+        @d = IdentifyPayload.new(server_id, user_id, session_id, token)
+      end
     end
 
     struct IdentifyPayload
-      def initialize(@server_id, @user_id, @session_id, @token)
-      end
-
       include JSON::Serializable
 
       property server_id : UInt64
       property user_id : UInt64
       property session_id : String
       property token : String
+
+      def initialize(@server_id, @user_id, @session_id, @token)
+      end
     end
 
     struct SelectProtocolPacket
-      def initialize(protocol, data)
-        @op = Discord::VoiceClient::OP_SELECT_PROTOCOL
-        @d = SelectProtocolPayload.new(protocol, data)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : SelectProtocolPayload
+
+      def initialize(protocol, data)
+        @op = Discord::VoiceClient::OP_SELECT_PROTOCOL
+        @d = SelectProtocolPayload.new(protocol, data)
+      end
     end
 
     struct SelectProtocolPayload
-      def initialize(@protocol, @data)
-      end
-
       include JSON::Serializable
 
       property protocol : String
       property data : ProtocolData
+
+      def initialize(@protocol, @data)
+      end
     end
 
     struct ProtocolData
-      def initialize(@address, @port, @mode)
-      end
-
       include JSON::Serializable
 
       property address : String
       property port : UInt16
       property mode : String
+
+      def initialize(@address, @port, @mode)
+      end
     end
 
     struct ReadyPayload
@@ -77,25 +77,25 @@ module Discord
     end
 
     struct SpeakingPacket
-      def initialize(speaking, delay)
-        @op = Discord::VoiceClient::OP_SPEAKING
-        @d = SpeakingPayload.new(speaking, delay)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : SpeakingPayload
+
+      def initialize(speaking, delay)
+        @op = Discord::VoiceClient::OP_SPEAKING
+        @d = SpeakingPayload.new(speaking, delay)
+      end
     end
 
     struct SpeakingPayload
-      def initialize(@speaking, @delay)
-      end
-
       include JSON::Serializable
 
       property speaking : Bool
       property delay : Int32
+
+      def initialize(@speaking, @delay)
+      end
     end
 
     struct HelloPayload

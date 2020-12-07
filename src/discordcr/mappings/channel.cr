@@ -77,14 +77,6 @@ module Discord
   end
 
   struct Channel
-    # :nodoc:
-    def initialize(private_channel : PrivateChannel)
-      @id = private_channel.id
-      @type = private_channel.type
-      @recipients = private_channel.recipients
-      @last_message_id = private_channel.last_message_id
-    end
-
     include JSON::Serializable
 
     property id : Snowflake
@@ -104,6 +96,14 @@ module Discord
     property position : Int32?
     property parent_id : Snowflake?
     property rate_limit_per_user : Int32?
+
+    # :nodoc:
+    def initialize(private_channel : PrivateChannel)
+      @id = private_channel.id
+      @type = private_channel.type
+      @recipients = private_channel.recipients
+      @last_message_id = private_channel.last_message_id
+    end
 
     # Produces a string to mention this channel in a message
     def mention
@@ -145,14 +145,6 @@ module Discord
   end
 
   struct Embed
-    def initialize(@title : String? = nil, @type : String = "rich",
-                   @description : String? = nil, @url : String? = nil,
-                   @timestamp : Time? = nil, @colour : UInt32? = nil,
-                   @footer : EmbedFooter? = nil, @image : EmbedImage? = nil,
-                   @thumbnail : EmbedThumbnail? = nil, @author : EmbedAuthor? = nil,
-                   @fields : Array(EmbedField)? = nil)
-    end
-
     include JSON::Serializable
 
     property title : String?
@@ -171,6 +163,14 @@ module Discord
     property author : EmbedAuthor?
     property fields : Array(EmbedField)?
 
+    def initialize(@title : String? = nil, @type : String = "rich",
+                   @description : String? = nil, @url : String? = nil,
+                   @timestamp : Time? = nil, @colour : UInt32? = nil,
+                   @footer : EmbedFooter? = nil, @image : EmbedImage? = nil,
+                   @thumbnail : EmbedThumbnail? = nil, @author : EmbedAuthor? = nil,
+                   @fields : Array(EmbedField)? = nil)
+    end
+
     {% unless flag?(:correct_english) %}
       def color
         colour
@@ -179,15 +179,15 @@ module Discord
   end
 
   struct EmbedThumbnail
-    def initialize(@url : String)
-    end
-
     include JSON::Serializable
 
     property url : String
     property proxy_url : String?
     property height : UInt32?
     property width : UInt32?
+
+    def initialize(@url : String)
+    end
   end
 
   struct EmbedVideo
@@ -199,15 +199,15 @@ module Discord
   end
 
   struct EmbedImage
-    def initialize(@url : String)
-    end
-
     include JSON::Serializable
 
     property url : String
     property proxy_url : String?
     property height : UInt32?
     property width : UInt32?
+
+    def initialize(@url : String)
+    end
   end
 
   struct EmbedProvider
@@ -218,37 +218,48 @@ module Discord
   end
 
   struct EmbedAuthor
-    def initialize(@name : String? = nil, @url : String? = nil, @icon_url : String? = nil)
-    end
-
     include JSON::Serializable
 
     property name : String?
     property url : String?
     property icon_url : String?
     property proxy_icon_url : String?
+
+    def initialize(
+      @name : String? = nil,
+      @url : String? = nil,
+      @icon_url : String? = nil
+    )
+    end
   end
 
   struct EmbedFooter
-    def initialize(@text : String? = nil, @icon_url : String? = nil)
-    end
-
     include JSON::Serializable
 
     property text : String?
     property icon_url : String?
     property proxy_icon_url : String?
+
+    def initialize(
+      @text : String? = nil,
+      @icon_url : String? = nil
+    )
+    end
   end
 
   struct EmbedField
-    def initialize(@name : String, @value : String, @inline : Bool = false)
-    end
-
     include JSON::Serializable
 
     property name : String
     property value : String
     property inline : Bool
+
+    def initialize(
+      @name : String,
+      @value : String,
+      @inline : Bool = false
+    )
+    end
   end
 
   struct Attachment

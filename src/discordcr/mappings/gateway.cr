@@ -22,21 +22,18 @@ module Discord
     end
 
     struct IdentifyPacket
-      def initialize(token, properties, large_threshold, compress, shard, intents)
-        @op = Discord::Client::OP_IDENTIFY
-        @d = IdentifyPayload.new(token, properties, large_threshold, compress, shard, intents)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : IdentifyPayload
+
+      def initialize(token, properties, large_threshold, compress, shard, intents)
+        @op = Discord::Client::OP_IDENTIFY
+        @d = IdentifyPayload.new(token, properties, large_threshold, compress, shard, intents)
+      end
     end
 
     struct IdentifyPayload
-      def initialize(@token, @properties, @compress, @large_threshold, @shard, @intents)
-      end
-
       include JSON::Serializable
 
       property token : String
@@ -45,12 +42,12 @@ module Discord
       property large_threshold : Int32
       property shard : Tuple(Int32, Int32)?
       property intents : Intents?
+
+      def initialize(@token, @properties, @compress, @large_threshold, @shard, @intents)
+      end
     end
 
     struct IdentifyProperties
-      def initialize(@os, @browser, @device, @referrer, @referring_domain)
-      end
-
       include JSON::Serializable
 
       @[JSON::Field(key: "$os")]
@@ -63,6 +60,9 @@ module Discord
       property referrer : String
       @[JSON::Field(key: "$referring_domain")]
       property referring_domain : String
+
+      def initialize(@os, @browser, @device, @referrer, @referring_domain)
+      end
     end
 
     @[Flags]
@@ -85,46 +85,43 @@ module Discord
     end
 
     struct ResumePacket
-      def initialize(token, session_id, seq)
-        @op = Discord::Client::OP_RESUME
-        @d = ResumePayload.new(token, session_id, seq)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : ResumePayload
+
+      def initialize(token, session_id, seq)
+        @op = Discord::Client::OP_RESUME
+        @d = ResumePayload.new(token, session_id, seq)
+      end
     end
 
     # :nodoc:
     struct ResumePayload
-      def initialize(@token, @session_id, @seq)
-      end
-
       include JSON::Serializable
 
       property token : String
       property session_id : String
       property seq : Int64
+
+      def initialize(@token, @session_id, @seq)
+      end
     end
 
     struct StatusUpdatePacket
-      def initialize(status, game, afk, since)
-        @op = Discord::Client::OP_STATUS_UPDATE
-        @d = StatusUpdatePayload.new(status, game, afk, since)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : StatusUpdatePayload
+
+      def initialize(status, game, afk, since)
+        @op = Discord::Client::OP_STATUS_UPDATE
+        @d = StatusUpdatePayload.new(status, game, afk, since)
+      end
     end
 
     # :nodoc:
     struct StatusUpdatePayload
-      def initialize(@status, @game, @afk, @since)
-      end
-
       include JSON::Serializable
 
       @[JSON::Field(emit_null: true)]
@@ -134,25 +131,25 @@ module Discord
       property afk : Bool
       @[JSON::Field(emit_null: true)]
       property since : Int64?
+
+      def initialize(@status, @game, @afk, @since)
+      end
     end
 
     struct VoiceStateUpdatePacket
-      def initialize(guild_id, channel_id, self_mute, self_deaf)
-        @op = Discord::Client::OP_VOICE_STATE_UPDATE
-        @d = VoiceStateUpdatePayload.new(guild_id, channel_id, self_mute, self_deaf)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : VoiceStateUpdatePayload
+
+      def initialize(guild_id, channel_id, self_mute, self_deaf)
+        @op = Discord::Client::OP_VOICE_STATE_UPDATE
+        @d = VoiceStateUpdatePayload.new(guild_id, channel_id, self_mute, self_deaf)
+      end
     end
 
     # :nodoc:
     struct VoiceStateUpdatePayload
-      def initialize(@guild_id, @channel_id, @self_mute, @self_deaf)
-      end
-
       include JSON::Serializable
 
       property guild_id : UInt64
@@ -160,30 +157,33 @@ module Discord
       property channel_id : UInt64?
       property self_mute : Bool
       property self_deaf : Bool
+
+      def initialize(@guild_id, @channel_id, @self_mute, @self_deaf)
+      end
     end
 
     struct RequestGuildMembersPacket
-      def initialize(guild_id, query, limit)
-        @op = Discord::Client::OP_REQUEST_GUILD_MEMBERS
-        @d = RequestGuildMembersPayload.new(guild_id, query, limit)
-      end
-
       include JSON::Serializable
 
       property op : Int32
       property d : RequestGuildMembersPayload
+
+      def initialize(guild_id, query, limit)
+        @op = Discord::Client::OP_REQUEST_GUILD_MEMBERS
+        @d = RequestGuildMembersPayload.new(guild_id, query, limit)
+      end
     end
 
     # :nodoc:
     struct RequestGuildMembersPayload
-      def initialize(@guild_id, @query, @limit)
-      end
-
       include JSON::Serializable
 
       property guild_id : UInt64
       property query : String
       property limit : Int32
+
+      def initialize(@guild_id, @query, @limit)
+      end
     end
 
     struct HelloPayload

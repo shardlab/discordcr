@@ -2,16 +2,6 @@ require "./converters"
 
 module Discord
   struct User
-    # :nodoc:
-    def initialize(partial : PartialUser)
-      @username = partial.username.not_nil!
-      @id = partial.id
-      @discriminator = partial.discriminator.not_nil!
-      @avatar = partial.avatar
-      @email = partial.email
-      @bot = partial.bot
-    end
-
     include JSON::Serializable
 
     property username : String
@@ -25,6 +15,16 @@ module Discord
     property verified : Bool?
     property member : PartialGuildMember?
     property flags : UserFlags?
+
+    # :nodoc:
+    def initialize(partial : PartialUser)
+      @username = partial.username.not_nil!
+      @id = partial.id
+      @discriminator = partial.discriminator.not_nil!
+      @avatar = partial.avatar
+      @email = partial.email
+      @bot = partial.bot
+    end
 
     # Produces a CDN URL to this user's avatar in the given `size`.
     # If the user has an avatar a WebP will be returned, or a GIF

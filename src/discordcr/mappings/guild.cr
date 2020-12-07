@@ -3,27 +3,6 @@ require "./voice"
 
 module Discord
   struct Guild
-    # :nodoc:
-    def initialize(payload : Gateway::GuildCreatePayload)
-      @id = payload.id
-      @name = payload.name
-      @icon = payload.icon
-      @splash = payload.splash
-      @owner_id = payload.owner_id
-      @region = payload.region
-      @afk_channel_id = payload.afk_channel_id
-      @afk_timeout = payload.afk_timeout
-      @verification_level = payload.verification_level
-      @premium_tier = payload.premium_tier
-      @roles = payload.roles
-      @emoji = payload.emoji
-      @features = payload.features
-      @widget_channel_id = payload.widget_channel_id
-      @default_message_notifications = payload.default_message_notifications
-      @explicit_content_filter = payload.explicit_content_filter
-      @system_channel_id = payload.system_channel_id
-    end
-
     include JSON::Serializable
 
     property id : Snowflake
@@ -48,6 +27,27 @@ module Discord
     property default_message_notifications : UInt8
     property explicit_content_filter : UInt8
     property system_channel_id : Snowflake?
+
+    # :nodoc:
+    def initialize(payload : Gateway::GuildCreatePayload)
+      @id = payload.id
+      @name = payload.name
+      @icon = payload.icon
+      @splash = payload.splash
+      @owner_id = payload.owner_id
+      @region = payload.region
+      @afk_channel_id = payload.afk_channel_id
+      @afk_timeout = payload.afk_timeout
+      @verification_level = payload.verification_level
+      @premium_tier = payload.premium_tier
+      @roles = payload.roles
+      @emoji = payload.emoji
+      @features = payload.features
+      @widget_channel_id = payload.widget_channel_id
+      @default_message_notifications = payload.default_message_notifications
+      @explicit_content_filter = payload.explicit_content_filter
+      @system_channel_id = payload.system_channel_id
+    end
 
     {% unless flag?(:correct_english) %}
       def emojis
@@ -89,6 +89,18 @@ module Discord
   end
 
   struct GuildMember
+    include JSON::Serializable
+
+    property user : User
+    property nick : String?
+    property roles : Array(Snowflake)
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property joined_at : Time?
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property premium_since : Time?
+    property deaf : Bool?
+    property mute : Bool?
+
     # :nodoc:
     def initialize(user : User, partial_member : PartialGuildMember)
       @user = user
@@ -125,18 +137,6 @@ module Discord
       @roles = payload.roles
       # Presence updates have no joined_at or deaf/mute, thanks Discord
     end
-
-    include JSON::Serializable
-
-    property user : User
-    property nick : String?
-    property roles : Array(Snowflake)
-    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-    property joined_at : Time?
-    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-    property premium_since : Time?
-    property deaf : Bool?
-    property mute : Bool?
 
     # Produces a string to mention this member in a message
     def mention
@@ -263,8 +263,7 @@ module Discord
   end
 
   struct GamePlaying
-    def initialize(@name = nil, @type : Type? = nil, @url = nil, @state = nil, @emoji = nil)
-    end
+    include JSON::Serializable
 
     enum Type : UInt8
       Playing   = 0
@@ -274,13 +273,20 @@ module Discord
       Custom    = 4
     end
 
-    include JSON::Serializable
-
     property name : String?
     property type : Type?
     property url : String?
     property state : String?
     property emoji : Emoji?
+
+    def initialize(
+      @name = nil,
+      @type : Type? = nil,
+      @url = nil,
+      @state = nil,
+      @emoji = nil
+    )
+    end
   end
 
   struct Presence
