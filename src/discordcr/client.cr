@@ -446,6 +446,15 @@ module Discord
 
         payload = Gateway::ResumedPayload.from_json(data)
         call_event resumed, payload
+      when "APPLICATION_COMMAND_CREATE"
+        payload = Gateway::ApplicationCommandPayload.from_json(data)
+        call_event application_command_create, payload
+      when "APPLICATION_COMMAND_UPDATE"
+        payload = Gateway::ApplicationCommandPayload.from_json(data)
+        call_event application_command_update, payload
+      when "APPLICATION_COMMAND_DELETE"
+        payload = Gateway::ApplicationCommandPayload.from_json(data)
+        call_event application_command_delete, payload
       when "CHANNEL_CREATE"
         payload = Channel.from_json(data)
 
@@ -575,6 +584,10 @@ module Discord
         @cache.try &.remove_guild_role(payload.guild_id, payload.role_id)
 
         call_event guild_role_delete, payload
+      when "INTERACTION_CREATE"
+        payload = Interaction.from_json(data)
+
+        call_event interaction_create, payload
       when "INVITE_CREATE"
         payload = Gateway::InviteCreatePayload.from_json(data)
 
@@ -708,6 +721,21 @@ module Discord
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#resumed)
     event resumed, Gateway::ResumedPayload
 
+    # Called when a new slash command is created.
+    #
+    # [API docs for this event]()
+    event application_command_create, Gateway::ApplicationCommandPayload
+
+    # Called when a new slash command is updated.
+    #
+    # [API docs for this event]()
+    event application_command_update, Gateway::ApplicationCommandPayload
+
+    # Called when a new slash command is deleted.
+    #
+    # [API docs for this event]()
+    event application_command_delete, Gateway::ApplicationCommandPayload
+
     # Called when a channel has been created on a server the bot has access to,
     # or when somebody has started a DM channel with the bot.
     #
@@ -812,6 +840,11 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-role-delete)
     event guild_role_delete, Gateway::GuildRoleDeletePayload
+
+    # Called when a user in a guild uses a slash command.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#interaction-create)
+    event interaction_create, Interaction
 
     # Called when an invite is created on a guild.
     #

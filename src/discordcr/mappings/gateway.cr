@@ -3,6 +3,8 @@ require "./user"
 require "./channel"
 require "./guild"
 
+require "./interaction"
+
 module Discord
   module Gateway
     struct ReadyPayload
@@ -448,6 +450,17 @@ module Discord
       @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
       property last_pin_timestamp : Time?
       property channel_id : Snowflake
+    end
+
+    struct ApplicationCommandPayload
+      include JSON::Serializable
+
+      property guild_id : Snowflake
+      property id : Snowflake
+      property application_id : Snowflake
+      property name : String
+      property description : String
+      property options : Array(ApplicationCommandOption)?
     end
   end
 end
