@@ -14,9 +14,27 @@ module Discord
     UserPremiumGuildSubscriptionTier1 =  9
     UserPremiumGuildSubscriptionTier2 = 10
     UserPremiumGuildSubscriptionTier3 = 11
+    ChannelFollowAdd                  = 12
+    GuildDiscoveryDisqualified        = 14
+    GuildDiscoveryRequalified         = 15
+    Reply                             = 19
+    ApplicationCommand                = 20
 
     def self.new(pull : JSON::PullParser)
       MessageType.new(pull.read_int.to_u8)
+    end
+  end
+
+  @[Flags]
+  enum MessageFlags : UInt8
+    Crossposted          = 1 << 0
+    IsCrosspost          = 1 << 1
+    SuppressEmbeds       = 1 << 2
+    SourceMessageDeleted = 1 << 3
+    Urgent               = 1 << 4
+
+    def self.new(pull : JSON::PullParser)
+      MessageFlags.new(pull.read_int.to_u8)
     end
   end
 
@@ -32,16 +50,23 @@ module Discord
     property member : PartialGuildMember?
     @[JSON::Field(converter: Discord::TimestampConverter)]
     property timestamp : Time
+    property edited_timestamp : Time?
     property tts : Bool
     property mention_everyone : Bool
     property mentions : Array(User)
     property mention_roles : Array(Snowflake)
+    property mention_channels : Array(Snowflake)?
     property attachments : Array(Attachment)
     property embeds : Array(Embed)
     property pinned : Bool?
     property reactions : Array(Reaction)?
     property nonce : String | Int64?
+    property webhook_id : Snowflake?
     property activity : Activity?
+    property application : Application?
+    property message_reference : MessageReference?
+    property flags : MessageFlags?
+    property referenced_message : JSON::Any?
   end
 
   enum ActivityType : UInt8
@@ -60,6 +85,16 @@ module Discord
 
     property type : ActivityType
     property party_id : String?
+  end
+
+  struct Application
+    include JSON::Serializable
+
+    property id : Snowflake
+    property cover_image : String?
+    property description : String
+    property icon : String?
+    property name : String
   end
 
   enum ChannelType : UInt8
@@ -96,6 +131,8 @@ module Discord
     property position : Int32?
     property parent_id : Snowflake?
     property rate_limit_per_user : Int32?
+    @[JSON::Field(converter: Discord::TimestampConverter)]
+    property last_pin_timestamp : Time?
 
     # :nodoc:
     def initialize(private_channel : PrivateChannel)
@@ -272,5 +309,29 @@ module Discord
     property proxy_url : String
     property height : UInt32?
     property width : UInt32?
+  end
+
+  struct MessageReference
+    include JSON::Serializable
+
+    property message_id : UInt64 | Snowflake?
+    property channel_id : UInt64 | Snowflake?
+    property guild_id : UInt64 | Snowflake?
+
+    def initialize(@message_id : UInt64 | Snowflake, @guild_id : UInt64 | Snowflake, @channel_id : UInt64 | Snowflake? = nil)
+    end
+  end
+
+  struct AllowedMentions
+    include JSON::Serializable
+
+    property parse : Array(String)?
+    property roles : Array(Snowflake) | Array(UInt64)?
+    property users : Array(Snowflake) | Array(UInt64)?
+    property replied_user : Bool
+
+    def initialize(@parse : Array(String)? = nil, @roles : Array(Snowflake) | Array(UInt64)? = nil,
+                   @users : Array(Snowflake) | Array(UInt64)? = nil, @replied_user : Bool = false)
+    end
   end
 end
