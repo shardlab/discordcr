@@ -847,7 +847,7 @@ refrain from caching at all.</p>
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L35" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L35" target="_blank">
         discordcr/cache.cr
       </a>
     
@@ -941,6 +941,13 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
+        <a href="#cache(voice_state:VoiceState)-instance-method" class="signature"><strong>#cache</strong>(voice_state : VoiceState)</a>
+        
+          <div class="summary"><p>Adds a specific <em>voice state</em> to the cache.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#cache_current_user(current_user:User)-instance-method" class="signature"><strong>#cache_current_user</strong>(current_user : User)</a>
         
           <div class="summary"><p>Caches the current user.</p></div>
@@ -1018,16 +1025,16 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#dm_channels:Hash(UInt64,UInt64)-instance-method" class="signature"><strong>#dm_channels</strong> : Hash(UInt64, UInt64)</a>
+        <a href="#delete_voice_state(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_voice_state</strong>(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)</a>
         
-          <div class="summary"><p>Mapping of users to the respective DM channels the bot has open with them, represented as {user ID => channel ID}.</p></div>
+          <div class="summary"><p>Deletes voice state for user in guild from cache.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_channels</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
+        <a href="#dm_channels:Hash(UInt64,UInt64)-instance-method" class="signature"><strong>#dm_channels</strong> : Hash(UInt64, UInt64)</a>
         
-          <div class="summary"><p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p></div>
+          <div class="summary"><p>Mapping of users to the respective DM channels the bot has open with them, represented as {user ID => channel ID}.</p></div>
         
       </li>
     
@@ -1039,9 +1046,9 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_roles(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_roles</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
+        <a href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_channels</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
         
-          <div class="summary"><p>Returns all roles of a guild, identified by its <em>guild_id</em>.</p></div>
+          <div class="summary"><p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p></div>
         
       </li>
     
@@ -1049,6 +1056,13 @@ refrain from caching at all.</p>
         <a href="#guild_roles:Hash(UInt64,Array(UInt64))-instance-method" class="signature"><strong>#guild_roles</strong> : Hash(UInt64, Array(UInt64))</a>
         
           <div class="summary"><p>Mapping of guilds to the roles on them, represented as {guild ID => [role IDs]}.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_roles(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_roles</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
+        
+          <div class="summary"><p>Returns all roles of a guild, identified by its <em>guild_id</em>.</p></div>
         
       </li>
     
@@ -1130,6 +1144,13 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
+        <a href="#resolve_voice_state(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake):VoiceState-instance-method" class="signature"><strong>#resolve_voice_state</strong>(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake) : VoiceState</a>
+        
+          <div class="summary"><p>Resolves a voice state by <em>guild ID</em> and <em>user ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#roles:Hash(UInt64,Discord::Role)-instance-method" class="signature"><strong>#roles</strong> : Hash(UInt64, Discord::Role)</a>
         
           <div class="summary"><p>A map of all roles on servers the bot is on.</p></div>
@@ -1140,6 +1161,13 @@ refrain from caching at all.</p>
         <a href="#users:Hash(UInt64,Discord::User)-instance-method" class="signature"><strong>#users</strong> : Hash(UInt64, Discord::User)</a>
         
           <div class="summary"><p>A map of cached users.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#voice_states:Hash(UInt64,Hash(UInt64,Discord::VoiceState))-instance-method" class="signature"><strong>#voice_states</strong> : Hash(UInt64, Hash(UInt64, Discord::VoiceState))</a>
+        
+          <div class="summary"><p>Mapping of users in guild to voice states, represented as {guild ID => {user ID => voice state}}</p></div>
         
       </li>
     
@@ -1200,7 +1228,7 @@ misses) should be done on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L74" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1236,7 +1264,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L258" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L286" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1258,7 +1286,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L237" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1279,7 +1307,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L197" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1300,7 +1328,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L182" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L202" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1321,7 +1349,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L187" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L207" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1342,7 +1370,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L192" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L212" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1363,7 +1391,28 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L204" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L224" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(voice_state:VoiceState)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(voice_state : <a href="../Discord/VoiceState.html">VoiceState</a>)
+
+        <a class="method-permalink" href="#cache(voice_state:VoiceState)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds a specific <em>voice state</em> to the cache.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L229" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1384,7 +1433,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L217" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L245" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1406,7 +1455,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L210" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L238" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1429,7 +1478,7 @@ processing chunks; outside of that it is likely not of much use.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L250" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1451,7 +1500,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1472,7 +1521,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L149" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1493,7 +1542,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L177" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L190" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1514,7 +1563,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L172" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L185" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1535,7 +1584,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L154" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L167" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1557,7 +1606,7 @@ is on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L160" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L173" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1578,7 +1627,7 @@ is on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L167" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L180" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1599,7 +1648,28 @@ is on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L144" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L157" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_voice_state(guild_id:UInt64|Snowflake,user_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_voice_state</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, user_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_voice_state(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes voice state for user in guild from cache.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L195" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1621,28 +1691,7 @@ represented as {user ID => channel ID}.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L62" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="guild_channels(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
-      <div class="signature">
-        
-        def <strong>guild_channels</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(<a href="../UInt64.html">UInt64</a>)
-
-        <a class="method-permalink" href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L252" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1664,28 +1713,28 @@ represented as {user ID => channel ID}.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="guild_roles(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
+    <div class="entry-detail" id="guild_channels(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
       <div class="signature">
         
-        def <strong>guild_roles</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(<a href="../UInt64.html">UInt64</a>)
+        def <strong>guild_channels</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(<a href="../UInt64.html">UInt64</a>)
 
-        <a class="method-permalink" href="#guild_roles(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method">#</a>
+        <a class="method-permalink" href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Returns all roles of a guild, identified by its <em>guild_id</em>.</p>
+          <p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L231" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L280" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1707,7 +1756,28 @@ represented as {user ID => channel ID}.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_roles(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_roles</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(<a href="../UInt64.html">UInt64</a>)
+
+        <a class="method-permalink" href="#guild_roles(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns all roles of a guild, identified by its <em>guild_id</em>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L259" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1730,7 +1800,7 @@ affected guilds would be missing here too.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1754,7 +1824,7 @@ well as all members that have been chunked (see
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1775,7 +1845,7 @@ well as all members that have been chunked (see
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L266" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L294" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1796,7 +1866,7 @@ well as all members that have been chunked (see
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L245" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L273" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1818,7 +1888,7 @@ will do an API call.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L102" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1841,7 +1911,7 @@ always be cached.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1863,7 +1933,7 @@ always be cached.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1885,7 +1955,7 @@ will do an API call.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L103" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L109" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1908,7 +1978,7 @@ object is not cached.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1931,7 +2001,7 @@ all roles should be cached at all times so it won't be a problem.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L121" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1953,7 +2023,30 @@ will do an API call.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L95" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_voice_state(guild_id:UInt64|Snowflake,user_id:UInt64|Snowflake):VoiceState-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_voice_state</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, user_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : <a href="../Discord/VoiceState.html">VoiceState</a>
+
+        <a class="method-permalink" href="#resolve_voice_state(guild_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake):VoiceState-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Resolves a voice state by <em>guild ID</em> and <em>user ID</em>. No API request will be
+performed if voice state is not cached, because there is no endpoint for
+it. If there is a gateway connection this should always be cached.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L152" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1975,7 +2068,7 @@ guild, as role IDs are unique even across guilds.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1998,7 +2091,29 @@ the bot in the past (and haven't been deleted by means of <code><a href="../Disc
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/325af6a30f058b8d994112dd7abaea320852575b/src/discordcr/cache.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="voice_states:Hash(UInt64,Hash(UInt64,Discord::VoiceState))-instance-method">
+      <div class="signature">
+        
+        def <strong>voice_states</strong> : Hash(<a href="../UInt64.html">UInt64</a>, Hash(<a href="../UInt64.html">UInt64</a>, <a href="../Discord/VoiceState.html">Discord::VoiceState</a>))
+
+        <a class="method-permalink" href="#voice_states:Hash(UInt64,Hash(UInt64,Discord::VoiceState))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Mapping of users in guild to voice states, represented as {guild ID =>
+{user ID => voice state}}</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/fc6299ad54c2796510c1132b43a11a60ee4d1747/src/discordcr/cache.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
