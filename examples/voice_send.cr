@@ -9,6 +9,8 @@ require "../src/discordcr"
 
 # Make sure to replace this fake data with actual data when running.
 client = Discord::Client.new(token: "Bot MjI5NDU5NjgxOTU1NjUyMzM3.Cpnz31.GQ7K9xwZtvC40y8MPY3eTqjEIXm", client_id: 229459681955652337_u64)
+cache = Discord::Cache.new(client)
+client.cache = cache
 
 # ID of the current user, required to create a voice client
 current_user_id = nil
@@ -35,6 +37,17 @@ client.on_message_create do |payload|
     client.create_message(payload.channel_id, "Connecting...")
     connect_channel_id = payload.channel_id
     client.voice_state_update(ids[0].to_u64, ids[1].to_u64, false, false)
+  elsif payload.content.starts_with? "!vs"
+    # Used as:
+    # !vs
+
+    reply = begin
+      vs = cache.resolve_voice_state(payload.guild_id.not_nil!, payload.author.id)
+      "You are connected to channel #{vs.channel_id} at guild #{vs.guild_id}"
+    rescue
+      "No voice state"
+    end
+    client.create_message(payload.channel_id, reply)
   elsif payload.content.starts_with? "!play_dca "
     # Used as:
     # !play_dca <filename>

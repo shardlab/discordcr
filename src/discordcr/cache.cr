@@ -69,6 +69,10 @@ module Discord
     # [channel IDs]}.
     getter guild_channels
 
+    # Mapping of users in guild to voice states, represented as {guild ID =>
+    # {user ID => voice state}}
+    getter voice_states
+
     # Creates a new cache with a *client* that requests (in case of cache
     # misses) should be done on.
     def initialize(@client : Client)
@@ -82,6 +86,8 @@ module Discord
 
       @guild_roles = Hash(UInt64, Array(UInt64)).new
       @guild_channels = Hash(UInt64, Array(UInt64)).new
+
+      @voice_states = Hash(UInt64, Hash(UInt64, VoiceState)).new
     end
 
     # Resolves a user by its *ID*. If the requested object is not cached, it
@@ -140,6 +146,13 @@ module Discord
       @current_user ||= @client.get_current_user
     end
 
+    # Resolves a voice state by *guild ID* and *user ID*. No API request will be
+    # performed if voice state is not cached, because there is no endpoint for
+    # it. If there is a gateway connection this should always be cached.
+    def resolve_voice_state(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake) : VoiceState
+      @voice_states[guild_id.to_u64][user_id.to_u64]
+    end
+
     # Deletes a user from the cache given its *ID*.
     def delete_user(id : UInt64 | Snowflake)
       @users.delete(id.to_u64)
@@ -178,6 +191,13 @@ module Discord
       @current_user = nil
     end
 
+    # Deletes voice state for user in guild from cache.
+    def delete_voice_state(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+      guild_id = guild_id.to_u64
+      user_id = user_id.to_u64
+      @voice_states[guild_id]?.try &.delete(user_id)
+    end
+
     # Adds a specific *user* to the cache.
     def cache(user : User)
       @users[user.id.to_u64] = user
@@ -203,6 +223,14 @@ module Discord
     # Adds a specific *role* to the cache.
     def cache(role : Role)
       @roles[role.id.to_u64] = role
+    end
+
+    # Adds a specific *voice state* to the cache.
+    def cache(voice_state : VoiceState)
+      user_id = voice_state.user_id.to_u64
+      guild_id = voice_state.guild_id.not_nil!.to_u64
+      user_voice_states = @voice_states[guild_id] ||= Hash(UInt64, VoiceState).new
+      user_voice_states[user_id] = voice_state
     end
 
     # Adds a particular DM channel to the cache, given the *channel_id* and the
