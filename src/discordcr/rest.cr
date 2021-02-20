@@ -1132,18 +1132,18 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#create-guild-ban)
     def create_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake,
                          delete_message_days : Int32? = nil, reason : String? = nil)
-      params = HTTP::Params.build do |form|
-        form.add("delete-message-days", delete_message_days.to_s) if delete_message_days
-        form.add("reason", reason) if reason
-      end
+      json = encode_tuple(
+        delete_message_days: delete_message_days,
+        reason: reason,
+      )
 
       request(
         :guilds_gid_bans_uid,
         guild_id,
         "PUT",
-        "/guilds/#{guild_id}/bans/#{user_id}?#{params}",
-        HTTP::Headers.new,
-        nil
+        "/guilds/#{guild_id}/bans/#{user_id}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json,
       )
     end
 
