@@ -690,12 +690,17 @@ module Discord
         splash: splash
       )
 
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       response = request(
         :guilds_gid,
         guild_id,
         "PATCH",
         "/guilds/#{guild_id}",
-        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
+        headers,
         json
       )
 
@@ -836,12 +841,17 @@ module Discord
         nsfw: nsfw
       )
 
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       response = request(
         :guilds_gid_channels,
         guild_id,
         "POST",
         "/guilds/#{guild_id}/channels",
-        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
+        headers,
         json
       )
 
@@ -1004,12 +1014,17 @@ module Discord
         channel_id: channel_id
       )
 
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       request(
         :guilds_gid_members_uid,
         guild_id,
         "PATCH",
         "/guilds/#{guild_id}/members/#{user_id}",
-        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
+        headers,
         json
       )
     end
@@ -1034,12 +1049,15 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#remove-guild-member)
     def remove_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = nil)
+      headers = HTTP::Headers.new
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       request(
         :guilds_gid_members_uid,
         guild_id,
         "DELETE",
         "/guilds/#{guild_id}/members/#{user_id}",
-        HTTP::Headers{"X-Audit-Log-Reason" => reason},
+        headers,
         nil
       )
     end
@@ -1094,12 +1112,15 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#get-guild-ban)
     def get_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = nil)
+      headers = HTTP::Headers.new
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       response = request(
         :guilds_gid_bans_uid,
         guild_id,
         "GET",
         "/guilds/#{guild_id}/bans/#{user_id}",
-        HTTP::Headers{"X-Audit-Log-Reason" => reason},
+        headers,
         nil
       )
 
@@ -1130,12 +1151,15 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#remove-guild-ban)
     def remove_guild_ban(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, reason : String? = nil)
+      headers = HTTP::Headers.new
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       request(
         :guilds_gid_bans_uid,
         guild_id,
         "DELETE",
         "/guilds/#{guild_id}/bans/#{user_id}",
-        HTTP::Headers{"X-Audit-Log-Reason" => reason},
+        headers,
         nil
       )
     end
@@ -1170,12 +1194,17 @@ module Discord
         mentionable: mentionable
       )
 
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       response = request(
         :get_guild_roles,
         guild_id,
         "POST",
         "/guilds/#{guild_id}/roles",
-        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
+        headers,
         json
       )
 
@@ -1197,12 +1226,17 @@ module Discord
         hoist: hoist
       )
 
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       response = request(
         :guilds_gid_roles_rid,
         guild_id,
         "PATCH",
         "/guilds/#{guild_id}/roles/#{role_id}",
-        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
+        headers,
         json
       )
 
@@ -1232,12 +1266,15 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#delete-guild-role)
     def delete_guild_role(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake, reason : String? = nil)
+      headers = HTTP::Headers.new
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       request(
         :guilds_gid_roles_rid,
         guild_id,
         "DELETE",
         "/guilds/#{guild_id}/roles/#{role_id}",
-        HTTP::Headers{"X-Audit-Log-Reason" => reason},
+        headers,
         nil
       )
     end
@@ -1264,12 +1301,17 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#begin-guild-prune)
     def begin_guild_prune(guild_id : UInt64 | Snowflake, days : UInt32, reason : String? = nil)
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       response = request(
         :guilds_gid_prune,
         guild_id,
         "POST",
         "/guilds/#{guild_id}/prune?days=#{days}",
-        HTTP::Headers{"Content-Type" => "application/json", "X-Audit-Log-Reason" => reason},
+        headers,
         nil
       )
 
@@ -1608,12 +1650,15 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/invite#delete-invite)
     def delete_invite(code : String, reason : String? = nil)
+      headers = HTTP::Headers.new
+      headers["X-Audit-Log-Reason"] = reason if reason
+
       response = request(
         :invites_code,
         nil,
         "DELETE",
         "/invites/#{code}",
-        HTTP::Headers{"X-Audit-Log-Reason" => reason},
+        headers,
         nil
       )
 
