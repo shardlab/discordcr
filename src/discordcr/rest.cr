@@ -287,7 +287,7 @@ module Discord
     # embed = Discord::Embed.new(
     #   title: "Title of Embed",
     #   description: "Description of embed. This can be a long text. Neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.",
-    #   timestamp: Time.now,
+    #   timestamp: Time.utc,
     #   url: "https://example.com",
     #   image: Discord::EmbedImage.new(
     #     url: "https://example.com/image.png",
