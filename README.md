@@ -1,4 +1,4 @@
-[![docs](https://img.shields.io/badge/docs-latest-green.svg?style=flat-square)](https://shardlab.github.io/discordcr/doc/v0.4.0/)
+[![docs](https://img.shields.io/badge/docs-v0.4.0-green.svg?style=flat-square)](https://dcr.shardlab.dev/v0.4.0/) [![docs](https://img.shields.io/badge/docs-master-red.svg?style=flat-square)](https://dcr.shardlab.dev/master/)
 
 ### Important Notice
 This is the **new official source of discordcr**!\
@@ -81,7 +81,10 @@ puts user.username
 ```
 
 Apart from this, API documentation is also available, at
-https://shardlab.github.io/discordcr/doc/v0.4.0/.
+
+https://dcr.shardlab.dev/v0.4.0 for v0.4.0
+
+https://dcr.shardlab.dev/master for latest
 
 ## Contributing
 
@@ -95,3 +98,4 @@ https://shardlab.github.io/discordcr/doc/v0.4.0/.
 
 - [meew0](https://github.com/meew0) - creator, maintainer
 - [RX14](https://github.com/RX14) - Crystal expert, maintainer
+- [PixeL](https://github.com/PixelInc) - Maintainer
