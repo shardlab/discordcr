@@ -1520,7 +1520,7 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/user#get-current-user-guilds)
     def get_current_user_guilds(limit : Int32 = 100, before : UInt64 | Snowflake = 0_u64, after : UInt64 | Snowflake = 0_u64)
-      params = HTTP::Params.build do |form|
+      params = URI::Params.build do |form|
         form.add "limit", limit.to_s
 
         if before > 0_u64
