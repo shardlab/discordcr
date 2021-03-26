@@ -74,6 +74,10 @@ module Discord
     def self.new(pull : JSON::PullParser)
       ChannelType.new(pull.read_int.to_u8)
     end
+
+    def to_json(json : JSON::Builder)
+      json.number(value)
+    end
   end
 
   struct Channel

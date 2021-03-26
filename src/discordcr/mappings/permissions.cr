@@ -35,5 +35,9 @@ module Discord
     def self.new(pull : JSON::PullParser)
       Permissions.new(pull.read_int.to_u64)
     end
+
+    def to_json(json : JSON::Builder)
+      json.number(value)
+    end
   end
 end
