@@ -274,6 +274,7 @@ module Discord
     end
 
     property name : String?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::GamePlaying::Type))]
     property type : Type?
     property url : String?
     property state : String?
