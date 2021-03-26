@@ -41,6 +41,8 @@ module Discord
       property compress : Bool
       property large_threshold : Int32
       property shard : Tuple(Int32, Int32)?
+
+      @[JSON::Field(converter: Enum::ValueConverter)]
       property intents : Intents?
 
       def initialize(@token, @properties, @compress, @large_threshold, @shard, @intents)
