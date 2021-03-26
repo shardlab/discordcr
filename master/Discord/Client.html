@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="generator" content="Crystal Docs 0.36.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
+
 
 
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="discordcr">
+  <meta name="repository-name" content="discordcr">
   <title>Discord::Client - discordcr master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
@@ -25,6 +20,11 @@
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -800,7 +800,7 @@ sort of interaction with Discord.</p>
 
 <p>A new simple client that does nothing yet can be created like this:</p>
 
-<pre><code>client <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span>(token: <span class="s">&quot;Bot token&quot;</span>, client_id: <span class="n">123_u64</span>)</code></pre>
+<pre><code class="language-crystal">client <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span>(token: <span class="s">&quot;Bot token&quot;</span>, client_id: <span class="n">123_u64</span>)</code></pre>
 
 <p>With this client, REST requests can now be sent. (See the <code><a href="../Discord/REST.html">Discord::REST</a></code>
 module.) A gateway connection can also be started using the <code><a href="../Discord/Client.html#run-instance-method">#run</a></code> method.</p>
@@ -842,7 +842,7 @@ module.) A gateway connection can also be started using the <code><a href="../Di
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L24" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L24" target="_blank">
         discordcr/client.cr
       </a>
     
@@ -1325,7 +1325,7 @@ module.) A gateway connection can also be started using the <code><a href="../Di
       </li>
     
       <li class="entry-summary">
-        <a href="#websocket-instance-method" class="signature"><strong>#websocket</strong></a>
+        <a href="#websocket:Discord::WebSocket-instance-method" class="signature"><strong>#websocket</strong> : Discord::WebSocket</a>
         
           <div class="summary"><p>The internal websocket the client is currently using</p></div>
         
@@ -1858,7 +1858,7 @@ will need to be revealed using the "click to reveal" thing on the token
 <p>If the <em>shard</em> key is set, the gateway will operate in sharded mode. This
 means that this client's gateway connection will only receive packets from
 a part of the guilds the bot is connected to. See
-<a href="https://discord.com/developers/docs/topics/gateway#sharding" target="_blank">here</a>
+<a href="https://discord.com/developers/docs/topics/gateway#sharding">here</a>
 for more information.</p>
 
 <p>The <em>large_threshold</em> defines the minimum member count that, if a guild
@@ -1882,13 +1882,13 @@ but if you desire to do so, you can.</p>
 
 <p>The <em>intents</em> value is used to request that only specific events are sent
 to this client for the current session. For details on what <code>Intents</code> values
-correspond to which gateway events, see the <a href="https://discord.com/developers/docs/topics/gateway#gateway-intents" target="_blank">API docs</a>.</p>
+correspond to which gateway events, see the <a href="https://discord.com/developers/docs/topics/gateway#gateway-intents">API docs</a>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L98" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L98" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1924,7 +1924,7 @@ the client receives the corresponding gateway dispatches.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1946,7 +1946,7 @@ the client receives the corresponding gateway dispatches.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1969,7 +1969,7 @@ if it was not provided in the initializer.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1990,7 +1990,7 @@ if it was not provided in the initializer.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L268" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L268" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2008,13 +2008,13 @@ if it was not provided in the initializer.</p>
           <p>Called when a channel has been created on a server the bot has access to,
 or when somebody has started a DM channel with the bot.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#channel-create" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-create">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L727" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L727" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2033,13 +2033,13 @@ or when somebody has started a DM channel with the bot.</p>
 for other users closing the DM channel with the bot, only for the bot
 closing the DM channel with a user.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#channel-delete" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-delete">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L740" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L740" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2057,13 +2057,13 @@ closing the DM channel with a user.</p>
           <p>Called when a channel's pinned messages are updated, where a pin was
 either added or removed.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#channel-pins-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-pins-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L746" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L746" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2081,13 +2081,13 @@ either added or removed.</p>
           <p>Called when a channel's properties are updated, like the name or
 permission overwrites.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#channel-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#channel-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L733" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L733" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2115,7 +2115,7 @@ unprocessed JSON event data.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L705" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L705" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2133,13 +2133,13 @@ unprocessed JSON event data.</p>
           <p>Called when somebody is banned from a guild. A <code><a href="../Discord/Client.html#on_guild_member_remove(&handler:Gateway::GuildMemberRemovePayload-%3E)-instance-method">#on_guild_member_remove</a></code>
 event is also called.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-ban-add" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-ban-add">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L773" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L773" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2156,13 +2156,13 @@ event is also called.</p>
           
           <p>Called when somebody is unbanned from a guild.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-ban-remove" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-ban-remove">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L778" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L778" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2182,13 +2182,13 @@ outage becomes available again, or the guild is streamed after READY.
 To verify that it is the first case, you can check the <code>unavailable</code>
 property in <code><a href="../Discord/Gateway/GuildCreatePayload.html">Gateway::GuildCreatePayload</a></code>.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-create" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-create">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L754" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L754" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2207,13 +2207,13 @@ property in <code><a href="../Discord/Gateway/GuildCreatePayload.html">Gateway::
 an outage. To verify that it is the former case, you can check the
 <code>unavailable</code> property.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-delete" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-delete">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L767" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L767" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2230,13 +2230,13 @@ an outage. To verify that it is the former case, you can check the
           
           <p>Called when a guild's emoji are updated.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-emoji-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-emoji-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L783" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L783" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2253,13 +2253,13 @@ an outage. To verify that it is the former case, you can check the
           
           <p>Called when a guild's integrations (Twitch, YouTube) are updated.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-integrations-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-integrations-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L788" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L788" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2276,13 +2276,13 @@ an outage. To verify that it is the former case, you can check the
           
           <p>Called when somebody other than the bot joins a guild.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-add" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-add">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L793" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L793" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2299,13 +2299,13 @@ an outage. To verify that it is the former case, you can check the
           
           <p>Called when somebody other than the bot leaves a guild.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-remove" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-remove">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L804" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L804" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2323,13 +2323,13 @@ an outage. To verify that it is the former case, you can check the
           <p>Called when a member object is updated. This happens when somebody
 changes their nickname or has their roles changed.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-member-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L799" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L799" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2348,13 +2348,13 @@ changes their nickname or has their roles changed.</p>
 <code><a href="../Discord/Client.html#request_guild_members(guild_id:UInt64,query:String=&quot;&quot;,limit:Int32=0)-instance-method">#request_guild_members</a></code> call. If a <code><a href="../Discord/Cache.html">Cache</a></code> is set up, this is handled
 automatically.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-members-chunk" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-members-chunk">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L811" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L811" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2371,13 +2371,13 @@ automatically.</p>
           
           <p>Called when a role is created on a guild.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-create" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-create">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L816" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L816" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2394,13 +2394,13 @@ automatically.</p>
           
           <p>Called when a role is deleted.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-delete" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-delete">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L826" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L826" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2417,13 +2417,13 @@ automatically.</p>
           
           <p>Called when a role's properties are updated, for example name or colour.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-role-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L821" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L821" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2441,13 +2441,13 @@ automatically.</p>
           <p>Called when a guild's properties, like name or verification level, are
 updated.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#guild-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#guild-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L760" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L760" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2464,13 +2464,13 @@ updated.</p>
           
           <p>Called when an invite is created on a guild.</p>
 
-<p><a href="https://discordapp.com/developers/docs/topics/gateway#invite-create" target="_blank">API docs for this event</a></p>
+<p><a href="https://discordapp.com/developers/docs/topics/gateway#invite-create">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L831" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L831" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2487,13 +2487,13 @@ updated.</p>
           
           <p>Called when an invite is deleted.</p>
 
-<p><a href="https://discordapp.com/developers/docs/topics/gateway#invite-delete" target="_blank">API docs for this event</a></p>
+<p><a href="https://discordapp.com/developers/docs/topics/gateway#invite-delete">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L836" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L836" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2511,13 +2511,13 @@ updated.</p>
           <p>Called when a message is sent to a channel the bot has access to. This
 may be any sort of text channel, no matter private or guild.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#message-create" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-create">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L842" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L842" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2534,13 +2534,13 @@ may be any sort of text channel, no matter private or guild.</p>
           
           <p>Called when a single message is deleted.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#message-delete" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-delete">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L866" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L866" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2558,13 +2558,13 @@ may be any sort of text channel, no matter private or guild.</p>
           <p>Called when multiple messages are deleted at once, due to a bot using the
 bulk-delete endpoint, or other actions.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#message-delete-bulk" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-delete-bulk">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L872" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L872" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2585,7 +2585,7 @@ bulk-delete endpoint, or other actions.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L845" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L845" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2606,7 +2606,7 @@ bulk-delete endpoint, or other actions.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L848" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L848" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2627,7 +2627,7 @@ bulk-delete endpoint, or other actions.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L851" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L851" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2648,7 +2648,7 @@ bulk-delete endpoint, or other actions.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L854" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L854" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2667,13 +2667,13 @@ bulk-delete endpoint, or other actions.</p>
 messages, but the event is also sent when embed information for an
 existing message is updated.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#message-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#message-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L861" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L861" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2692,13 +2692,13 @@ existing message is updated.</p>
 they are playing, or their streaming status. Also called when a user's
 properties (user/avatar/discriminator) are changed.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#presence-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#presence-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L879" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L879" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2720,13 +2720,13 @@ marks the point when gateway packets can be set (e. g. <code><a href="../Discord
 bot lifetime, as it is also called when the client reconnects with a new
 session.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#ready" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#ready">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L715" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L715" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2744,13 +2744,13 @@ session.</p>
           <p>Called when the client has successfully resumed an existing connection
 after reconnecting.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#resumed" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#resumed">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L721" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L721" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2767,13 +2767,13 @@ after reconnecting.</p>
           
           <p>Called when somebody starts typing in a channel the bot has access to.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#typing-start" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#typing-start">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L884" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L884" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2790,13 +2790,13 @@ after reconnecting.</p>
           
           <p>Called when the user properties of the bot itself are changed.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#user-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#user-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L889" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L889" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2816,13 +2816,13 @@ the current voice server when initially connecting to voice, and it is
 called again with the new voice server when the current server fails over
 to a new one, or when the guild's voice region changes.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#voice-server-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#voice-server-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L903" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L903" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2840,13 +2840,13 @@ to a new one, or when the guild's voice region changes.</p>
           <p>Called when somebody joins or leaves a voice channel, moves to a different
 one, or is muted/unmuted/deafened/undeafened.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#voice-state-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#voice-state-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L895" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L895" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2863,13 +2863,13 @@ one, or is muted/unmuted/deafened/undeafened.</p>
           
           <p>Sent when a guild channel's webhook is created, updated, or deleted.</p>
 
-<p><a href="https://discord.com/developers/docs/topics/gateway#webhooks-update" target="_blank">API docs for this event</a></p>
+<p><a href="https://discord.com/developers/docs/topics/gateway#webhooks-update">API docs for this event</a></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L908" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L908" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2895,7 +2895,7 @@ provided; use <code>0.0</code> to skip waiting entirely.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L345" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L345" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2923,7 +2923,7 @@ is set up, arriving members will be cached automatically.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L392" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L392" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2946,7 +2946,7 @@ make Discord replay all events since that sequence.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L331" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L331" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2969,7 +2969,7 @@ execution until the bot is forcibly stopped.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L134" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L134" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2991,7 +2991,7 @@ a voice client, for example</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3017,7 +3017,7 @@ purpose.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L367" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L367" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3038,7 +3038,7 @@ purpose.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L156" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L156" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3065,7 +3065,7 @@ connections yet - this will have to be done externally until that happens.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L379" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L379" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3087,17 +3087,17 @@ unexpected way</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L163" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="websocket-instance-method">
+    <div class="entry-detail" id="websocket:Discord::WebSocket-instance-method">
       <div class="signature">
         
-        def <strong>websocket</strong>
+        def <strong>websocket</strong> : <a href="../Discord/WebSocket.html">Discord::WebSocket</a>
 
-        <a class="method-permalink" href="#websocket-instance-method">#</a>
+        <a class="method-permalink" href="#websocket:Discord::WebSocket-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -3108,7 +3108,7 @@ unexpected way</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cdc631dc1147613ab8fca8698e8484052fcafedf/src/discordcr/client.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/84fa43035cd911fd41a3b0aba350e54c3fa6f1a0/src/discordcr/client.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
