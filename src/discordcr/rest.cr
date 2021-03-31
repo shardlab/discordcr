@@ -306,12 +306,14 @@ module Discord
     # For more details on the format of the `embed` object, look at the
     # [relevant documentation](https://discord.com/developers/docs/resources/channel#embed-object).
     def create_message(channel_id : UInt64 | Snowflake, content : String, embed : Embed? = nil, tts : Bool = false,
-                       nonce : Int64 | String? = nil)
+                       nonce : Int64 | String? = nil, allowed_mentions : AllowedMentions? = nil, message_reference : MessageReference? = nil)
       json = encode_tuple(
         content: content,
         embed: embed,
         tts: tts,
-        nonce: nonce
+        nonce: nonce,
+        allowed_mentions: allowed_mentions,
+        message_reference: message_reference
       )
 
       response = request(
@@ -608,7 +610,7 @@ module Discord
       )
     end
 
-    # Get a list of messages pinned to this channel.
+    # Gets a list of messages pinned to this channel.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#get-pinned-messages)
     def get_pinned_messages(channel_id : UInt64 | Snowflake)
@@ -1164,7 +1166,7 @@ module Discord
       )
     end
 
-    # Get a list of roles on the guild.
+    # Gets a list of roles on the guild.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#get-guild-roles)
     def get_guild_roles(guild_id : UInt64 | Snowflake)
@@ -1279,7 +1281,7 @@ module Discord
       )
     end
 
-    # Get a number of members that would be pruned with the given number of
+    # Gets a number of members that would be pruned with the given number of
     # days. Requires the "Kick Members" permission.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#get-guild-prune-count)
@@ -1681,9 +1683,9 @@ module Discord
       Array(VoiceRegion).from_json(response.body)
     end
 
-    # Get a webhook.
+    # Gets a webhook.
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-webhook).
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-webhook)
     def get_webhook(webhook_id : UInt64 | Snowflake)
       response = request(
         :webhooks_wid,
@@ -1696,9 +1698,9 @@ module Discord
       Webhook.from_json(response.body)
     end
 
-    # Get a webhook, with a token.
+    # Gets a webhook, with a token.
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-webhook-with-token).
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-webhook-with-token)
     def get_webhook(webhook_id : UInt64 | Snowflake, token : String)
       response = request(
         :webhooks_wid,
@@ -1711,9 +1713,9 @@ module Discord
       Webhook.from_json(response.body)
     end
 
-    # Get an array of guild webhooks.
+    # Gets an array of guild webhooks.
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-guild-webhooks).
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-guild-webhooks)
     def get_guild_webhooks(guild_id : UInt64 | Snowflake)
       response = request(
         :guilds_gid_webhooks,
@@ -1726,9 +1728,9 @@ module Discord
       Array(Webhook).from_json(response.body)
     end
 
-    # Create a channel webhook.
+    # Creates a channel webhook.
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#create-webhook).
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#create-webhook)
     def create_channel_webhook(channel_id : UInt64 | Snowflake, name : String,
                                avatar : String)
       json = {
@@ -1748,9 +1750,9 @@ module Discord
       Webhook.from_json(response.body)
     end
 
-    # Get an array of channel webhooks.
+    # Gets an array of channel webhooks.
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-channel-webhooks).
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#get-channel-webhooks)
     def get_channel_webhooks(channel_id : UInt64 | Snowflake)
       response = request(
         :channels_cid_webhooks,
@@ -1764,9 +1766,9 @@ module Discord
       Array(Webhook).from_json(response.body)
     end
 
-    # Modify a webhook. Accepts optional parameters `name`, `avatar`, and `channel_id`.
+    # Modifies a webhook. Accepts optional parameters `name`, `avatar`, and `channel_id`.
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#modify-webhook).
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#modify-webhook)
     def modify_webhook(webhook_id : UInt64 | Snowflake, name : String? = nil, avatar : String? = nil,
                        channel_id : UInt64 | Snowflake | Nil = nil)
       json = encode_tuple(
@@ -1787,9 +1789,9 @@ module Discord
       Webhook.from_json(response.body)
     end
 
-    # Modify a webhook, with a token. Accepts optional parameters `name`, `avatar`, and `channel_id`.
+    # Modifies a webhook, with a token. Accepts optional parameters `name`, `avatar`, and `channel_id`.
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#modify-webhook-with-token).
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#modify-webhook-with-token)
     def modify_webhook_with_token(webhook_id : UInt64 | Snowflake, token : String, name : String? = nil,
                                   avatar : String? = nil)
       json = encode_tuple(
@@ -1843,14 +1845,15 @@ module Discord
     def execute_webhook(webhook_id : UInt64 | Snowflake, token : String, content : String? = nil,
                         file : String? = nil, embeds : Array(Embed)? = nil,
                         tts : Bool? = nil, avatar_url : String? = nil,
-                        username : String? = nil, wait : Bool? = false)
+                        username : String? = nil, allowed_mentions : AllowedMentions? = nil, wait : Bool? = false)
       json = encode_tuple(
         content: content,
         file: file,
         embeds: embeds,
         tts: tts,
         avatar_url: avatar_url,
-        username: username
+        username: username,
+        allowed_mentions: AllowedMentions
       )
 
       response = request(
@@ -1864,6 +1867,249 @@ module Discord
 
       # Expecting response
       Message.from_json(response.body) if wait
+    end
+
+    # Edits a previously-sent webhook message from the same token.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#edit-webhook-message)
+    def edit_webhook_message(webhook_id : UInt64 | Snowflake, token : String, message_id : UInt64 | Snowflake | String,
+                             content : String? = nil, embeds : Array(Embed)? = nil, allowed_mentions : AllowedMentions? = nil)
+      json = encode_tuple(
+        content: content,
+        embeds: embeds,
+        allowed_mentions: allowed_mentions
+      )
+
+      response = request(
+        :webhooks_wid,
+        webhook_id,
+        "PATCH",
+        "/webhooks/#{webhooks_id}/#{token}/messages/#{message_id}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      Webhook.from_json(response.body)
+    end
+
+    # Deletes a message that was created by the webhook.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/webhook#delete-webhook-message)
+    def delete_webhook_message(webhook_id : UInt64 | Snowflake, token : String, message_id : UInt64 | Snowflake | String)
+      request(
+        :webhooks_wid,
+        webhook_id,
+        "DELETE",
+        "/webhooks/#{webhooks_id}/#{token}/messages/#{message_id}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        nil
+      )
+    end
+
+    # Gets an array of global application commands.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#get-global-application-commands)
+    def get_global_application_commands(application_id : UInt64 | Snowflake)
+      response = request(
+        :applications_aid,
+        nil,
+        "GET",
+        "/applications/#{application_id}/commands",
+        HTTP::Headers.new,
+        nil
+      )
+
+      Array(ApplicationCommand).from_json(response.body)
+    end
+
+    # Creates a new global command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#create-global-application-command)
+    def create_global_application_command(application_id : UInt64 | Snowflake, name : String, description : String,
+                                          options : Array(ApplicationCommandOption)? = nil)
+      json = encode_tuple(
+        name: name,
+        description: description,
+        options: options
+      )
+
+      response = request(
+        :applications_aid_commands,
+        nil,
+        "POST",
+        "/applications/#{application_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Edits a global command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#edit-global-application-command)
+    def edit_global_application_command(application_id : UInt64 | Snowflake, name : String, description : String,
+                                        options : Array(ApplicationCommandOption)? = nil)
+      json = encode_tuple(
+        name: name,
+        description: description,
+        options: options
+      )
+
+      response = request(
+        :applications_aid_commands,
+        nil,
+        "PATCH",
+        "/applications/#{application_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Deletes a global command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#delete-global-application-command)
+    def delete_global_application_command(application_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake)
+      request(
+        :applications_aid_commands_cid,
+        nil,
+        "DELETE",
+        "/applications/#{application_id}/commands/#{command_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Gets an array of guild application commands.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#get-guild-application-commands)
+    def get_guild_application_commands(application_id : UInt64 | Snowflake, guild_id : UInt64 | Snowflake)
+      response = request(
+        :applications_aid_guilds_gid_commands,
+        guild_id,
+        "GET",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands",
+        HTTP::Headers.new,
+        nil
+      )
+
+      Array(ApplicationCommand).from_json(response.body)
+    end
+
+    # Creates a new guild command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#create-guild-application-command)
+    def create_guild_application_command(application_id : UInt64 | Snowflake, guild_id : UInt64 | Snowflake, name : String, description : String,
+                                         options : Array(ApplicationCommandOption)? = nil)
+      json = encode_tuple(
+        name: name,
+        description: description,
+        options: options
+      )
+
+      response = request(
+        :applications_aid_guilds_gid_commands,
+        guild_id,
+        "POST",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Edits a guild command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#edit-guild-application-command)
+    def edit_guild_application_command(application_id : UInt64 | Snowflake, guild_id : UInt64 | Snowflake, name : String, description : String,
+                                       options : Array(ApplicationCommandOption)? = nil)
+      json = encode_tuple(
+        name: name,
+        description: description,
+        options: options
+      )
+
+      response = request(
+        :applications_aid_guilds_gid_commands_cid,
+        guild_id,
+        "PATCH",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Deletes a guild command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#delete-guild-application-command)
+    def delete_guild_application_command(application_id : UInt64 | Snowflake, guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake)
+      request(
+        :applications_aid_guilds_gid_commands_cid,
+        guild_id,
+        "DELETE",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands/#{command_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Creates a response to an interaction.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#create-interaction-response)
+    def create_interaction_response(interaction_id : UInt64 | Snowflake, interaction_token : String, interaction_response : InteractionResponse)
+      request(
+        :interactions_iid_token_callback,
+        interaction_id,
+        "POST",
+        "/interactions/#{interaction_id}/#{interaction_token}/callback",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        interaction_response
+      )
+    end
+
+    # Edits the initial Interaction response.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#edit-original-interaction-response)
+    def edit_original_interaction_response(interaction_id : UInt64 | Snowflake, interaction_token : String, content : String? = nil,
+                                           embeds : Array(Embed)? = nil, allowed_mentions : AllowedMentions? = nil)
+      edit_webhook_message(interaction_id, interaction_token, "@original", content, embeds, allowed_mentions)
+    end
+
+    # Deletes the initial Interaction response.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#delete-original-interaction-response)
+    def delete_original_interaction_response(interaction_id : UInt64 | Snowflake, interaction_token : String)
+      delete_webhook_message(interaction_id, interaction_token, "@original")
+    end
+
+    # Creates a followup message for an Interaction.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#create-followup-message)
+    def create_followup_message(interaction_id : UInt64 | Snowflake, interaction_token : String, content : String? = nil,
+                                file : String? = nil, embeds : Array(Embed)? = nil,
+                                tts : Bool? = nil, avatar_url : String? = nil,
+                                username : String? = nil, allowed_mentions : AllowedMentions? = nil, wait : Bool? = false)
+      execute_webhook(interaction_id, interaction_token, content, file, embeds, tts, avatar_url, username, allowed_mentions, wait)
+    end
+
+    # Edits a followup message for an Interaction.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#edit-followup-message)
+    def edit_followup_message(interaction_id : UInt64 | Snowflake, interaction_token : String, message_id : UInt64 | Snowflake,
+                              content : String? = nil, embeds : Array(Embed)? = nil, allowed_mentions : AllowedMentions? = nil)
+      edit_webhook_message(interaction_id, interaction_token, message_id, content, embeds, allowed_mentions)
+    end
+
+    # Deletes a followup message for an Interaction.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#delete-followup-message)
+    def delete_followup_message(interaction_id : UInt64 | Snowflake, interaction_token : String, message_id : UInt64 | Snowflake)
+      delete_webhook_message(interaction_id, interaction_token, message_id)
     end
   end
 end
