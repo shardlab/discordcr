@@ -31,6 +31,7 @@ module Discord
     ManageRoles         = 1 << 28
     ManageWebhooks      = 1 << 29
     ManageEmojis        = 1 << 30
+    RequestToSpeak      = 1 << 32
 
     def self.new(pull : JSON::PullParser)
       Permissions.new(pull.read_int.to_u64)

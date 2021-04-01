@@ -14,6 +14,9 @@ module Discord
     property self_deaf : Bool
     property self_mute : Bool
     property suppress : Bool
+
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property request_to_speak_timestamp : Time?
   end
 
   struct VoiceRegion

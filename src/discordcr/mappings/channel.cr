@@ -64,13 +64,14 @@ module Discord
   end
 
   enum ChannelType : UInt8
-    GuildText     = 0
-    DM            = 1
-    GuildVoice    = 2
-    GroupDM       = 3
-    GuildCategory = 4
-    GuildNews     = 5
-    GuildStore    = 6
+    GuildText       =  0
+    DM              =  1
+    GuildVoice      =  2
+    GroupDM         =  3
+    GuildCategory   =  4
+    GuildNews       =  5
+    GuildStore      =  6
+    GuildStageVoice = 13
 
     def self.new(pull : JSON::PullParser)
       ChannelType.new(pull.read_int.to_u8)
