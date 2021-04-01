@@ -889,6 +889,34 @@ module Discord
       )
     end
 
+    # Updates the current user's, or passed user's voice state.
+    # For use with Stage Channels only.
+    # The user that is being updated must be inside of the stage channel.
+    # Requires "MUTE_MEMBERS" to (un)suppress other members, you can always suppress yourself.
+    # Requires "REQUEST_TO_SPEAK" to request to speak.
+    #
+    # [API docs for this method](todo)
+    def modify_voice_state(guild_id : UInt64 | Snowflake,
+                           channel_id : UInt64 | Snowflake,
+                           user_id : UInt64 | Snowflake | Nil = nil,
+                           suppress : Bool? = nil,
+                           request_to_speak_timestamp : Time? = nil)
+      json = encode_tuple(
+        channel_id: channel_id,
+        suppress: suppress,
+        request_to_speak_timestamp: request_to_speak_timestamp,
+      )
+
+      request(
+        :guilds_gid_voicestate,
+        guild_id,
+        "PATCH",
+        "/guilds/#{guild_id}/voice-states/#{user_id || "@me"}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+    end
+
     # Modifies the position of channels within a guild. Requires the
     # "Manage Channels" permission.
     #
