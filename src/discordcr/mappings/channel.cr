@@ -117,6 +117,30 @@ module Discord
     end
   end
 
+  enum StagePrivacyLevel : UInt8
+    PUBLIC     = 1
+    GUILD_ONLY = 2
+
+    def self.new(pull : JSON::PullParser)
+      StagePrivacyLevel.new(pull.read_int.to_u8)
+    end
+
+    def to_json(json : JSON::Builder)
+      json.number(value)
+    end
+  end
+
+  struct StageInstance
+    include JSON::Serializable
+
+    getter id : Snowflake
+    getter guild_id : Snowflake
+    getter channel_id : Snowflake
+    getter topic : String
+    getter privacy_level : StagePrivacyLevel
+    getter discoverable_disabled : Bool
+  end
+
   struct PrivateChannel
     include JSON::Serializable
 

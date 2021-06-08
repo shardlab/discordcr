@@ -226,6 +226,7 @@ module Discord
       property default_message_notifications : UInt8
       property explicit_content_filter : UInt8
       property system_channel_id : Snowflake?
+      property stage_instances : Array(StageInstance)
 
       {% unless flag?(:correct_english) %}
         def emojis
