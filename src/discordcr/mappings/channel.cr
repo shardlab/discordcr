@@ -294,7 +294,7 @@ module Discord
     include JSON::Serializable
 
     property id : Snowflake
-    property pack_id : Snowflake
+    property pack_id : Snowflake?
     property name : String
     property description : String
     property tags : String?
