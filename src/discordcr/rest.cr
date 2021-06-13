@@ -968,7 +968,7 @@ module Discord
     # Requires "MUTE_MEMBERS" to (un)suppress other members, you can always suppress yourself.
     # Requires "REQUEST_TO_SPEAK" to request to speak.
     #
-    # [API docs for this method](todo)
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild#update-current-user-voice-state)
     def modify_voice_state(guild_id : UInt64 | Snowflake,
                            channel_id : UInt64 | Snowflake,
                            user_id : UInt64 | Snowflake | Nil = nil,

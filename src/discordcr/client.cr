@@ -639,6 +639,8 @@ module Discord
         payload = StageInstance.from_json(data)
         cache payload
 
+        @cache.try &.add_guild_stage_instance(payload.guild_id, payload.id)
+
         call_event stage_instance_create, payload
       when "STAGE_INSTANCE_UPDATE"
         payload = StageInstance.from_json(data)
@@ -649,8 +651,7 @@ module Discord
         payload = StageInstance.from_json(data)
 
         @cache.try &.delete_stage_instance(payload.id)
-        guild_id = payload.guild_id.not_nil!
-        @cache.try &.remove_guild_stage_instance(guild_id, payload.id)
+        @cache.try &.remove_guild_stage_instance(payload.guild_id, payload.id)
 
         call_event stage_instance_delete, payload
       when "TYPING_START"

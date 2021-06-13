@@ -138,7 +138,7 @@ module Discord
       @roles[id.to_u64] # There is no endpoint for getting an individual role, so we will have to ignore that case for now.
     end
 
-    # Resolves a Stage instance by its **ID**.
+    # Resolves a Stage instance by its *ID*.
     # An API request will be performed if the object is not cached.
     def resolve_stage_instance(id : UInt64 | Snowflake) : StageInstance
       id = id.to_u64
