@@ -1911,7 +1911,7 @@ module Discord
     # Creates a new Stage instance associated to a Stage channel.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#create-stage-instance)
-    def create_stge_instance(channel_id : UInt64 | Snowflake, topic : String, privacy_level : UInt8 | PrivacyLevel | Nil = PrivacyLevel::GuildOnly)
+    def create_stage_instance(channel_id : UInt64 | Snowflake, topic : String, privacy_level : UInt8 | PrivacyLevel | Nil = PrivacyLevel::GuildOnly)
       json = encode_tuple(
         channel_id: channel_id,
         topic: topic,
@@ -1931,7 +1931,7 @@ module Discord
     # Gets the stage instance associated with the Stage channel, if it exists.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#get-stage-instance)
-    def get_stge_instance(channel_id : UInt64 | Snowflake)
+    def get_stage_instance(channel_id : UInt64 | Snowflake)
       response = request(
         :stageinstances_cid,
         channel_id,
@@ -1947,7 +1947,7 @@ module Discord
     # Updates fields of an existing Stage instance.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#update-stage-instance)
-    def update_stge_instance(channel_id : UInt64 | Snowflake, topic : String? = nil, privacy_level : UInt8 | PrivacyLevel | Nil = nil)
+    def update_stage_instance(channel_id : UInt64 | Snowflake, topic : String? = nil, privacy_level : UInt8 | PrivacyLevel | Nil = nil)
       json = encode_tuple(
         topic: topic,
         privacy_level: privacy_level,
@@ -1966,7 +1966,7 @@ module Discord
     # Deletes the Stage instance.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#delete-stage-instance)
-    def delete_stge_instance(channel_id : UInt64 | Snowflake)
+    def delete_stage_instance(channel_id : UInt64 | Snowflake)
       response = request(
         :stageinstances_cid,
         channel_id,
