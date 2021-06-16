@@ -1,8 +1,3 @@
-require "json"
-
-require "./rest"
-require "./cache"
-
 module Discord
   # Calculates the shard ID that would receive the gateway events from
   # a guild with the given `guild_id`, based on the total number of shards.
@@ -45,10 +40,15 @@ module Discord
     DEFAULT_PROPERTIES = Gateway::IdentifyProperties.new(
       os: "Crystal",
       browser: "discordcr",
-      device: "discordcr",
-      referrer: "",
-      referring_domain: ""
+      device: "discordcr"
     )
+
+    # Default gateway intents
+    DEFAULT_INTENTS = Gateway::Intents::Guilds |
+                      Gateway::Intents::GuildMessages |
+                      Gateway::Intents::GuildMessageReactions |
+                      Gateway::Intents::DirectMessages |
+                      Gateway::Intents::DirectMessageReactions
 
     # Available gateway compression modes that can be requested
     enum CompressMode
@@ -101,7 +101,8 @@ module Discord
                    @compress : CompressMode = CompressMode::Stream,
                    @zlib_buffer_size : Int32 = 10 * 1024 * 1024,
                    @properties : Gateway::IdentifyProperties = DEFAULT_PROPERTIES,
-                   @intents : Gateway::Intents? = nil)
+                   @intents : Gateway::Intents = DEFAULT_INTENTS,
+                   @initial_presence : Gateway::StatusUpdatePayload? = nil)
       @backoff = 1.0
 
       # Set some default value for the heartbeat interval. This should never
@@ -137,7 +138,6 @@ module Discord
           websocket.run
         rescue ex
           Log.error(exception: ex) { "[#{@client_name}] Received exception from WebSocket#run" }
-          Log.error { ex.inspect_with_backtrace }
         end
 
         @send_heartbeats = false
@@ -175,9 +175,9 @@ module Discord
       url = URI.parse(get_gateway.url)
 
       if @compress.stream?
-        path = "#{url.path}/?encoding=json&v=6&compress=zlib-stream"
+        path = "#{url.path}/?encoding=json&v=#{API_VERSION}&compress=zlib-stream"
       else
-        path = "#{url.path}/?encoding=json&v=6"
+        path = "#{url.path}/?encoding=json&v=#{API_VERSION}"
       end
 
       websocket = Discord::WebSocket.new(
@@ -248,11 +248,9 @@ module Discord
           end
         rescue ex : JSON::ParseException
           Log.error(exception: ex) { "[#{@client_name}] An exception occurred during message parsing! Please report this." }
-          Log.error { ex.inspect_with_backtrace }
           Log.error { "Previous exception raised with packet: #{packet}" }
         rescue ex
           Log.error(exception: ex) { "[#{@client_name}] A miscellaneous exception occurred during message handling." }
-          Log.error { ex.inspect_with_backtrace }
         end
 
         # Set the sequence to confirm that we have handled this packet, in case
@@ -306,7 +304,6 @@ module Discord
               @last_heartbeat_acked = false
             rescue ex
               Log.error(exception: ex) { "[#{@client_name}] Heartbeat failed!" }
-              Log.error { ex.inspect_with_backtrace }
             end
           end
 
@@ -321,7 +318,7 @@ module Discord
       end
 
       compress = @compress.large?
-      packet = Gateway::IdentifyPacket.new(@token, @properties, compress, @large_threshold, shard_tuple, @intents)
+      packet = Gateway::IdentifyPacket.new(@token, @properties, compress, @large_threshold, shard_tuple, @initial_presence, @intents)
       websocket.send(packet.to_json)
     end
 
@@ -359,13 +356,13 @@ module Discord
     end
 
     # Sends a status update to Discord. The *status* can be `"online"`,
-    # `"idle"`, `"dnd"`, or `"invisible"`. Setting the *game* to a `GamePlaying`
+    # `"idle"`, `"dnd"`, or `"invisible"`. Setting the *activities* to an `Array(Activity)`
     # object makes the bot appear as playing some game on Discord. *since* and
     # *afk* can be used in conjunction to signify to Discord that the status
     # change is due to inactivity on the bot's part – this fulfills no cosmetic
     # purpose.
-    def status_update(status : String? = nil, game : GamePlaying? = nil, afk : Bool = false, since : Int64? = nil)
-      packet = Gateway::StatusUpdatePacket.new(status, game, afk, since)
+    def status_update(status : String = "online", activities : Array(Activity)? = nil, afk : Bool = false, since : Int64? = nil)
+      packet = Gateway::StatusUpdatePacket.new(status, activities, afk, since)
       websocket.send(packet.to_json)
     end
 
@@ -399,9 +396,13 @@ module Discord
       @on_{{name}}_handlers.try &.each do |handler|
         begin
           handler.call({{payload}})
+        rescue err : CodeException
+          Log.error(exception: err) { "[#{@client_name}] An exception occurred in a user-defined event handler!" }
+          if (he = err.human_errors) != ""
+            Log.error { "[#{@client_name}] Received error information from Discord#{he}" }
+          end
         rescue ex
           Log.error(exception: ex) { "[#{@client_name}] An exception occurred in a user-defined event handler!" }
-          Log.error { ex.inspect_with_backtrace }
         end
       end
     end
@@ -426,15 +427,6 @@ module Discord
 
         @cache.try &.cache_current_user(payload.user)
 
-        payload.private_channels.each do |channel|
-          cache Channel.new(channel)
-
-          if channel.type == 1 # DM channel, not group
-            recipient_id = channel.recipients[0].id
-            @cache.try &.cache_dm_channel(channel.id, recipient_id)
-          end
-        end
-
         Log.info { "[#{@client_name}] Received READY, v: #{payload.v}" }
         call_event ready, payload
       when "RESUMED"
@@ -446,6 +438,21 @@ module Discord
 
         payload = Gateway::ResumedPayload.from_json(data)
         call_event resumed, payload
+      when "RECONNECT"
+        Log.info { "[#{@client_name}] Received RECONNECT, commencing reconnect" }
+        handle_reconnect
+      when "APPLICATION_COMMAND_CREATE"
+        payload = Gateway::ApplicationCommandPayload.from_json(data)
+
+        call_event application_command_create, payload
+      when "APPLICATION_COMMAND_UPDATE"
+        payload = Gateway::ApplicationCommandPayload.from_json(data)
+
+        call_event application_command_update, payload
+      when "APPLICATION_COMMAND_DELETE"
+        payload = Gateway::ApplicationCommandPayload.from_json(data)
+
+        call_event application_command_delete, payload
       when "CHANNEL_CREATE"
         payload = Channel.from_json(data)
 
@@ -494,7 +501,7 @@ module Discord
         end
 
         payload.members.each do |member|
-          cache member.user
+          member.user.try { |user| cache user }
           @cache.try &.cache(member, guild.id)
         end
 
@@ -531,7 +538,7 @@ module Discord
       when "GUILD_MEMBER_ADD"
         payload = Gateway::GuildMemberAddPayload.from_json(data)
 
-        cache payload.user
+        payload.user.try { |user| cache user }
         member = GuildMember.new(payload)
         @cache.try &.cache(member, payload.guild_id)
 
@@ -626,7 +633,7 @@ module Discord
 
         if payload.user.full?
           member = GuildMember.new(payload)
-          @cache.try &.cache(member, payload.guild_id)
+          @cache.try &.cache(member, payload.guild_id.not_nil!) # GuildID is always present on PRESENCE_UPDATE event
         end
 
         call_event presence_update, payload
@@ -666,6 +673,30 @@ module Discord
       when "WEBHOOKS_UPDATE"
         payload = Gateway::WebhooksUpdatePayload.from_json(data)
         call_event webhooks_update, payload
+      when "INTEGRATION_CREATE"
+        payload = Gateway::IntegrationPayload.from_json(data)
+        call_event integration_create, payload
+      when "INTEGRATION_UPDATE"
+        payload = Gateway::IntegrationPayload.from_json(data)
+        call_event integration_update, payload
+      when "INTEGRATION_DELETE"
+        payload = Gateway::IntegrationDeletePayload.from_json(data)
+        call_event integration_delete, payload
+      when "INTERACTION_CREATE"
+        payload = Interaction.from_json(data)
+        call_event interaction_create, payload
+      when "STAGE_INSTANCE_CREATE"
+        payload = StageInstance.from_json(data)
+        call_event stage_instance_create, payload
+      when "STAGE_INSTANCE_UPDATE"
+        payload = StageInstance.from_json(data)
+        call_event stage_instance_update, payload
+      when "STAGE_INSTANCE_DELETE"
+        payload = StageInstance.from_json(data)
+        call_event stage_instance_delete, payload
+      when "APPLICATION_COMMAND_PERMISSIONS_UPDATE"
+        payload = GuildApplicationCommandPermissions.from_json(data)
+        call_event application_command_permissions_update, payload
       else
         Log.warn { "[#{@client_name}] Unsupported dispatch: #{type} #{data}" }
       end
@@ -719,6 +750,24 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#resumed)
     event resumed, Gateway::ResumedPayload
+
+    # Sent when a new Slash Command is created, relevant to the current user.
+    # The inner payload is an ApplicationCommand object, with an optional extra guild_id key.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#application-command-create)
+    event application_command_create, Gateway::ApplicationCommandPayload
+
+    # Sent when a Slash Command relevant to the current user is updated.
+    # The inner payload is an ApplicationCommand object, with an optional extra guild_id key.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#application-command-update)
+    event application_command_update, Gateway::ApplicationCommandPayload
+
+    # Sent when a Slash Command relevant to the current user is deleted.
+    # The inner payload is an ApplicationCommand object, with an optional extra guild_id key.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#application-command-delete)
+    event application_command_delete, Gateway::ApplicationCommandPayload
 
     # Called when a channel has been created on a server the bot has access to,
     # or when somebody has started a DM channel with the bot.
@@ -825,14 +874,34 @@ module Discord
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-role-delete)
     event guild_role_delete, Gateway::GuildRoleDeletePayload
 
+    # Sent when an integration is created. The inner payload is a integration object with an additional guild_id key
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#integration-create)
+    event integration_create, Gateway::IntegrationPayload
+
+    # Sent when an integration is updated. The inner payload is a integration object with an additional guild_id key
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#integration-update)
+    event integration_update, Gateway::IntegrationPayload
+
+    # Sent when an integration is deleted.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#integration-delete)
+    event integration_delete, Gateway::IntegrationDeletePayload
+
+    # Sent when a user in a guild uses a Slash Command. Inner payload is an Interaction.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#interaction-create)
+    event interaction_create, Interaction
+
     # Called when an invite is created on a guild.
     #
-    # [API docs for this event](https://discordapp.com/developers/docs/topics/gateway#invite-create)
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#invite-create)
     event invite_create, Gateway::InviteCreatePayload
 
     # Called when an invite is deleted.
     #
-    # [API docs for this event](https://discordapp.com/developers/docs/topics/gateway#invite-delete)
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#invite-delete)
     event invite_delete, Gateway::InviteDeletePayload
 
     # Called when a message is sent to a channel the bot has access to. This
@@ -840,18 +909,6 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#message-create)
     event message_create, Message
-
-    # Called when a reaction is added to a message.
-    event message_reaction_add, Gateway::MessageReactionPayload
-
-    # Called when a reaction is removed from a message.
-    event message_reaction_remove, Gateway::MessageReactionPayload
-
-    # Called when all reactions are removed at once from a message.
-    event message_reaction_remove_all, Gateway::MessageReactionRemoveAllPayload
-
-    # Called when all reactions of a single emoji are removed at once from a message.
-    event message_reaction_remove_emoji, Gateway::MessageReactionRemoveEmojiPayload
 
     # Called when a message is updated. Most commonly this is done for edited
     # messages, but the event is also sent when embed information for an
@@ -870,6 +927,18 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#message-delete-bulk)
     event message_delete_bulk, Gateway::MessageDeleteBulkPayload
+
+    # Called when a reaction is added to a message.
+    event message_reaction_add, Gateway::MessageReactionPayload
+
+    # Called when a reaction is removed from a message.
+    event message_reaction_remove, Gateway::MessageReactionPayload
+
+    # Called when all reactions are removed at once from a message.
+    event message_reaction_remove_all, Gateway::MessageReactionRemoveAllPayload
+
+    # Called when all reactions of a single emoji are removed at once from a message.
+    event message_reaction_remove_emoji, Gateway::MessageReactionRemoveEmojiPayload
 
     # Called when a user updates their status (online/idle/offline), the game
     # they are playing, or their streaming status. Also called when a user's
@@ -906,6 +975,26 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#webhooks-update)
     event webhooks_update, Gateway::WebhooksUpdatePayload
+
+    # Sent when a Stage instance is created (i.e. the Stage is now "live"). Inner payload is a Stage instance
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-create)
+    event stage_instance_create, StageInstance
+
+    # Sent when a Stage instance has been updated. Inner payload is a Stage instance
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-update)
+    event stage_instance_update, StageInstance
+
+    # Sent when a Stage instance has been deleted (i.e. the Stage has been closed). Inner payload is a Stage instance
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-delete)
+    event stage_instance_delete, StageInstance
+
+    # Sent when a Application Command Permission has been updated. Inner payload is a Guild Application Command Permissions
+    #
+    # Not documented, thanks Discord
+    event application_command_permissions_update, GuildApplicationCommandPermissions
   end
 
   module Gateway

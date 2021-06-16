@@ -1,9 +1,4 @@
-require "uri"
-
-require "./mappings/gateway"
-require "./mappings/vws"
 require "./websocket"
-require "./sodium"
 
 module Discord
   class VoiceClient

@@ -137,7 +137,11 @@ describe Discord::Guild do
     "features": [],
     "default_message_notifications": 1,
     "explicit_content_filter": 1,
-    "premium_tier": 0
+    "premium_tier": 0,
+    "mfa_level": 0,
+    "system_channel_flags": 0,
+    "preferred_locale": "en_GB",
+    "nsfw_level": 0
   }
   JSON
 
@@ -189,9 +193,9 @@ describe Discord::Emoji do
   end
 end
 
-describe Discord::OAuth2Application do
+describe Discord::Application do
   describe "#icon_url" do
-    application_with_icon = Discord::OAuth2Application.from_json <<-JSON
+    application_with_icon = Discord::Application.from_json <<-JSON
     {
       "id": "1",
       "name": "name",
@@ -204,7 +208,8 @@ describe Discord::OAuth2Application do
         "discriminator": "0001"
       },
       "summary": "some summary",
-      "verify_key": "key"
+      "verify_key": "key",
+      "description": "description"
     }
     JSON
 

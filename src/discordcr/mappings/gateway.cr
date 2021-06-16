@@ -1,25 +1,14 @@
-require "./converters"
 require "./user"
 require "./channel"
 require "./guild"
+require "./slash_commands"
+require "./stage_instance"
 
 module Discord
   module Gateway
-    struct ReadyPayload
-      include JSON::Serializable
-
-      property v : UInt8
-      property user : User
-      property private_channels : Array(PrivateChannel)
-      property guilds : Array(UnavailableGuild)
-      property session_id : String
-    end
-
-    struct ResumedPayload
-      include JSON::Serializable
-
-      property _trace : Array(String)
-    end
+    #
+    # Gateway Commands
+    #
 
     struct IdentifyPacket
       include JSON::Serializable
@@ -27,9 +16,9 @@ module Discord
       property op : Int32
       property d : IdentifyPayload
 
-      def initialize(token, properties, large_threshold, compress, shard, intents)
+      def initialize(token, properties, large_threshold, compress, shard, presence, intents)
         @op = Discord::Client::OP_IDENTIFY
-        @d = IdentifyPayload.new(token, properties, large_threshold, compress, shard, intents)
+        @d = IdentifyPayload.new(token, properties, large_threshold, compress, shard, presence, intents)
       end
     end
 
@@ -41,11 +30,12 @@ module Discord
       property compress : Bool
       property large_threshold : Int32
       property shard : Tuple(Int32, Int32)?
+      property presence : StatusUpdatePayload?
 
       @[JSON::Field(converter: Enum::ValueConverter)]
-      property intents : Intents?
+      property intents : Intents
 
-      def initialize(@token, @properties, @compress, @large_threshold, @shard, @intents)
+      def initialize(@token, @properties, @compress, @large_threshold, @shard, @presence, @intents)
       end
     end
 
@@ -58,12 +48,8 @@ module Discord
       property browser : String
       @[JSON::Field(key: "$device")]
       property device : String
-      @[JSON::Field(key: "$referrer")]
-      property referrer : String
-      @[JSON::Field(key: "$referring_domain")]
-      property referring_domain : String
 
-      def initialize(@os, @browser, @device, @referrer, @referring_domain)
+      def initialize(@os, @browser, @device)
       end
     end
 
@@ -110,31 +96,27 @@ module Discord
       end
     end
 
-    struct StatusUpdatePacket
+    struct RequestGuildMembersPacket
       include JSON::Serializable
 
       property op : Int32
-      property d : StatusUpdatePayload
+      property d : RequestGuildMembersPayload
 
-      def initialize(status, game, afk, since)
-        @op = Discord::Client::OP_STATUS_UPDATE
-        @d = StatusUpdatePayload.new(status, game, afk, since)
+      def initialize(guild_id, query, limit)
+        @op = Discord::Client::OP_REQUEST_GUILD_MEMBERS
+        @d = RequestGuildMembersPayload.new(guild_id, query, limit)
       end
     end
 
     # :nodoc:
-    struct StatusUpdatePayload
+    struct RequestGuildMembersPayload
       include JSON::Serializable
 
-      @[JSON::Field(emit_null: true)]
-      property status : String?
-      @[JSON::Field(emit_null: true)]
-      property game : GamePlaying?
-      property afk : Bool
-      @[JSON::Field(emit_null: true)]
-      property since : Int64?
+      property guild_id : UInt64
+      property query : String
+      property limit : Int32
 
-      def initialize(@status, @game, @afk, @since)
+      def initialize(@guild_id, @query, @limit)
       end
     end
 
@@ -164,29 +146,36 @@ module Discord
       end
     end
 
-    struct RequestGuildMembersPacket
+    struct StatusUpdatePacket
       include JSON::Serializable
 
       property op : Int32
-      property d : RequestGuildMembersPayload
+      property d : StatusUpdatePayload
 
-      def initialize(guild_id, query, limit)
-        @op = Discord::Client::OP_REQUEST_GUILD_MEMBERS
-        @d = RequestGuildMembersPayload.new(guild_id, query, limit)
+      def initialize(status, activities, afk, since)
+        @op = Discord::Client::OP_STATUS_UPDATE
+        @d = StatusUpdatePayload.new(status, activities, afk, since)
       end
     end
 
     # :nodoc:
-    struct RequestGuildMembersPayload
+    struct StatusUpdatePayload
       include JSON::Serializable
 
-      property guild_id : UInt64
-      property query : String
-      property limit : Int32
+      @[JSON::Field(emit_null: true)]
+      property since : UInt64?
+      @[JSON::Field(emit_null: true)]
+      property activities : Array(Activity)?
+      property status : String
+      property afk : Bool
 
-      def initialize(@guild_id, @query, @limit)
+      def initialize(@status = "online", @activities = nil, @afk = false, @since = nil)
       end
     end
+
+    #
+    # Gateway Events
+    #
 
     struct HelloPayload
       include JSON::Serializable
@@ -195,43 +184,59 @@ module Discord
       property _trace : Array(String)
     end
 
-    # This one is special from simply Guild since it also has fields for members
-    # and presences.
-    struct GuildCreatePayload
+    struct ReadyPayload
+      include JSON::Serializable
+
+      property v : UInt8
+      property user : User
+      property guilds : Array(UnavailableGuild)
+      property session_id : String
+      property shard : Array(Int32)?
+      property application : PartialApplication
+    end
+
+    struct PartialApplication
       include JSON::Serializable
 
       property id : Snowflake
-      property name : String
-      property icon : String?
-      property splash : String?
-      property owner_id : Snowflake
-      property region : String
-      property afk_channel_id : Snowflake?
-      property afk_timeout : Int32?
-      property verification_level : UInt8
-      property premium_tier : UInt8
-      property premium_subscription_count : UInt8?
-      property roles : Array(Role)
-      @[JSON::Field(key: "emojis")]
-      property emoji : Array(Emoji)
-      property features : Array(String)
+      @[JSON::Field(converter: Enum::ValueConverter(Discord::ApplicationFlags))]
+      property flags : ApplicationFlags
+    end
+
+    struct ResumedPayload
+      include JSON::Serializable
+
+      property _trace : Array(String)
+    end
+
+    struct ReconnectPayload
+      include JSON::Serializable
+
+      property _trace : Array(String)
+    end
+
+    struct ChannelPinsUpdatePayload
+      include JSON::Serializable
+
+      property guild_id : Snowflake?
+      property channel_id : Snowflake
+      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+      property last_pin_timestamp : Time?
+    end
+
+    # This one is special from simply Guild since it also has fields for members
+    # and presences.
+    struct GuildCreatePayload < GuildAbstract
+      @[JSON::Field(converter: Discord::TimestampConverter)]
+      property joined_at : Time
       property large : Bool
+      property unavailable : Bool
+      property member_count : UInt32
       property voice_states : Array(VoiceState)
-      property unavailable : Bool?
-      property member_count : Int32
       property members : Array(GuildMember)
       property channels : Array(Channel)
-      property presences : Array(Presence)
-      property widget_channel_id : Snowflake?
-      property default_message_notifications : UInt8
-      property explicit_content_filter : UInt8
-      property system_channel_id : Snowflake?
-
-      {% unless flag?(:correct_english) %}
-        def emojis
-          emoji
-        end
-      {% end %}
+      property presences : Array(PresenceUpdatePayload)
+      property stage_instances : Array(StageInstance)
     end
 
     struct GuildDeletePayload
@@ -244,8 +249,8 @@ module Discord
     struct GuildBanPayload
       include JSON::Serializable
 
-      property user : User
       property guild_id : Snowflake
+      property user : User
     end
 
     struct GuildEmojiUpdatePayload
@@ -268,35 +273,31 @@ module Discord
       property guild_id : Snowflake
     end
 
-    struct GuildMemberAddPayload
-      include JSON::Serializable
-
-      property user : User
-      property nick : String?
-      property roles : Array(Snowflake)
-      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-      property joined_at : Time?
-      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-      property premium_since : Time?
-      property deaf : Bool
-      property mute : Bool
-      property guild_id : Snowflake
-    end
-
-    struct GuildMemberUpdatePayload
-      include JSON::Serializable
-
-      property user : User
-      property roles : Array(Snowflake)
-      property nick : String?
+    struct GuildMemberAddPayload < GuildMemberAbstract
       property guild_id : Snowflake
     end
 
     struct GuildMemberRemovePayload
       include JSON::Serializable
 
-      property user : User
       property guild_id : Snowflake
+      property user : User
+    end
+
+    struct GuildMemberUpdatePayload
+      include JSON::Serializable
+
+      property guild_id : Snowflake
+      property roles : Array(Snowflake)
+      property user : User
+      property nick : String?
+      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+      property joined_at : Time
+      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+      property premium_since : Time?
+      property deaf : Bool?
+      property mute : Bool?
+      property pending : Bool?
     end
 
     struct GuildMembersChunkPayload
@@ -304,6 +305,11 @@ module Discord
 
       property guild_id : Snowflake
       property members : Array(GuildMember)
+      property chunk_index : UInt32
+      property chunk_count : UInt32
+      property not_found : Bool?
+      property presences : Array(PresenceUpdatePayload)?
+      property nonce : String?
     end
 
     struct GuildRolePayload
@@ -320,17 +326,33 @@ module Discord
       property role_id : Snowflake
     end
 
+    struct IntegrationPayload < IntegrationAbstract
+      property guild_id : Snowflake
+    end
+
+    struct IntegrationDeletePayload
+      include JSON::Serializable
+
+      property id : Snowflake
+      property guild_id : Snowflake
+      property application_id : Snowflake?
+    end
+
     struct InviteCreatePayload
       include JSON::Serializable
 
       property channel_id : Snowflake
       property code : String
-      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-      property created_at : Time?
+      @[JSON::Field(converter: Discord::TimestampConverter)]
+      property created_at : Time
       property guild_id : Snowflake?
       property inviter : User?
       property max_age : Int32
       property max_uses : Int32
+      @[JSON::Field(converter: Enum::ValueConverter(Discord::InviteTargetType))]
+      property target_type : InviteTargetType?
+      property target_user : User?
+      property target_application : Application? # NOTE: Untested, might rise
       property temporary : Bool
       property uses : Int32
     end
@@ -343,51 +365,42 @@ module Discord
       property code : String
     end
 
-    struct MessageReactionPayload
-      include JSON::Serializable
-
-      property user_id : Snowflake
-      property channel_id : Snowflake
-      property message_id : Snowflake
-      property guild_id : Snowflake?
-      property emoji : ReactionEmoji
-    end
-
-    struct MessageReactionRemoveAllPayload
-      include JSON::Serializable
-
-      property channel_id : Snowflake
-      property message_id : Snowflake
-      property guild_id : Snowflake?
-    end
-
-    struct MessageReactionRemoveEmojiPayload
-      include JSON::Serializable
-
-      property channel_id : Snowflake
-      property guild_id : Snowflake
-      property message_id : Snowflake
-      property emoji : ReactionEmoji
-    end
-
     struct MessageUpdatePayload
       include JSON::Serializable
 
-      property type : UInt8?
-      property content : String?
       property id : Snowflake
       property channel_id : Snowflake
       property guild_id : Snowflake?
       property author : User?
+      property member : GuildMember?
+      property content : String?
       @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
       property timestamp : Time?
+      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+      property edited_timestamp : Time?
       property tts : Bool?
       property mention_everyone : Bool?
       property mentions : Array(User)?
       property mention_roles : Array(Snowflake)?
+      property mention_channels : Array(ChannelMention)?
       property attachments : Array(Attachment)?
       property embeds : Array(Embed)?
+      property reactions : Array(Reaction)?
+      property nonce : String | Int64?
       property pinned : Bool?
+      property webhook_id : Snowflake?
+      @[JSON::Field(converter: Enum::ValueConverter(Discord::MessageType))]
+      property type : MessageType?
+      property activity : MessageActivity?
+      property application : Application?
+      property application_id : Snowflake?
+      property message_reference : MessageReference?
+      @[JSON::Field(converter: Enum::ValueConverter(Discord::MessageFlags))]
+      property flags : MessageFlags?
+      property stickers : Array(Sticker)?
+      property referenced_message : Message?
+      property interaction : MessageInteraction?
+      property components : Array(Component)?
     end
 
     struct MessageDeletePayload
@@ -406,27 +419,154 @@ module Discord
       property guild_id : Snowflake?
     end
 
+    struct MessageReactionPayload
+      include JSON::Serializable
+
+      property user_id : Snowflake
+      property channel_id : Snowflake
+      property message_id : Snowflake
+      property guild_id : Snowflake?
+      property member : GuildMember?
+      property emoji : Emoji
+    end
+
+    struct MessageReactionRemoveAllPayload
+      include JSON::Serializable
+
+      property channel_id : Snowflake
+      property message_id : Snowflake
+      property guild_id : Snowflake?
+    end
+
+    struct MessageReactionRemoveEmojiPayload
+      include JSON::Serializable
+
+      property channel_id : Snowflake
+      property guild_id : Snowflake?
+      property message_id : Snowflake
+      property emoji : Emoji
+    end
+
     struct PresenceUpdatePayload
       include JSON::Serializable
 
       property user : PartialUser
-      property roles : Array(Snowflake)
-      property game : GamePlaying?
-      property nick : String?
-      property guild_id : Snowflake
+      # This is nilable to get rid of a pointless Presence struct
+      property guild_id : Snowflake?
       property status : String
-      property activities : Array(GamePlaying)
+      property activities : Array(Activity)
+      property client_status : ClientStatus
+    end
+
+    struct ClientStatus
+      include JSON::Serializable
+
+      property desktop : String?
+      property mobile : String?
+      property web : String?
+    end
+
+    struct Activity
+      include JSON::Serializable
+
+      enum Type : UInt8
+        Playing   = 0
+        Streaming = 1
+        Listening = 2
+        Watching  = 3
+        Custom    = 4
+        Competing = 5
+      end
+
+      property name : String
+      @[JSON::Field(converter: Enum::ValueConverter(Discord::Gateway::Activity::Type))]
+      property type : Type
+      property url : String?
+      @[JSON::Field(converter: Time::EpochMillisConverter)]
+      property created_at : Time
+      property timestamps : Timestamps?
+      property application_id : Snowflake?
+      property details : String?
+      property state : String?
+      property emoji : Emoji?
+      property party : ActivityParty?
+      property assets : ActivityAssets?
+      property secrets : ActivitySecrets?
+      property instance : Bool?
+      @[JSON::Field(converter: Enum::ValueConverter(Discord::Gateway::ActivityFlags))]
+      property flags : ActivityFlags?
+      property buttons : Array(ActivityButton)?
+
+      def initialize(
+        @name = nil,
+        @type : Type? = nil,
+        @url = nil,
+        @state = nil,
+        @emoji = nil,
+        @created_at = Time.utc.to_unix
+      )
+      end
+    end
+
+    struct Timestamps
+      include JSON::Serializable
+
+      @[JSON::Field(converter: Time::EpochMillisConverter)]
+      property start : Time?
+      @[JSON::Field(key: "end", converter: Time::EpochMillisConverter)]
+      property end_time : Time?
+    end
+
+    struct ActivityParty
+      include JSON::Serializable
+
+      property id : Snowflake?
+      property size : Array(Int32)?
+    end
+
+    struct ActivityAssets
+      include JSON::Serializable
+
+      property large_image : String?
+      property large_text : String?
+      property small_image : String?
+      property small_text : String?
+    end
+
+    struct ActivitySecrets
+      include JSON::Serializable
+
+      property join : String?
+      property spectate : String?
+      property match : String?
+    end
+
+    @[Flags]
+    enum ActivityFlags
+      Instance    = 1 << 0
+      Join        = 1 << 1
+      Spectate    = 1 << 2
+      JoinRequest = 1 << 3
+      Sync        = 1 << 4
+      Play        = 1 << 5
+    end
+
+    struct ActivityButton
+      include JSON::Serializable
+
+      property label : String
+      property url : String
     end
 
     struct TypingStartPayload
       include JSON::Serializable
 
       property channel_id : Snowflake
-      property user_id : Snowflake
       property guild_id : Snowflake?
-      property member : GuildMember?
+      property user_id : Snowflake
       @[JSON::Field(converter: Time::EpochConverter)]
       property timestamp : Time
+      property member : GuildMember?
     end
 
     struct VoiceServerUpdatePayload
@@ -444,12 +584,8 @@ module Discord
       property channel_id : Snowflake
     end
 
-    struct ChannelPinsUpdatePayload
-      include JSON::Serializable
-
-      @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-      property last_pin_timestamp : Time?
-      property channel_id : Snowflake
+    struct ApplicationCommandPayload < ApplicationCommandAbstract
+      property guild_id : Snowflake?
     end
   end
 end

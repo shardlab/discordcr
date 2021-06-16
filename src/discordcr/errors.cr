@@ -36,6 +36,7 @@ module Discord
     include JSON::Serializable
 
     property code : Int32
+    property errors : Hash(String, JSON::Any)
     property message : String
   end
 
@@ -58,6 +59,45 @@ module Discord
     # delete. Must provide at least 2 and fewer than 100 messages to delete.".
     def error_message : String
       @error.message
+    end
+
+    def error_errors : Hash(String, JSON::Any)
+      @error.errors
+    end
+
+    def human_errors : String
+      if @error.errors.size == 0
+        ""
+      else
+        "\n" + @error.errors.map do |key, e|
+          "Field '#{key}' reported following errors:\n#{next_down(e)}"
+        end.join
+      end
+    end
+
+    private def next_down(e, offset = 2) : String
+      if !e["_errors"]?
+        e.as_h.map do |key, n|
+          "#{" "*offset}Inner #{(num = key.to_i?) ? "#{human_int(num + 1)} element" : "field '#{key}'"} reported following errors:\n#{next_down(n, offset + 2)}"
+        end.join
+      else
+        e["_errors"].as_a.map do |err|
+          "#{" "*offset}- #{err["code"]} - #{err["message"]}\n"
+        end.join
+      end
+    end
+
+    private def human_int(nr)
+      case
+      when (ld = nr % 10) == 1 && (tld = nr % 100) != 11
+        return "#{nr}st"
+      when ld == 2 && tld != 12
+        return "#{nr}nd"
+      when ld == 3 && tld != 13
+        return "#{nr}rd"
+      else
+        return "#{nr}th"
+      end
     end
 
     def message
