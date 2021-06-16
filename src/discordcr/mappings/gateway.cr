@@ -497,14 +497,7 @@ module Discord
       property flags : ActivityFlags?
       property buttons : Array(ActivityButton)?
 
-      def initialize(
-        @name = nil,
-        @type : Type? = nil,
-        @url = nil,
-        @state = nil,
-        @emoji = nil,
-        @created_at = Time.utc.to_unix
-      )
+      def initialize(@name = nil, @type = Type::Playing, @url = nil, @state = nil, @emoji = nil, @created_at = Time.utc)
       end
     end
 
