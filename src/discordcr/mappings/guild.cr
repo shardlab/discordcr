@@ -1,53 +1,53 @@
-require "./converters"
-require "./voice"
-
 module Discord
-  struct Guild
+  # Guilds in Discord represent an isolated collection of users and channels, and are often referred to as "servers" in the UI.
+  abstract struct GuildAbstract
     include JSON::Serializable
+    include AbstractCast
 
     property id : Snowflake
     property name : String
     property icon : String?
+    property icon_hash : String?
     property splash : String?
+    property discovery_splash : String?
     property owner_id : Snowflake
     property region : String
     property afk_channel_id : Snowflake?
     property afk_timeout : Int32?
-    property embed_enabled : Bool?
-    property embed_channel_id : Snowflake?
-    property verification_level : UInt8
-    property premium_tier : UInt8
-    property premium_subscription_count : UInt8?
+    property widget_enabled : Bool?
+    property widget_channel_id : Snowflake?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::VerificationLevel))]
+    property verification_level : VerificationLevel
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::MessageNotificationLevel))]
+    property default_message_notifications : MessageNotificationLevel
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::ExplicitContentFilter))]
+    property explicit_content_filter : ExplicitContentFilter
     property roles : Array(Role)
     @[JSON::Field(key: "emojis")]
     property emoji : Array(Emoji)
     property features : Array(String)
-    property widget_enabled : Bool?
-    property widget_channel_id : Snowflake?
-    property default_message_notifications : UInt8
-    property explicit_content_filter : UInt8
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::MFALevel))]
+    property mfa_level : MFALevel
+    property application_id : Snowflake?
     property system_channel_id : Snowflake?
-
-    # :nodoc:
-    def initialize(payload : Gateway::GuildCreatePayload)
-      @id = payload.id
-      @name = payload.name
-      @icon = payload.icon
-      @splash = payload.splash
-      @owner_id = payload.owner_id
-      @region = payload.region
-      @afk_channel_id = payload.afk_channel_id
-      @afk_timeout = payload.afk_timeout
-      @verification_level = payload.verification_level
-      @premium_tier = payload.premium_tier
-      @roles = payload.roles
-      @emoji = payload.emoji
-      @features = payload.features
-      @widget_channel_id = payload.widget_channel_id
-      @default_message_notifications = payload.default_message_notifications
-      @explicit_content_filter = payload.explicit_content_filter
-      @system_channel_id = payload.system_channel_id
-    end
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::SystemChannelFlags))]
+    property system_channel_flags : SystemChannelFlags
+    property rules_channel_id : Snowflake?
+    property max_presences : UInt32?
+    property max_members : UInt32?
+    property vanity_url_code : String?
+    property description : String?
+    property banner : String?
+    property premium_tier : UInt8
+    property premium_subscription_count : UInt8?
+    property preferred_locale : String
+    property public_updates_channel_id : Snowflake?
+    property max_video_channel_users : UInt32?
+    property approximate_member_count : UInt32?
+    property approximate_presence_count : UInt32?
+    property welcome_screen : WelcomeScreen?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::NSFWLevel))]
+    property nsfw_level : NSFWLevel
 
     {% unless flag?(:correct_english) %}
       def emojis
@@ -57,8 +57,7 @@ module Discord
 
     # Produces a CDN URL to this guild's icon in the given `format` and `size`,
     # or `nil` if no icon is set.
-    def icon_url(format : CDN::GuildIconFormat = CDN::GuildIconFormat::WebP,
-                 size : Int32 = 128)
+    def icon_url(format : CDN::ExtraImageFormat = CDN::ExtraImageFormat::WebP, size : Int32 = 128)
       if icon = @icon
         CDN.guild_icon(id, icon, format, size)
       end
@@ -66,12 +65,80 @@ module Discord
 
     # Produces a CDN URL to this guild's splash in the given `format` and `size`,
     # or `nil` if no splash is set.
-    def splash_url(format : CDN::GuildSplashFormat = CDN::GuildSplashFormat::WebP,
-                   size : Int32 = 128)
+    def splash_url(format : CDN::ImageFormat = CDN::ImageFormat::WebP, size : Int32 = 128)
       if splash = @splash
         CDN.guild_splash(id, splash, format, size)
       end
     end
+
+    # Produces a CDN URL to this guild's discovery_splash in the given `format` and `size`,
+    # or `nil` if no discovery_splash is set.
+    def discovery_splash_url(format : CDN::ImageFormat = CDN::ImageFormat::WebP, size : Int32 = 128)
+      if discovery_splash = @discovery_splash
+        CDN.guild_discovery_splash(id, discovery_splash, format, size)
+      end
+    end
+
+    # Produces a CDN URL to this guild's banner in the given `format` and `size`,
+    # or `nil` if no banner is set.
+    def banner_url(format : CDN::ImageFormat = CDN::ImageFormat::WebP, size : Int32 = 128)
+      if banner = @banner
+        CDN.guild_banner(id, banner, format, size)
+      end
+    end
+  end
+
+  struct Guild < GuildAbstract
+  end
+
+  enum MessageNotificationLevel
+    AllMessages  = 0
+    OnlyMentions = 1
+  end
+
+  enum ExplicitContentFilter
+    Disabled            = 0
+    MembersWithoutRoles = 1
+    AllMembers          = 2
+  end
+
+  enum MFALevel
+    None     = 0
+    Elevated = 1
+  end
+
+  enum VerificationLevel
+    None     = 0
+    Low      = 1
+    Medium   = 2
+    High     = 3
+    VeryHigh = 4
+  end
+
+  enum NSFWLevel
+    Default       = 0
+    Explicit      = 1
+    Safe          = 2
+    AgeRestricted = 3
+  end
+
+  @[Flags]
+  enum SystemChannelFlags
+    SupressJoinNotifications          = 1 << 0
+    SupressPremiumSubscriptions       = 1 << 1
+    SupressGuildReminderNotifications = 1 << 2
+  end
+
+  # Partial Guild object sent only on `GET /users/@me/guilds` endpoint
+  struct PartialGuild
+    include JSON::Serializable
+
+    property id : String
+    property name : String
+    property icon : String?
+    property owner : Bool
+    property permissions : Permissions?
+    property features : Array(String)
   end
 
   struct UnavailableGuild
@@ -81,62 +148,78 @@ module Discord
     property unavailable : Bool
   end
 
-  struct GuildEmbed
+  struct GuildPreview
+    include JSON::Serializable
+
+    property id : Snowflake
+    property name : String
+    property icon : String?
+    property splash : String?
+    property discovery_splash : String?
+    @[JSON::Field(key: "emojis")]
+    property emoji : Array(Emoji)
+    property features : Array(String)
+    property approximate_member_count : UInt32
+    property approximate_presence_count : UInt32
+    property description : String?
+  end
+
+  # This is not documented, but derived from an example provided with the `GET /guilds/{guild.id}/widget.json` endpoint
+  struct GuildWidget
+    include JSON::Serializable
+
+    property id : Snowflake
+    property name : String
+    property instant_invite : String
+    property channels : Array(WidgetChannel)
+    property members : Array(WidgetMember)
+    property presence_count : UInt32
+  end
+
+  # This structure is not documented
+  struct WidgetChannel
+    include JSON::Serializable
+
+    property id : Snowflake
+    property name : String
+    property position : UInt32
+  end
+
+  # This structure is not documented
+  struct WidgetMember
+    include JSON::Serializable
+
+    property id : Snowflake
+    property username : String
+    property discriminator : String
+    property avatar : String?
+    property status : String
+    property avatar_url : String
+  end
+
+  # In the docs this is called GuildWidget but this is not the widget itself
+  struct GuildWidgetSettings
     include JSON::Serializable
 
     property enabled : Bool
     property channel_id : Snowflake?
   end
 
-  struct GuildMember
+  abstract struct GuildMemberAbstract
     include JSON::Serializable
+    include AbstractCast
 
-    property user : User
+    property user : User?
     property nick : String?
     property roles : Array(Snowflake)
-    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-    property joined_at : Time?
+    @[JSON::Field(converter: Discord::TimestampConverter)]
+    property joined_at : Time
     @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
     property premium_since : Time?
     property deaf : Bool?
     property mute : Bool?
-
-    # :nodoc:
-    def initialize(user : User, partial_member : PartialGuildMember)
-      @user = user
-      @roles = partial_member.roles
-      @nick = partial_member.nick
-      @joined_at = partial_member.joined_at
-      @premium_since = partial_member.premium_since
-      @mute = partial_member.mute
-      @deaf = partial_member.deaf
-    end
-
-    # :nodoc:
-    def initialize(payload : Gateway::GuildMemberAddPayload | GuildMember, roles : Array(Snowflake), nick : String?)
-      initialize(payload)
-      @nick = nick
-      @roles = roles
-    end
-
-    # :nodoc:
-    def initialize(payload : Gateway::GuildMemberAddPayload | GuildMember)
-      @user = payload.user
-      @nick = payload.nick
-      @roles = payload.roles
-      @joined_at = payload.joined_at
-      @premium_since = payload.premium_since
-      @deaf = payload.deaf
-      @mute = payload.mute
-    end
-
-    # :nodoc:
-    def initialize(payload : Gateway::PresenceUpdatePayload)
-      @user = User.new(payload.user)
-      @nick = payload.nick
-      @roles = payload.roles
-      # Presence updates have no joined_at or deaf/mute, thanks Discord
-    end
+    property pending : Bool?
+    property permissions : Permissions?
 
     # Produces a string to mention this member in a message
     def mention
@@ -148,41 +231,73 @@ module Discord
     end
   end
 
-  struct PartialGuildMember
-    include JSON::Serializable
+  struct GuildMember < GuildMemberAbstract
+    # :nodoc:
+    def initialize(user : User, partial_member : GuildMember)
+      @user = user
+      @roles = partial_member.roles
+      @nick = partial_member.nick
+      @joined_at = partial_member.joined_at
+      @premium_since = partial_member.premium_since
+      @mute = partial_member.mute
+      @deaf = partial_member.deaf
+      @joined_at = partial_member.joined_at
+    end
 
-    property nick : String?
-    property roles : Array(Snowflake)
-    @[JSON::Field(converter: Discord::TimestampConverter)]
-    property joined_at : Time
-    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
-    property premium_since : Time?
-    property deaf : Bool
-    property mute : Bool
+    # :nodoc:
+    def initialize(payload : GuildMemberAbstract, roles : Array(Snowflake), nick : String?)
+      initialize(payload)
+      @nick = nick
+      @roles = roles
+    end
+
+    # :nodoc:
+    def initialize(payload : Gateway::PresenceUpdatePayload)
+      @user = User.new(payload.user)
+      @roles = Array(Snowflake).new
+      @joined_at = Time.utc
+      @mute = false
+      @deaf = false
+      # Presence updates have no joined_at or deaf/mute, thanks Discord
+      # And since API v8 there is no nick or roles! Thanks Discord!!
+    end
   end
 
-  struct Integration
+  abstract struct IntegrationAbstract
     include JSON::Serializable
+    include AbstractCast
 
     property id : Snowflake
     property name : String
     property type : String
-    property enabled : Bool
-    property syncing : Bool
-    property role_id : Snowflake
-    @[JSON::Field(key: "expire_behavior")]
-    property expire_behaviour : UInt8
-    property expire_grace_period : Int32
-    property user : User
+    property enabled : Bool = true # Because AuditLog object holds an array of partial integration objects without the enabled field, we will assume true if it is not present
+    property syncing : Bool?
+    property role_id : Snowflake?
+    property enable_emoticons : Bool?
+    @[JSON::Field(key: "expire_behavior", converter: Enum::ValueConverter(Discord::ExpireBehaviour))]
+    property expire_behaviour : ExpireBehaviour?
+    property expire_grace_period : UInt32?
+    property user : User?
     property account : IntegrationAccount
-    @[JSON::Field(converter: Time::EpochConverter)]
-    property synced_at : Time
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property synced_at : Time?
+    property subscriber_count : UInt32?
+    property revoked : Bool?
+    property application : IntegrationApplication?
 
     {% unless flag?(:correct_english) %}
       def expire_behavior
         expire_behaviour
       end
     {% end %}
+  end
+
+  struct Integration < IntegrationAbstract
+  end
+
+  enum ExpireBehaviour
+    RemoveRole = 0
+    Kick       = 1
   end
 
   struct IntegrationAccount
@@ -192,110 +307,37 @@ module Discord
     property name : String
   end
 
-  struct Emoji
-    include JSON::Serializable
-
-    property id : Snowflake?
-    property name : String
-    property roles : Array(Snowflake)?
-    property require_colons : Bool?
-    property managed : Bool?
-    property animated : Bool?
-
-    # Produces a CDN URL to this emoji's image in the given `size`. Will return
-    # a PNG, or GIF if the emoji is animated.
-    def image_url(size : Int32 = 128)
-      if animated
-        image_url(:gif, size)
-      else
-        image_url(:png, size)
-      end
-    end
-
-    # Produces a CDN URL to this emoji's image in the given `format` and `size`
-    # or `nil` if the emoji has no id.
-    def image_url(format : CDN::CustomEmojiFormat, size : Int32 = 128)
-      if emoji_id = id
-        CDN.custom_emoji(emoji_id, format, size)
-      end
-    end
-
-    # Produces a string to mention this emoji in a message
-    def mention
-      if animated
-        "<a:#{name}:#{id}>"
-      else
-        "<:#{name}:#{id}>"
-      end
-    end
-  end
-
-  struct Role
+  struct IntegrationApplication
     include JSON::Serializable
 
     property id : Snowflake
     property name : String
-    property permissions : Permissions
-    @[JSON::Field(key: "color")]
-    property colour : UInt32
-    property hoist : Bool
-    property position : Int32
-    property managed : Bool
-    property mentionable : Bool
-
-    {% unless flag?(:correct_english) %}
-      def color
-        colour
-      end
-    {% end %}
-
-    # Produces a string to mention this role in a message
-    def mention
-      "<@&#{id}>"
-    end
+    property icon : String?
+    property description : String
+    property summary : String
+    property bot : User?
   end
 
   struct GuildBan
     include JSON::Serializable
 
-    property user : User
     property reason : String?
+    property user : User
   end
 
-  struct GamePlaying
+  struct WelcomeScreen
     include JSON::Serializable
 
-    enum Type : UInt8
-      Playing   = 0
-      Streaming = 1
-      Listening = 2
-      Watching  = 3
-      Custom    = 4
-    end
-
-    property name : String?
-    @[JSON::Field(converter: Enum::ValueConverter(Discord::GamePlaying::Type))]
-    property type : Type?
-    property url : String?
-    property state : String?
-    property emoji : Emoji?
-
-    def initialize(
-      @name = nil,
-      @type : Type? = nil,
-      @url = nil,
-      @state = nil,
-      @emoji = nil
-    )
-    end
+    property description : String?
+    property welcome_channels : Array(WelcomChannel)
   end
 
-  struct Presence
+  struct WelcomChannel
     include JSON::Serializable
 
-    property user : PartialUser
-    property game : GamePlaying?
-    property status : String
-    property activities : Array(GamePlaying)
+    property channel_id : Snowflake
+    property description : String
+    property emoji_id : Snowflake?
+    property emoji_name : String?
   end
 end

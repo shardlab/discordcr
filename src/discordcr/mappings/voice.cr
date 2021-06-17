@@ -1,5 +1,3 @@
-require "./converters"
-
 module Discord
   struct VoiceState
     include JSON::Serializable
@@ -13,7 +11,11 @@ module Discord
     property mute : Bool
     property self_deaf : Bool
     property self_mute : Bool
+    property self_stream : Bool?
+    property self_video : Bool
     property suppress : Bool
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property request_to_speak_timestamp : Time?
   end
 
   struct VoiceRegion
@@ -21,10 +23,9 @@ module Discord
 
     property id : String
     property name : String
-    property sample_hostname : String
-    property sample_port : UInt16
-    property custom : Bool?
     property vip : Bool
     property optimal : Bool
+    property deprecated : Bool
+    property custom : Bool
   end
 end

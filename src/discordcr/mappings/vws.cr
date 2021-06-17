@@ -1,5 +1,3 @@
-require "./converters"
-
 module Discord
   # :nodoc:
   module VWS

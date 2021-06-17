@@ -1,20 +1,23 @@
-require "./converters"
-
 module Discord
   struct User
     include JSON::Serializable
 
-    property username : String
     property id : Snowflake
+    property username : String
     property discriminator : String
     property avatar : String?
-    property email : String?
     property bot : Bool?
     property system : Bool?
     property mfa_enabled : Bool?
+    property locale : String?
     property verified : Bool?
-    property member : PartialGuildMember?
+    property email : String?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::UserFlags))]
     property flags : UserFlags?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::PremiumType))]
+    property premium_type : PremiumType?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::UserFlags))]
+    property public_flags : UserFlags?
 
     # :nodoc:
     def initialize(partial : PartialUser)
@@ -40,7 +43,7 @@ module Discord
 
     # Produces a CDN URL to this user's avatar, in the given `format` and
     # `size`. If the user has no avatar, a default avatar URL is returned.
-    def avatar_url(format : CDN::UserAvatarFormat, size : Int32 = 128)
+    def avatar_url(format : CDN::ExtraImageFormat, size : Int32 = 128)
       if avatar = @avatar
         CDN.user_avatar(id, avatar, format, size)
       else
@@ -69,12 +72,16 @@ module Discord
     BugHunterLevel2           = 1 << 14
     VerifiedBot               = 1 << 16
     EarlyVerifiedBotDeveloper = 1 << 17
-
-    def self.new(pull : JSON::PullParser)
-      UserFlags.new(pull.read_int.to_u32)
-    end
+    DiscordCertifiedModerator = 1 << 18
   end
 
+  enum PremiumType
+    None         = 0
+    NitroClassic = 1
+    Nitro        = 2
+  end
+
+  # NOTE: Only exists for the sake of Presence and old code
   struct PartialUser
     include JSON::Serializable
 
@@ -84,20 +91,12 @@ module Discord
     property avatar : String?
     property email : String?
     property bot : Bool?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::UserFlags))]
+    property flags : UserFlags?
 
     def full? : Bool
       !@username.nil? && !@discriminator.nil? && !@avatar.nil?
     end
-  end
-
-  struct UserGuild
-    include JSON::Serializable
-
-    property id : Snowflake
-    property name : String
-    property icon : String?
-    property owner : Bool
-    property permissions : Permissions
   end
 
   struct Connection
@@ -107,5 +106,16 @@ module Discord
     property name : String
     property type : String
     property revoked : Bool
+    property integrations : Array(Integration)?
+    property verified : Bool
+    property friend_sync : Bool
+    property show_activity : Bool
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::Visibility))]
+    property visibility : Visibility
+  end
+
+  enum Visibility
+    None     = 0
+    Everyone = 1
   end
 end

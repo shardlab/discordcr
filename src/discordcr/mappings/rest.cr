@@ -1,5 +1,3 @@
-require "./converters"
-
 module Discord
   module REST
     # A response to the Get Gateway REST API call.
@@ -26,6 +24,7 @@ module Discord
       property remaining : Int32
       @[JSON::Field(converter: Discord::TimeSpanMillisecondsConverter)]
       property reset_after : Time::Span
+      property max_concurrency : Int32
     end
 
     # A response to the Get Guild Prune Count REST API call.
@@ -44,32 +43,25 @@ module Discord
 
     # A request payload to rearrange channels in a `Guild` by a REST API call.
     struct ModifyChannelPositionPayload
-      @id : Snowflake
+      @_internal = {} of String => (Int32 | Bool | UInt64 | Snowflake | Nil)
 
-      def initialize(id : UInt64 | Snowflake, @position : Int32,
-                     @parent_id : UInt64 | Snowflake | ChannelParent = ChannelParent::Unchanged,
-                     @lock_permissions : Bool? = nil)
-        id = Snowflake.new(id) unless id.is_a?(Snowflake)
-        @id = id
+      # Valid args: position: Int32, lock_permissions: Bool, parent_id: UInt64 | Snowflake | Nil
+      # Note: `parent_id: nil` will send null, and not setting `parent_id` will result in `parent_id` not being present
+      #
+      # To see valid fields, see `VALID_MODIFY_CHANNEL_POSITION_PAYLOAD_ARGS` constant (beneath this method in code)
+      def initialize(id : UInt64 | Snowflake, **args : **T) forall T
+        @_internal["id"] = id.is_a?(Snowflake) ? id : Snowflake.new(id)
+        TypeCheck.args_check(args, VALID_MODIFY_CHANNEL_POSITION_PAYLOAD_ARGS).each { |k, v| @_internal[k] = v }
       end
 
+      VALID_MODIFY_CHANNEL_POSITION_PAYLOAD_ARGS = {
+        :position         => TypeCheck(Int32),
+        :lock_permissions => TypeCheck(Bool),
+        :parent_id        => TypeCheck(UInt64 | Snowflake | Nil),
+      }
+
       def to_json(builder : JSON::Builder)
-        builder.object do
-          builder.field("id") { @id.to_json(builder) }
-
-          builder.field("position", @position)
-
-          case parent = @parent_id
-          when UInt64, Snowflake
-            parent.to_json(builder)
-          when ChannelParent::None
-            builder.field("parent_id", nil)
-          when ChannelParent::Unchanged
-            # no field
-          end
-
-          builder.field("lock_permissions", @lock_permissions) unless @lock_permissions.nil?
-        end
+        @_internal.to_json(builder)
       end
     end
 
@@ -81,8 +73,25 @@ module Discord
       property position : Int32
 
       def initialize(id : UInt64 | Snowflake, @position : Int32)
-        id = Snowflake.new(id) unless id.is_a?(Snowflake)
-        @id = id
+        @id = id.is_a?(Snowflake) ? id : Snowflake.new(id)
+      end
+    end
+
+    struct TypeCheck(T)
+      def self.check(value)
+        value.is_a?(T)
+      end
+
+      def self.type
+        T
+      end
+
+      def self.args_check(args, valid : Hash(Symbol, TypeCheck.class))
+        args.map do |key, value|
+          raise "field '#{key}' does not exist" unless valid[key]?
+          raise "field '#{key}' is of invalid type (must be #{valid[key].type})" unless valid[key].check(value)
+          {key.to_s, value}
+        end.to_h
       end
     end
   end
