@@ -1,5 +1,3 @@
-require "json"
-
 module Discord
   # Parser for the DCA file format, a simple wrapper around Opus made
   # specifically for Discord bots.
