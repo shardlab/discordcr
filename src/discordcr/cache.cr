@@ -1,5 +1,3 @@
-require "./mappings/*"
-
 module Discord
   # A cache is a utility class that stores various kinds of Discord objects,
   # like `User`s, `Role`s etc. Its purpose is to reduce both the load on
@@ -215,9 +213,10 @@ module Discord
 
     # Adds a specific *member* to the cache, given the *guild_id* it is on.
     def cache(member : GuildMember, guild_id : UInt64 | Snowflake)
+      return if member.user.nil?
       guild_id = guild_id.to_u64
       local_members = @members[guild_id] ||= Hash(UInt64, GuildMember).new
-      local_members[member.user.id.to_u64] = member
+      local_members[member.user.not_nil!.id.to_u64] = member
     end
 
     # Adds a specific *role* to the cache.
@@ -251,7 +250,8 @@ module Discord
       guild_id = guild_id.to_u64
       local_members = @members[guild_id] ||= Hash(UInt64, GuildMember).new
       members.each do |member|
-        local_members[member.user.id.to_u64] = member
+        next if member.user.nil?
+        local_members[member.user.not_nil!.id.to_u64] = member
       end
     end
 
