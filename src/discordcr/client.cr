@@ -685,15 +685,6 @@ module Discord
       when "INTERACTION_CREATE"
         payload = Interaction.from_json(data)
         call_event interaction_create, payload
-      when "STAGE_INSTANCE_CREATE"
-        payload = StageInstance.from_json(data)
-        call_event stage_instance_create, payload
-      when "STAGE_INSTANCE_UPDATE"
-        payload = StageInstance.from_json(data)
-        call_event stage_instance_update, payload
-      when "STAGE_INSTANCE_DELETE"
-        payload = StageInstance.from_json(data)
-        call_event stage_instance_delete, payload
       when "APPLICATION_COMMAND_PERMISSIONS_UPDATE"
         payload = GuildApplicationCommandPermissions.from_json(data)
         call_event application_command_permissions_update, payload
@@ -975,21 +966,6 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#webhooks-update)
     event webhooks_update, Gateway::WebhooksUpdatePayload
-
-    # Sent when a Stage instance is created (i.e. the Stage is now "live"). Inner payload is a Stage instance
-    #
-    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-create)
-    event stage_instance_create, StageInstance
-
-    # Sent when a Stage instance has been updated. Inner payload is a Stage instance
-    #
-    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-update)
-    event stage_instance_update, StageInstance
-
-    # Sent when a Stage instance has been deleted (i.e. the Stage has been closed). Inner payload is a Stage instance
-    #
-    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-delete)
-    event stage_instance_delete, StageInstance
 
     # Sent when a Application Command Permission has been updated. Inner payload is a Guild Application Command Permissions
     #
