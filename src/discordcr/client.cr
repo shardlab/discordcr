@@ -503,6 +503,11 @@ module Discord
           cache voice_state
         end
 
+        payload.stage_instances.each do |stage_instance|
+          cache stage_instance
+          @cache.try &.add_guild_stage_instance(guild.id, stage_instance.id)
+        end
+
         call_event guild_create, payload
       when "GUILD_UPDATE"
         payload = Guild.from_json(data)
@@ -630,6 +635,25 @@ module Discord
         end
 
         call_event presence_update, payload
+      when "STAGE_INSTANCE_CREATE"
+        payload = StageInstance.from_json(data)
+        cache payload
+
+        @cache.try &.add_guild_stage_instance(payload.guild_id, payload.id)
+
+        call_event stage_instance_create, payload
+      when "STAGE_INSTANCE_UPDATE"
+        payload = StageInstance.from_json(data)
+        cache payload
+
+        call_event stage_instance_update, payload
+      when "STAGE_INSTANCE_DELETE"
+        payload = StageInstance.from_json(data)
+
+        @cache.try &.delete_stage_instance(payload.id)
+        @cache.try &.remove_guild_stage_instance(payload.guild_id, payload.id)
+
+        call_event stage_instance_delete, payload
       when "TYPING_START"
         payload = Gateway::TypingStartPayload.from_json(data)
 
@@ -877,6 +901,21 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#presence-update)
     event presence_update, Gateway::PresenceUpdatePayload
+
+    # Sent when a Stage instance is created.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-create)
+    event stage_instance_create, StageInstance
+
+    # Sent when a Stage instance is updated.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-update)
+    event stage_instance_update, StageInstance
+
+    # Sent when a Stage instance is deleted.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#stage-instance-delete)
+    event stage_instance_delete, StageInstance
 
     # Called when somebody starts typing in a channel the bot has access to.
     #

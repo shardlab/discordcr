@@ -858,6 +858,79 @@ module Discord
       Channel.from_json(response.body)
     end
 
+    # Creates a new Stage instance associated to a Stage channel.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#create-stage-instance)
+    def create_stage_instance(channel_id : UInt64 | Snowflake, topic : String, privacy_level : StagePrivacyLevel = StagePrivacyLevel::GUILD_ONLY)
+      json = encode_tuple(
+        channel_id: channel_id,
+        topic: topic,
+        privacy_level: privacy_level
+      )
+
+      response = request(
+        :stage_instances_cid,
+        channel_id,
+        "POST",
+        "/stage-instances",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      StageInstance.from_json(response.body)
+    end
+
+    # Gets the Stage instance associated with the passed Stage channel if it exists.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#get-stage-instance)
+    def get_stage_instance(channel_id : UInt64 | Snowflake)
+      response = request(
+        :stage_instances_cid,
+        channel_id,
+        "GET",
+        "/stage-instances/#{channel_id}",
+        HTTP::Headers.new,
+        nil
+      )
+
+      StageInstance.from_json(response.body)
+    end
+
+    # Updates fields of an existing Stage instance.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#update-stage-instance)
+    def update_stage_instance(channel_id : UInt64 | Snowflake, topic : String? = nil, privacy_level : StagePrivacyLevel? = nil)
+      json = encode_tuple(
+        topic: topic,
+        privacy_level: privacy_level
+      )
+
+      response = request(
+        :stage_instances_cid,
+        channel_id,
+        "PATCH",
+        "/stage-instances/#{channel_id}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      StageInstance.from_json(response.body)
+    end
+
+    # Deletes the Stage instance associated with the passed Stage channel.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/stage-instance#delete-stage-instance)
+    def delete_stage_instance(channel_id : UInt64 | Snowflake)
+      request(
+        :stage_instances_cid,
+        channel_id,
+        "DELETE",
+        "/stage-instances/#{channel_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
     # Gets the vanity URL of a guild. Requires the guild to be partnered.
     #
     # There are no API docs for this method.
@@ -886,6 +959,34 @@ module Discord
         "/guilds/#{guild_id}/vanity-url",
         HTTP::Headers{"Content-Type" => "application/json"},
         {code: code}.to_json
+      )
+    end
+
+    # Updates the current user's, or passed user's voice state.
+    # For use with Stage Channels only.
+    # The user that is being updated must be inside of the stage channel.
+    # Requires "MUTE_MEMBERS" to (un)suppress other members, you can always suppress yourself.
+    # Requires "REQUEST_TO_SPEAK" to request to speak.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild#update-current-user-voice-state)
+    def modify_voice_state(guild_id : UInt64 | Snowflake,
+                           channel_id : UInt64 | Snowflake,
+                           user_id : UInt64 | Snowflake | Nil = nil,
+                           suppress : Bool? = nil,
+                           request_to_speak_timestamp : Time? = nil)
+      json = encode_tuple(
+        channel_id: channel_id,
+        suppress: suppress,
+        request_to_speak_timestamp: request_to_speak_timestamp,
+      )
+
+      request(
+        :guilds_gid_voicestate,
+        guild_id,
+        "PATCH",
+        "/guilds/#{guild_id}/voice-states/#{user_id || "@me"}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
       )
     end
 

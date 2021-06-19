@@ -47,6 +47,10 @@ module Discord
     # affected guilds would be missing here too.
     getter guilds
 
+    # A map of cached stage instances, i. e. all stage instances on all servers
+    # the bot is on.
+    getter stage_instances
+
     # A double map of members on servers, represented as {guild ID => {user ID
     # => member}}. Will only contain previously and currently online members as
     # well as all members that have been chunked (see
@@ -69,6 +73,10 @@ module Discord
     # [channel IDs]}.
     getter guild_channels
 
+    # Mapping of guilds to the Stage instances on them, represented as {guild ID =>
+    # [stage instance IDs]}.
+    getter guild_stage_instances
+
     # Mapping of users in guild to voice states, represented as {guild ID =>
     # {user ID => voice state}}
     getter voice_states
@@ -81,11 +89,13 @@ module Discord
       @guilds = Hash(UInt64, Guild).new
       @members = Hash(UInt64, Hash(UInt64, GuildMember)).new
       @roles = Hash(UInt64, Role).new
+      @stage_instances = Hash(UInt64, StageInstance).new
 
       @dm_channels = Hash(UInt64, UInt64).new
 
       @guild_roles = Hash(UInt64, Array(UInt64)).new
       @guild_channels = Hash(UInt64, Array(UInt64)).new
+      @guild_stage_instances = Hash(UInt64, Array(UInt64)).new
 
       @voice_states = Hash(UInt64, Hash(UInt64, VoiceState)).new
     end
@@ -128,6 +138,13 @@ module Discord
       @roles[id.to_u64] # There is no endpoint for getting an individual role, so we will have to ignore that case for now.
     end
 
+    # Resolves a Stage instance by its *ID*.
+    # An API request will be performed if the object is not cached.
+    def resolve_stage_instance(id : UInt64 | Snowflake) : StageInstance
+      id = id.to_u64
+      @stage_instances.fetch(id) { @stage_instances[id] = @client.get_stage_instance(id) }
+    end
+
     # Resolves the ID of a DM channel with a particular user by the recipient's
     # *recipient_id*. If there is no such channel cached, one will be created.
     def resolve_dm_channel(recipient_id : UInt64 | Snowflake) : UInt64
@@ -166,6 +183,11 @@ module Discord
     # Deletes a guild from the cache given its *ID*.
     def delete_guild(id : UInt64 | Snowflake)
       @guilds.delete(id.to_u64)
+    end
+
+    # Deletes a stage instance from the cache given its *ID*.
+    def delete_stage_instance(id : UInt64 | Snowflake)
+      @stage_instances.delete(id.to_u64)
     end
 
     # Deletes a member from the cache given its *user_id* and the *guild_id* it
@@ -223,6 +245,11 @@ module Discord
     # Adds a specific *role* to the cache.
     def cache(role : Role)
       @roles[role.id.to_u64] = role
+    end
+
+    # Adds a specific *Stage instance* to the cache.
+    def cache(stage_instance : StageInstance)
+      @stage_instances[stage_instance.id.to_u64] = stage_instance
     end
 
     # Adds a specific *voice state* to the cache.
@@ -295,6 +322,27 @@ module Discord
       guild_id = guild_id.to_u64
       channel_id = channel_id.to_u64
       @guild_channels[guild_id]?.try { |local_channels| local_channels.delete(channel_id) }
+    end
+
+    # Returns all Stage instances of a guild, identified by its *guild_id*.
+    def guild_stage_instances(guild_id : UInt64 | Snowflake) : Array(UInt64)
+      @guild_stage_instances[guild_id.to_u64]
+    end
+
+    # Marks a Stage instance, identified by the *instance_id*, as belonging to a particular
+    # guild, identified by the *guild_id*.
+    def add_guild_stage_instance(guild_id : UInt64 | Snowflake, instance_id : UInt64 | Snowflake)
+      guild_id = guild_id.to_u64
+      instance_id = instance_id.to_u64
+      local_instances = @guild_stage_instances[guild_id] ||= [] of UInt64
+      local_instances << instance_id
+    end
+
+    # Marks a Stage instance as not belonging to a particular guild anymore.
+    def remove_guild_stage_instance(guild_id : UInt64 | Snowflake, instance_id : UInt64 | Snowflake)
+      guild_id = guild_id.to_u64
+      instance_id = instance_id.to_u64
+      @guild_stage_instances[guild_id]?.try { |local_instances| local_instances.delete(instance_id) }
     end
   end
 end
