@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.4.1">
+<meta name="crystal_docs.project_name" content="discordcr">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="discordcr">
+  <title>Discord::MessageType - discordcr 0.4.1</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          discordcr
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.4.1
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="discordcr/Discord" data-name="discord">
+      <a href="../Discord.html">Discord</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Activity" data-name="discord::activity">
+      <a href="../Discord/Activity.html">Activity</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
+      <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/APIError" data-name="discord::apierror">
+      <a href="../Discord/APIError.html">APIError</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Attachment" data-name="discord::attachment">
+      <a href="../Discord/Attachment.html">Attachment</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Cache" data-name="discord::cache">
+      <a href="../Discord/Cache.html">Cache</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/CDN" data-name="discord::cdn">
+      <a href="../Discord/CDN.html">CDN</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/ApplicationAssetFormat" data-name="discord::cdn::applicationassetformat">
+      <a href="../Discord/CDN/ApplicationAssetFormat.html">ApplicationAssetFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/ApplicationIconFormat" data-name="discord::cdn::applicationiconformat">
+      <a href="../Discord/CDN/ApplicationIconFormat.html">ApplicationIconFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/CustomEmojiFormat" data-name="discord::cdn::customemojiformat">
+      <a href="../Discord/CDN/CustomEmojiFormat.html">CustomEmojiFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/GuildIconFormat" data-name="discord::cdn::guildiconformat">
+      <a href="../Discord/CDN/GuildIconFormat.html">GuildIconFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/GuildSplashFormat" data-name="discord::cdn::guildsplashformat">
+      <a href="../Discord/CDN/GuildSplashFormat.html">GuildSplashFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CDN/UserAvatarFormat" data-name="discord::cdn::useravatarformat">
+      <a href="../Discord/CDN/UserAvatarFormat.html">UserAvatarFormat</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Channel" data-name="discord::channel">
+      <a href="../Discord/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ChannelType" data-name="discord::channeltype">
+      <a href="../Discord/ChannelType.html">ChannelType</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/Client" data-name="discord::client">
+      <a href="../Discord/Client.html">Client</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Client/CompressMode" data-name="discord::client::compressmode">
+      <a href="../Discord/Client/CompressMode.html">CompressMode</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/CodeException" data-name="discord::codeexception">
+      <a href="../Discord/CodeException.html">CodeException</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Connection" data-name="discord::connection">
+      <a href="../Discord/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/DCA1Mappings" data-name="discord::dca1mappings">
+      <a href="../Discord/DCA1Mappings.html">DCA1Mappings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/DCA" data-name="discord::dca1mappings::dca">
+      <a href="../Discord/DCA1Mappings/DCA.html">DCA</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Info" data-name="discord::dca1mappings::info">
+      <a href="../Discord/DCA1Mappings/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Metadata" data-name="discord::dca1mappings::metadata">
+      <a href="../Discord/DCA1Mappings/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Opus" data-name="discord::dca1mappings::opus">
+      <a href="../Discord/DCA1Mappings/Opus.html">Opus</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Origin" data-name="discord::dca1mappings::origin">
+      <a href="../Discord/DCA1Mappings/Origin.html">Origin</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCA1Mappings/Tool" data-name="discord::dca1mappings::tool">
+      <a href="../Discord/DCA1Mappings/Tool.html">Tool</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/DCAParser" data-name="discord::dcaparser">
+      <a href="../Discord/DCAParser.html">DCAParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Embed" data-name="discord::embed">
+      <a href="../Discord/Embed.html">Embed</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
+      <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedField" data-name="discord::embedfield">
+      <a href="../Discord/EmbedField.html">EmbedField</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedFooter" data-name="discord::embedfooter">
+      <a href="../Discord/EmbedFooter.html">EmbedFooter</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedImage" data-name="discord::embedimage">
+      <a href="../Discord/EmbedImage.html">EmbedImage</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedProvider" data-name="discord::embedprovider">
+      <a href="../Discord/EmbedProvider.html">EmbedProvider</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedThumbnail" data-name="discord::embedthumbnail">
+      <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/EmbedVideo" data-name="discord::embedvideo">
+      <a href="../Discord/EmbedVideo.html">EmbedVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Emoji" data-name="discord::emoji">
+      <a href="../Discord/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/GamePlaying" data-name="discord::gameplaying">
+      <a href="../Discord/GamePlaying.html">GamePlaying</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/GamePlaying/Type" data-name="discord::gameplaying::type">
+      <a href="../Discord/GamePlaying/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/Gateway" data-name="discord::gateway">
+      <a href="../Discord/Gateway.html">Gateway</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ChannelPinsUpdatePayload" data-name="discord::gateway::channelpinsupdatepayload">
+      <a href="../Discord/Gateway/ChannelPinsUpdatePayload.html">ChannelPinsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildBanPayload" data-name="discord::gateway::guildbanpayload">
+      <a href="../Discord/Gateway/GuildBanPayload.html">GuildBanPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildCreatePayload" data-name="discord::gateway::guildcreatepayload">
+      <a href="../Discord/Gateway/GuildCreatePayload.html">GuildCreatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildDeletePayload" data-name="discord::gateway::guilddeletepayload">
+      <a href="../Discord/Gateway/GuildDeletePayload.html">GuildDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildEmojiUpdatePayload" data-name="discord::gateway::guildemojiupdatepayload">
+      <a href="../Discord/Gateway/GuildEmojiUpdatePayload.html">GuildEmojiUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildIntegrationsUpdatePayload" data-name="discord::gateway::guildintegrationsupdatepayload">
+      <a href="../Discord/Gateway/GuildIntegrationsUpdatePayload.html">GuildIntegrationsUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMemberAddPayload" data-name="discord::gateway::guildmemberaddpayload">
+      <a href="../Discord/Gateway/GuildMemberAddPayload.html">GuildMemberAddPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMemberRemovePayload" data-name="discord::gateway::guildmemberremovepayload">
+      <a href="../Discord/Gateway/GuildMemberRemovePayload.html">GuildMemberRemovePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMembersChunkPayload" data-name="discord::gateway::guildmemberschunkpayload">
+      <a href="../Discord/Gateway/GuildMembersChunkPayload.html">GuildMembersChunkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildMemberUpdatePayload" data-name="discord::gateway::guildmemberupdatepayload">
+      <a href="../Discord/Gateway/GuildMemberUpdatePayload.html">GuildMemberUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildRoleDeletePayload" data-name="discord::gateway::guildroledeletepayload">
+      <a href="../Discord/Gateway/GuildRoleDeletePayload.html">GuildRoleDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/GuildRolePayload" data-name="discord::gateway::guildrolepayload">
+      <a href="../Discord/Gateway/GuildRolePayload.html">GuildRolePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/HelloPayload" data-name="discord::gateway::hellopayload">
+      <a href="../Discord/Gateway/HelloPayload.html">HelloPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/IdentifyPacket" data-name="discord::gateway::identifypacket">
+      <a href="../Discord/Gateway/IdentifyPacket.html">IdentifyPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/IdentifyPayload" data-name="discord::gateway::identifypayload">
+      <a href="../Discord/Gateway/IdentifyPayload.html">IdentifyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/IdentifyProperties" data-name="discord::gateway::identifyproperties">
+      <a href="../Discord/Gateway/IdentifyProperties.html">IdentifyProperties</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/Intents" data-name="discord::gateway::intents">
+      <a href="../Discord/Gateway/Intents.html">Intents</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/InviteCreatePayload" data-name="discord::gateway::invitecreatepayload">
+      <a href="../Discord/Gateway/InviteCreatePayload.html">InviteCreatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/InviteDeletePayload" data-name="discord::gateway::invitedeletepayload">
+      <a href="../Discord/Gateway/InviteDeletePayload.html">InviteDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageDeleteBulkPayload" data-name="discord::gateway::messagedeletebulkpayload">
+      <a href="../Discord/Gateway/MessageDeleteBulkPayload.html">MessageDeleteBulkPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageDeletePayload" data-name="discord::gateway::messagedeletepayload">
+      <a href="../Discord/Gateway/MessageDeletePayload.html">MessageDeletePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageReactionPayload" data-name="discord::gateway::messagereactionpayload">
+      <a href="../Discord/Gateway/MessageReactionPayload.html">MessageReactionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageReactionRemoveAllPayload" data-name="discord::gateway::messagereactionremoveallpayload">
+      <a href="../Discord/Gateway/MessageReactionRemoveAllPayload.html">MessageReactionRemoveAllPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageReactionRemoveEmojiPayload" data-name="discord::gateway::messagereactionremoveemojipayload">
+      <a href="../Discord/Gateway/MessageReactionRemoveEmojiPayload.html">MessageReactionRemoveEmojiPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/MessageUpdatePayload" data-name="discord::gateway::messageupdatepayload">
+      <a href="../Discord/Gateway/MessageUpdatePayload.html">MessageUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/PresenceUpdatePayload" data-name="discord::gateway::presenceupdatepayload">
+      <a href="../Discord/Gateway/PresenceUpdatePayload.html">PresenceUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ReadyPayload" data-name="discord::gateway::readypayload">
+      <a href="../Discord/Gateway/ReadyPayload.html">ReadyPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/RequestGuildMembersPacket" data-name="discord::gateway::requestguildmemberspacket">
+      <a href="../Discord/Gateway/RequestGuildMembersPacket.html">RequestGuildMembersPacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ResumedPayload" data-name="discord::gateway::resumedpayload">
+      <a href="../Discord/Gateway/ResumedPayload.html">ResumedPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ResumePacket" data-name="discord::gateway::resumepacket">
+      <a href="../Discord/Gateway/ResumePacket.html">ResumePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/Session" data-name="discord::gateway::session">
+      <a href="../Discord/Gateway/Session.html">Session</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ShardKey" data-name="discord::gateway::shardkey">
+      <a href="../Discord/Gateway/ShardKey.html">ShardKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/StatusUpdatePacket" data-name="discord::gateway::statusupdatepacket">
+      <a href="../Discord/Gateway/StatusUpdatePacket.html">StatusUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/TypingStartPayload" data-name="discord::gateway::typingstartpayload">
+      <a href="../Discord/Gateway/TypingStartPayload.html">TypingStartPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/VoiceServerUpdatePayload" data-name="discord::gateway::voiceserverupdatepayload">
+      <a href="../Discord/Gateway/VoiceServerUpdatePayload.html">VoiceServerUpdatePayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/VoiceStateUpdatePacket" data-name="discord::gateway::voicestateupdatepacket">
+      <a href="../Discord/Gateway/VoiceStateUpdatePacket.html">VoiceStateUpdatePacket</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/WebhooksUpdatePayload" data-name="discord::gateway::webhooksupdatepayload">
+      <a href="../Discord/Gateway/WebhooksUpdatePayload.html">WebhooksUpdatePayload</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Guild" data-name="discord::guild">
+      <a href="../Discord/Guild.html">Guild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/GuildBan" data-name="discord::guildban">
+      <a href="../Discord/GuildBan.html">GuildBan</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+      <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/GuildMember" data-name="discord::guildmember">
+      <a href="../Discord/GuildMember.html">GuildMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Integration" data-name="discord::integration">
+      <a href="../Discord/Integration.html">Integration</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/IntegrationAccount" data-name="discord::integrationaccount">
+      <a href="../Discord/IntegrationAccount.html">IntegrationAccount</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Invite" data-name="discord::invite">
+      <a href="../Discord/Invite.html">Invite</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/InviteChannel" data-name="discord::invitechannel">
+      <a href="../Discord/InviteChannel.html">InviteChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/InviteGuild" data-name="discord::inviteguild">
+      <a href="../Discord/InviteGuild.html">InviteGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/InviteMetadata" data-name="discord::invitemetadata">
+      <a href="../Discord/InviteMetadata.html">InviteMetadata</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/Mention" data-name="discord::mention">
+      <a href="../Discord/Mention.html">Mention</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Channel" data-name="discord::mention::channel">
+      <a href="../Discord/Mention/Channel.html">Channel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Emoji" data-name="discord::mention::emoji">
+      <a href="../Discord/Mention/Emoji.html">Emoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Everyone" data-name="discord::mention::everyone">
+      <a href="../Discord/Mention/Everyone.html">Everyone</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Here" data-name="discord::mention::here">
+      <a href="../Discord/Mention/Here.html">Here</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/MentionType" data-name="discord::mention::mentiontype">
+      <a href="../Discord/Mention/MentionType.html">MentionType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/Role" data-name="discord::mention::role">
+      <a href="../Discord/Mention/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Mention/User" data-name="discord::mention::user">
+      <a href="../Discord/Mention/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Message" data-name="discord::message">
+      <a href="../Discord/Message.html">Message</a>
+      
+    </li>
+  
+  <li class=" current" data-id="discordcr/Discord/MessageType" data-name="discord::messagetype">
+      <a href="../Discord/MessageType.html">MessageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/OAuth2Application" data-name="discord::oauth2application">
+      <a href="../Discord/OAuth2Application.html">OAuth2Application</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Overwrite" data-name="discord::overwrite">
+      <a href="../Discord/Overwrite.html">Overwrite</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/Paginator" data-name="discord::paginator(t)">
+      <a href="../Discord/Paginator.html">Paginator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/Paginator/Direction" data-name="discord::paginator::direction">
+      <a href="../Discord/Paginator/Direction.html">Direction</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/PartialGuildMember" data-name="discord::partialguildmember">
+      <a href="../Discord/PartialGuildMember.html">PartialGuildMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/PartialUser" data-name="discord::partialuser">
+      <a href="../Discord/PartialUser.html">PartialUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Permissions" data-name="discord::permissions">
+      <a href="../Discord/Permissions.html">Permissions</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Presence" data-name="discord::presence">
+      <a href="../Discord/Presence.html">Presence</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/PrivateChannel" data-name="discord::privatechannel">
+      <a href="../Discord/PrivateChannel.html">PrivateChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Reaction" data-name="discord::reaction">
+      <a href="../Discord/Reaction.html">Reaction</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ReactionEmoji" data-name="discord::reactionemoji">
+      <a href="../Discord/ReactionEmoji.html">ReactionEmoji</a>
+      
+    </li>
+  
+  <li class="parent " data-id="discordcr/Discord/REST" data-name="discord::rest">
+      <a href="../Discord/REST.html">REST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="discordcr/Discord/REST/ChannelParent" data-name="discord::rest::channelparent">
+      <a href="../Discord/REST/ChannelParent.html">ChannelParent</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/GatewayBotResponse" data-name="discord::rest::gatewaybotresponse">
+      <a href="../Discord/REST/GatewayBotResponse.html">GatewayBotResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/GatewayResponse" data-name="discord::rest::gatewayresponse">
+      <a href="../Discord/REST/GatewayResponse.html">GatewayResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/GuildVanityURLResponse" data-name="discord::rest::guildvanityurlresponse">
+      <a href="../Discord/REST/GuildVanityURLResponse.html">GuildVanityURLResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/ModifyChannelPositionPayload" data-name="discord::rest::modifychannelpositionpayload">
+      <a href="../Discord/REST/ModifyChannelPositionPayload.html">ModifyChannelPositionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/ModifyRolePositionPayload" data-name="discord::rest::modifyrolepositionpayload">
+      <a href="../Discord/REST/ModifyRolePositionPayload.html">ModifyRolePositionPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/PruneCountResponse" data-name="discord::rest::prunecountresponse">
+      <a href="../Discord/REST/PruneCountResponse.html">PruneCountResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/RateLimitKey" data-name="discord::rest::ratelimitkey">
+      <a href="../Discord/REST/RateLimitKey.html">RateLimitKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/REST/SessionStartLimit" data-name="discord::rest::sessionstartlimit">
+      <a href="../Discord/REST/SessionStartLimit.html">SessionStartLimit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Role" data-name="discord::role">
+      <a href="../Discord/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
+      <a href="../Discord/Snowflake.html">Snowflake</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/StageInstance" data-name="discord::stageinstance">
+      <a href="../Discord/StageInstance.html">StageInstance</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/StagePrivacyLevel" data-name="discord::stageprivacylevel">
+      <a href="../Discord/StagePrivacyLevel.html">StagePrivacyLevel</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/StatusException" data-name="discord::statusexception">
+      <a href="../Discord/StatusException.html">StatusException</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Team" data-name="discord::team">
+      <a href="../Discord/Team.html">Team</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/TeamMember" data-name="discord::teammember">
+      <a href="../Discord/TeamMember.html">TeamMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/TeamMembershipState" data-name="discord::teammembershipstate">
+      <a href="../Discord/TeamMembershipState.html">TeamMembershipState</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/UnavailableGuild" data-name="discord::unavailableguild">
+      <a href="../Discord/UnavailableGuild.html">UnavailableGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/User" data-name="discord::user">
+      <a href="../Discord/User.html">User</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/UserFlags" data-name="discord::userflags">
+      <a href="../Discord/UserFlags.html">UserFlags</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
+      <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceClient" data-name="discord::voiceclient">
+      <a href="../Discord/VoiceClient.html">VoiceClient</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceRegion" data-name="discord::voiceregion">
+      <a href="../Discord/VoiceRegion.html">VoiceRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceState" data-name="discord::voicestate">
+      <a href="../Discord/VoiceState.html">VoiceState</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VoiceUDP" data-name="discord::voiceudp">
+      <a href="../Discord/VoiceUDP.html">VoiceUDP</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Webhook" data-name="discord::webhook">
+      <a href="../Discord/Webhook.html">Webhook</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/WebSocket" data-name="discord::websocket">
+      <a href="../Discord/WebSocket.html">WebSocket</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/UInt64" data-name="uint64">
+      <a href="../UInt64.html">UInt64</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">enum</span> Discord::MessageType
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L4" target="_blank">
+        discordcr/mappings/channel.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Default">
+        <strong>Default</strong> = <code><span class="n">0_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RecipientAdd">
+        <strong>RecipientAdd</strong> = <code><span class="n">1_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RecipientRemove">
+        <strong>RecipientRemove</strong> = <code><span class="n">2_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Call">
+        <strong>Call</strong> = <code><span class="n">3_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ChannelNameChange">
+        <strong>ChannelNameChange</strong> = <code><span class="n">4_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ChannelIconChange">
+        <strong>ChannelIconChange</strong> = <code><span class="n">5_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ChannelPinnedMessage">
+        <strong>ChannelPinnedMessage</strong> = <code><span class="n">6_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GuildMemberJoin">
+        <strong>GuildMemberJoin</strong> = <code><span class="n">7_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UserPremiumGuildSubscription">
+        <strong>UserPremiumGuildSubscription</strong> = <code><span class="n">8_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UserPremiumGuildSubscriptionTier1">
+        <strong>UserPremiumGuildSubscriptionTier1</strong> = <code><span class="n">9_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UserPremiumGuildSubscriptionTier2">
+        <strong>UserPremiumGuildSubscriptionTier2</strong> = <code><span class="n">10_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UserPremiumGuildSubscriptionTier3">
+        <strong>UserPremiumGuildSubscriptionTier3</strong> = <code><span class="n">11_u8</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#call?-instance-method" class="signature"><strong>#call?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channel_icon_change?-instance-method" class="signature"><strong>#channel_icon_change?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channel_name_change?-instance-method" class="signature"><strong>#channel_name_change?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channel_pinned_message?-instance-method" class="signature"><strong>#channel_pinned_message?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default?-instance-method" class="signature"><strong>#default?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_member_join?-instance-method" class="signature"><strong>#guild_member_join?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#recipient_add?-instance-method" class="signature"><strong>#recipient_add?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#recipient_remove?-instance-method" class="signature"><strong>#recipient_remove?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_premium_guild_subscription?-instance-method" class="signature"><strong>#user_premium_guild_subscription?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_premium_guild_subscription_tier1?-instance-method" class="signature"><strong>#user_premium_guild_subscription_tier1?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_premium_guild_subscription_tier2?-instance-method" class="signature"><strong>#user_premium_guild_subscription_tier2?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_premium_guild_subscription_tier3?-instance-method" class="signature"><strong>#user_premium_guild_subscription_tier3?</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="call?-instance-method">
+      <div class="signature">
+        
+        def <strong>call?</strong>
+
+        <a class="method-permalink" href="#call?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channel_icon_change?-instance-method">
+      <div class="signature">
+        
+        def <strong>channel_icon_change?</strong>
+
+        <a class="method-permalink" href="#channel_icon_change?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channel_name_change?-instance-method">
+      <div class="signature">
+        
+        def <strong>channel_name_change?</strong>
+
+        <a class="method-permalink" href="#channel_name_change?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channel_pinned_message?-instance-method">
+      <div class="signature">
+        
+        def <strong>channel_pinned_message?</strong>
+
+        <a class="method-permalink" href="#channel_pinned_message?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default?-instance-method">
+      <div class="signature">
+        
+        def <strong>default?</strong>
+
+        <a class="method-permalink" href="#default?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_member_join?-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_member_join?</strong>
+
+        <a class="method-permalink" href="#guild_member_join?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="recipient_add?-instance-method">
+      <div class="signature">
+        
+        def <strong>recipient_add?</strong>
+
+        <a class="method-permalink" href="#recipient_add?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="recipient_remove?-instance-method">
+      <div class="signature">
+        
+        def <strong>recipient_remove?</strong>
+
+        <a class="method-permalink" href="#recipient_remove?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_premium_guild_subscription?-instance-method">
+      <div class="signature">
+        
+        def <strong>user_premium_guild_subscription?</strong>
+
+        <a class="method-permalink" href="#user_premium_guild_subscription?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_premium_guild_subscription_tier1?-instance-method">
+      <div class="signature">
+        
+        def <strong>user_premium_guild_subscription_tier1?</strong>
+
+        <a class="method-permalink" href="#user_premium_guild_subscription_tier1?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_premium_guild_subscription_tier2?-instance-method">
+      <div class="signature">
+        
+        def <strong>user_premium_guild_subscription_tier2?</strong>
+
+        <a class="method-permalink" href="#user_premium_guild_subscription_tier2?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_premium_guild_subscription_tier3?-instance-method">
+      <div class="signature">
+        
+        def <strong>user_premium_guild_subscription_tier3?</strong>
+
+        <a class="method-permalink" href="#user_premium_guild_subscription_tier3?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/v0.4.1/src/discordcr/mappings/channel.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
