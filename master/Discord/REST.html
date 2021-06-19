@@ -686,6 +686,16 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/StageInstance" data-name="discord::stageinstance">
+      <a href="../Discord/StageInstance.html">StageInstance</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/StagePrivacyLevel" data-name="discord::stageprivacylevel">
+      <a href="../Discord/StagePrivacyLevel.html">StagePrivacyLevel</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/StatusException" data-name="discord::statusexception">
       <a href="../Discord/StatusException.html">StatusException</a>
       
@@ -820,21 +830,21 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/mappings/enums.cr#L1" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/mappings/enums.cr#L1" target="_blank">
         discordcr/mappings/enums.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/mappings/rest.cr#L4" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/mappings/rest.cr#L4" target="_blank">
         discordcr/mappings/rest.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L11" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L11" target="_blank">
         discordcr/rest.cr
       </a>
     
@@ -999,6 +1009,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#create_stage_instance(channel_id:UInt64%7CSnowflake,topic:String,privacy_level:StagePrivacyLevel=StagePrivacyLevel::GUILD_ONLY)-instance-method" class="signature"><strong>#create_stage_instance</strong>(channel_id : UInt64 | Snowflake, topic : String, privacy_level : StagePrivacyLevel = <span class="t">StagePrivacyLevel</span><span class="t">::</span><span class="t">GUILD_ONLY</span>)</a>
+        
+          <div class="summary"><p>Creates a new Stage instance associated to a Stage channel.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#delete_all_reactions(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_all_reactions</strong>(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake)</a>
         
           <div class="summary"><p>Removes all reactions from a message.</p></div>
@@ -1083,6 +1100,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#delete_stage_instance(channel_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_stage_instance</strong>(channel_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes the Stage instance associated with the passed Stage channel.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#delete_user_reaction(channel_id:UInt64%7CSnowflake,message_id:UInt64%7CSnowflake,emoji:String,user_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_user_reaction</strong>(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, emoji : String, user_id : UInt64 | Snowflake)</a>
         
           <div class="summary"><p>Removes another user's reaction from a message.</p></div>
@@ -1090,16 +1114,16 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method" class="signature"><strong>#delete_webhook</strong>(webhook_id : UInt64 | Snowflake, token : String)</a>
+        <a href="#delete_webhook(webhook_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_webhook</strong>(webhook_id : UInt64 | Snowflake)</a>
         
-          <div class="summary"><p>Deletes a webhook with a token.</p></div>
+          <div class="summary"><p>Deletes a webhook.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_webhook(webhook_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_webhook</strong>(webhook_id : UInt64 | Snowflake)</a>
+        <a href="#delete_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method" class="signature"><strong>#delete_webhook</strong>(webhook_id : UInt64 | Snowflake, token : String)</a>
         
-          <div class="summary"><p>Deletes a webhook.</p></div>
+          <div class="summary"><p>Deletes a webhook with a token.</p></div>
         
       </li>
     
@@ -1307,6 +1331,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#get_stage_instance(channel_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#get_stage_instance</strong>(channel_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Gets the Stage instance associated with the passed Stage channel if it exists.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#get_user(user_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#get_user</strong>(user_id : UInt64 | Snowflake)</a>
         
           <div class="summary"><p>Gets a specific user by ID.</p></div>
@@ -1328,16 +1359,16 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#get_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method" class="signature"><strong>#get_webhook</strong>(webhook_id : UInt64 | Snowflake, token : String)</a>
+        <a href="#get_webhook(webhook_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#get_webhook</strong>(webhook_id : UInt64 | Snowflake)</a>
         
-          <div class="summary"><p>Get a webhook, with a token.</p></div>
+          <div class="summary"><p>Get a webhook.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#get_webhook(webhook_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#get_webhook</strong>(webhook_id : UInt64 | Snowflake)</a>
+        <a href="#get_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method" class="signature"><strong>#get_webhook</strong>(webhook_id : UInt64 | Snowflake, token : String)</a>
         
-          <div class="summary"><p>Get a webhook.</p></div>
+          <div class="summary"><p>Get a webhook, with a token.</p></div>
         
       </li>
     
@@ -1454,6 +1485,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#modify_voice_state(guild_id:UInt64%7CSnowflake,channel_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake%7CNil=nil,suppress:Bool?=nil,request_to_speak_timestamp:Time?=nil)-instance-method" class="signature"><strong>#modify_voice_state</strong>(guild_id : UInt64 | Snowflake, channel_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake | Nil = <span class="n">nil</span>, suppress : Bool? = <span class="n">nil</span>, request_to_speak_timestamp : Time? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Updates the current user's, or passed user's voice state.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#modify_webhook(webhook_id:UInt64%7CSnowflake,name:String?=nil,avatar:String?=nil,channel_id:UInt64%7CSnowflake%7CNil=nil)-instance-method" class="signature"><strong>#modify_webhook</strong>(webhook_id : UInt64 | Snowflake, name : String? = <span class="n">nil</span>, avatar : String? = <span class="n">nil</span>, channel_id : UInt64 | Snowflake | Nil = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Modify a webhook.</p></div>
@@ -1538,6 +1576,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#update_stage_instance(channel_id:UInt64%7CSnowflake,topic:String?=nil,privacy_level:StagePrivacyLevel?=nil)-instance-method" class="signature"><strong>#update_stage_instance</strong>(channel_id : UInt64 | Snowflake, topic : String? = <span class="n">nil</span>, privacy_level : StagePrivacyLevel? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Updates fields of an existing Stage instance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#upload_file(channel_id:UInt64%7CSnowflake,content:String?,file:IO,filename:String?=nil,spoiler:Bool=false)-instance-method" class="signature"><strong>#upload_file</strong>(channel_id : UInt64 | Snowflake, content : String?, file : IO, filename : String? = <span class="n">nil</span>, spoiler : Bool = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Uploads a file to a channel.</p></div>
@@ -1590,7 +1635,7 @@ for the user with the <code>guilds.join</code> scope.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L965" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1066" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1613,7 +1658,7 @@ for the user with the <code>guilds.join</code> scope.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1068" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1169" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1637,7 +1682,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L631" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L631" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1661,7 +1706,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1303" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1404" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1685,7 +1730,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L505" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L505" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1709,7 +1754,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L560" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L560" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1732,7 +1777,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1732" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1833" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1756,7 +1801,7 @@ before, it will be reopened.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1602" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1703" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1779,7 +1824,7 @@ before, it will be reopened.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1133" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1234" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1803,7 +1848,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L829" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L829" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1826,7 +1871,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L777" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L777" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1850,7 +1895,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1359" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1460" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1873,7 +1918,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1186" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1287" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1921,7 +1966,7 @@ client.create_message(channel_id, <span class="s">&quot;The content of the messa
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L308" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L308" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1948,7 +1993,30 @@ the "Add Reactions" permission if no one has reacted with this emoji yet.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L336" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L336" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_stage_instance(channel_id:UInt64|Snowflake,topic:String,privacy_level:StagePrivacyLevel=StagePrivacyLevel::GUILD_ONLY)-instance-method">
+      <div class="signature">
+        
+        def <strong>create_stage_instance</strong>(channel_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, topic : String, privacy_level : <a href="../Discord/StagePrivacyLevel.html">StagePrivacyLevel</a> = <span class="t">StagePrivacyLevel</span><span class="t">::</span><span class="t">GUILD_ONLY</span>)
+
+        <a class="method-permalink" href="#create_stage_instance(channel_id:UInt64%7CSnowflake,topic:String,privacy_level:StagePrivacyLevel=StagePrivacyLevel::GUILD_ONLY)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new Stage instance associated to a Stage channel.</p>
+
+<p><a href="https://discord.com/developers/docs/resources/stage-instance#create-stage-instance">API docs for this method</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L864" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1972,7 +2040,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1995,7 +2063,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L207" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L207" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2019,7 +2087,7 @@ Permissions" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L584" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L584" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2042,7 +2110,7 @@ Permissions" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L713" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L713" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2065,7 +2133,7 @@ Permissions" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L798" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L798" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2088,7 +2156,7 @@ Permissions" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1402" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1503" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2112,7 +2180,7 @@ to be lower than the bot's highest role.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1268" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1369" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2137,7 +2205,7 @@ server.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1652" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1753" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2162,7 +2230,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L490" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L490" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2187,7 +2255,7 @@ simply be the UTF-8 encoded characters.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L352" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L352" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2211,7 +2279,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L646" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L646" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2235,7 +2303,30 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L415" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L415" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_stage_instance(channel_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_stage_instance</strong>(channel_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_stage_instance(channel_id:UInt64%7CSnowflake)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes the Stage instance associated with the passed Stage channel.</p>
+
+<p><a href="https://discord.com/developers/docs/resources/stage-instance#delete-stage-instance">API docs for this method</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L923" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2261,30 +2352,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L369" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="delete_webhook(webhook_id:UInt64|Snowflake,token:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>delete_webhook</strong>(webhook_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, token : String)
-
-        <a class="method-permalink" href="#delete_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Deletes a webhook with a token. Does not require authentication.</p>
-
-<p><a href="https://discord.com/developers/docs/resources/webhook#delete-webhook-with-token">API docs for this method</a></p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1829" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L369" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2307,7 +2375,30 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1815" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1916" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_webhook(webhook_id:UInt64|Snowflake,token:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_webhook</strong>(webhook_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, token : String)
+
+        <a class="method-permalink" href="#delete_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes a webhook with a token. Does not require authentication.</p>
+
+<p><a href="https://discord.com/developers/docs/resources/webhook#delete-webhook-with-token">API docs for this method</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1930" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2332,7 +2423,7 @@ ID. Requires the "Manage Roles" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L521" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L521" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2356,7 +2447,7 @@ sent by the bot itself - you can't edit others' messages.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L472" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L472" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2379,7 +2470,7 @@ sent by the bot itself - you can't edit others' messages.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1843" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1944" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2402,7 +2493,7 @@ sent by the bot itself - you can't edit others' messages.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2426,7 +2517,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L543" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L543" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2450,7 +2541,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L265" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2474,7 +2565,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L222" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2497,7 +2588,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1754" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1855" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2520,7 +2611,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1484" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1585" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2543,7 +2634,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1522" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1623" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2566,7 +2657,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L114" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L114" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2589,7 +2680,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2612,7 +2703,7 @@ Message History" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L660" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L660" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2636,7 +2727,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1114" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1215" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2660,7 +2751,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1097" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1198" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2683,7 +2774,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L812" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L812" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2706,7 +2797,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1430" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1531" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2729,7 +2820,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L745" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L745" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2753,7 +2844,7 @@ Requires the "Manage Guild" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1342" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1443" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2776,7 +2867,7 @@ Requires the "Manage Guild" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L911" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1012" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2800,7 +2891,7 @@ days. Requires the "Kick Members" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1286" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1387" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2823,7 +2914,7 @@ days. Requires the "Kick Members" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1170" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1271" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2846,7 +2937,7 @@ days. Requires the "Kick Members" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L864" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L937" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2870,7 +2961,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1325" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1426" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2893,7 +2984,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1717" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1818" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2916,7 +3007,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1634" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1735" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2939,7 +3030,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L146" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L146" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2962,7 +3053,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L614" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L614" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2985,7 +3076,30 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L383" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L383" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_stage_instance(channel_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_stage_instance</strong>(channel_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#get_stage_instance(channel_id:UInt64%7CSnowflake)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets the Stage instance associated with the passed Stage channel if it exists.</p>
+
+<p><a href="https://discord.com/developers/docs/resources/stage-instance#get-stage-instance">API docs for this method</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L886" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3008,7 +3122,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1468" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1569" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3031,7 +3145,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1618" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1719" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3054,30 +3168,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1585" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="get_webhook(webhook_id:UInt64|Snowflake,token:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>get_webhook</strong>(webhook_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, token : String)
-
-        <a class="method-permalink" href="#get_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Get a webhook, with a token.</p>
-
-<p><a href="https://discord.com/developers/docs/resources/webhook#get-webhook-with-token">API docs for this method</a>.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1702" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1686" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3100,7 +3191,30 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1687" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1788" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_webhook(webhook_id:UInt64|Snowflake,token:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_webhook</strong>(webhook_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, token : String)
+
+        <a class="method-permalink" href="#get_webhook(webhook_id:UInt64%7CSnowflake,token:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get a webhook, with a token.</p>
+
+<p><a href="https://discord.com/developers/docs/resources/webhook#get-webhook-with-token">API docs for this method</a>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1803" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3123,7 +3237,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1571" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1672" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3146,7 +3260,7 @@ VIP regions for VIP servers.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L729" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L729" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3171,7 +3285,7 @@ to specify what ID to start at.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L929" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1030" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3194,7 +3308,7 @@ to specify what ID to start at.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1671" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1772" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3218,7 +3332,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L179" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L179" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3243,7 +3357,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1501" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1602" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3268,7 +3382,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1037" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1138" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3294,7 +3408,7 @@ Server" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L678" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L678" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3318,7 +3432,7 @@ Server" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L896" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L997" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3341,7 +3455,7 @@ Server" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1446" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1547" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3364,7 +3478,7 @@ Server" permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L761" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L761" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3388,7 +3502,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1379" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1480" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3417,7 +3531,7 @@ permission.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1006" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1107" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3441,7 +3555,7 @@ well as the role to be lower than the bot's highest role.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1218" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1319" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3465,7 +3579,7 @@ and you cannot raise roles above the bot's highest role.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1250" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1351" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3489,7 +3603,34 @@ partnered.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L881" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L954" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="modify_voice_state(guild_id:UInt64|Snowflake,channel_id:UInt64|Snowflake,user_id:UInt64|Snowflake|Nil=nil,suppress:Bool?=nil,request_to_speak_timestamp:Time?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>modify_voice_state</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, channel_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, user_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a> | Nil = <span class="n">nil</span>, suppress : Bool? = <span class="n">nil</span>, request_to_speak_timestamp : Time? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#modify_voice_state(guild_id:UInt64%7CSnowflake,channel_id:UInt64%7CSnowflake,user_id:UInt64%7CSnowflake%7CNil=nil,suppress:Bool?=nil,request_to_speak_timestamp:Time?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Updates the current user's, or passed user's voice state.
+For use with Stage Channels only.
+The user that is being updated must be inside of the stage channel.
+Requires "MUTE_MEMBERS" to (un)suppress other members, you can always suppress yourself.
+Requires "REQUEST_TO_SPEAK" to request to speak.</p>
+
+<p><a href="https://discord.com/developers/docs/resources/guild#update-current-user-voice-state">API docs for this method</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L972" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3512,7 +3653,7 @@ partnered.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1770" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1871" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3535,7 +3676,7 @@ partnered.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1793" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1894" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3562,7 +3703,7 @@ to make requests until all messages are fetched in the given <code>direction</co
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L247" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L247" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3588,7 +3729,7 @@ until all guilds are fetched in the given <code>direction</code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1554" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1655" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3614,7 +3755,7 @@ are fetched.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L950" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1051" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3635,7 +3776,7 @@ are fetched.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3658,7 +3799,7 @@ are fetched.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1153" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1254" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3681,7 +3822,7 @@ are fetched.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1051" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1152" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3704,7 +3845,7 @@ are fetched.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1082" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1183" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3735,7 +3876,7 @@ of error checking, so if a request fails (with a status code that is not
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3758,7 +3899,7 @@ of error checking, so if a request fails (with a status code that is not
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L1416" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L1517" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3783,7 +3924,30 @@ of error checking, so if a request fails (with a status code that is not
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L600" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L600" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update_stage_instance(channel_id:UInt64|Snowflake,topic:String?=nil,privacy_level:StagePrivacyLevel?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>update_stage_instance</strong>(channel_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, topic : String? = <span class="n">nil</span>, privacy_level : <a href="../Discord/StagePrivacyLevel.html">StagePrivacyLevel</a>? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#update_stage_instance(channel_id:UInt64%7CSnowflake,topic:String?=nil,privacy_level:StagePrivacyLevel?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Updates fields of an existing Stage instance.</p>
+
+<p><a href="https://discord.com/developers/docs/resources/stage-instance#update-stage-instance">API docs for this method</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L902" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3813,7 +3977,7 @@ while <code><a href="../Discord/REST.html#create_message(channel_id:UInt64%7CSno
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/rest.cr#L436" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/rest.cr#L436" target="_blank">View source</a>]
         
       </div>
     </div>

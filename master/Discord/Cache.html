@@ -686,6 +686,16 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/StageInstance" data-name="discord::stageinstance">
+      <a href="../Discord/StageInstance.html">StageInstance</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/StagePrivacyLevel" data-name="discord::stageprivacylevel">
+      <a href="../Discord/StagePrivacyLevel.html">StagePrivacyLevel</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/StatusException" data-name="discord::statusexception">
       <a href="../Discord/StatusException.html">StatusException</a>
       
@@ -847,7 +857,7 @@ refrain from caching at all.</p>
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L35" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L35" target="_blank">
         discordcr/cache.cr
       </a>
     
@@ -906,9 +916,9 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#cache(member:GuildMember,guild_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#cache</strong>(member : GuildMember, guild_id : UInt64 | Snowflake)</a>
+        <a href="#add_guild_stage_instance(guild_id:UInt64%7CSnowflake,instance_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#add_guild_stage_instance</strong>(guild_id : UInt64 | Snowflake, instance_id : UInt64 | Snowflake)</a>
         
-          <div class="summary"><p>Adds a specific <em>member</em> to the cache, given the <em>guild_id</em> it is on.</p></div>
+          <div class="summary"><p>Marks a Stage instance, identified by the <em>instance_id</em>, as belonging to a particular guild, identified by the <em>guild_id</em>.</p></div>
         
       </li>
     
@@ -916,6 +926,13 @@ refrain from caching at all.</p>
         <a href="#cache(user:User)-instance-method" class="signature"><strong>#cache</strong>(user : User)</a>
         
           <div class="summary"><p>Adds a specific <em>user</em> to the cache.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache(member:GuildMember,guild_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#cache</strong>(member : GuildMember, guild_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Adds a specific <em>member</em> to the cache, given the <em>guild_id</em> it is on.</p></div>
         
       </li>
     
@@ -937,6 +954,13 @@ refrain from caching at all.</p>
         <a href="#cache(role:Role)-instance-method" class="signature"><strong>#cache</strong>(role : Role)</a>
         
           <div class="summary"><p>Adds a specific <em>role</em> to the cache.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cache(stage_instance:StageInstance)-instance-method" class="signature"><strong>#cache</strong>(stage_instance : StageInstance)</a>
+        
+          <div class="summary"><p>Adds a specific <em>Stage instance</em> to the cache.</p></div>
         
       </li>
     
@@ -1018,6 +1042,13 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
+        <a href="#delete_stage_instance(id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_stage_instance</strong>(id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Deletes a stage instance from the cache given its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#delete_user(id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#delete_user</strong>(id : UInt64 | Snowflake)</a>
         
           <div class="summary"><p>Deletes a user from the cache given its <em>ID</em>.</p></div>
@@ -1039,16 +1070,16 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_channels:Hash(UInt64,Array(UInt64))-instance-method" class="signature"><strong>#guild_channels</strong> : Hash(UInt64, Array(UInt64))</a>
+        <a href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_channels</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
         
-          <div class="summary"><p>Mapping of guilds to the channels on them, represented as {guild ID => [channel IDs]}.</p></div>
+          <div class="summary"><p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_channels</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
+        <a href="#guild_channels:Hash(UInt64,Array(UInt64))-instance-method" class="signature"><strong>#guild_channels</strong> : Hash(UInt64, Array(UInt64))</a>
         
-          <div class="summary"><p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p></div>
+          <div class="summary"><p>Mapping of guilds to the channels on them, represented as {guild ID => [channel IDs]}.</p></div>
         
       </li>
     
@@ -1063,6 +1094,20 @@ refrain from caching at all.</p>
         <a href="#guild_roles(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_roles</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
         
           <div class="summary"><p>Returns all roles of a guild, identified by its <em>guild_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_stage_instances(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method" class="signature"><strong>#guild_stage_instances</strong>(guild_id : UInt64 | Snowflake) : Array(UInt64)</a>
+        
+          <div class="summary"><p>Returns all Stage instances of a guild, identified by its <em>guild_id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_stage_instances:Hash(UInt64,Array(UInt64))-instance-method" class="signature"><strong>#guild_stage_instances</strong> : Hash(UInt64, Array(UInt64))</a>
+        
+          <div class="summary"><p>Mapping of guilds to the Stage instances on them, represented as {guild ID => [stage instance IDs]}.</p></div>
         
       </li>
     
@@ -1091,6 +1136,13 @@ refrain from caching at all.</p>
         <a href="#remove_guild_role(guild_id:UInt64%7CSnowflake,role_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#remove_guild_role</strong>(guild_id : UInt64 | Snowflake, role_id : UInt64 | Snowflake)</a>
         
           <div class="summary"><p>Marks a role as not belonging to a particular guild anymore.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove_guild_stage_instance(guild_id:UInt64%7CSnowflake,instance_id:UInt64%7CSnowflake)-instance-method" class="signature"><strong>#remove_guild_stage_instance</strong>(guild_id : UInt64 | Snowflake, instance_id : UInt64 | Snowflake)</a>
+        
+          <div class="summary"><p>Marks a Stage instance as not belonging to a particular guild anymore.</p></div>
         
       </li>
     
@@ -1137,6 +1189,13 @@ refrain from caching at all.</p>
       </li>
     
       <li class="entry-summary">
+        <a href="#resolve_stage_instance(id:UInt64%7CSnowflake):StageInstance-instance-method" class="signature"><strong>#resolve_stage_instance</strong>(id : UInt64 | Snowflake) : StageInstance</a>
+        
+          <div class="summary"><p>Resolves a Stage instance by its <em>ID</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#resolve_user(id:UInt64%7CSnowflake):User-instance-method" class="signature"><strong>#resolve_user</strong>(id : UInt64 | Snowflake) : User</a>
         
           <div class="summary"><p>Resolves a user by its <em>ID</em>.</p></div>
@@ -1154,6 +1213,13 @@ refrain from caching at all.</p>
         <a href="#roles:Hash(UInt64,Discord::Role)-instance-method" class="signature"><strong>#roles</strong> : Hash(UInt64, Discord::Role)</a>
         
           <div class="summary"><p>A map of all roles on servers the bot is on.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stage_instances:Hash(UInt64,Discord::StageInstance)-instance-method" class="signature"><strong>#stage_instances</strong> : Hash(UInt64, Discord::StageInstance)</a>
+        
+          <div class="summary"><p>A map of cached stage instances, i.</p></div>
         
       </li>
     
@@ -1228,7 +1294,7 @@ misses) should be done on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1264,7 +1330,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L286" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L313" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1286,28 +1352,29 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L265" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L292" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="cache(member:GuildMember,guild_id:UInt64|Snowflake)-instance-method">
+    <div class="entry-detail" id="add_guild_stage_instance(guild_id:UInt64|Snowflake,instance_id:UInt64|Snowflake)-instance-method">
       <div class="signature">
         
-        def <strong>cache</strong>(member : <a href="../Discord/GuildMember.html">GuildMember</a>, guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
+        def <strong>add_guild_stage_instance</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, instance_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#cache(member:GuildMember,guild_id:UInt64%7CSnowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#add_guild_stage_instance(guild_id:UInt64%7CSnowflake,instance_id:UInt64%7CSnowflake)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Adds a specific <em>member</em> to the cache, given the <em>guild_id</em> it is on.</p>
+          <p>Marks a Stage instance, identified by the <em>instance_id</em>, as belonging to a particular
+guild, identified by the <em>guild_id</em>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L217" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L334" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1328,7 +1395,28 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L202" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L224" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(member:GuildMember,guild_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(member : <a href="../Discord/GuildMember.html">GuildMember</a>, guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#cache(member:GuildMember,guild_id:UInt64%7CSnowflake)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds a specific <em>member</em> to the cache, given the <em>guild_id</em> it is on.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L239" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1349,7 +1437,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L207" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L229" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1370,7 +1458,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L212" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L234" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1391,7 +1479,28 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L224" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L246" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cache(stage_instance:StageInstance)-instance-method">
+      <div class="signature">
+        
+        def <strong>cache</strong>(stage_instance : <a href="../Discord/StageInstance.html">StageInstance</a>)
+
+        <a class="method-permalink" href="#cache(stage_instance:StageInstance)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds a specific <em>Stage instance</em> to the cache.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L251" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1412,7 +1521,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L229" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L256" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1433,7 +1542,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L245" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L272" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1455,7 +1564,7 @@ guild, identified by the <em>guild_id</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L238" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1478,7 +1587,7 @@ processing chunks; outside of that it is likely not of much use.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L250" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L277" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1500,7 +1609,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1521,7 +1630,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L179" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1542,7 +1651,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L190" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L212" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1563,7 +1672,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L185" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L207" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1584,7 +1693,7 @@ as well as all DM channels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L167" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L184" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1606,7 +1715,7 @@ is on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L173" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L195" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1627,7 +1736,28 @@ is on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L180" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L202" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_stage_instance(id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_stage_instance</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#delete_stage_instance(id:UInt64%7CSnowflake)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes a stage instance from the cache given its <em>ID</em>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L189" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1648,7 +1778,7 @@ is on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L157" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L174" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1669,7 +1799,7 @@ is on.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L195" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1691,7 +1821,28 @@ represented as {user ID => channel ID}.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_channels(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_channels</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(<a href="../UInt64.html">UInt64</a>)
+
+        <a class="method-permalink" href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L307" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1713,28 +1864,7 @@ represented as {user ID => channel ID}.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L70" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="guild_channels(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
-      <div class="signature">
-        
-        def <strong>guild_channels</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(<a href="../UInt64.html">UInt64</a>)
-
-        <a class="method-permalink" href="#guild_channels(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Returns all channels of a guild, identified by its <em>guild_id</em>.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L280" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1756,7 +1886,7 @@ represented as {user ID => channel ID}.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1777,7 +1907,50 @@ represented as {user ID => channel ID}.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L259" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L286" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_stage_instances(guild_id:UInt64|Snowflake):Array(UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_stage_instances</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : Array(<a href="../UInt64.html">UInt64</a>)
+
+        <a class="method-permalink" href="#guild_stage_instances(guild_id:UInt64%7CSnowflake):Array(UInt64)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns all Stage instances of a guild, identified by its <em>guild_id</em>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L328" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_stage_instances:Hash(UInt64,Array(UInt64))-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_stage_instances</strong> : Hash(<a href="../UInt64.html">UInt64</a>, Array(<a href="../UInt64.html">UInt64</a>))
+
+        <a class="method-permalink" href="#guild_stage_instances:Hash(UInt64,Array(UInt64))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Mapping of guilds to the Stage instances on them, represented as {guild ID =>
+[stage instance IDs]}.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1800,7 +1973,7 @@ affected guilds would be missing here too.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1824,7 +1997,7 @@ well as all members that have been chunked (see
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1845,7 +2018,7 @@ well as all members that have been chunked (see
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L294" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L321" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1866,7 +2039,28 @@ well as all members that have been chunked (see
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L273" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L300" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_guild_stage_instance(guild_id:UInt64|Snowflake,instance_id:UInt64|Snowflake)-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_guild_stage_instance</strong>(guild_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, instance_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
+
+        <a class="method-permalink" href="#remove_guild_stage_instance(guild_id:UInt64%7CSnowflake,instance_id:UInt64%7CSnowflake)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Marks a Stage instance as not belonging to a particular guild anymore.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L342" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1888,7 +2082,7 @@ will do an API call.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1911,7 +2105,7 @@ always be cached.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L145" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1933,7 +2127,7 @@ always be cached.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L133" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1955,7 +2149,7 @@ will do an API call.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L109" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1978,7 +2172,7 @@ object is not cached.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2001,7 +2195,29 @@ all roles should be cached at all times so it won't be a problem.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L137" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolve_stage_instance(id:UInt64|Snowflake):StageInstance-instance-method">
+      <div class="signature">
+        
+        def <strong>resolve_stage_instance</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>) : <a href="../Discord/StageInstance.html">StageInstance</a>
+
+        <a class="method-permalink" href="#resolve_stage_instance(id:UInt64%7CSnowflake):StageInstance-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Resolves a Stage instance by its <em>ID</em>.
+An API request will be performed if the object is not cached.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L143" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2023,7 +2239,7 @@ will do an API call.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L95" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2046,7 +2262,7 @@ it. If there is a gateway connection this should always be cached.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L152" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L169" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2068,7 +2284,29 @@ guild, as role IDs are unique even across guilds.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L62" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stage_instances:Hash(UInt64,Discord::StageInstance)-instance-method">
+      <div class="signature">
+        
+        def <strong>stage_instances</strong> : Hash(<a href="../UInt64.html">UInt64</a>, <a href="../Discord/StageInstance.html">Discord::StageInstance</a>)
+
+        <a class="method-permalink" href="#stage_instances:Hash(UInt64,Discord::StageInstance)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A map of cached stage instances, i. e. all stage instances on all servers
+the bot is on.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2091,7 +2329,7 @@ the bot in the past (and haven't been deleted by means of <code><a href="../Disc
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2113,7 +2351,7 @@ the bot in the past (and haven't been deleted by means of <code><a href="../Disc
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/df22ea8f9499756949dfa16ed629bd1724b77e05/src/discordcr/cache.cr#L74" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/32d4ffa3376c69946fd2aa4ff10483634fd9bcbb/src/discordcr/cache.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
