@@ -271,6 +271,7 @@ module Discord
       Listening = 2
       Watching  = 3
       Custom    = 4
+      Competing = 5
     end
 
     property name : String?
