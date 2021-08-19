@@ -227,6 +227,7 @@ module Discord
       property explicit_content_filter : UInt8
       property system_channel_id : Snowflake?
       property stage_instances : Array(StageInstance)
+      property threads : Array(Channel)
 
       {% unless flag?(:correct_english) %}
         def emojis
@@ -411,9 +412,7 @@ module Discord
       include JSON::Serializable
 
       property user : PartialUser
-      property roles : Array(Snowflake)
       property game : GamePlaying?
-      property nick : String?
       property guild_id : Snowflake
       property status : String
       property activities : Array(GamePlaying)
@@ -451,6 +450,25 @@ module Discord
       @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
       property last_pin_timestamp : Time?
       property channel_id : Snowflake
+    end
+
+    struct ThreadMembersUpdatePayload
+      include JSON::Serializable
+
+      property id : Snowflake
+      property guild_id : Snowflake
+      property member_count : UInt32
+      property added_members : Array(ThreadMember)?
+      property removed_member_ids : Array(Snowflake)?
+    end
+
+    struct ThreadListSyncPayload
+      include JSON::Serializable
+
+      property guild_id : Snowflake
+      property channel_ids : Array(Snowflake)?
+      property threads : Array(Channel)
+      property members : Array(ThreadMember)
     end
   end
 end

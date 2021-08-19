@@ -11,7 +11,7 @@ module Discord
   module REST
     SSL_CONTEXT = OpenSSL::SSL::Context::Client.new
     USER_AGENT  = "DiscordBot (https://github.com/discordcr/discordcr, #{Discord::VERSION})"
-    API_BASE    = "https://discord.com/api/v6"
+    API_BASE    = "https://discord.com/api/v9"
 
     Log = Discord::Log.for("rest")
 
@@ -178,7 +178,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#modify-channel)
     def modify_channel(channel_id : UInt64 | Snowflake, name : String? = nil, position : UInt32? = nil,
                        topic : String? = nil, bitrate : UInt32? = nil, user_limit : UInt32? = nil,
-                       nsfw : Bool? = nil, rate_limit_per_user : Int32? = nil)
+                       nsfw : Bool? = nil, rate_limit_per_user : Int32? = nil, default_auto_archive_duration : AutoArchiveDuration? = nil)
       json = encode_tuple(
         name: name,
         position: position,
@@ -186,7 +186,8 @@ module Discord
         bitrate: bitrate,
         user_limit: user_limit,
         nsfw: nsfw,
-        rate_limit_per_user: rate_limit_per_user
+        rate_limit_per_user: rate_limit_per_user,
+        default_auto_archive_duration: default_auto_archive_duration
       )
 
       response = request(
@@ -201,7 +202,7 @@ module Discord
       Channel.from_json(response.body)
     end
 
-    # Deletes a channel by ID. Requires the "Manage Channel" permission.
+    # Deletes a channel by ID. Requires the "Manage Channel" permission, or "Manage Threads" if the channel is a thread.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#deleteclose-channel)
     def delete_channel(channel_id : UInt64 | Snowflake)
@@ -306,12 +307,13 @@ module Discord
     # For more details on the format of the `embed` object, look at the
     # [relevant documentation](https://discord.com/developers/docs/resources/channel#embed-object).
     def create_message(channel_id : UInt64 | Snowflake, content : String, embed : Embed? = nil, tts : Bool = false,
-                       nonce : Int64 | String? = nil)
+                       nonce : Int64 | String? = nil, message_reference : MessageReference? = nil)
       json = encode_tuple(
         content: content,
         embed: embed,
         tts: tts,
-        nonce: nonce
+        nonce: nonce,
+        message_reference: message_reference
       )
 
       response = request(
@@ -324,6 +326,225 @@ module Discord
       )
 
       Message.from_json(response.body)
+    end
+
+    # Start Thread from existing message
+    # When called on a GUILD_TEXT channel, creates a GUILD_PUBLIC_THREAD.
+    # When called on a GUILD_NEWS channel, creates a GUILD_NEWS_THREAD.
+    # The id of the created thread will be the same as the id of the message, and as such a message can only have a single thread created from it.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#start-thread-with-message)
+    def start_thread(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, name : String, auto_archive_duration : AutoArchiveDuration, reason : String? = nil)
+      json = encode_tuple(
+        name: name,
+        auto_archive_duration: auto_archive_duration
+      )
+
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
+      response = request(
+        :channels_cid_threads,
+        channel_id,
+        "POST",
+        "/channels/#{channel_id}/messages/#{message_id}/threads",
+        headers,
+        json
+      )
+      pp response
+
+      Channel.from_json(response.body)
+    end
+
+    # Start Thread without Message
+    # Creates a new thread that is not connected to an existing message.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#start-thread-without-message)
+    def start_thread(channel_id : UInt64 | Snowflake, name : String, auto_archive_duration : AutoArchiveDuration, type : ChannelType? = nil, invitable : Bool? = nil, reason : String? = nil)
+      json = encode_tuple(
+        name: name,
+        auto_archive_duration: auto_archive_duration,
+        type: type,
+        invitable: invitable
+      )
+
+      headers = HTTP::Headers{
+        "Content-Type" => "application/json",
+      }
+      headers["X-Audit-Log-Reason"] = reason if reason
+
+      response = request(
+        :channels_cid_threads,
+        channel_id,
+        "POST",
+        "/channels/#{channel_id}/threads",
+        headers,
+        json
+      )
+
+      Channel.from_json(response.body)
+    end
+
+    # Join Thread
+    # Adds the current user to a thread. Also requires the thread is not archived.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#join-thread)
+    def join_thread(channel_id : UInt64 | Snowflake)
+      request(
+        :channels_cid_thread_members,
+        channel_id,
+        "PUT",
+        "/channels/#{channel_id}/thread-members/@me",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Add Thread Member
+    # Adds another member to a thread. Requires the ability to send messages in the thread.
+    # Also requires the thread is not archived.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#add-thread-member)
+    def add_thread_member(channel_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+      request(
+        :channels_cid_thread_members,
+        channel_id,
+        "PUT",
+        "/channels/#{channel_id}/thread-members/#{user_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Leave Thread
+    # Removes the current user from a thread. Also requires the thread is not archived.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#leave-thread)
+    def leave_thread(channel_id : UInt64 | Snowflake)
+      request(
+        :channels_cid_thread_members,
+        channel_id,
+        "DELETE",
+        "/channels/#{channel_id}/thread-members/@me",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Remove Thread Member
+    # Removes another member from a thread. Requires the MANAGE_THREADS permission, or the creator of the thread if it is a GUILD_PRIVATE_THREAD.
+    # Also requires the thread is not archived.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#remove-thread-member)
+    def remove_thread_member(channel_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+      request(
+        :channels_cid_thread_members,
+        channel_id,
+        "DELETE",
+        "/channels/#{channel_id}/thread-members/#{user_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # List Thread Members
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#list-thread-members)
+    def list_thread_members(channel_id : UInt64 | Snowflake)
+      response = request(
+        :channels_cid_thread_members,
+        channel_id,
+        "GET",
+        "/channels/#{channel_id}/thread-members",
+        HTTP::Headers.new,
+        nil
+      )
+
+      Array(ThreadMember).from_json(response.body)
+    end
+
+    # List Active Threads
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#list-active-threads)
+    def list_active_threads(channel_id : UInt64 | Snowflake)
+      response = request(
+        :channel_cid_threads,
+        channel_id,
+        "GET",
+        "/channels/#{channel_id}/threads/active",
+        HTTP::Headers.new,
+        nil
+      )
+
+      ThreadsPayload.from_json(response.body)
+    end
+
+    # List Public Archived Threads
+    # Returns archived threads in the channel that are public.
+    # When called on a GUILD_TEXT channel, returns threads of type GUILD_PUBLIC_THREAD. When called on a GUILD_NEWS channel returns threads of type GUILD_NEWS_THREAD.
+    # Threads are ordered by archive_timestamp, in descending order. Requires the READ_MESSAGE_HISTORY permission.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#list-public-archived-threads)
+    def list_public_archived_threads(channel_id : UInt64 | Snowflake, before : Time? = nil, limit : Int32? = nil)
+      path = "/channels/#{channel_id}/threads/archived/public"
+      path += "&before=#{before}" if before
+      path += "&limit=#{limit}" if limit
+
+      response = request(
+        :channel_cid_threads,
+        channel_id,
+        "GET",
+        path,
+        HTTP::Headers.new,
+        nil
+      )
+
+      ThreadsPayload.from_json(response.body)
+    end
+
+    # List Private Archived Threads
+    # Returns archived threads in the channel that are of type GUILD_PRIVATE_THREAD.
+    # Threads are ordered by archive_timestamp, in descending order.
+    # Requires both the READ_MESSAGE_HISTORY and MANAGE_THREADS permissions.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#list-private-archived-threads)
+    def list_private_archived_threads(channel_id : UInt64 | Snowflake, before : Time? = nil, limit : Int32? = nil)
+      path = "/channels/#{channel_id}/threads/archived/private"
+      path += "&before=#{before}" if before
+      path += "&limit=#{limit}" if limit
+
+      response = request(
+        :channel_cid_threads,
+        channel_id,
+        "GET",
+        path,
+        HTTP::Headers.new,
+        nil
+      )
+
+      ThreadsPayload.from_json(response.body)
+    end
+
+    # List Joined Private Archived Threads
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/channel#list-joined-private-archived-threads)
+    def list_joined_private_threads(channel_id : UInt64 | Snowflake, before : Time? = nil, limit : Int32? = nil)
+      path = "/channels/#{channel_id}/users/@me/threads/archived/private"
+      path += "&before=#{before}" if before
+      path += "&limit=#{limit}" if limit
+
+      response = request(
+        :channel_cid_threads,
+        channel_id,
+        "GET",
+        path,
+        HTTP::Headers.new,
+        nil
+      )
+
+      ThreadsPayload.from_json(response.body)
     end
 
     # Adds a reaction to a message. The `emoji` property must be in the format
@@ -1532,7 +1753,7 @@ module Discord
     end
 
     # Gets embed data for a guild. Requires the "Manage Guild" permission.
-    #
+    # TODO Did this move to /widget?
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#get-guild-embed)
     def get_guild_embed(guild_id : UInt64 | Snowflake)
       response = request(

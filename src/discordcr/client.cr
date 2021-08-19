@@ -95,6 +95,7 @@ module Discord
     # The *intents* value is used to request that only specific events are sent
     # to this client for the current session. For details on what `Intents` values
     # correspond to which gateway events, see the [API docs](https://discord.com/developers/docs/topics/gateway#gateway-intents).
+    # Required with API version > 6. WS is imeadiately closed with 4013, "Invalid intents" otherwise.
     def initialize(@token : String, @client_id : UInt64 | Snowflake | Nil = nil,
                    @shard : Gateway::ShardKey? = nil,
                    @large_threshold : Int32 = 100,
@@ -175,9 +176,9 @@ module Discord
       url = URI.parse(get_gateway.url)
 
       if @compress.stream?
-        path = "#{url.path}/?encoding=json&v=6&compress=zlib-stream"
+        path = "#{url.path}/?encoding=json&v=9&compress=zlib-stream"
       else
-        path = "#{url.path}/?encoding=json&v=6"
+        path = "#{url.path}/?encoding=json&v=9"
       end
 
       websocket = Discord::WebSocket.new(
@@ -690,6 +691,24 @@ module Discord
       when "WEBHOOKS_UPDATE"
         payload = Gateway::WebhooksUpdatePayload.from_json(data)
         call_event webhooks_update, payload
+      when "THREAD_CREATE"
+        payload = Channel.from_json(data)
+        call_event thread_create, payload
+      when "THREAD_UPDATE"
+        payload = Channel.from_json(data)
+        call_event thread_update, payload
+      when "THREAD_DELETE"
+        payload = Channel.from_json(data)
+        call_event thread_delete, payload
+      when "THREAD_LIST_SYNC"
+        payload = Gateway::ThreadListSyncPayload.from_json(data)
+        call_event thread_list_sync, payload
+      when "THREAD_MEMBER_UPDATE"
+        payload = ThreadMember.from_json(data)
+        call_event thread_member_update, payload
+      when "THREAD_MEMBERS_UPDATE"
+        payload = Gateway::ThreadMembersUpdatePayload.from_json(data)
+        call_event thread_members_update, payload
       else
         Log.warn { "[#{@client_name}] Unsupported dispatch: #{type} #{data}" }
       end
@@ -945,6 +964,39 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#webhooks-update)
     event webhooks_update, Gateway::WebhooksUpdatePayload
+
+    # Sent when a thread is created, relevant to the current user, or when the current user is added to a thread.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#thread-create)
+    event thread_create, Channel
+
+    # Sent when a thread is updated. To keep track of the last_message_id changes, you must listen for Message Create events.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#thread-update)
+    event thread_update, Channel
+
+    # Sent when a thread relevant to the current user is deleted.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/topics/gateway#thread-delete)
+    event thread_delete, Channel
+
+    # Sent when the current user gains access to a channel.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#thread-list-sync)
+    event thread_list_sync, Gateway::ThreadListSyncPayload
+
+    # Sent when the thread member object for the current user is updated.
+    #  This event is documented for completeness, but unlikely to be used by most bots.
+    # (See #thread_members_update instead)
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#thread-member-update)
+    event thread_member_update, ThreadMember
+
+    # Sent when anyone is added to or removed from a thread.
+    # If the current user does not have the GUILD_MEMBERS Gateway Intent, then this event will only be sent if the current user was added to or removed from the thread.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#thread-members-update)
+    event thread_members_update, Gateway::ThreadMembersUpdatePayload
   end
 
   module Gateway
