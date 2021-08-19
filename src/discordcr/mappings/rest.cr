@@ -85,5 +85,14 @@ module Discord
         @id = id
       end
     end
+
+    # Response payload to a thread list request
+    struct ThreadsPayload
+      include JSON::Serializable
+
+      property threads : Array(Channel)
+      property members : Array(ThreadMember)
+      property has_more : Bool
+    end
   end
 end

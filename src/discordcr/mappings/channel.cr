@@ -2,25 +2,50 @@ require "./converters"
 
 module Discord
   enum MessageType : UInt8
-    Default                           =  0
-    RecipientAdd                      =  1
-    RecipientRemove                   =  2
-    Call                              =  3
-    ChannelNameChange                 =  4
-    ChannelIconChange                 =  5
-    ChannelPinnedMessage              =  6
-    GuildMemberJoin                   =  7
-    UserPremiumGuildSubscription      =  8
-    UserPremiumGuildSubscriptionTier1 =  9
-    UserPremiumGuildSubscriptionTier2 = 10
-    UserPremiumGuildSubscriptionTier3 = 11
+    Default                                 =  0
+    RecipientAdd                            =  1
+    RecipientRemove                         =  2
+    Call                                    =  3
+    ChannelNameChange                       =  4
+    ChannelIconChange                       =  5
+    ChannelPinnedMessage                    =  6
+    GuildMemberJoin                         =  7
+    UserPremiumGuildSubscription            =  8
+    UserPremiumGuildSubscriptionTier1       =  9
+    UserPremiumGuildSubscriptionTier2       = 10
+    UserPremiumGuildSubscriptionTier3       = 11
+    ChannelFollowAdd                        = 12
+    GuildDiscoveryDisqualified              = 14
+    GuildDiscoveryRequalified               = 15
+    GuildDiscoveryGracePeriodInitialWarning = 16
+    GuildDiscoveryGracePeriodFinalWarning   = 17
+    ThreadCreated                           = 18
+    Reply                                   = 19
+    ApplicationCommand                      = 20
+    ThreadStarterMessage                    = 21
+    GuildInviteReminder                     = 22
 
     def self.new(pull : JSON::PullParser)
       MessageType.new(pull.read_int.to_u8)
     end
   end
 
-  struct Message
+  enum AutoArchiveDuration : UInt16
+    Hour      =    60
+    Day       =  1440
+    ThreeDays =  4320
+    Week      = 10080
+
+    def to_json(json : JSON::Builder)
+      json.number(value)
+    end
+
+    def self.new(pull : JSON::PullParser)
+      AutoArchiveDuration.new(pull.read_int.to_u16)
+    end
+  end
+
+  class Message
     include JSON::Serializable
 
     property type : MessageType
@@ -43,6 +68,25 @@ module Discord
     property nonce : String | Int64?
     property activity : Activity?
     property webhook_id : Snowflake?
+    property thread : Channel?
+    property referenced_message : Message?
+
+    def to_message_reference : MessageReference
+      MessageReference.new(@id, @channel_id, @guild_id)
+    end
+  end
+
+  struct MessageReference
+    include JSON::Serializable
+
+    property message_id : Snowflake?
+    property channel_id : Snowflake?
+    property guild_id : Snowflake?
+    property fail_if_not_exists : Bool?
+
+    def initialize(@message_id = nil, @channel_id = nil,
+                   @guild_id = nil, @fail_if_not_exists = nil)
+    end
   end
 
   enum ActivityType : UInt8
@@ -64,21 +108,20 @@ module Discord
   end
 
   enum ChannelType : UInt8
-    GuildText       =  0
-    DM              =  1
-    GuildVoice      =  2
-    GroupDM         =  3
-    GuildCategory   =  4
-    GuildNews       =  5
-    GuildStore      =  6
-    GuildStageVoice = 13
+    GuildText          =  0
+    DM                 =  1
+    GuildVoice         =  2
+    GroupDM            =  3
+    GuildCategory      =  4
+    GuildNews          =  5
+    GuildStore         =  6
+    GuildNewsThread    = 10
+    GuildPublicThread  = 11
+    GuildPrivateThread = 12
+    GuildStageVoice    = 13
 
     def self.new(pull : JSON::PullParser)
       ChannelType.new(pull.read_int.to_u8)
-    end
-
-    def to_json(json : JSON::Builder)
-      json.number(value)
     end
   end
 
@@ -102,6 +145,11 @@ module Discord
     property position : Int32?
     property parent_id : Snowflake?
     property rate_limit_per_user : Int32?
+    property thread_metadata : ThreadMetaData?
+    property message_count : UInt32?
+    property member_count : UInt32?
+    property member : ThreadMember?
+    property last_message_id : Snowflake?
 
     # :nodoc:
     def initialize(private_channel : PrivateChannel)
@@ -115,6 +163,15 @@ module Discord
     def mention
       "<##{id}>"
     end
+  end
+
+  struct ThreadMetaData
+    include JSON::Serializable
+    property archived : Bool
+    property auto_archive_duration : AutoArchiveDuration
+    property archive_timestamp : Time
+    property locked : Bool
+    property invitable : Bool?
   end
 
   enum StagePrivacyLevel : UInt8
@@ -154,7 +211,7 @@ module Discord
     include JSON::Serializable
 
     property id : Snowflake
-    property type : String
+    property type : Int8
     property allow : Permissions
     property deny : Permissions
   end
@@ -302,5 +359,14 @@ module Discord
     property proxy_url : String
     property height : UInt32?
     property width : UInt32?
+  end
+
+  struct ThreadMember
+    include JSON::Serializable
+
+    property id : Snowflake?
+    property user_id : Snowflake?
+    property join_timestamp : Time
+    property flags : UInt32
   end
 end

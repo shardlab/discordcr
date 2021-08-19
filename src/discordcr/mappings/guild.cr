@@ -13,8 +13,9 @@ module Discord
     property region : String
     property afk_channel_id : Snowflake?
     property afk_timeout : Int32?
-    property embed_enabled : Bool?
-    property embed_channel_id : Snowflake?
+    # Removed in v8
+    # property embed_enabled : Bool?
+    # property embed_channel_id : Snowflake?
     property verification_level : UInt8
     property premium_tier : UInt8
     property premium_subscription_count : UInt8?
@@ -93,7 +94,7 @@ module Discord
 
     property user : User
     property nick : String?
-    property roles : Array(Snowflake)
+    property roles : Array(Snowflake)?
     @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
     property joined_at : Time?
     @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
@@ -133,8 +134,6 @@ module Discord
     # :nodoc:
     def initialize(payload : Gateway::PresenceUpdatePayload)
       @user = User.new(payload.user)
-      @nick = payload.nick
-      @roles = payload.roles
       # Presence updates have no joined_at or deaf/mute, thanks Discord
     end
 
