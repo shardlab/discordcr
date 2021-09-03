@@ -84,6 +84,11 @@ module Discord
       DirectMessages         = 1 << 12
       DirectMessageReactions = 1 << 13
       DirectMessageTyping    = 1 << 14
+
+      # Generates an Unprivileged intents constant, removing GuildMembers and GuildPresences.
+      {% begin %}
+        Unprivileged = {{ @type.constants.reject { |e| ["All", "None", "GuildMembers", "GuildPresences"].includes?(e.stringify) }.join("|").id }}
+      {% end %}
     end
 
     struct ResumePacket
