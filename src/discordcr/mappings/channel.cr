@@ -36,12 +36,12 @@ module Discord
     ThreeDays =  4320
     Week      = 10080
 
-    def to_json(json : JSON::Builder)
-      json.number(value)
-    end
-
     def self.new(pull : JSON::PullParser)
       AutoArchiveDuration.new(pull.read_int.to_u16)
+    end
+
+    def to_json(json : JSON::Builder)
+      json.number(value)
     end
   end
 
@@ -71,7 +71,7 @@ module Discord
     property thread : Channel?
     property referenced_message : Message?
 
-    def to_message_reference : MessageReference
+    def message_reference : MessageReference
       MessageReference.new(@id, @channel_id, @guild_id)
     end
   end
@@ -123,6 +123,10 @@ module Discord
     def self.new(pull : JSON::PullParser)
       ChannelType.new(pull.read_int.to_u8)
     end
+
+    def to_json(json : JSON::Builder)
+      json.number(value)
+    end
   end
 
   struct Channel
@@ -149,6 +153,7 @@ module Discord
     property message_count : UInt32?
     property member_count : UInt32?
     property member : ThreadMember?
+    property default_auto_archive_duration : AutoArchiveDuration?
     property last_message_id : Snowflake?
 
     # :nodoc:

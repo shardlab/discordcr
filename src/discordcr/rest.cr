@@ -178,7 +178,9 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#modify-channel)
     def modify_channel(channel_id : UInt64 | Snowflake, name : String? = nil, position : UInt32? = nil,
                        topic : String? = nil, bitrate : UInt32? = nil, user_limit : UInt32? = nil,
-                       nsfw : Bool? = nil, rate_limit_per_user : Int32? = nil, default_auto_archive_duration : AutoArchiveDuration? = nil)
+                       nsfw : Bool? = nil, rate_limit_per_user : Int32? = nil,
+                       default_auto_archive_duration : AutoArchiveDuration? = nil, archived : Bool? = nil,
+                       locked : Bool? = nil, invitable : Bool? = nil)
       json = encode_tuple(
         name: name,
         position: position,
@@ -187,7 +189,10 @@ module Discord
         user_limit: user_limit,
         nsfw: nsfw,
         rate_limit_per_user: rate_limit_per_user,
-        default_auto_archive_duration: default_auto_archive_duration
+        default_auto_archive_duration: default_auto_archive_duration,
+        archived: archived,
+        locked: locked,
+        invitable: invitable
       )
 
       response = request(
@@ -334,7 +339,8 @@ module Discord
     # The id of the created thread will be the same as the id of the message, and as such a message can only have a single thread created from it.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#start-thread-with-message)
-    def start_thread(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, name : String, auto_archive_duration : AutoArchiveDuration, reason : String? = nil)
+    def start_thread(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, name : String,
+                     auto_archive_duration : AutoArchiveDuration, reason : String? = nil)
       json = encode_tuple(
         name: name,
         auto_archive_duration: auto_archive_duration
@@ -353,7 +359,6 @@ module Discord
         headers,
         json
       )
-      pp response
 
       Channel.from_json(response.body)
     end
@@ -362,7 +367,8 @@ module Discord
     # Creates a new thread that is not connected to an existing message.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#start-thread-without-message)
-    def start_thread(channel_id : UInt64 | Snowflake, name : String, auto_archive_duration : AutoArchiveDuration, type : ChannelType? = nil, invitable : Bool? = nil, reason : String? = nil)
+    def start_thread(channel_id : UInt64 | Snowflake, name : String, auto_archive_duration : AutoArchiveDuration,
+                     type : ChannelType? = ChannelType::GuildPublicThread, invitable : Bool? = nil, reason : String? = nil)
       json = encode_tuple(
         name: name,
         auto_archive_duration: auto_archive_duration,
@@ -467,13 +473,13 @@ module Discord
 
     # List Active Threads
     #
-    # [API docs for this method](https://discord.com/developers/docs/resources/channel#list-active-threads)
-    def list_active_threads(channel_id : UInt64 | Snowflake)
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild#list-active-threads)
+    def list_active_threads(guild_id : UInt64 | Snowflake)
       response = request(
-        :channel_cid_threads,
-        channel_id,
+        :guild_gid_threads,
+        guild_id,
         "GET",
-        "/channels/#{channel_id}/threads/active",
+        "/guilds/#{guild_id}/threads/active",
         HTTP::Headers.new,
         nil
       )
@@ -1753,7 +1759,7 @@ module Discord
     end
 
     # Gets embed data for a guild. Requires the "Manage Guild" permission.
-    # TODO Did this move to /widget?
+    #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#get-guild-embed)
     def get_guild_embed(guild_id : UInt64 | Snowflake)
       response = request(
