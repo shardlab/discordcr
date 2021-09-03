@@ -1059,9 +1059,10 @@ module Discord
     # permission.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#create-guild-channel)
-    def create_guild_channel(guild_id : UInt64 | Snowflake, name : String, type : ChannelType, topic : String?,
-                             bitrate : UInt32?, user_limit : UInt32?, rate_limit_per_user : Int32?,
-                             position : UInt32?, parent_id : UInt64? | Snowflake?, nsfw : Bool?, reason : String? = nil)
+    def create_guild_channel(guild_id : UInt64 | Snowflake, name : String, type : ChannelType, topic : String? = nil,
+                             bitrate : UInt32? = nil, user_limit : UInt32? = nil, rate_limit_per_user : Int32? = nil,
+                             position : UInt32? = nil, parent_id : UInt64? | Snowflake? = nil, nsfw : Bool? = nil,
+                             reason : String? = nil)
       json = encode_tuple(
         name: name,
         type: type,
