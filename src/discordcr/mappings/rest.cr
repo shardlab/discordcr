@@ -92,7 +92,7 @@ module Discord
 
       property threads : Array(Channel)
       property members : Array(ThreadMember)
-      property has_more : Bool
+      property has_more : Bool?
     end
   end
 end
