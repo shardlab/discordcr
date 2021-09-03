@@ -2177,7 +2177,8 @@ module Discord
     def execute_webhook(webhook_id : UInt64 | Snowflake, token : String, content : String? = nil,
                         file : String? = nil, embeds : Array(Embed)? = nil,
                         tts : Bool? = nil, avatar_url : String? = nil,
-                        username : String? = nil, wait : Bool? = false)
+                        username : String? = nil, wait : Bool? = false,
+                        thread_id : UInt64 | Snowflake? = nil)
       json = encode_tuple(
         content: content,
         file: file,
@@ -2187,11 +2188,16 @@ module Discord
         username: username
       )
 
+      params = URI::Params.build do |form|
+        form.add "wait", wait if wait
+        form.add "thread_id", thread_id if thread_id
+      end
+
       response = request(
         :webhooks_wid,
         webhook_id,
         "POST",
-        "/webhooks/#{webhook_id}/#{token}?wait=#{wait}",
+        "/webhooks/#{webhook_id}/#{token}?#{params}",
         HTTP::Headers{"Content-Type" => "application/json"},
         json
       )
