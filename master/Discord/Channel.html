@@ -76,6 +76,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/AutoArchiveDuration" data-name="discord::autoarchiveduration">
+      <a href="../Discord/AutoArchiveDuration.html">AutoArchiveDuration</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Cache" data-name="discord::cache">
       <a href="../Discord/Cache.html">Cache</a>
       
@@ -431,6 +436,16 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/Gateway/ThreadListSyncPayload" data-name="discord::gateway::threadlistsyncpayload">
+      <a href="../Discord/Gateway/ThreadListSyncPayload.html">ThreadListSyncPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ThreadMembersUpdatePayload" data-name="discord::gateway::threadmembersupdatepayload">
+      <a href="../Discord/Gateway/ThreadMembersUpdatePayload.html">ThreadMembersUpdatePayload</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Gateway/TypingStartPayload" data-name="discord::gateway::typingstartpayload">
       <a href="../Discord/Gateway/TypingStartPayload.html">TypingStartPayload</a>
       
@@ -556,6 +571,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
+      <a href="../Discord/MessageReference.html">MessageReference</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageType" data-name="discord::messagetype">
       <a href="../Discord/MessageType.html">MessageType</a>
       
@@ -671,6 +691,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/REST/ThreadsPayload" data-name="discord::rest::threadspayload">
+      <a href="../Discord/REST/ThreadsPayload.html">ThreadsPayload</a>
+      
+    </li>
+  
 </ul>
 
       
@@ -713,6 +738,16 @@
   
   <li class=" " data-id="discordcr/Discord/TeamMembershipState" data-name="discord::teammembershipstate">
       <a href="../Discord/TeamMembershipState.html">TeamMembershipState</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ThreadMember" data-name="discord::threadmember">
+      <a href="../Discord/ThreadMember.html">ThreadMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ThreadMetaData" data-name="discord::threadmetadata">
+      <a href="../Discord/ThreadMetaData.html">ThreadMetaData</a>
       
     </li>
   
@@ -832,7 +867,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L85" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L132" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -895,6 +930,16 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#default_auto_archive_duration:AutoArchiveDuration?-instance-method" class="signature"><strong>#default_auto_archive_duration</strong> : AutoArchiveDuration?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default_auto_archive_duration=(default_auto_archive_duration:AutoArchiveDuration?)-instance-method" class="signature"><strong>#default_auto_archive_duration=</strong>(default_auto_archive_duration : AutoArchiveDuration?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#guild_id:Snowflake?-instance-method" class="signature"><strong>#guild_id</strong> : Snowflake?</a>
         
       </li>
@@ -935,9 +980,39 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#member:ThreadMember?-instance-method" class="signature"><strong>#member</strong> : ThreadMember?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#member=(member:ThreadMember?)-instance-method" class="signature"><strong>#member=</strong>(member : ThreadMember?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#member_count:UInt32?-instance-method" class="signature"><strong>#member_count</strong> : UInt32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#member_count=(member_count:UInt32?)-instance-method" class="signature"><strong>#member_count=</strong>(member_count : UInt32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#mention-instance-method" class="signature"><strong>#mention</strong></a>
         
           <div class="summary"><p>Produces a string to mention this channel in a message</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#message_count:UInt32?-instance-method" class="signature"><strong>#message_count</strong> : UInt32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#message_count=(message_count:UInt32?)-instance-method" class="signature"><strong>#message_count=</strong>(message_count : UInt32?)</a>
         
       </li>
     
@@ -1018,6 +1093,16 @@
     
       <li class="entry-summary">
         <a href="#recipients=(recipients:Array(User)?)-instance-method" class="signature"><strong>#recipients=</strong>(recipients : Array(User)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#thread_metadata:ThreadMetaData?-instance-method" class="signature"><strong>#thread_metadata</strong> : ThreadMetaData?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#thread_metadata=(thread_metadata:ThreadMetaData?)-instance-method" class="signature"><strong>#thread_metadata=</strong>(thread_metadata : ThreadMetaData?)</a>
         
       </li>
     
@@ -1122,7 +1207,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1152,7 +1237,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1168,7 +1253,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1184,7 +1269,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L95" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L142" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1200,7 +1285,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L95" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L142" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default_auto_archive_duration:AutoArchiveDuration?-instance-method">
+      <div class="signature">
+        
+        def <strong>default_auto_archive_duration</strong> : <a href="../Discord/AutoArchiveDuration.html">AutoArchiveDuration</a>?
+
+        <a class="method-permalink" href="#default_auto_archive_duration:AutoArchiveDuration?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L156" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default_auto_archive_duration=(default_auto_archive_duration:AutoArchiveDuration?)-instance-method">
+      <div class="signature">
+        
+        def <strong>default_auto_archive_duration=</strong>(default_auto_archive_duration : <a href="../Discord/AutoArchiveDuration.html">AutoArchiveDuration</a>?)
+
+        <a class="method-permalink" href="#default_auto_archive_duration=(default_auto_archive_duration:AutoArchiveDuration?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L156" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1216,7 +1333,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L137" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1232,7 +1349,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L137" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1248,7 +1365,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L146" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1264,7 +1381,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L146" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1280,7 +1397,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L135" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1296,7 +1413,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L135" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1312,7 +1429,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L157" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1328,7 +1445,71 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L157" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="member:ThreadMember?-instance-method">
+      <div class="signature">
+        
+        def <strong>member</strong> : <a href="../Discord/ThreadMember.html">ThreadMember</a>?
+
+        <a class="method-permalink" href="#member:ThreadMember?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L155" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="member=(member:ThreadMember?)-instance-method">
+      <div class="signature">
+        
+        def <strong>member=</strong>(member : <a href="../Discord/ThreadMember.html">ThreadMember</a>?)
+
+        <a class="method-permalink" href="#member=(member:ThreadMember?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L155" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="member_count:UInt32?-instance-method">
+      <div class="signature">
+        
+        def <strong>member_count</strong> : UInt32?
+
+        <a class="method-permalink" href="#member_count:UInt32?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L154" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="member_count=(member_count:UInt32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>member_count=</strong>(member_count : UInt32?)
+
+        <a class="method-permalink" href="#member_count=(member_count:UInt32?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L154" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1349,7 +1530,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L168" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="message_count:UInt32?-instance-method">
+      <div class="signature">
+        
+        def <strong>message_count</strong> : UInt32?
+
+        <a class="method-permalink" href="#message_count:UInt32?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L153" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="message_count=(message_count:UInt32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>message_count=</strong>(message_count : UInt32?)
+
+        <a class="method-permalink" href="#message_count=(message_count:UInt32?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L153" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1365,7 +1578,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L138" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1381,7 +1594,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L138" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1397,7 +1610,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L98" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1413,7 +1626,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L98" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1429,7 +1642,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L147" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1445,7 +1658,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L147" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1461,7 +1674,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L103" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1477,7 +1690,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L103" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1493,7 +1706,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L92" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L139" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1509,7 +1722,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L92" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L139" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1525,7 +1738,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L149" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1541,7 +1754,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L149" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1557,7 +1770,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L151" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1573,7 +1786,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L151" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1589,7 +1802,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L97" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L144" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1605,7 +1818,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L97" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L144" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="thread_metadata:ThreadMetaData?-instance-method">
+      <div class="signature">
+        
+        def <strong>thread_metadata</strong> : <a href="../Discord/ThreadMetaData.html">ThreadMetaData</a>?
+
+        <a class="method-permalink" href="#thread_metadata:ThreadMetaData?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L152" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="thread_metadata=(thread_metadata:ThreadMetaData?)-instance-method">
+      <div class="signature">
+        
+        def <strong>thread_metadata=</strong>(thread_metadata : <a href="../Discord/ThreadMetaData.html">ThreadMetaData</a>?)
+
+        <a class="method-permalink" href="#thread_metadata=(thread_metadata:ThreadMetaData?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L152" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1621,7 +1866,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L140" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1637,7 +1882,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L140" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1653,7 +1898,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L136" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1669,7 +1914,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L136" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1685,7 +1930,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L143" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1701,7 +1946,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L143" target="_blank">View source</a>]
         
       </div>
     </div>

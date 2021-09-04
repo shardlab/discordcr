@@ -76,6 +76,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/AutoArchiveDuration" data-name="discord::autoarchiveduration">
+      <a href="../Discord/AutoArchiveDuration.html">AutoArchiveDuration</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Cache" data-name="discord::cache">
       <a href="../Discord/Cache.html">Cache</a>
       
@@ -431,6 +436,16 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/Gateway/ThreadListSyncPayload" data-name="discord::gateway::threadlistsyncpayload">
+      <a href="../Discord/Gateway/ThreadListSyncPayload.html">ThreadListSyncPayload</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/Gateway/ThreadMembersUpdatePayload" data-name="discord::gateway::threadmembersupdatepayload">
+      <a href="../Discord/Gateway/ThreadMembersUpdatePayload.html">ThreadMembersUpdatePayload</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Gateway/TypingStartPayload" data-name="discord::gateway::typingstartpayload">
       <a href="../Discord/Gateway/TypingStartPayload.html">TypingStartPayload</a>
       
@@ -556,6 +571,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
+      <a href="../Discord/MessageReference.html">MessageReference</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageType" data-name="discord::messagetype">
       <a href="../Discord/MessageType.html">MessageType</a>
       
@@ -671,6 +691,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/REST/ThreadsPayload" data-name="discord::rest::threadspayload">
+      <a href="../Discord/REST/ThreadsPayload.html">ThreadsPayload</a>
+      
+    </li>
+  
 </ul>
 
       
@@ -713,6 +738,16 @@
   
   <li class=" " data-id="discordcr/Discord/TeamMembershipState" data-name="discord::teammembershipstate">
       <a href="../Discord/TeamMembershipState.html">TeamMembershipState</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ThreadMember" data-name="discord::threadmember">
+      <a href="../Discord/ThreadMember.html">ThreadMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/ThreadMetaData" data-name="discord::threadmetadata">
+      <a href="../Discord/ThreadMetaData.html">ThreadMetaData</a>
       
     </li>
   
@@ -816,7 +851,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L66" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L110" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -869,6 +904,21 @@
     
       <dt class="entry-const" id="GuildStore">
         <strong>GuildStore</strong> = <code><span class="n">6_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GuildNewsThread">
+        <strong>GuildNewsThread</strong> = <code><span class="n">10_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GuildPublicThread">
+        <strong>GuildPublicThread</strong> = <code><span class="n">11_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GuildPrivateThread">
+        <strong>GuildPrivateThread</strong> = <code><span class="n">12_u8</span></code>
       </dt>
       
     
@@ -929,6 +979,21 @@
     
       <li class="entry-summary">
         <a href="#guild_news?-instance-method" class="signature"><strong>#guild_news?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_news_thread?-instance-method" class="signature"><strong>#guild_news_thread?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_private_thread?-instance-method" class="signature"><strong>#guild_private_thread?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guild_public_thread?-instance-method" class="signature"><strong>#guild_public_thread?</strong></a>
         
       </li>
     
@@ -1030,7 +1095,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L76" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L123" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1060,7 +1125,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L68" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1076,7 +1141,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L114" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1092,7 +1157,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L115" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1108,7 +1173,55 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L116" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_news_thread?-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_news_thread?</strong>
+
+        <a class="method-permalink" href="#guild_news_thread?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L118" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_private_thread?-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_private_thread?</strong>
+
+        <a class="method-permalink" href="#guild_private_thread?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L120" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guild_public_thread?-instance-method">
+      <div class="signature">
+        
+        def <strong>guild_public_thread?</strong>
+
+        <a class="method-permalink" href="#guild_public_thread?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1124,7 +1237,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L74" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L121" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1140,7 +1253,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L73" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1156,7 +1269,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1172,7 +1285,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L69" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L113" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1227,7 +1340,7 @@ member value.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/cb3214bead28332526b438f885b8dbb7eb0a1782/src/discordcr/mappings/channel.cr#L80" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>

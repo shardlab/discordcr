@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="discordcr">
-  <title>Discord::EmbedAuthor - discordcr master</title>
+  <title>Discord::ThreadMetaData - discordcr master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -211,7 +211,7 @@
       
     </li>
   
-  <li class=" current" data-id="discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
+  <li class=" " data-id="discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
       <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>
       
     </li>
@@ -746,7 +746,7 @@
       
     </li>
   
-  <li class=" " data-id="discordcr/Discord/ThreadMetaData" data-name="discord::threadmetadata">
+  <li class=" current" data-id="discordcr/Discord/ThreadMetaData" data-name="discord::threadmetadata">
       <a href="../Discord/ThreadMetaData.html">ThreadMetaData</a>
       
     </li>
@@ -820,12 +820,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Discord::EmbedAuthor
+  <span class="kind">struct</span> Discord::ThreadMetaData
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/EmbedAuthor.html">Discord::EmbedAuthor</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/ThreadMetaData.html">Discord::ThreadMetaData</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -867,7 +867,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L312" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L173" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -893,11 +893,6 @@
         
       </li>
     
-      <li class="entry-summary">
-        <a href="#new(name:String?=nil,url:String?=nil,icon_url:String?=nil)-class-method" class="signature"><strong>.new</strong>(name : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, icon_url : String? = <span class="n">nil</span>)</a>
-        
-      </li>
-    
   </ul>
 
 
@@ -915,42 +910,52 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#icon_url:String?-instance-method" class="signature"><strong>#icon_url</strong> : String?</a>
+        <a href="#archive_timestamp:Time-instance-method" class="signature"><strong>#archive_timestamp</strong> : Time</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#icon_url=(icon_url:String?)-instance-method" class="signature"><strong>#icon_url=</strong>(icon_url : String?)</a>
+        <a href="#archive_timestamp=(archive_timestamp:Time)-instance-method" class="signature"><strong>#archive_timestamp=</strong>(archive_timestamp : Time)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#name:String?-instance-method" class="signature"><strong>#name</strong> : String?</a>
+        <a href="#archived:Bool-instance-method" class="signature"><strong>#archived</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#name=(name:String?)-instance-method" class="signature"><strong>#name=</strong>(name : String?)</a>
+        <a href="#archived=(archived:Bool)-instance-method" class="signature"><strong>#archived=</strong>(archived : Bool)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#proxy_icon_url:String?-instance-method" class="signature"><strong>#proxy_icon_url</strong> : String?</a>
+        <a href="#auto_archive_duration:AutoArchiveDuration-instance-method" class="signature"><strong>#auto_archive_duration</strong> : AutoArchiveDuration</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#proxy_icon_url=(proxy_icon_url:String?)-instance-method" class="signature"><strong>#proxy_icon_url=</strong>(proxy_icon_url : String?)</a>
+        <a href="#auto_archive_duration=(auto_archive_duration:AutoArchiveDuration)-instance-method" class="signature"><strong>#auto_archive_duration=</strong>(auto_archive_duration : AutoArchiveDuration)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#url:String?-instance-method" class="signature"><strong>#url</strong> : String?</a>
+        <a href="#invitable:Bool?-instance-method" class="signature"><strong>#invitable</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#url=(url:String?)-instance-method" class="signature"><strong>#url=</strong>(url : String?)</a>
+        <a href="#invitable=(invitable:Bool?)-instance-method" class="signature"><strong>#invitable=</strong>(invitable : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#locked:Bool-instance-method" class="signature"><strong>#locked</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#locked=(locked:Bool)-instance-method" class="signature"><strong>#locked=</strong>(locked : Bool)</a>
         
       </li>
     
@@ -1025,23 +1030,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L313" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(name:String?=nil,url:String?=nil,icon_url:String?=nil)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(name : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, icon_url : String? = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#new(name:String?=nil,url:String?=nil,icon_url:String?=nil)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L174" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1060,130 +1049,162 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="icon_url:String?-instance-method">
+    <div class="entry-detail" id="archive_timestamp:Time-instance-method">
       <div class="signature">
         
-        def <strong>icon_url</strong> : String?
+        def <strong>archive_timestamp</strong> : Time
 
-        <a class="method-permalink" href="#icon_url:String?-instance-method">#</a>
+        <a class="method-permalink" href="#archive_timestamp:Time-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L317" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L177" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="icon_url=(icon_url:String?)-instance-method">
+    <div class="entry-detail" id="archive_timestamp=(archive_timestamp:Time)-instance-method">
       <div class="signature">
         
-        def <strong>icon_url=</strong>(icon_url : String?)
+        def <strong>archive_timestamp=</strong>(archive_timestamp : Time)
 
-        <a class="method-permalink" href="#icon_url=(icon_url:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#archive_timestamp=(archive_timestamp:Time)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L317" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L177" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="name:String?-instance-method">
+    <div class="entry-detail" id="archived:Bool-instance-method">
       <div class="signature">
         
-        def <strong>name</strong> : String?
+        def <strong>archived</strong> : Bool
 
-        <a class="method-permalink" href="#name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#archived:Bool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L315" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L175" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="name=(name:String?)-instance-method">
+    <div class="entry-detail" id="archived=(archived:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>name=</strong>(name : String?)
+        def <strong>archived=</strong>(archived : Bool)
 
-        <a class="method-permalink" href="#name=(name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#archived=(archived:Bool)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L315" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L175" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="proxy_icon_url:String?-instance-method">
+    <div class="entry-detail" id="auto_archive_duration:AutoArchiveDuration-instance-method">
       <div class="signature">
         
-        def <strong>proxy_icon_url</strong> : String?
+        def <strong>auto_archive_duration</strong> : <a href="../Discord/AutoArchiveDuration.html">AutoArchiveDuration</a>
 
-        <a class="method-permalink" href="#proxy_icon_url:String?-instance-method">#</a>
+        <a class="method-permalink" href="#auto_archive_duration:AutoArchiveDuration-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L318" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="proxy_icon_url=(proxy_icon_url:String?)-instance-method">
+    <div class="entry-detail" id="auto_archive_duration=(auto_archive_duration:AutoArchiveDuration)-instance-method">
       <div class="signature">
         
-        def <strong>proxy_icon_url=</strong>(proxy_icon_url : String?)
+        def <strong>auto_archive_duration=</strong>(auto_archive_duration : <a href="../Discord/AutoArchiveDuration.html">AutoArchiveDuration</a>)
 
-        <a class="method-permalink" href="#proxy_icon_url=(proxy_icon_url:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#auto_archive_duration=(auto_archive_duration:AutoArchiveDuration)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L318" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="url:String?-instance-method">
+    <div class="entry-detail" id="invitable:Bool?-instance-method">
       <div class="signature">
         
-        def <strong>url</strong> : String?
+        def <strong>invitable</strong> : Bool?
 
-        <a class="method-permalink" href="#url:String?-instance-method">#</a>
+        <a class="method-permalink" href="#invitable:Bool?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L316" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L179" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="url=(url:String?)-instance-method">
+    <div class="entry-detail" id="invitable=(invitable:Bool?)-instance-method">
       <div class="signature">
         
-        def <strong>url=</strong>(url : String?)
+        def <strong>invitable=</strong>(invitable : Bool?)
 
-        <a class="method-permalink" href="#url=(url:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#invitable=(invitable:Bool?)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L316" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L179" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="locked:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>locked</strong> : Bool
+
+        <a class="method-permalink" href="#locked:Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="locked=(locked:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>locked=</strong>(locked : Bool)
+
+        <a class="method-permalink" href="#locked=(locked:Bool)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>

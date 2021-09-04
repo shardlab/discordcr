@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="discordcr">
-  <title>Discord::EmbedAuthor - discordcr master</title>
+  <title>Discord::AutoArchiveDuration - discordcr master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -76,7 +76,7 @@
       
     </li>
   
-  <li class=" " data-id="discordcr/Discord/AutoArchiveDuration" data-name="discord::autoarchiveduration">
+  <li class=" current" data-id="discordcr/Discord/AutoArchiveDuration" data-name="discord::autoarchiveduration">
       <a href="../Discord/AutoArchiveDuration.html">AutoArchiveDuration</a>
       
     </li>
@@ -211,7 +211,7 @@
       
     </li>
   
-  <li class=" current" data-id="discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
+  <li class=" " data-id="discordcr/Discord/EmbedAuthor" data-name="discord::embedauthor">
       <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>
       
     </li>
@@ -820,33 +820,17 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Discord::EmbedAuthor
+  <span class="kind">enum</span> Discord::AutoArchiveDuration
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/EmbedAuthor.html">Discord::EmbedAuthor</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
 
 
 
-
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type">JSON::Serializable</li>
-    
-  </ul>
 
 
 
@@ -867,7 +851,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L312" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L33" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -875,6 +859,40 @@
   
 
 
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Hour">
+        <strong>Hour</strong> = <code><span class="n">60_u16</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Day">
+        <strong>Day</strong> = <code><span class="n">1440_u16</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ThreeDays">
+        <strong>ThreeDays</strong> = <code><span class="n">4320_u16</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Week">
+        <strong>Week</strong> = <code><span class="n">10080_u16</span></code>
+      </dt>
+      
+    
+  </dl>
 
 
 
@@ -890,11 +908,6 @@
     
       <li class="entry-summary">
         <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new(name:String?=nil,url:String?=nil,icon_url:String?=nil)-class-method" class="signature"><strong>.new</strong>(name : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, icon_url : String? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -915,42 +928,29 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#icon_url:String?-instance-method" class="signature"><strong>#icon_url</strong> : String?</a>
+        <a href="#day?-instance-method" class="signature"><strong>#day?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#icon_url=(icon_url:String?)-instance-method" class="signature"><strong>#icon_url=</strong>(icon_url : String?)</a>
+        <a href="#hour?-instance-method" class="signature"><strong>#hour?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#name:String?-instance-method" class="signature"><strong>#name</strong> : String?</a>
+        <a href="#three_days?-instance-method" class="signature"><strong>#three_days?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#name=(name:String?)-instance-method" class="signature"><strong>#name=</strong>(name : String?)</a>
+        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        
+          <div class="summary"><p>Serializes this enum member by name.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#proxy_icon_url:String?-instance-method" class="signature"><strong>#proxy_icon_url</strong> : String?</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#proxy_icon_url=(proxy_icon_url:String?)-instance-method" class="signature"><strong>#proxy_icon_url=</strong>(proxy_icon_url : String?)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#url:String?-instance-method" class="signature"><strong>#url</strong> : String?</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#url=(url:String?)-instance-method" class="signature"><strong>#url=</strong>(url : String?)</a>
+        <a href="#week?-instance-method" class="signature"><strong>#week?</strong></a>
         
       </li>
     
@@ -1025,23 +1025,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L313" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(name:String?=nil,url:String?=nil,icon_url:String?=nil)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(name : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, icon_url : String? = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#new(name:String?=nil,url:String?=nil,icon_url:String?=nil)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1060,130 +1044,121 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="icon_url:String?-instance-method">
+    <div class="entry-detail" id="day?-instance-method">
       <div class="signature">
         
-        def <strong>icon_url</strong> : String?
+        def <strong>day?</strong>
 
-        <a class="method-permalink" href="#icon_url:String?-instance-method">#</a>
+        <a class="method-permalink" href="#day?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L317" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="icon_url=(icon_url:String?)-instance-method">
+    <div class="entry-detail" id="hour?-instance-method">
       <div class="signature">
         
-        def <strong>icon_url=</strong>(icon_url : String?)
+        def <strong>hour?</strong>
 
-        <a class="method-permalink" href="#icon_url=(icon_url:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#hour?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L317" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="name:String?-instance-method">
+    <div class="entry-detail" id="three_days?-instance-method">
       <div class="signature">
         
-        def <strong>name</strong> : String?
+        def <strong>three_days?</strong>
 
-        <a class="method-permalink" href="#name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#three_days?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L315" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="name=(name:String?)-instance-method">
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
       <div class="signature">
         
-        def <strong>name=</strong>(name : String?)
+        def <strong>to_json</strong>(json : JSON::Builder)
 
-        <a class="method-permalink" href="#name=(name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct Enum
+            </div>
+          
+          <p>Serializes this enum member by name.</p>
+
+<p>For non-flags enums, the serialization is a JSON string. The value is the
+member name (see <code>#to_s</code>) transformed with <code>String#underscore</code>.</p>
+
+<pre><code class="language-crystal"><span class="k">enum</span> <span class="t">Stages</span>
+  <span class="t">INITIAL</span>
+  <span class="t">SECOND_STAGE</span>
+<span class="k">end</span>
+
+<span class="t">Stages</span><span class="t">::</span><span class="t">INITIAL</span>.to_json      <span class="c"># =&gt; %(&quot;initial&quot;)</span>
+<span class="t">Stages</span><span class="t">::</span><span class="t">SECOND_STAGE</span>.to_json <span class="c"># =&gt; %(&quot;second_stage&quot;)</span></code></pre>
+
+<p>For flags enums, the serialization is a JSON array including every flagged
+member individually serialized in the same way as a member of a non-flags enum.
+<code>None</code> is serialized as an empty array, <code>All</code> as an array containing
+all members.</p>
+
+<pre><code class="language-crystal">@[<span class="t">Flags</span>]
+<span class="k">enum</span> <span class="t">Sides</span>
+  <span class="t">LEFT</span>
+  <span class="t">RIGHT</span>
+<span class="k">end</span>
+
+<span class="t">Sides</span><span class="t">::</span><span class="t">LEFT</span>.to_json                  <span class="c"># =&gt; %([&quot;left&quot;])</span>
+(<span class="t">Sides</span><span class="t">::</span><span class="t">LEFT</span> <span class="o">|</span> <span class="t">Sides</span><span class="t">::</span><span class="t">RIGHT</span>).to_json <span class="c"># =&gt; %([&quot;left&quot;,&quot;right&quot;])</span>
+<span class="t">Sides</span><span class="t">::</span><span class="t">All</span>.to_json                   <span class="c"># =&gt; %([&quot;left&quot;,&quot;right&quot;])</span>
+<span class="t">Sides</span><span class="t">::</span><span class="t">None</span>.to_json                  <span class="c"># =&gt; %([])</span></code></pre>
+
+<p><code>ValueConverter.to_json</code> offers a different serialization strategy based on the
+member value.</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L315" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="proxy_icon_url:String?-instance-method">
+    <div class="entry-detail" id="week?-instance-method">
       <div class="signature">
         
-        def <strong>proxy_icon_url</strong> : String?
+        def <strong>week?</strong>
 
-        <a class="method-permalink" href="#proxy_icon_url:String?-instance-method">#</a>
+        <a class="method-permalink" href="#week?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L318" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="proxy_icon_url=(proxy_icon_url:String?)-instance-method">
-      <div class="signature">
-        
-        def <strong>proxy_icon_url=</strong>(proxy_icon_url : String?)
-
-        <a class="method-permalink" href="#proxy_icon_url=(proxy_icon_url:String?)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L318" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="url:String?-instance-method">
-      <div class="signature">
-        
-        def <strong>url</strong> : String?
-
-        <a class="method-permalink" href="#url:String?-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L316" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="url=(url:String?)-instance-method">
-      <div class="signature">
-        
-        def <strong>url=</strong>(url : String?)
-
-        <a class="method-permalink" href="#url=(url:String?)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L316" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
