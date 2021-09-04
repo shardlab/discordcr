@@ -489,6 +489,12 @@ module Discord
           @cache.try &.add_guild_channel(guild.id, channel.id)
         end
 
+        payload.threads.each do |channel|
+          channel.guild_id = guild.id
+          cache channel
+          @cache.try &.add_guild_channel(guild.id, channel.id)
+        end
+
         payload.roles.each do |role|
           cache role
           @cache.try &.add_guild_role(guild.id, role.id)
@@ -693,15 +699,36 @@ module Discord
         call_event webhooks_update, payload
       when "THREAD_CREATE"
         payload = Channel.from_json(data)
+        cache payload
+
+        if guild_id = payload.guild_id
+          @cache.try &.add_guild_channel(guild_id, payload.id)
+        end
+
         call_event thread_create, payload
       when "THREAD_UPDATE"
         payload = Channel.from_json(data)
+        cache payload
+
         call_event thread_update, payload
       when "THREAD_DELETE"
         payload = Channel.from_json(data)
+
+        @cache.try &.delete_channel(payload.id)
+        if guild_id = payload.guild_id
+          @cache.try &.remove_guild_channel(guild_id, payload.id)
+        end
+
         call_event thread_delete, payload
       when "THREAD_LIST_SYNC"
         payload = Gateway::ThreadListSyncPayload.from_json(data)
+
+        payload.threads.each do |channel|
+          channel.guild_id = payload.guild_id
+          cache channel
+          @cache.try &.add_guild_channel(payload.guild_id, channel.id)
+        end
+
         call_event thread_list_sync, payload
       when "THREAD_MEMBER_UPDATE"
         payload = ThreadMember.from_json(data)
