@@ -212,6 +212,18 @@ module Discord
       Log.warn { "[#{@client_name}] Websocket closed with code: #{code}, reason: #{reason}" }
     end
 
+    # :nodoc:
+    macro call_event(name, payload)
+      @on_{{name}}_handlers.try &.each do |handler|
+        begin
+          handler.call({{payload}})
+        rescue ex
+          Log.error(exception: ex) { "[#{@client_name}] An exception occurred in a user-defined event handler!" }
+          Log.error { ex.inspect_with_backtrace }
+        end
+      end
+    end
+
     OP_DISPATCH              =  0
     OP_HEARTBEAT             =  1
     OP_IDENTIFY              =  2
@@ -227,6 +239,8 @@ module Discord
 
     private def on_message(packet : Discord::WebSocket::Packet)
       spawn do
+        call_event opcode, {packet.opcode, packet}
+
         begin
           case packet.opcode
           when OP_HELLO
@@ -393,18 +407,6 @@ module Discord
     def request_guild_members(guild_id : UInt64, query : String = "", limit : Int32 = 0)
       packet = Gateway::RequestGuildMembersPacket.new(guild_id, query, limit)
       websocket.send(packet.to_json)
-    end
-
-    # :nodoc:
-    macro call_event(name, payload)
-      @on_{{name}}_handlers.try &.each do |handler|
-        begin
-          handler.call({{payload}})
-        rescue ex
-          Log.error(exception: ex) { "[#{@client_name}] An exception occurred in a user-defined event handler!" }
-          Log.error { ex.inspect_with_backtrace }
-        end
-      end
     end
 
     # :nodoc:
@@ -763,6 +765,9 @@ module Discord
         (@on_{{name}}_handlers ||= [] of {{payload_type}} ->) << handler
       end
     end
+
+    # :nodoc:
+    event opcode, {Int, Discord::WebSocket::Packet}
 
     # Called when the bot receives any kind of dispatch at all, even one that
     # is otherwise unsupported. This can be useful for statistics, e. g. how
