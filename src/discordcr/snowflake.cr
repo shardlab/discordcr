@@ -24,6 +24,11 @@ module Discord
       new(value)
     end
 
+    # Allows serialization of snowflake as an object key
+    def self.from_json_object_key?(key : String)
+      Snowflake.new(key)
+    end
+
     def initialize(@value : UInt64)
     end
 

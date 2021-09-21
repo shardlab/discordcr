@@ -592,6 +592,10 @@ module Discord
         @cache.try &.remove_guild_role(payload.guild_id, payload.role_id)
 
         call_event guild_role_delete, payload
+      when "INTERACTION_CREATE"
+        payload = Interaction.from_json(data)
+
+        call_event interaction_create, payload
       when "INVITE_CREATE"
         payload = Gateway::InviteCreatePayload.from_json(data)
 
@@ -894,6 +898,11 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-role-delete)
     event guild_role_delete, Gateway::GuildRoleDeletePayload
+
+    # Called when a user in a guild uses an Application Command.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#interaction-create)
+    event interaction_create, Interaction
 
     # Called when an invite is created on a guild.
     #
