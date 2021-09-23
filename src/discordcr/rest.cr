@@ -476,7 +476,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#list-active-threads)
     def list_active_threads(guild_id : UInt64 | Snowflake)
       response = request(
-        :guild_gid_threads,
+        :guilds_gid_threads,
         guild_id,
         "GET",
         "/guilds/#{guild_id}/threads/active",
@@ -499,7 +499,7 @@ module Discord
       path += "&limit=#{limit}" if limit
 
       response = request(
-        :channel_cid_threads,
+        :channels_cid_threads,
         channel_id,
         "GET",
         path,
@@ -522,7 +522,7 @@ module Discord
       path += "&limit=#{limit}" if limit
 
       response = request(
-        :channel_cid_threads,
+        :channels_cid_threads,
         channel_id,
         "GET",
         path,
@@ -542,7 +542,7 @@ module Discord
       path += "&limit=#{limit}" if limit
 
       response = request(
-        :channel_cid_threads,
+        :channels_cid_threads,
         channel_id,
         "GET",
         path,
