@@ -89,6 +89,19 @@ module Discord
     end
   end
 
+  struct AllowedMentions
+    include JSON::Serializable
+
+    property parse : Array(String)?
+    property roles : Array(Snowflake)?
+    property users : Array(Snowflake)?
+    property replied_user : Bool
+
+    def initialize(@parse : Array(String)? = nil, @roles : Array(Snowflake)? = nil,
+                   @users : Array(Snowflake)? = nil, @replied_user : Bool = false)
+    end
+  end
+
   enum ActivityType : UInt8
     Join        = 1
     Spectate    = 2
