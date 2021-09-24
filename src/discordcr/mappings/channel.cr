@@ -30,6 +30,22 @@ module Discord
     end
   end
 
+  @[Flags]
+  enum MessageFlags : UInt8
+    Crossposted          = 1 << 0
+    IsCrosspost          = 1 << 1
+    SuppressEmbeds       = 1 << 2
+    SourceMessageDeleted = 1 << 3
+    Urgent               = 1 << 4
+    HasThread            = 1 << 5
+    Ephemeral            = 1 << 6
+    Loading              = 1 << 7
+
+    def self.new(pull : JSON::PullParser)
+      MessageFlags.new(pull.read_int.to_u8)
+    end
+  end
+
   enum AutoArchiveDuration : UInt16
     Hour      =    60
     Day       =  1440
@@ -57,17 +73,22 @@ module Discord
     property member : PartialGuildMember?
     @[JSON::Field(converter: Discord::TimestampConverter)]
     property timestamp : Time
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property edited_timestamp : Time?
     property tts : Bool
     property mention_everyone : Bool
     property mentions : Array(User)
     property mention_roles : Array(Snowflake)
+    property mention_channels : Array(Snowflake)?
     property attachments : Array(Attachment)
     property embeds : Array(Embed)
     property pinned : Bool?
     property reactions : Array(Reaction)?
     property nonce : String | Int64?
     property activity : Activity?
+    property application : OAuth2Application?
     property webhook_id : Snowflake?
+    property flags : MessageFlags?
     property thread : Channel?
     property referenced_message : Message?
 
@@ -142,6 +163,11 @@ module Discord
     end
   end
 
+  enum VideoQualityMode : UInt8
+    Auto = 1
+    Full = 2
+  end
+
   struct Channel
     include JSON::Serializable
 
@@ -162,6 +188,10 @@ module Discord
     property position : Int32?
     property parent_id : Snowflake?
     property rate_limit_per_user : Int32?
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property last_pin_timestamp : Time?
+    property rtc_region : VoiceRegion?
+    property video_quality_mode : VideoQualityMode?
     property thread_metadata : ThreadMetaData?
     property message_count : UInt32?
     property member_count : UInt32?
