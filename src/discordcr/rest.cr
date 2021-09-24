@@ -312,12 +312,13 @@ module Discord
     # For more details on the format of the `embed` object, look at the
     # [relevant documentation](https://discord.com/developers/docs/resources/channel#embed-object).
     def create_message(channel_id : UInt64 | Snowflake, content : String, embed : Embed? = nil, tts : Bool = false,
-                       nonce : Int64 | String? = nil, message_reference : MessageReference? = nil)
+                       nonce : Int64 | String? = nil, allowed_mentions : AllowedMentions? = nil, message_reference : MessageReference? = nil)
       json = encode_tuple(
         content: content,
         embed: embed,
         tts: tts,
         nonce: nonce,
+        allowed_mentions: allowed_mentions,
         message_reference: message_reference
       )
 
@@ -660,7 +661,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#create-message)
     # (same as `#create_message` -- this method implements form data bodies
     # while `#create_message` implements JSON bodies)
-    def upload_file(channel_id : UInt64 | Snowflake, content : String?, file : IO, filename : String? = nil, embed : Embed? = nil, spoiler : Bool = false)
+    def upload_file(channel_id : UInt64 | Snowflake, content : String?, file : IO, filename : String? = nil, embed : Embed? = nil, allowed_mentions : AllowedMentions? = nil, spoiler : Bool = false)
       io = IO::Memory.new
 
       unless filename
@@ -680,7 +681,8 @@ module Discord
       if content || embed
         json = encode_tuple(
           content: content,
-          embed: embed
+          embed: embed,
+          allowed_mentions: allowed_mentions
         )
         builder.field("payload_json", json)
       end
@@ -2178,15 +2180,16 @@ module Discord
     def execute_webhook(webhook_id : UInt64 | Snowflake, token : String, content : String? = nil,
                         file : String? = nil, embeds : Array(Embed)? = nil,
                         tts : Bool? = nil, avatar_url : String? = nil,
-                        username : String? = nil, wait : Bool? = false,
-                        thread_id : UInt64 | Snowflake? = nil)
+                        username : String? = nil, allowed_mentions : AllowedMentions? = nil,
+                        wait : Bool? = false, thread_id : UInt64 | Snowflake? = nil)
       json = encode_tuple(
         content: content,
         file: file,
         embeds: embeds,
         tts: tts,
         avatar_url: avatar_url,
-        username: username
+        username: username,
+        allowed_mentions: allowed_mentions
       )
 
       params = URI::Params.build do |form|
