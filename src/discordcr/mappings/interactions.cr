@@ -144,7 +144,7 @@ module Discord
     property tts : Bool?
     property content : String?
     property embeds : Array(Embed)?
-    # property allowed_mentions : AllowedMentions?
+    property allowed_mentions : AllowedMentions?
     @[JSON::Field(converter: Enum::ValueConverter(Discord::InteractionCallbackDataFlags))]
     property flags : InteractionCallbackDataFlags?
     property components : Array(ActionRow)?

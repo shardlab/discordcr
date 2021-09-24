@@ -87,10 +87,13 @@ module Discord
     property nonce : String | Int64?
     property activity : Activity?
     property application : OAuth2Application?
+    property application_id : Snowflake?
     property webhook_id : Snowflake?
     property flags : MessageFlags?
     property thread : Channel?
     property referenced_message : Message?
+    property interaction : Interaction?
+    property components : Array(Component)?
 
     def message_reference : MessageReference
       MessageReference.new(@id, @channel_id, @guild_id)
@@ -198,6 +201,7 @@ module Discord
     property member : ThreadMember?
     property default_auto_archive_duration : AutoArchiveDuration?
     property last_message_id : Snowflake?
+    property permissions : String?
 
     # :nodoc:
     def initialize(private_channel : PrivateChannel)
