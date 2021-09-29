@@ -64,53 +64,54 @@ module Discord
     property required : Bool?
     property choices : Array(ApplicationCommandOptionChoice)?
     property options : Array(ApplicationCommandOption)?
+    property channel_types : Array(ChannelType)?
 
-    def initialize(@type, @name, @description, @required = nil, @choices = nil, @options = nil)
+    def initialize(@type, @name, @description, @required = nil, @choices = nil, @options = nil, @channel_types = nil)
     end
 
     def self.sub_command(name : String, description : String, required : Bool? = nil,
                          options : Array(ApplicationCommandOption)? = nil)
-      self.new(ApplicationCommandOptionType::SubCommand, name, description, required, nil, options)
+      self.new(ApplicationCommandOptionType::SubCommand, name, description, required, nil, options, nil)
     end
 
     def self.sub_command_group(name : String, description : String, required : Bool? = nil,
                                options : Array(ApplicationCommandOption)? = nil)
-      self.new(ApplicationCommandOptionType::SubCommandGroup, name, description, required, nil, options)
+      self.new(ApplicationCommandOptionType::SubCommandGroup, name, description, required, nil, options, nil)
     end
 
     def self.string(name : String, description : String, required : Bool? = nil,
                     choices : Array(ApplicationCommandOptionChoice)? = nil)
-      self.new(ApplicationCommandOptionType::String, name, description, required, choices, nil)
+      self.new(ApplicationCommandOptionType::String, name, description, required, choices, nil, nil)
     end
 
     def self.integer(name : String, description : String, required : Bool? = nil,
                      choices : Array(ApplicationCommandOptionChoice)? = nil)
-      self.new(ApplicationCommandOptionType::Integer, name, description, required, choices, nil)
+      self.new(ApplicationCommandOptionType::Integer, name, description, required, choices, nil, nil)
     end
 
     def self.boolean(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::Boolean, name, description, required, nil, nil)
+      self.new(ApplicationCommandOptionType::Boolean, name, description, required, nil, nil, nil)
     end
 
     def self.user(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::User, name, description, required, nil, nil)
+      self.new(ApplicationCommandOptionType::User, name, description, required, nil, nil, nil)
     end
 
-    def self.channel(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::Channel, name, description, required, nil, nil)
+    def self.channel(name : String, description : String, required : Bool? = nil, channel_types : Array(ChannelType)? = nil)
+      self.new(ApplicationCommandOptionType::Channel, name, description, required, nil, nil, channel_types)
     end
 
     def self.role(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::Role, name, description, required, nil, nil)
+      self.new(ApplicationCommandOptionType::Role, name, description, required, nil, nil, nil)
     end
 
     def self.mentionalble(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::Mentionable, name, description, required, nil, nil)
+      self.new(ApplicationCommandOptionType::Mentionable, name, description, required, nil, nil, nil)
     end
 
     def self.number(name : String, description : String, required : Bool? = nil,
                     choices : Array(ApplicationCommandOptionChoice)? = nil)
-      self.new(ApplicationCommandOptionType::Number, name, description, required, choices, nil)
+      self.new(ApplicationCommandOptionType::Number, name, description, required, choices, nil, nil)
     end
   end
 
