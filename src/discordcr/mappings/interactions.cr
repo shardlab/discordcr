@@ -74,6 +74,17 @@ module Discord
     property members : Hash(Snowflake, GuildMember)?
     property roles : Hash(Snowflake, Role)?
     property channels : Hash(Snowflake, Channel)?
+    property messages : Hash(Snowflake, Message)?
+  end
+
+  struct MessageInteraction
+    include JSON::Serializable
+
+    property id : Snowflake
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::InteractionType))]
+    property type : InteractionType
+    property name : String
+    property user : User
   end
 
   enum InteractionCallbackType : UInt8
