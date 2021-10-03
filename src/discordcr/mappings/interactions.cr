@@ -71,7 +71,7 @@ module Discord
     include JSON::Serializable
 
     property users : Hash(Snowflake, User)?
-    property members : Hash(Snowflake, GuildMember)?
+    property members : Hash(Snowflake, PartialGuildMember)?
     property roles : Hash(Snowflake, Role)?
     property channels : Hash(Snowflake, Channel)?
     property messages : Hash(Snowflake, Message)?

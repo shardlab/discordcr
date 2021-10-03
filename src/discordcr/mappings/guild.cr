@@ -156,8 +156,8 @@ module Discord
     property joined_at : Time
     @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
     property premium_since : Time?
-    property deaf : Bool
-    property mute : Bool
+    property deaf : Bool?
+    property mute : Bool?
   end
 
   struct Integration

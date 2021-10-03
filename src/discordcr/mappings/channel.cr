@@ -92,7 +92,7 @@ module Discord
     property flags : MessageFlags?
     property thread : Channel?
     property referenced_message : Message?
-    property interaction : Interaction?
+    property interaction : MessageInteraction?
     property components : Array(Component)?
 
     def message_reference : MessageReference
