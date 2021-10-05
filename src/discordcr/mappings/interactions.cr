@@ -22,49 +22,47 @@ module Discord
     property token : String
     property version : Int32
     property message : Message?
+  end
 
-    # Returns the interaction data within `#data` variable associated with `InteractionType::ApplicationCommand` interaction type, and unwraps nilable variables if possible.
-    #
-    # Since `InteractionData` is used for different interaction types with different choice of fields, all its variables are nilable by default, but we can ensure some non-nil variables if we know the type of the interaction.
-    def application_command_data
-      data = @data.not_nil! # data is always present for this interaction type
-      {
-        id: data.id.not_nil!,
-        name: data.name.not_nil!,
-        type: data.type.not_nil!,
-        resolved: data.resolved,
-        options: data.options,
-        target_id: data.target_id
-      }
-    end
+  abstract struct InteractionData
+    include JSON::Serializable
 
-    # Returns the interaction data within `#data` variable associated with `InteractionType::MessageComponent` interaction type, and unwraps nilable variables if possible.
-    #
-    # Since `InteractionData` is used for different interaction types with different choice of fields, all its variables are nilable by default, but we can ensure some non-nil variables if we know the type of the interaction.
-    def message_component_data
-      data = @data.not_nil! # data is always present for this interaction type
-      {
-        custom_id: data.custom_id.not_nil!,
-        component_type: data.component_type.not_nil!,
-        values: data.values
-      }
+    def self.new(pull : JSON::PullParser)
+      type = self
+      json = String.build do |io|
+        JSON.build(io) do |builder|
+          builder.start_object
+          pull.read_object do |key|
+            if key == "id"
+              type = ApplicationCommandInteractionData
+            elsif key == "custom_id"
+              type = MessageComponentInteractionData
+            end
+            builder.field(key) { pull.read_raw(builder) }
+          end
+          builder.end_object
+        end
+      end
+
+      type.from_json(json)
     end
   end
 
-  struct InteractionData
-    include JSON::Serializable
-
-    property id : Snowflake?
-    property name : String?
+  struct ApplicationCommandInteractionData < InteractionData
+    property id : Snowflake
+    property name : String
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ApplicationCommandType))]
-    property type : ApplicationCommandType?
+    property type : ApplicationCommandType
     property resolved : ResolvedInteractionData?
     property options : Array(ApplicationCommandInteractionDataOption)?
-    property custom_id : String?
-    @[JSON::Field(converter: Enum::ValueConverter(Discord::ComponentType))]
-    property component_type : ComponentType?
-    property values : Array(String)?
     property target_id : Snowflake?
+  end
+
+  struct MessageComponentInteractionData < InteractionData
+    property custom_id : String
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::ComponentType))]
+    property component_type : ComponentType
+    property values : Array(String)?
   end
 
   struct ResolvedInteractionData

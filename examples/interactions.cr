@@ -55,18 +55,18 @@ commands.push(
 client.bulk_overwrite_global_application_commands(commands)
 
 # Handle interactions
-client.on_interaction_create do |interaction|  
+client.on_interaction_create do |interaction|
   if interaction.type.application_command?
-    data = interaction.application_command_data
+    data = interaction.data.as(Discord::ApplicationCommandInteractionData)
 
-    case data[:name]
+    case data.name
     when "animal"
       response = Discord::InteractionResponse.message(
-        data[:options].not_nil!.first.value.to_s
+        data.options.not_nil!.first.value.to_s
       )
       client.create_interaction_response(interaction.id, interaction.token, response)
     when "counter"
-      step = data[:options].try(&.first.value) || 1
+      step = data.options.try(&.first.value) || 1
       response = Discord::InteractionResponse.message(
         "0",
         components: [
@@ -79,9 +79,9 @@ client.on_interaction_create do |interaction|
       client.create_interaction_response(interaction.id, interaction.token, response)
     end
   elsif interaction.type.message_component?
-    data = interaction.message_component_data
+    data = interaction.data.as(Discord::MessageComponentInteractionData)
 
-    key, value = data[:custom_id].split(":")
+    key, value = data.custom_id.split(":")
     count = interaction.message.not_nil!.content.to_i
     case key
     when "add"
