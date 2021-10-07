@@ -119,7 +119,7 @@ module Discord
     include JSON::Serializable
 
     property name : String
-    property value : String | Int32 | Int64 | Float32 | Float64
+    property value : String | Int64 | Float64
 
     def initialize(@name, @value)
     end
@@ -128,10 +128,23 @@ module Discord
   struct ApplicationCommandInteractionDataOption
     include JSON::Serializable
 
+    def self.new(pull : JSON::PullParser)
+      obj = new_from_json_pull_parser(pull)
+      
+      # The default behavior of serialization prefers String over Snowflake,
+      # and if the value is a String but the type tells that it isn't,
+      # the value needs to be converted to Snowflake instead
+      if (str = obj.value.as?(String)) && !obj.type.string?
+        obj.value = Snowflake.new(str)
+      end
+
+      obj
+    end
+
     property name : String
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ApplicationCommandOptionType))]
     property type : ApplicationCommandOptionType
-    property value : String | Int32 | Int64 | Float32 | Float64 | Bool | Snowflake?
+    property value : String | Int64 | Float64 | Bool | Snowflake?
     property options : Array(ApplicationCommandInteractionDataOption)?
   end
 
