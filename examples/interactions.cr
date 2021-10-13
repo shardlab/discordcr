@@ -11,8 +11,6 @@ client = Discord::Client.new(token: "Bot MjI5NDU5NjgxOTU1NjUyMzM3.Cpnz31.GQ7K9xw
 
 # Making an array of commands with `PartialApplicationCommand`
 # to register multiple commands altogether.
-# You may want to separate these procedures into a separate program to avoid
-# registering the same many commands each time you start the bot.
 
 commands = [] of Discord::PartialApplicationCommand
 
