@@ -193,7 +193,8 @@ module Discord
     property rate_limit_per_user : Int32?
     @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
     property last_pin_timestamp : Time?
-    property rtc_region : VoiceRegion?
+    property rtc_region : String?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::VideoQualityMode))]
     property video_quality_mode : VideoQualityMode?
     property thread_metadata : ThreadMetaData?
     property message_count : UInt32?
