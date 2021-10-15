@@ -241,6 +241,7 @@ module Discord
     property position : Int32
     property managed : Bool
     property mentionable : Bool
+    property tags : RoleTags?
 
     {% unless flag?(:correct_english) %}
       def color
@@ -252,6 +253,14 @@ module Discord
     def mention
       "<@&#{id}>"
     end
+  end
+
+  struct RoleTags
+    include JSON::Serializable
+
+    property bot_id : Snowflake?
+    property integration_id : Snowflake?
+    property premium_subscriber : Nil
   end
 
   struct GuildBan
