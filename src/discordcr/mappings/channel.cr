@@ -169,6 +169,14 @@ module Discord
   enum VideoQualityMode : UInt8
     Auto = 1
     Full = 2
+
+    def self.new(pull : JSON::PullParser)
+      VideoQualityMode.new(pull.read_int.to_u8)
+    end
+
+    def to_json(json : JSON::Builder)
+      json.number(value)
+    end
   end
 
   struct Channel
