@@ -180,7 +180,8 @@ module Discord
                        topic : String? = nil, bitrate : UInt32? = nil, user_limit : UInt32? = nil,
                        nsfw : Bool? = nil, rate_limit_per_user : Int32? = nil,
                        default_auto_archive_duration : AutoArchiveDuration? = nil, archived : Bool? = nil,
-                       locked : Bool? = nil, invitable : Bool? = nil)
+                       locked : Bool? = nil, invitable : Bool? = nil, video_quality_mode : VideoQualityMode? = nil,
+                       rtc_region : String? = nil)
       json = encode_tuple(
         name: name,
         position: position,
@@ -192,7 +193,9 @@ module Discord
         default_auto_archive_duration: default_auto_archive_duration,
         archived: archived,
         locked: locked,
-        invitable: invitable
+        invitable: invitable,
+        video_quality_mode: video_quality_mode,
+        rtc_region: rtc_region,
       )
 
       response = request(
