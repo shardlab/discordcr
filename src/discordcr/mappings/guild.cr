@@ -260,7 +260,18 @@ module Discord
 
     property bot_id : Snowflake?
     property integration_id : Snowflake?
+
+    # Due to discord being bad, this field is either null or missing.
+    # so the only way to get any use out of this is to use a field presence indicator.
+    @[JSON::Field(presence: true)]
     property premium_subscriber : Nil
+
+    @[JSON::Field(ignore: true)]
+    getter? premium_subscriber_present : Bool
+
+    def premium_subscriber : Bool
+      premium_subscriber_present?
+    end
   end
 
   struct GuildBan
