@@ -128,24 +128,55 @@ module Discord
   struct ApplicationCommandInteractionDataOption
     include JSON::Serializable
 
-    def self.new(pull : JSON::PullParser)
-      obj = new_from_json_pull_parser(pull)
-      
-      # The default behavior of serialization prefers String over Snowflake,
-      # and if the value is a String but the type tells that it isn't,
-      # the value needs to be converted to Snowflake instead
-      if (str = obj.value.as?(String)) && !obj.type.string?
-        obj.value = Snowflake.new(str)
-      end
-
-      obj
-    end
-
     property name : String
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ApplicationCommandOptionType))]
     property type : ApplicationCommandOptionType
     property value : String | Int64 | Float64 | Bool | Snowflake?
     property options : Array(ApplicationCommandInteractionDataOption)?
+
+    def initialize(@name, @type, @value = nil, @options = nil)
+    end
+
+    def self.new(pull : JSON::PullParser)
+      name = nil
+      type = nil
+      value_raw = ""
+      options = nil
+
+      pull.read_object do |key|
+        case key
+        when "name"
+          name = pull.read_string
+        when "type"
+          type = ApplicationCommandOptionType.new(pull.read_int.to_u8)
+        when "value"
+          value_raw = pull.read_raw
+        when "options"
+          options = Array(self).new
+          pull.read_array do
+            options.push(self.new(pull))
+          end
+        end
+      end
+      
+      value = case type
+      when ApplicationCommandOptionType::String
+        String.from_json(value_raw)
+      when ApplicationCommandOptionType::Integer
+        Int64.from_json(value_raw)
+      when ApplicationCommandOptionType::Boolean
+        Bool.from_json(value_raw)
+      when ApplicationCommandOptionType::User,
+           ApplicationCommandOptionType::Channel,
+           ApplicationCommandOptionType::Role,
+           ApplicationCommandOptionType::Mentionable
+        Snowflake.from_json(value_raw)
+      when ApplicationCommandOptionType::Number
+        Float64.from_json(value_raw)
+      end
+
+      self.new(name || "", type || ApplicationCommandOptionType.new(0), value, options)
+    end
   end
 
   struct GuildApplicationCommandPermissions
