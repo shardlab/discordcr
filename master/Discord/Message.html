@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -867,7 +887,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L48" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L64" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -889,7 +909,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -910,217 +930,257 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#activity:Activity?-instance-method" class="signature"><strong>#activity</strong> : Activity?</a>
+        <a href="#activity%3AActivity%3F-instance-method" class="signature"><strong>#activity</strong> : Activity?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#activity=(activity:Activity?)-instance-method" class="signature"><strong>#activity=</strong>(activity : Activity?)</a>
+        <a href="#activity%3D%28activity%3AActivity%3F%29-instance-method" class="signature"><strong>#activity=</strong>(activity : Activity?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attachments:Array(Attachment)-instance-method" class="signature"><strong>#attachments</strong> : Array(Attachment)</a>
+        <a href="#application%3AOAuth2Application%3F-instance-method" class="signature"><strong>#application</strong> : OAuth2Application?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attachments=(attachments:Array(Attachment))-instance-method" class="signature"><strong>#attachments=</strong>(attachments : Array(Attachment))</a>
+        <a href="#application%3D%28application%3AOAuth2Application%3F%29-instance-method" class="signature"><strong>#application=</strong>(application : OAuth2Application?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#author:User-instance-method" class="signature"><strong>#author</strong> : User</a>
+        <a href="#attachments%3AArray%28Attachment%29-instance-method" class="signature"><strong>#attachments</strong> : Array(Attachment)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#author=(author:User)-instance-method" class="signature"><strong>#author=</strong>(author : User)</a>
+        <a href="#attachments%3D%28attachments%3AArray%28Attachment%29%29-instance-method" class="signature"><strong>#attachments=</strong>(attachments : Array(Attachment))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#channel_id:Snowflake-instance-method" class="signature"><strong>#channel_id</strong> : Snowflake</a>
+        <a href="#author%3AUser-instance-method" class="signature"><strong>#author</strong> : User</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#channel_id=(channel_id:Snowflake)-instance-method" class="signature"><strong>#channel_id=</strong>(channel_id : Snowflake)</a>
+        <a href="#author%3D%28author%3AUser%29-instance-method" class="signature"><strong>#author=</strong>(author : User)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#content:String-instance-method" class="signature"><strong>#content</strong> : String</a>
+        <a href="#channel_id%3ASnowflake-instance-method" class="signature"><strong>#channel_id</strong> : Snowflake</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#content=(content:String)-instance-method" class="signature"><strong>#content=</strong>(content : String)</a>
+        <a href="#channel_id%3D%28channel_id%3ASnowflake%29-instance-method" class="signature"><strong>#channel_id=</strong>(channel_id : Snowflake)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#embeds:Array(Embed)-instance-method" class="signature"><strong>#embeds</strong> : Array(Embed)</a>
+        <a href="#content%3AString-instance-method" class="signature"><strong>#content</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#embeds=(embeds:Array(Embed))-instance-method" class="signature"><strong>#embeds=</strong>(embeds : Array(Embed))</a>
+        <a href="#content%3D%28content%3AString%29-instance-method" class="signature"><strong>#content=</strong>(content : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_id:Snowflake?-instance-method" class="signature"><strong>#guild_id</strong> : Snowflake?</a>
+        <a href="#edited_timestamp%3ATime%3F-instance-method" class="signature"><strong>#edited_timestamp</strong> : Time?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_id=(guild_id:Snowflake?)-instance-method" class="signature"><strong>#guild_id=</strong>(guild_id : Snowflake?)</a>
+        <a href="#edited_timestamp%3D%28edited_timestamp%3ATime%3F%29-instance-method" class="signature"><strong>#edited_timestamp=</strong>(edited_timestamp : Time?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id:Snowflake-instance-method" class="signature"><strong>#id</strong> : Snowflake</a>
+        <a href="#embeds%3AArray%28Embed%29-instance-method" class="signature"><strong>#embeds</strong> : Array(Embed)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id=(id:Snowflake)-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake)</a>
+        <a href="#embeds%3D%28embeds%3AArray%28Embed%29%29-instance-method" class="signature"><strong>#embeds=</strong>(embeds : Array(Embed))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#member:PartialGuildMember?-instance-method" class="signature"><strong>#member</strong> : PartialGuildMember?</a>
+        <a href="#flags%3AMessageFlags%3F-instance-method" class="signature"><strong>#flags</strong> : MessageFlags?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#member=(member:PartialGuildMember?)-instance-method" class="signature"><strong>#member=</strong>(member : PartialGuildMember?)</a>
+        <a href="#flags%3D%28flags%3AMessageFlags%3F%29-instance-method" class="signature"><strong>#flags=</strong>(flags : MessageFlags?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mention_everyone:Bool-instance-method" class="signature"><strong>#mention_everyone</strong> : Bool</a>
+        <a href="#guild_id%3ASnowflake%3F-instance-method" class="signature"><strong>#guild_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mention_everyone=(mention_everyone:Bool)-instance-method" class="signature"><strong>#mention_everyone=</strong>(mention_everyone : Bool)</a>
+        <a href="#guild_id%3D%28guild_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#guild_id=</strong>(guild_id : Snowflake?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mention_roles:Array(Snowflake)-instance-method" class="signature"><strong>#mention_roles</strong> : Array(Snowflake)</a>
+        <a href="#id%3ASnowflake-instance-method" class="signature"><strong>#id</strong> : Snowflake</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mention_roles=(mention_roles:Array(Snowflake))-instance-method" class="signature"><strong>#mention_roles=</strong>(mention_roles : Array(Snowflake))</a>
+        <a href="#id%3D%28id%3ASnowflake%29-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mentions:Array(User)-instance-method" class="signature"><strong>#mentions</strong> : Array(User)</a>
+        <a href="#member%3APartialGuildMember%3F-instance-method" class="signature"><strong>#member</strong> : PartialGuildMember?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mentions=(mentions:Array(User))-instance-method" class="signature"><strong>#mentions=</strong>(mentions : Array(User))</a>
+        <a href="#member%3D%28member%3APartialGuildMember%3F%29-instance-method" class="signature"><strong>#member=</strong>(member : PartialGuildMember?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#message_reference:MessageReference-instance-method" class="signature"><strong>#message_reference</strong> : MessageReference</a>
+        <a href="#mention_channels%3AArray%28Snowflake%29%3F-instance-method" class="signature"><strong>#mention_channels</strong> : Array(Snowflake)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#nonce:String%7CInt64%7CNil-instance-method" class="signature"><strong>#nonce</strong> : String | Int64 | Nil</a>
+        <a href="#mention_channels%3D%28mention_channels%3AArray%28Snowflake%29%3F%29-instance-method" class="signature"><strong>#mention_channels=</strong>(mention_channels : Array(Snowflake)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#nonce=(nonce:String%7CInt64%7CNil)-instance-method" class="signature"><strong>#nonce=</strong>(nonce : String | Int64 | Nil)</a>
+        <a href="#mention_everyone%3ABool-instance-method" class="signature"><strong>#mention_everyone</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#pinned:Bool?-instance-method" class="signature"><strong>#pinned</strong> : Bool?</a>
+        <a href="#mention_everyone%3D%28mention_everyone%3ABool%29-instance-method" class="signature"><strong>#mention_everyone=</strong>(mention_everyone : Bool)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#pinned=(pinned:Bool?)-instance-method" class="signature"><strong>#pinned=</strong>(pinned : Bool?)</a>
+        <a href="#mention_roles%3AArray%28Snowflake%29-instance-method" class="signature"><strong>#mention_roles</strong> : Array(Snowflake)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#reactions:Array(Reaction)?-instance-method" class="signature"><strong>#reactions</strong> : Array(Reaction)?</a>
+        <a href="#mention_roles%3D%28mention_roles%3AArray%28Snowflake%29%29-instance-method" class="signature"><strong>#mention_roles=</strong>(mention_roles : Array(Snowflake))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#reactions=(reactions:Array(Reaction)?)-instance-method" class="signature"><strong>#reactions=</strong>(reactions : Array(Reaction)?)</a>
+        <a href="#mentions%3AArray%28User%29-instance-method" class="signature"><strong>#mentions</strong> : Array(User)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#referenced_message:Message?-instance-method" class="signature"><strong>#referenced_message</strong> : Message?</a>
+        <a href="#mentions%3D%28mentions%3AArray%28User%29%29-instance-method" class="signature"><strong>#mentions=</strong>(mentions : Array(User))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#referenced_message=(referenced_message:Message?)-instance-method" class="signature"><strong>#referenced_message=</strong>(referenced_message : Message?)</a>
+        <a href="#message_reference%3AMessageReference-instance-method" class="signature"><strong>#message_reference</strong> : MessageReference</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#thread:Channel?-instance-method" class="signature"><strong>#thread</strong> : Channel?</a>
+        <a href="#nonce%3AString%7CInt64%7CNil-instance-method" class="signature"><strong>#nonce</strong> : String | Int64 | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#thread=(thread:Channel?)-instance-method" class="signature"><strong>#thread=</strong>(thread : Channel?)</a>
+        <a href="#nonce%3D%28nonce%3AString%7CInt64%7CNil%29-instance-method" class="signature"><strong>#nonce=</strong>(nonce : String | Int64 | Nil)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamp:Time-instance-method" class="signature"><strong>#timestamp</strong> : Time</a>
+        <a href="#pinned%3ABool%3F-instance-method" class="signature"><strong>#pinned</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamp=(timestamp:Time)-instance-method" class="signature"><strong>#timestamp=</strong>(timestamp : Time)</a>
+        <a href="#pinned%3D%28pinned%3ABool%3F%29-instance-method" class="signature"><strong>#pinned=</strong>(pinned : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tts:Bool-instance-method" class="signature"><strong>#tts</strong> : Bool</a>
+        <a href="#reactions%3AArray%28Reaction%29%3F-instance-method" class="signature"><strong>#reactions</strong> : Array(Reaction)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tts=(tts:Bool)-instance-method" class="signature"><strong>#tts=</strong>(tts : Bool)</a>
+        <a href="#reactions%3D%28reactions%3AArray%28Reaction%29%3F%29-instance-method" class="signature"><strong>#reactions=</strong>(reactions : Array(Reaction)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#type:MessageType-instance-method" class="signature"><strong>#type</strong> : MessageType</a>
+        <a href="#referenced_message%3AMessage%3F-instance-method" class="signature"><strong>#referenced_message</strong> : Message?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#type=(type:MessageType)-instance-method" class="signature"><strong>#type=</strong>(type : MessageType)</a>
+        <a href="#referenced_message%3D%28referenced_message%3AMessage%3F%29-instance-method" class="signature"><strong>#referenced_message=</strong>(referenced_message : Message?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#webhook_id:Snowflake?-instance-method" class="signature"><strong>#webhook_id</strong> : Snowflake?</a>
+        <a href="#thread%3AChannel%3F-instance-method" class="signature"><strong>#thread</strong> : Channel?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#webhook_id=(webhook_id:Snowflake?)-instance-method" class="signature"><strong>#webhook_id=</strong>(webhook_id : Snowflake?)</a>
+        <a href="#thread%3D%28thread%3AChannel%3F%29-instance-method" class="signature"><strong>#thread=</strong>(thread : Channel?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timestamp%3ATime-instance-method" class="signature"><strong>#timestamp</strong> : Time</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timestamp%3D%28timestamp%3ATime%29-instance-method" class="signature"><strong>#timestamp=</strong>(timestamp : Time)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tts%3ABool-instance-method" class="signature"><strong>#tts</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tts%3D%28tts%3ABool%29-instance-method" class="signature"><strong>#tts=</strong>(tts : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type%3AMessageType-instance-method" class="signature"><strong>#type</strong> : MessageType</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type%3D%28type%3AMessageType%29-instance-method" class="signature"><strong>#type=</strong>(type : MessageType)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#webhook_id%3ASnowflake%3F-instance-method" class="signature"><strong>#webhook_id</strong> : Snowflake?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#webhook_id%3D%28webhook_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#webhook_id=</strong>(webhook_id : Snowflake?)</a>
         
       </li>
     
@@ -1179,13 +1239,13 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1209,13 +1269,13 @@
         
         def <strong>activity</strong> : <a href="../Discord/Activity.html">Activity</a>?
 
-        <a class="method-permalink" href="#activity:Activity?-instance-method">#</a>
+        <a class="method-permalink" href="#activity%3AActivity%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L69" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1225,13 +1285,45 @@
         
         def <strong>activity=</strong>(activity : <a href="../Discord/Activity.html">Activity</a>?)
 
-        <a class="method-permalink" href="#activity=(activity:Activity?)-instance-method">#</a>
+        <a class="method-permalink" href="#activity%3D%28activity%3AActivity%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L69" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L88" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="application:OAuth2Application?-instance-method">
+      <div class="signature">
+        
+        def <strong>application</strong> : <a href="../Discord/OAuth2Application.html">OAuth2Application</a>?
+
+        <a class="method-permalink" href="#application%3AOAuth2Application%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="application=(application:OAuth2Application?)-instance-method">
+      <div class="signature">
+        
+        def <strong>application=</strong>(application : <a href="../Discord/OAuth2Application.html">OAuth2Application</a>?)
+
+        <a class="method-permalink" href="#application%3D%28application%3AOAuth2Application%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1241,13 +1333,13 @@
         
         def <strong>attachments</strong> : Array(<a href="../Discord/Attachment.html">Attachment</a>)
 
-        <a class="method-permalink" href="#attachments:Array(Attachment)-instance-method">#</a>
+        <a class="method-permalink" href="#attachments%3AArray%28Attachment%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1257,13 +1349,13 @@
         
         def <strong>attachments=</strong>(attachments : Array(<a href="../Discord/Attachment.html">Attachment</a>))
 
-        <a class="method-permalink" href="#attachments=(attachments:Array(Attachment))-instance-method">#</a>
+        <a class="method-permalink" href="#attachments%3D%28attachments%3AArray%28Attachment%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1273,13 +1365,13 @@
         
         def <strong>author</strong> : <a href="../Discord/User.html">User</a>
 
-        <a class="method-permalink" href="#author:User-instance-method">#</a>
+        <a class="method-permalink" href="#author%3AUser-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1289,13 +1381,13 @@
         
         def <strong>author=</strong>(author : <a href="../Discord/User.html">User</a>)
 
-        <a class="method-permalink" href="#author=(author:User)-instance-method">#</a>
+        <a class="method-permalink" href="#author%3D%28author%3AUser%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1305,13 +1397,13 @@
         
         def <strong>channel_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>
 
-        <a class="method-permalink" href="#channel_id:Snowflake-instance-method">#</a>
+        <a class="method-permalink" href="#channel_id%3ASnowflake-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1321,13 +1413,13 @@
         
         def <strong>channel_id=</strong>(channel_id : <a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#channel_id=(channel_id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#channel_id%3D%28channel_id%3ASnowflake%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1337,13 +1429,13 @@
         
         def <strong>content</strong> : String
 
-        <a class="method-permalink" href="#content:String-instance-method">#</a>
+        <a class="method-permalink" href="#content%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L68" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1353,13 +1445,45 @@
         
         def <strong>content=</strong>(content : String)
 
-        <a class="method-permalink" href="#content=(content:String)-instance-method">#</a>
+        <a class="method-permalink" href="#content%3D%28content%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edited_timestamp:Time?-instance-method">
+      <div class="signature">
+        
+        def <strong>edited_timestamp</strong> : Time?
+
+        <a class="method-permalink" href="#edited_timestamp%3ATime%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edited_timestamp=(edited_timestamp:Time?)-instance-method">
+      <div class="signature">
+        
+        def <strong>edited_timestamp=</strong>(edited_timestamp : Time?)
+
+        <a class="method-permalink" href="#edited_timestamp%3D%28edited_timestamp%3ATime%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1369,13 +1493,13 @@
         
         def <strong>embeds</strong> : Array(<a href="../Discord/Embed.html">Embed</a>)
 
-        <a class="method-permalink" href="#embeds:Array(Embed)-instance-method">#</a>
+        <a class="method-permalink" href="#embeds%3AArray%28Embed%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L84" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1385,13 +1509,45 @@
         
         def <strong>embeds=</strong>(embeds : Array(<a href="../Discord/Embed.html">Embed</a>))
 
-        <a class="method-permalink" href="#embeds=(embeds:Array(Embed))-instance-method">#</a>
+        <a class="method-permalink" href="#embeds%3D%28embeds%3AArray%28Embed%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L84" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flags:MessageFlags?-instance-method">
+      <div class="signature">
+        
+        def <strong>flags</strong> : <a href="../Discord/MessageFlags.html">MessageFlags</a>?
+
+        <a class="method-permalink" href="#flags%3AMessageFlags%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flags=(flags:MessageFlags?)-instance-method">
+      <div class="signature">
+        
+        def <strong>flags=</strong>(flags : <a href="../Discord/MessageFlags.html">MessageFlags</a>?)
+
+        <a class="method-permalink" href="#flags%3D%28flags%3AMessageFlags%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1401,13 +1557,13 @@
         
         def <strong>guild_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#guild_id:Snowflake?-instance-method">#</a>
+        <a class="method-permalink" href="#guild_id%3ASnowflake%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1417,13 +1573,13 @@
         
         def <strong>guild_id=</strong>(guild_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#guild_id=(guild_id:Snowflake?)-instance-method">#</a>
+        <a class="method-permalink" href="#guild_id%3D%28guild_id%3ASnowflake%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1433,13 +1589,13 @@
         
         def <strong>id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>
 
-        <a class="method-permalink" href="#id:Snowflake-instance-method">#</a>
+        <a class="method-permalink" href="#id%3ASnowflake-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1449,13 +1605,13 @@
         
         def <strong>id=</strong>(id : <a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#id=(id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#id%3D%28id%3ASnowflake%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1465,13 +1621,13 @@
         
         def <strong>member</strong> : <a href="../Discord/PartialGuildMember.html">PartialGuildMember</a>?
 
-        <a class="method-permalink" href="#member:PartialGuildMember?-instance-method">#</a>
+        <a class="method-permalink" href="#member%3APartialGuildMember%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L73" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1481,13 +1637,45 @@
         
         def <strong>member=</strong>(member : <a href="../Discord/PartialGuildMember.html">PartialGuildMember</a>?)
 
-        <a class="method-permalink" href="#member=(member:PartialGuildMember?)-instance-method">#</a>
+        <a class="method-permalink" href="#member%3D%28member%3APartialGuildMember%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mention_channels:Array(Snowflake)?-instance-method">
+      <div class="signature">
+        
+        def <strong>mention_channels</strong> : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?
+
+        <a class="method-permalink" href="#mention_channels%3AArray%28Snowflake%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mention_channels=(mention_channels:Array(Snowflake)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>mention_channels=</strong>(mention_channels : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?)
+
+        <a class="method-permalink" href="#mention_channels%3D%28mention_channels%3AArray%28Snowflake%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1497,13 +1685,13 @@
         
         def <strong>mention_everyone</strong> : Bool
 
-        <a class="method-permalink" href="#mention_everyone:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#mention_everyone%3ABool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L61" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1513,13 +1701,13 @@
         
         def <strong>mention_everyone=</strong>(mention_everyone : Bool)
 
-        <a class="method-permalink" href="#mention_everyone=(mention_everyone:Bool)-instance-method">#</a>
+        <a class="method-permalink" href="#mention_everyone%3D%28mention_everyone%3ABool%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L61" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1529,13 +1717,13 @@
         
         def <strong>mention_roles</strong> : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#mention_roles:Array(Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#mention_roles%3AArray%28Snowflake%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1545,13 +1733,13 @@
         
         def <strong>mention_roles=</strong>(mention_roles : Array(<a href="../Discord/Snowflake.html">Snowflake</a>))
 
-        <a class="method-permalink" href="#mention_roles=(mention_roles:Array(Snowflake))-instance-method">#</a>
+        <a class="method-permalink" href="#mention_roles%3D%28mention_roles%3AArray%28Snowflake%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1561,13 +1749,13 @@
         
         def <strong>mentions</strong> : Array(<a href="../Discord/User.html">User</a>)
 
-        <a class="method-permalink" href="#mentions:Array(User)-instance-method">#</a>
+        <a class="method-permalink" href="#mentions%3AArray%28User%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L80" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1577,13 +1765,13 @@
         
         def <strong>mentions=</strong>(mentions : Array(<a href="../Discord/User.html">User</a>))
 
-        <a class="method-permalink" href="#mentions=(mentions:Array(User))-instance-method">#</a>
+        <a class="method-permalink" href="#mentions%3D%28mentions%3AArray%28User%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L80" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1593,13 +1781,13 @@
         
         def <strong>message_reference</strong> : <a href="../Discord/MessageReference.html">MessageReference</a>
 
-        <a class="method-permalink" href="#message_reference:MessageReference-instance-method">#</a>
+        <a class="method-permalink" href="#message_reference%3AMessageReference-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L74" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L95" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1609,13 +1797,13 @@
         
         def <strong>nonce</strong> : String | Int64 | Nil
 
-        <a class="method-permalink" href="#nonce:String%7CInt64%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#nonce%3AString%7CInt64%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L68" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1625,13 +1813,13 @@
         
         def <strong>nonce=</strong>(nonce : String | Int64 | Nil)
 
-        <a class="method-permalink" href="#nonce=(nonce:String%7CInt64%7CNil)-instance-method">#</a>
+        <a class="method-permalink" href="#nonce%3D%28nonce%3AString%7CInt64%7CNil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L68" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1641,13 +1829,13 @@
         
         def <strong>pinned</strong> : Bool?
 
-        <a class="method-permalink" href="#pinned:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#pinned%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L85" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1657,13 +1845,13 @@
         
         def <strong>pinned=</strong>(pinned : Bool?)
 
-        <a class="method-permalink" href="#pinned=(pinned:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#pinned%3D%28pinned%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L85" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1673,13 +1861,13 @@
         
         def <strong>reactions</strong> : Array(<a href="../Discord/Reaction.html">Reaction</a>)?
 
-        <a class="method-permalink" href="#reactions:Array(Reaction)?-instance-method">#</a>
+        <a class="method-permalink" href="#reactions%3AArray%28Reaction%29%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1689,13 +1877,13 @@
         
         def <strong>reactions=</strong>(reactions : Array(<a href="../Discord/Reaction.html">Reaction</a>)?)
 
-        <a class="method-permalink" href="#reactions=(reactions:Array(Reaction)?)-instance-method">#</a>
+        <a class="method-permalink" href="#reactions%3D%28reactions%3AArray%28Reaction%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1705,13 +1893,13 @@
         
         def <strong>referenced_message</strong> : <a href="../Discord/Message.html">Message</a>?
 
-        <a class="method-permalink" href="#referenced_message:Message?-instance-method">#</a>
+        <a class="method-permalink" href="#referenced_message%3AMessage%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1721,13 +1909,13 @@
         
         def <strong>referenced_message=</strong>(referenced_message : <a href="../Discord/Message.html">Message</a>?)
 
-        <a class="method-permalink" href="#referenced_message=(referenced_message:Message?)-instance-method">#</a>
+        <a class="method-permalink" href="#referenced_message%3D%28referenced_message%3AMessage%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1737,13 +1925,13 @@
         
         def <strong>thread</strong> : <a href="../Discord/Channel.html">Channel</a>?
 
-        <a class="method-permalink" href="#thread:Channel?-instance-method">#</a>
+        <a class="method-permalink" href="#thread%3AChannel%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L92" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1753,13 +1941,13 @@
         
         def <strong>thread=</strong>(thread : <a href="../Discord/Channel.html">Channel</a>?)
 
-        <a class="method-permalink" href="#thread=(thread:Channel?)-instance-method">#</a>
+        <a class="method-permalink" href="#thread%3D%28thread%3AChannel%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L92" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1769,13 +1957,13 @@
         
         def <strong>timestamp</strong> : Time
 
-        <a class="method-permalink" href="#timestamp:Time-instance-method">#</a>
+        <a class="method-permalink" href="#timestamp%3ATime-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L75" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1785,13 +1973,13 @@
         
         def <strong>timestamp=</strong>(timestamp : Time)
 
-        <a class="method-permalink" href="#timestamp=(timestamp:Time)-instance-method">#</a>
+        <a class="method-permalink" href="#timestamp%3D%28timestamp%3ATime%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L75" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1801,13 +1989,13 @@
         
         def <strong>tts</strong> : Bool
 
-        <a class="method-permalink" href="#tts:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#tts%3ABool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1817,13 +2005,13 @@
         
         def <strong>tts=</strong>(tts : Bool)
 
-        <a class="method-permalink" href="#tts=(tts:Bool)-instance-method">#</a>
+        <a class="method-permalink" href="#tts%3D%28tts%3ABool%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1833,13 +2021,13 @@
         
         def <strong>type</strong> : <a href="../Discord/MessageType.html">MessageType</a>
 
-        <a class="method-permalink" href="#type:MessageType-instance-method">#</a>
+        <a class="method-permalink" href="#type%3AMessageType-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1849,13 +2037,13 @@
         
         def <strong>type=</strong>(type : <a href="../Discord/MessageType.html">MessageType</a>)
 
-        <a class="method-permalink" href="#type=(type:MessageType)-instance-method">#</a>
+        <a class="method-permalink" href="#type%3D%28type%3AMessageType%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1865,13 +2053,13 @@
         
         def <strong>webhook_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#webhook_id:Snowflake?-instance-method">#</a>
+        <a class="method-permalink" href="#webhook_id%3ASnowflake%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1881,13 +2069,13 @@
         
         def <strong>webhook_id=</strong>(webhook_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#webhook_id=(webhook_id:Snowflake?)-instance-method">#</a>
+        <a class="method-permalink" href="#webhook_id%3D%28webhook_id%3ASnowflake%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -839,10 +859,8 @@
 
   <p>This module contains methods for building URLs to resources on Discord's CDN
 for things like guild icons and avatars.</p>
-
 <p><span class="flag purple">NOTE</span>  All <code>size</code> arguments for CDN methods must be a power of 2 between 16
 and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised.</p>
-
 <p><a href="https://discord.com/developers/docs/reference#image-formatting">API Documentation for image formatting</a></p>
 
 
@@ -882,7 +900,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L8" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L8" target="_blank">
         discordcr/cdn.cr
       </a>
     
@@ -931,56 +949,56 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#application_asset(application_id:UInt64%7CSnowflake,asset_id:UInt64%7CSnowflake,format:ApplicationAssetFormat=ApplicationAssetFormat::PNG,size:Int32=128)-instance-method" class="signature"><strong>#application_asset</strong>(application_id : UInt64 | Snowflake, asset_id : UInt64 | Snowflake, format : ApplicationAssetFormat = <span class="t">ApplicationAssetFormat</span><span class="t">::</span><span class="t">PNG</span>, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#application_asset%28application_id%3AUInt64%7CSnowflake%2Casset_id%3AUInt64%7CSnowflake%2Cformat%3AApplicationAssetFormat%3DApplicationAssetFormat%3A%3APNG%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#application_asset</strong>(application_id : UInt64 | Snowflake, asset_id : UInt64 | Snowflake, format : ApplicationAssetFormat = <span class="t">ApplicationAssetFormat</span><span class="t">::</span><span class="t">PNG</span>, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL for an application asset in the given <code>format</code> and <code>size</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#application_icon(id:UInt64%7CSnowflake,icon:String,format:ApplicationIconFormat=ApplicationIconFormat::WebP,size:Int32=128)-instance-method" class="signature"><strong>#application_icon</strong>(id : UInt64 | Snowflake, icon : String, format : ApplicationIconFormat = <span class="t">ApplicationIconFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#application_icon%28id%3AUInt64%7CSnowflake%2Cicon%3AString%2Cformat%3AApplicationIconFormat%3DApplicationIconFormat%3A%3AWebP%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#application_icon</strong>(id : UInt64 | Snowflake, icon : String, format : ApplicationIconFormat = <span class="t">ApplicationIconFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL for an application icon in the given <code>format</code> and <code>size</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#custom_emoji(id:UInt64%7CSnowflake,format:CustomEmojiFormat=CustomEmojiFormat::PNG,size:Int32=128)-instance-method" class="signature"><strong>#custom_emoji</strong>(id : UInt64 | Snowflake, format : CustomEmojiFormat = <span class="t">CustomEmojiFormat</span><span class="t">::</span><span class="t">PNG</span>, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#custom_emoji%28id%3AUInt64%7CSnowflake%2Cformat%3ACustomEmojiFormat%3DCustomEmojiFormat%3A%3APNG%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#custom_emoji</strong>(id : UInt64 | Snowflake, format : CustomEmojiFormat = <span class="t">CustomEmojiFormat</span><span class="t">::</span><span class="t">PNG</span>, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL for a custom emoji in the given <code>format</code> and <code>size</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_user_avatar(user_discriminator:String)-instance-method" class="signature"><strong>#default_user_avatar</strong>(user_discriminator : String)</a>
+        <a href="#default_user_avatar%28user_discriminator%3AString%29-instance-method" class="signature"><strong>#default_user_avatar</strong>(user_discriminator : String)</a>
         
           <div class="summary"><p>Produces a CDN URL for a default user avatar, calculated from the given discriminator value.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_icon(id:UInt64%7CSnowflake,icon:String,format:GuildIconFormat=GuildIconFormat::WebP,size:Int32=128)-instance-method" class="signature"><strong>#guild_icon</strong>(id : UInt64 | Snowflake, icon : String, format : GuildIconFormat = <span class="t">GuildIconFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#guild_icon%28id%3AUInt64%7CSnowflake%2Cicon%3AString%2Cformat%3AGuildIconFormat%3DGuildIconFormat%3A%3AWebP%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#guild_icon</strong>(id : UInt64 | Snowflake, icon : String, format : GuildIconFormat = <span class="t">GuildIconFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL for a guild icon in the given <code>format</code> and <code>size</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#guild_splash(id:UInt64%7CSnowflake,splash:String,format:GuildSplashFormat=GuildSplashFormat::WebP,size:Int32=128)-instance-method" class="signature"><strong>#guild_splash</strong>(id : UInt64 | Snowflake, splash : String, format : GuildSplashFormat = <span class="t">GuildSplashFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#guild_splash%28id%3AUInt64%7CSnowflake%2Csplash%3AString%2Cformat%3AGuildSplashFormat%3DGuildSplashFormat%3A%3AWebP%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#guild_splash</strong>(id : UInt64 | Snowflake, splash : String, format : GuildSplashFormat = <span class="t">GuildSplashFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL for a guild splash in the given <code>format</code> and <code>size</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user_avatar(id:UInt64%7CSnowflake,avatar:String,size:Int32=128)-instance-method" class="signature"><strong>#user_avatar</strong>(id : UInt64 | Snowflake, avatar : String, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#user_avatar%28id%3AUInt64%7CSnowflake%2Cavatar%3AString%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#user_avatar</strong>(id : UInt64 | Snowflake, avatar : String, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL for a user avatar in the given <code>size</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user_avatar(id:UInt64%7CSnowflake,avatar:String,format:UserAvatarFormat,size:Int32=128)-instance-method" class="signature"><strong>#user_avatar</strong>(id : UInt64 | Snowflake, avatar : String, format : UserAvatarFormat, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#user_avatar%28id%3AUInt64%7CSnowflake%2Cavatar%3AString%2Cformat%3AUserAvatarFormat%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#user_avatar</strong>(id : UInt64 | Snowflake, avatar : String, format : UserAvatarFormat, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL for a user avatar in the given <code>format</code> and <code>size</code></p></div>
         
@@ -1015,7 +1033,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
         
         def <strong>application_asset</strong>(application_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, asset_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, format : <a href="../Discord/CDN/ApplicationAssetFormat.html">ApplicationAssetFormat</a> = <span class="t">ApplicationAssetFormat</span><span class="t">::</span><span class="t">PNG</span>, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#application_asset(application_id:UInt64%7CSnowflake,asset_id:UInt64%7CSnowflake,format:ApplicationAssetFormat=ApplicationAssetFormat::PNG,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#application_asset%28application_id%3AUInt64%7CSnowflake%2Casset_id%3AUInt64%7CSnowflake%2Cformat%3AApplicationAssetFormat%3DApplicationAssetFormat%3A%3APNG%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1026,7 +1044,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L209" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L209" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1036,7 +1054,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
         
         def <strong>application_icon</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, icon : String, format : <a href="../Discord/CDN/ApplicationIconFormat.html">ApplicationIconFormat</a> = <span class="t">ApplicationIconFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#application_icon(id:UInt64%7CSnowflake,icon:String,format:ApplicationIconFormat=ApplicationIconFormat::WebP,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#application_icon%28id%3AUInt64%7CSnowflake%2Cicon%3AString%2Cformat%3AApplicationIconFormat%3DApplicationIconFormat%3A%3AWebP%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1047,7 +1065,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L201" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L201" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1057,7 +1075,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
         
         def <strong>custom_emoji</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, format : <a href="../Discord/CDN/CustomEmojiFormat.html">CustomEmojiFormat</a> = <span class="t">CustomEmojiFormat</span><span class="t">::</span><span class="t">PNG</span>, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#custom_emoji(id:UInt64%7CSnowflake,format:CustomEmojiFormat=CustomEmojiFormat::PNG,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#custom_emoji%28id%3AUInt64%7CSnowflake%2Cformat%3ACustomEmojiFormat%3DCustomEmojiFormat%3A%3APNG%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1068,7 +1086,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L153" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L153" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1078,7 +1096,7 @@ and 2048. If an invalid size is given, <code>ArgumentError</code> will be raised
         
         def <strong>default_user_avatar</strong>(user_discriminator : String)
 
-        <a class="method-permalink" href="#default_user_avatar(user_discriminator:String)-instance-method">#</a>
+        <a class="method-permalink" href="#default_user_avatar%28user_discriminator%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1090,7 +1108,7 @@ discriminator value.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1100,7 +1118,7 @@ discriminator value.</p>
         
         def <strong>guild_icon</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, icon : String, format : <a href="../Discord/CDN/GuildIconFormat.html">GuildIconFormat</a> = <span class="t">GuildIconFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#guild_icon(id:UInt64%7CSnowflake,icon:String,format:GuildIconFormat=GuildIconFormat::WebP,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#guild_icon%28id%3AUInt64%7CSnowflake%2Cicon%3AString%2Cformat%3AGuildIconFormat%3DGuildIconFormat%3A%3AWebP%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1111,7 +1129,7 @@ discriminator value.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L161" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L161" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1121,7 +1139,7 @@ discriminator value.</p>
         
         def <strong>guild_splash</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, splash : String, format : <a href="../Discord/CDN/GuildSplashFormat.html">GuildSplashFormat</a> = <span class="t">GuildSplashFormat</span><span class="t">::</span><span class="t">WebP</span>, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#guild_splash(id:UInt64%7CSnowflake,splash:String,format:GuildSplashFormat=GuildSplashFormat::WebP,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#guild_splash%28id%3AUInt64%7CSnowflake%2Csplash%3AString%2Cformat%3AGuildSplashFormat%3DGuildSplashFormat%3A%3AWebP%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1132,7 +1150,7 @@ discriminator value.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L169" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L169" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1142,7 +1160,7 @@ discriminator value.</p>
         
         def <strong>user_avatar</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, avatar : String, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#user_avatar(id:UInt64%7CSnowflake,avatar:String,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#user_avatar%28id%3AUInt64%7CSnowflake%2Cavatar%3AString%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1154,7 +1172,7 @@ string, this will return a WebP or GIF based on the animated avatar hint.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L185" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L185" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1164,7 +1182,7 @@ string, this will return a WebP or GIF based on the animated avatar hint.</p>
         
         def <strong>user_avatar</strong>(id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>, avatar : String, format : <a href="../Discord/CDN/UserAvatarFormat.html">UserAvatarFormat</a>, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#user_avatar(id:UInt64%7CSnowflake,avatar:String,format:UserAvatarFormat,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#user_avatar%28id%3AUInt64%7CSnowflake%2Cavatar%3AString%2Cformat%3AUserAvatarFormat%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1175,7 +1193,7 @@ string, this will return a WebP or GIF based on the animated avatar hint.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/cdn.cr#L194" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/cdn.cr#L194" target="_blank">View source</a>]
         
       </div>
     </div>

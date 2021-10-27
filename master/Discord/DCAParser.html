@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -865,7 +885,7 @@ specifically for Discord bots.</p>
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/dca.cr#L6" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/dca.cr#L6" target="_blank">
         discordcr/dca.cr
       </a>
     
@@ -910,7 +930,7 @@ specifically for Discord bots.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(io:IO,raw=false,strict_metadata=true)-class-method" class="signature"><strong>.new</strong>(io : IO, raw = <span class="n">false</span>, strict_metadata = <span class="n">true</span>)</a>
+        <a href="#new%28io%3AIO%2Craw%3Dfalse%2Cstrict_metadata%3Dtrue%29-class-method" class="signature"><strong>.new</strong>(io : IO, raw = <span class="n">false</span>, strict_metadata = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Create a new parser.</p></div>
         
@@ -933,21 +953,21 @@ specifically for Discord bots.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#metadata:DCA1Mappings::Metadata?-instance-method" class="signature"><strong>#metadata</strong> : DCA1Mappings::Metadata?</a>
+        <a href="#metadata%3ADCA1Mappings%3A%3AMetadata%3F-instance-method" class="signature"><strong>#metadata</strong> : DCA1Mappings::Metadata?</a>
         
           <div class="summary"><p>The parsed metadata, or nil if it could not be parsed.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#next_frame(reuse_buffer=false):Bytes?-instance-method" class="signature"><strong>#next_frame</strong>(reuse_buffer = <span class="n">false</span>) : Bytes?</a>
+        <a href="#next_frame%28reuse_buffer%3Dfalse%29%3ABytes%3F-instance-method" class="signature"><strong>#next_frame</strong>(reuse_buffer = <span class="n">false</span>) : Bytes?</a>
         
           <div class="summary"><p>Reads the next frame from the IO.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parse(&block:Bytes-%3E)-instance-method" class="signature"><strong>#parse</strong>(&block : Bytes -> )</a>
+        <a href="#parse%28%26block%3ABytes-%3E%29-instance-method" class="signature"><strong>#parse</strong>(&block : Bytes -> )</a>
         
           <div class="summary"><p>Continually reads frames from the IO until there are none left.</p></div>
         
@@ -998,7 +1018,7 @@ specifically for Discord bots.</p>
         
         def self.<strong>new</strong>(io : IO, raw = <span class="n">false</span>, strict_metadata = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#new(io:IO,raw=false,strict_metadata=true)-class-method">#</a>
+        <a class="method-permalink" href="#new%28io%3AIO%2Craw%3Dfalse%2Cstrict_metadata%3Dtrue%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1013,7 +1033,7 @@ the metadata will silently be <code>nil</code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/dca.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/dca.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1037,7 +1057,7 @@ the metadata will silently be <code>nil</code>.</p>
         
         def <strong>metadata</strong> : <a href="../Discord/DCA1Mappings/Metadata.html">DCA1Mappings::Metadata</a>?
 
-        <a class="method-permalink" href="#metadata:DCA1Mappings::Metadata?-instance-method">#</a>
+        <a class="method-permalink" href="#metadata%3ADCA1Mappings%3A%3AMetadata%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1048,7 +1068,7 @@ the metadata will silently be <code>nil</code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/dca.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/dca.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1058,36 +1078,35 @@ the metadata will silently be <code>nil</code>.</p>
         
         def <strong>next_frame</strong>(reuse_buffer = <span class="n">false</span>) : Bytes?
 
-        <a class="method-permalink" href="#next_frame(reuse_buffer=false):Bytes?-instance-method">#</a>
+        <a class="method-permalink" href="#next_frame%28reuse_buffer%3Dfalse%29%3ABytes%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Reads the next frame from the IO. If there is nothing left to read, it
 will return <code>nil</code>.</p>
-
 <p>If <em>reuse_buffer</em> is true, a large buffer will be allocated once and
 reused for future calls of this method, reducing the load on the GC and
 potentially reusing memory use overall; if it is false, a new buffer of
 just the correct size will be allocated every time. Note that if the
 buffer is reused, the returned data is only valid until the next call to
-<code><a href="../Discord/DCAParser.html#next_frame(reuse_buffer=false):Bytes?-instance-method">#next_frame</a></code>.</p>
+<code><a href="../Discord/DCAParser.html#next_frame%28reuse_buffer%3Dfalse%29%3ABytes%3F-instance-method">#next_frame</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/dca.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/dca.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="parse(&block:Bytes->)-instance-method">
+    <div class="entry-detail" id="parse(&amp;block:Bytes-&gt;)-instance-method">
       <div class="signature">
         
         def <strong>parse</strong>(&block : Bytes -> )
 
-        <a class="method-permalink" href="#parse(&block:Bytes-%3E)-instance-method">#</a>
+        <a class="method-permalink" href="#parse%28%26block%3ABytes-%3E%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1099,7 +1118,7 @@ is passed to the given <em>block</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/dca.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/dca.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>

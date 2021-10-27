@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -864,7 +884,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/rest.cr#L46" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/rest.cr#L46" target="_blank">
         discordcr/mappings/rest.cr
       </a>
     
@@ -886,7 +906,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(id:UInt64%7CSnowflake,position:Int32,parent_id:UInt64%7CSnowflake%7CChannelParent=ChannelParent::Unchanged,lock_permissions:Bool?=nil)-class-method" class="signature"><strong>.new</strong>(id : UInt64 | Snowflake, position : Int32, parent_id : UInt64 | Snowflake | ChannelParent = <span class="t">ChannelParent</span><span class="t">::</span><span class="t">Unchanged</span>, lock_permissions : Bool? = <span class="n">nil</span>)</a>
+        <a href="#new%28id%3AUInt64%7CSnowflake%2Cposition%3AInt32%2Cparent_id%3AUInt64%7CSnowflake%7CChannelParent%3DChannelParent%3A%3AUnchanged%2Clock_permissions%3ABool%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(id : UInt64 | Snowflake, position : Int32, parent_id : UInt64 | Snowflake | ChannelParent = <span class="t">ChannelParent</span><span class="t">::</span><span class="t">Unchanged</span>, lock_permissions : Bool? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -907,7 +927,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#to_json(builder:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(builder : JSON::Builder)</a>
+        <a href="#to_json%28builder%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(builder : JSON::Builder)</a>
         
       </li>
     
@@ -966,13 +986,13 @@
         
         def self.<strong>new</strong>(id : <a href="../../UInt64.html">UInt64</a> | <a href="../../Discord/Snowflake.html">Snowflake</a>, position : Int32, parent_id : <a href="../../UInt64.html">UInt64</a> | <a href="../../Discord/Snowflake.html">Snowflake</a> | <a href="../../Discord/REST/ChannelParent.html">ChannelParent</a> = <span class="t">ChannelParent</span><span class="t">::</span><span class="t">Unchanged</span>, lock_permissions : Bool? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(id:UInt64%7CSnowflake,position:Int32,parent_id:UInt64%7CSnowflake%7CChannelParent=ChannelParent::Unchanged,lock_permissions:Bool?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28id%3AUInt64%7CSnowflake%2Cposition%3AInt32%2Cparent_id%3AUInt64%7CSnowflake%7CChannelParent%3DChannelParent%3A%3AUnchanged%2Clock_permissions%3ABool%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/rest.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/rest.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -996,13 +1016,13 @@
         
         def <strong>to_json</strong>(builder : JSON::Builder)
 
-        <a class="method-permalink" href="#to_json(builder:JSON::Builder)-instance-method">#</a>
+        <a class="method-permalink" href="#to_json%28builder%3AJSON%3A%3ABuilder%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/rest.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/rest.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>

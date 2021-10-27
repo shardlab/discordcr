@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" current" data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -880,7 +900,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L5" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L5" target="_blank">
         discordcr/snowflake.cr
       </a>
     
@@ -902,24 +922,24 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(string:String)-class-method" class="signature"><strong>.new</strong>(string : String)</a>
+        <a href="#new%28string%3AString%29-class-method" class="signature"><strong>.new</strong>(string : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(parser:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(parser : JSON::PullParser)</a>
+        <a href="#new%28parser%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(parser : JSON::PullParser)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(time:Time)-class-method" class="signature"><strong>.new</strong>(time : Time)</a>
+        <a href="#new%28time%3ATime%29-class-method" class="signature"><strong>.new</strong>(time : Time)</a>
         
           <div class="summary"><p>Creates a <code><a href="../Discord/Snowflake.html">Snowflake</a></code> embedded with the given timestamp</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(value:UInt64)-class-method" class="signature"><strong>.new</strong>(value : UInt64)</a>
+        <a href="#new%28value%3AUInt64%29-class-method" class="signature"><strong>.new</strong>(value : UInt64)</a>
         
       </li>
     
@@ -940,12 +960,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#(other:Snowflake)-instance-method" class="signature"><strong>#<=></strong>(other : Snowflake)</a>
+        <a href="#%3C%3D%3E%28other%3ASnowflake%29-instance-method" class="signature"><strong>#<=></strong>(other : Snowflake)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#(int:UInt64)-instance-method" class="signature"><strong>#<=></strong>(int : UInt64)</a>
+        <a href="#%3C%3D%3E%28int%3AUInt64%29-instance-method" class="signature"><strong>#<=></strong>(int : UInt64)</a>
         
           <div class="summary"><p>The comparison operator.</p></div>
         
@@ -959,26 +979,26 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#to_json(builder:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(builder : JSON::Builder)</a>
+        <a href="#to_json%28builder%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(builder : JSON::Builder)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_s(io:IO)-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
+        <a href="#to_s%28io%3AIO%29-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
         
           <div class="summary"><p>Same as <code>#inspect(io)</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_u64:UInt64-instance-method" class="signature"><strong>#to_u64</strong> : UInt64</a>
+        <a href="#to_u64%3AUInt64-instance-method" class="signature"><strong>#to_u64</strong> : UInt64</a>
         
           <div class="summary"><p>Compatibility with UInt64 API</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#value:UInt64-instance-method" class="signature"><strong>#value</strong> : UInt64</a>
+        <a href="#value%3AUInt64-instance-method" class="signature"><strong>#value</strong> : UInt64</a>
         
       </li>
     
@@ -1057,13 +1077,13 @@
         
         def self.<strong>new</strong>(string : String)
 
-        <a class="method-permalink" href="#new(string:String)-class-method">#</a>
+        <a class="method-permalink" href="#new%28string%3AString%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1073,13 +1093,13 @@
         
         def self.<strong>new</strong>(parser : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(parser:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28parser%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1089,7 +1109,7 @@
         
         def self.<strong>new</strong>(time : Time)
 
-        <a class="method-permalink" href="#new(time:Time)-class-method">#</a>
+        <a class="method-permalink" href="#new%28time%3ATime%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1100,7 +1120,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1110,13 +1130,13 @@
         
         def self.<strong>new</strong>(value : <a href="../UInt64.html">UInt64</a>)
 
-        <a class="method-permalink" href="#new(value:UInt64)-class-method">#</a>
+        <a class="method-permalink" href="#new%28value%3AUInt64%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1135,28 +1155,28 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="(other:Snowflake)-instance-method">
+    <div class="entry-detail" id="&lt;=&gt;(other:Snowflake)-instance-method">
       <div class="signature">
         
         def <strong><=></strong>(other : <a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#(other:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%3E%28other%3ASnowflake%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="(int:UInt64)-instance-method">
+    <div class="entry-detail" id="&lt;=&gt;(int:UInt64)-instance-method">
       <div class="signature">
         
         def <strong><=></strong>(int : <a href="../UInt64.html">UInt64</a>)
 
-        <a class="method-permalink" href="#(int:UInt64)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%3E%28int%3AUInt64%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1169,11 +1189,8 @@
 a negative number if this object is considered less than <em>other</em>,
 a positive number if this object is considered greater than <em>other</em>,
 or <code>nil</code> if the two objects are not comparable.</p>
-
 <p>Subclasses define this method to provide class-specific ordering.</p>
-
 <p>The comparison operator is usually used to sort values:</p>
-
 <pre><code class="language-crystal"><span class="c"># Sort in a descending way:</span>
 [<span class="n">3</span>, <span class="n">1</span>, <span class="n">2</span>].sort { <span class="o">|</span>x, y<span class="o">|</span> y <span class="o">&lt;=&gt;</span> x } <span class="c"># =&gt; [3, 2, 1]</span>
 
@@ -1184,7 +1201,7 @@ or <code>nil</code> if the two objects are not comparable.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1205,7 +1222,7 @@ or <code>nil</code> if the two objects are not comparable.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1215,13 +1232,13 @@ or <code>nil</code> if the two objects are not comparable.</p>
         
         def <strong>to_json</strong>(builder : JSON::Builder)
 
-        <a class="method-permalink" href="#to_json(builder:JSON::Builder)-instance-method">#</a>
+        <a class="method-permalink" href="#to_json%28builder%3AJSON%3A%3ABuilder%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1231,7 +1248,7 @@ or <code>nil</code> if the two objects are not comparable.</p>
         
         def <strong>to_s</strong>(io : IO)
 
-        <a class="method-permalink" href="#to_s(io:IO)-instance-method">#</a>
+        <a class="method-permalink" href="#to_s%28io%3AIO%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1246,7 +1263,7 @@ or <code>nil</code> if the two objects are not comparable.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1256,7 +1273,7 @@ or <code>nil</code> if the two objects are not comparable.</p>
         
         def <strong>to_u64</strong> : <a href="../UInt64.html">UInt64</a>
 
-        <a class="method-permalink" href="#to_u64:UInt64-instance-method">#</a>
+        <a class="method-permalink" href="#to_u64%3AUInt64-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1267,7 +1284,7 @@ or <code>nil</code> if the two objects are not comparable.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1277,13 +1294,13 @@ or <code>nil</code> if the two objects are not comparable.</p>
         
         def <strong>value</strong> : <a href="../UInt64.html">UInt64</a>
 
-        <a class="method-permalink" href="#value:UInt64-instance-method">#</a>
+        <a class="method-permalink" href="#value%3AUInt64-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -865,7 +885,7 @@ payload format used in the gateway and VWS.</p>
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L7" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L7" target="_blank">
         discordcr/websocket.cr
       </a>
     
@@ -911,7 +931,7 @@ payload format used in the gateway and VWS.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(host:String,path:String,port:Int32,tls:Bool,zlib_buffer_size:Int32=(10*1024)*1024)-class-method" class="signature"><strong>.new</strong>(host : String, path : String, port : Int32, tls : Bool, zlib_buffer_size : Int32 = (<span class="n">10</span> <span class="o">*</span> <span class="n">1024</span>) <span class="o">*</span> <span class="n">1024</span>)</a>
+        <a href="#new%28host%3AString%2Cpath%3AString%2Cport%3AInt32%2Ctls%3ABool%2Czlib_buffer_size%3AInt32%3D%2810%2A1024%29%2A1024%29-class-method" class="signature"><strong>.new</strong>(host : String, path : String, port : Int32, tls : Bool, zlib_buffer_size : Int32 = (<span class="n">10</span> <span class="o">*</span> <span class="n">1024</span>) <span class="o">*</span> <span class="n">1024</span>)</a>
         
       </li>
     
@@ -932,27 +952,27 @@ payload format used in the gateway and VWS.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#close(code:HTTP::WebSocket::CloseCode%7CInt?=nil,message=nil)-instance-method" class="signature"><strong>#close</strong>(code : HTTP::WebSocket::CloseCode | Int? = <span class="n">nil</span>, message = <span class="n">nil</span>)</a>
+        <a href="#close%28code%3AHTTP%3A%3AWebSocket%3A%3ACloseCode%7CInt%3F%3Dnil%2Cmessage%3Dnil%29-instance-method" class="signature"><strong>#close</strong>(code : HTTP::WebSocket::CloseCode | Int? = <span class="n">nil</span>, message = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_close(&handler:HTTP::WebSocket::CloseCode,String-%3E)-instance-method" class="signature"><strong>#on_close</strong>(&handler : HTTP::WebSocket::CloseCode, String -> )</a>
+        <a href="#on_close%28%26handler%3AHTTP%3A%3AWebSocket%3A%3ACloseCode%2CString-%3E%29-instance-method" class="signature"><strong>#on_close</strong>(&handler : HTTP::WebSocket::CloseCode, String -> )</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_compressed(&handler:Packet-%3E)-instance-method" class="signature"><strong>#on_compressed</strong>(&handler : Packet -> )</a>
+        <a href="#on_compressed%28%26handler%3APacket-%3E%29-instance-method" class="signature"><strong>#on_compressed</strong>(&handler : Packet -> )</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_compressed_stream(&handler:Packet-%3E)-instance-method" class="signature"><strong>#on_compressed_stream</strong>(&handler : Packet -> )</a>
+        <a href="#on_compressed_stream%28%26handler%3APacket-%3E%29-instance-method" class="signature"><strong>#on_compressed_stream</strong>(&handler : Packet -> )</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_message(&handler:Packet-%3E)-instance-method" class="signature"><strong>#on_message</strong>(&handler : Packet -> )</a>
+        <a href="#on_message%28%26handler%3APacket-%3E%29-instance-method" class="signature"><strong>#on_message</strong>(&handler : Packet -> )</a>
         
       </li>
     
@@ -962,7 +982,7 @@ payload format used in the gateway and VWS.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#send(message)-instance-method" class="signature"><strong>#send</strong>(message)</a>
+        <a href="#send%28message%29-instance-method" class="signature"><strong>#send</strong>(message)</a>
         
       </li>
     
@@ -1011,13 +1031,13 @@ payload format used in the gateway and VWS.</p>
         
         def self.<strong>new</strong>(host : String, path : String, port : Int32, tls : Bool, zlib_buffer_size : Int32 = (<span class="n">10</span> <span class="o">*</span> <span class="n">1024</span>) <span class="o">*</span> <span class="n">1024</span>)
 
-        <a class="method-permalink" href="#new(host:String,path:String,port:Int32,tls:Bool,zlib_buffer_size:Int32=(10*1024)*1024)-class-method">#</a>
+        <a class="method-permalink" href="#new%28host%3AString%2Cpath%3AString%2Cport%3AInt32%2Ctls%3ABool%2Czlib_buffer_size%3AInt32%3D%2810%2A1024%29%2A1024%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L61" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1041,77 +1061,77 @@ payload format used in the gateway and VWS.</p>
         
         def <strong>close</strong>(code : HTTP::WebSocket::CloseCode | Int? = <span class="n">nil</span>, message = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#close(code:HTTP::WebSocket::CloseCode%7CInt?=nil,message=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#close%28code%3AHTTP%3A%3AWebSocket%3A%3ACloseCode%7CInt%3F%3Dnil%2Cmessage%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L125" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L125" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="on_close(&handler:HTTP::WebSocket::CloseCode,String->)-instance-method">
+    <div class="entry-detail" id="on_close(&amp;handler:HTTP::WebSocket::CloseCode,String-&gt;)-instance-method">
       <div class="signature">
         
         def <strong>on_close</strong>(&handler : HTTP::WebSocket::CloseCode, String -> )
 
-        <a class="method-permalink" href="#on_close(&handler:HTTP::WebSocket::CloseCode,String-%3E)-instance-method">#</a>
+        <a class="method-permalink" href="#on_close%28%26handler%3AHTTP%3A%3AWebSocket%3A%3ACloseCode%2CString-%3E%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="on_compressed(&handler:Packet->)-instance-method">
+    <div class="entry-detail" id="on_compressed(&amp;handler:Packet-&gt;)-instance-method">
       <div class="signature">
         
         def <strong>on_compressed</strong>(&handler : Packet -> )
 
-        <a class="method-permalink" href="#on_compressed(&handler:Packet-%3E)-instance-method">#</a>
+        <a class="method-permalink" href="#on_compressed%28%26handler%3APacket-%3E%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="on_compressed_stream(&handler:Packet->)-instance-method">
+    <div class="entry-detail" id="on_compressed_stream(&amp;handler:Packet-&gt;)-instance-method">
       <div class="signature">
         
         def <strong>on_compressed_stream</strong>(&handler : Packet -> )
 
-        <a class="method-permalink" href="#on_compressed_stream(&handler:Packet-%3E)-instance-method">#</a>
+        <a class="method-permalink" href="#on_compressed_stream%28%26handler%3APacket-%3E%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="on_message(&handler:Packet->)-instance-method">
+    <div class="entry-detail" id="on_message(&amp;handler:Packet-&gt;)-instance-method">
       <div class="signature">
         
         def <strong>on_message</strong>(&handler : Packet -> )
 
-        <a class="method-permalink" href="#on_message(&handler:Packet-%3E)-instance-method">#</a>
+        <a class="method-permalink" href="#on_message%28%26handler%3APacket-%3E%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L109" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L109" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1127,7 +1147,7 @@ payload format used in the gateway and VWS.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L121" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L121" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1137,13 +1157,13 @@ payload format used in the gateway and VWS.</p>
         
         def <strong>send</strong>(message)
 
-        <a class="method-permalink" href="#send(message)-instance-method">#</a>
+        <a class="method-permalink" href="#send%28message%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/websocket.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/websocket.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>

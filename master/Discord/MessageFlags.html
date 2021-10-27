@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="discordcr">
-  <title>Discord::GuildEmbed - discordcr master</title>
+  <title>Discord::MessageFlags - discordcr master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -486,7 +486,7 @@
       
     </li>
   
-  <li class=" current" data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+  <li class=" " data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
       <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
       
     </li>
@@ -576,7 +576,7 @@
       
     </li>
   
-  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+  <li class=" current" data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
       <a href="../Discord/MessageFlags.html">MessageFlags</a>
       
     </li>
@@ -840,33 +840,17 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Discord::GuildEmbed
+  <span class="kind">enum</span> Discord::MessageFlags
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/GuildEmbed.html">Discord::GuildEmbed</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
 
 
 
-
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type">JSON::Serializable</li>
-    
-  </ul>
 
 
 
@@ -887,14 +871,68 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L85" target="_blank">
-        discordcr/mappings/guild.cr
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L34" target="_blank">
+        discordcr/mappings/channel.cr
       </a>
     
     <br/>
   
 
 
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Crossposted">
+        <strong>Crossposted</strong> = <code><span class="n">1_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="IsCrosspost">
+        <strong>IsCrosspost</strong> = <code><span class="n">2_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SuppressEmbeds">
+        <strong>SuppressEmbeds</strong> = <code><span class="n">4_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SourceMessageDeleted">
+        <strong>SourceMessageDeleted</strong> = <code><span class="n">8_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Urgent">
+        <strong>Urgent</strong> = <code><span class="n">16_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HasThread">
+        <strong>HasThread</strong> = <code><span class="n">32_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Ephemeral">
+        <strong>Ephemeral</strong> = <code><span class="n">64_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Loading">
+        <strong>Loading</strong> = <code><span class="n">128_u8</span></code>
+      </dt>
+      
+    
+  </dl>
 
 
 
@@ -930,22 +968,47 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#channel_id%3ASnowflake%3F-instance-method" class="signature"><strong>#channel_id</strong> : Snowflake?</a>
+        <a href="#crossposted%3F-instance-method" class="signature"><strong>#crossposted?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#channel_id=</strong>(channel_id : Snowflake?)</a>
+        <a href="#ephemeral%3F-instance-method" class="signature"><strong>#ephemeral?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled%3ABool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
+        <a href="#has_thread%3F-instance-method" class="signature"><strong>#has_thread?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled%3D%28enabled%3ABool%29-instance-method" class="signature"><strong>#enabled=</strong>(enabled : Bool)</a>
+        <a href="#is_crosspost%3F-instance-method" class="signature"><strong>#is_crosspost?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#loading%3F-instance-method" class="signature"><strong>#loading?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#none%3F-instance-method" class="signature"><strong>#none?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#source_message_deleted%3F-instance-method" class="signature"><strong>#source_message_deleted?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#suppress_embeds%3F-instance-method" class="signature"><strong>#suppress_embeds?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#urgent%3F-instance-method" class="signature"><strong>#urgent?</strong></a>
         
       </li>
     
@@ -1020,7 +1083,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1039,66 +1102,146 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="channel_id:Snowflake?-instance-method">
+    <div class="entry-detail" id="crossposted?-instance-method">
       <div class="signature">
         
-        def <strong>channel_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
+        def <strong>crossposted?</strong>
 
-        <a class="method-permalink" href="#channel_id%3ASnowflake%3F-instance-method">#</a>
+        <a class="method-permalink" href="#crossposted%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="channel_id=(channel_id:Snowflake?)-instance-method">
+    <div class="entry-detail" id="ephemeral?-instance-method">
       <div class="signature">
         
-        def <strong>channel_id=</strong>(channel_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
+        def <strong>ephemeral?</strong>
 
-        <a class="method-permalink" href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#ephemeral%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="enabled:Bool-instance-method">
+    <div class="entry-detail" id="has_thread?-instance-method">
       <div class="signature">
         
-        def <strong>enabled</strong> : Bool
+        def <strong>has_thread?</strong>
 
-        <a class="method-permalink" href="#enabled%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#has_thread%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="enabled=(enabled:Bool)-instance-method">
+    <div class="entry-detail" id="is_crosspost?-instance-method">
       <div class="signature">
         
-        def <strong>enabled=</strong>(enabled : Bool)
+        def <strong>is_crosspost?</strong>
 
-        <a class="method-permalink" href="#enabled%3D%28enabled%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#is_crosspost%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="loading?-instance-method">
+      <div class="signature">
+        
+        def <strong>loading?</strong>
+
+        <a class="method-permalink" href="#loading%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="none?-instance-method">
+      <div class="signature">
+        
+        def <strong>none?</strong>
+
+        <a class="method-permalink" href="#none%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="source_message_deleted?-instance-method">
+      <div class="signature">
+        
+        def <strong>source_message_deleted?</strong>
+
+        <a class="method-permalink" href="#source_message_deleted%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="suppress_embeds?-instance-method">
+      <div class="signature">
+        
+        def <strong>suppress_embeds?</strong>
+
+        <a class="method-permalink" href="#suppress_embeds%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="urgent?-instance-method">
+      <div class="signature">
+        
+        def <strong>urgent?</strong>
+
+        <a class="method-permalink" href="#urgent%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>

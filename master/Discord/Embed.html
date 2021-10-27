@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -867,7 +887,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L239" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L290" target="_blank">
         discordcr/mappings/channel.cr
       </a>
     
@@ -889,12 +909,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(title:String?=nil,type:String=&quot;rich&quot;,description:String?=nil,url:String?=nil,timestamp:Time?=nil,colour:UInt32?=nil,footer:EmbedFooter?=nil,image:EmbedImage?=nil,thumbnail:EmbedThumbnail?=nil,author:EmbedAuthor?=nil,fields:Array(EmbedField)?=nil)-class-method" class="signature"><strong>.new</strong>(title : String? = <span class="n">nil</span>, type : String = <span class="s">&quot;rich&quot;</span>, description : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, timestamp : Time? = <span class="n">nil</span>, colour : UInt32? = <span class="n">nil</span>, footer : EmbedFooter? = <span class="n">nil</span>, image : EmbedImage? = <span class="n">nil</span>, thumbnail : EmbedThumbnail? = <span class="n">nil</span>, author : EmbedAuthor? = <span class="n">nil</span>, fields : Array(EmbedField)? = <span class="n">nil</span>)</a>
+        <a href="#new%28title%3AString%3F%3Dnil%2Ctype%3AString%3D%22rich%22%2Cdescription%3AString%3F%3Dnil%2Curl%3AString%3F%3Dnil%2Ctimestamp%3ATime%3F%3Dnil%2Ccolour%3AUInt32%3F%3Dnil%2Cfooter%3AEmbedFooter%3F%3Dnil%2Cimage%3AEmbedImage%3F%3Dnil%2Cthumbnail%3AEmbedThumbnail%3F%3Dnil%2Cauthor%3AEmbedAuthor%3F%3Dnil%2Cfields%3AArray%28EmbedField%29%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(title : String? = <span class="n">nil</span>, type : String = <span class="s">&quot;rich&quot;</span>, description : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, timestamp : Time? = <span class="n">nil</span>, colour : UInt32? = <span class="n">nil</span>, footer : EmbedFooter? = <span class="n">nil</span>, image : EmbedImage? = <span class="n">nil</span>, thumbnail : EmbedThumbnail? = <span class="n">nil</span>, author : EmbedAuthor? = <span class="n">nil</span>, fields : Array(EmbedField)? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -915,12 +935,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#author:EmbedAuthor?-instance-method" class="signature"><strong>#author</strong> : EmbedAuthor?</a>
+        <a href="#author%3AEmbedAuthor%3F-instance-method" class="signature"><strong>#author</strong> : EmbedAuthor?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#author=(author:EmbedAuthor?)-instance-method" class="signature"><strong>#author=</strong>(author : EmbedAuthor?)</a>
+        <a href="#author%3D%28author%3AEmbedAuthor%3F%29-instance-method" class="signature"><strong>#author=</strong>(author : EmbedAuthor?)</a>
         
       </li>
     
@@ -930,122 +950,122 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#colour:UInt32?-instance-method" class="signature"><strong>#colour</strong> : UInt32?</a>
+        <a href="#colour%3AUInt32%3F-instance-method" class="signature"><strong>#colour</strong> : UInt32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#colour=(colour:UInt32?)-instance-method" class="signature"><strong>#colour=</strong>(colour : UInt32?)</a>
+        <a href="#colour%3D%28colour%3AUInt32%3F%29-instance-method" class="signature"><strong>#colour=</strong>(colour : UInt32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#description:String?-instance-method" class="signature"><strong>#description</strong> : String?</a>
+        <a href="#description%3AString%3F-instance-method" class="signature"><strong>#description</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#description=(description:String?)-instance-method" class="signature"><strong>#description=</strong>(description : String?)</a>
+        <a href="#description%3D%28description%3AString%3F%29-instance-method" class="signature"><strong>#description=</strong>(description : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fields:Array(EmbedField)?-instance-method" class="signature"><strong>#fields</strong> : Array(EmbedField)?</a>
+        <a href="#fields%3AArray%28EmbedField%29%3F-instance-method" class="signature"><strong>#fields</strong> : Array(EmbedField)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fields=(fields:Array(EmbedField)?)-instance-method" class="signature"><strong>#fields=</strong>(fields : Array(EmbedField)?)</a>
+        <a href="#fields%3D%28fields%3AArray%28EmbedField%29%3F%29-instance-method" class="signature"><strong>#fields=</strong>(fields : Array(EmbedField)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#footer:EmbedFooter?-instance-method" class="signature"><strong>#footer</strong> : EmbedFooter?</a>
+        <a href="#footer%3AEmbedFooter%3F-instance-method" class="signature"><strong>#footer</strong> : EmbedFooter?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#footer=(footer:EmbedFooter?)-instance-method" class="signature"><strong>#footer=</strong>(footer : EmbedFooter?)</a>
+        <a href="#footer%3D%28footer%3AEmbedFooter%3F%29-instance-method" class="signature"><strong>#footer=</strong>(footer : EmbedFooter?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image:EmbedImage?-instance-method" class="signature"><strong>#image</strong> : EmbedImage?</a>
+        <a href="#image%3AEmbedImage%3F-instance-method" class="signature"><strong>#image</strong> : EmbedImage?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image=(image:EmbedImage?)-instance-method" class="signature"><strong>#image=</strong>(image : EmbedImage?)</a>
+        <a href="#image%3D%28image%3AEmbedImage%3F%29-instance-method" class="signature"><strong>#image=</strong>(image : EmbedImage?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#provider:EmbedProvider?-instance-method" class="signature"><strong>#provider</strong> : EmbedProvider?</a>
+        <a href="#provider%3AEmbedProvider%3F-instance-method" class="signature"><strong>#provider</strong> : EmbedProvider?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#provider=(provider:EmbedProvider?)-instance-method" class="signature"><strong>#provider=</strong>(provider : EmbedProvider?)</a>
+        <a href="#provider%3D%28provider%3AEmbedProvider%3F%29-instance-method" class="signature"><strong>#provider=</strong>(provider : EmbedProvider?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#thumbnail:EmbedThumbnail?-instance-method" class="signature"><strong>#thumbnail</strong> : EmbedThumbnail?</a>
+        <a href="#thumbnail%3AEmbedThumbnail%3F-instance-method" class="signature"><strong>#thumbnail</strong> : EmbedThumbnail?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#thumbnail=(thumbnail:EmbedThumbnail?)-instance-method" class="signature"><strong>#thumbnail=</strong>(thumbnail : EmbedThumbnail?)</a>
+        <a href="#thumbnail%3D%28thumbnail%3AEmbedThumbnail%3F%29-instance-method" class="signature"><strong>#thumbnail=</strong>(thumbnail : EmbedThumbnail?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamp:Time?-instance-method" class="signature"><strong>#timestamp</strong> : Time?</a>
+        <a href="#timestamp%3ATime%3F-instance-method" class="signature"><strong>#timestamp</strong> : Time?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamp=(timestamp:Time?)-instance-method" class="signature"><strong>#timestamp=</strong>(timestamp : Time?)</a>
+        <a href="#timestamp%3D%28timestamp%3ATime%3F%29-instance-method" class="signature"><strong>#timestamp=</strong>(timestamp : Time?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#title:String?-instance-method" class="signature"><strong>#title</strong> : String?</a>
+        <a href="#title%3AString%3F-instance-method" class="signature"><strong>#title</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#title=(title:String?)-instance-method" class="signature"><strong>#title=</strong>(title : String?)</a>
+        <a href="#title%3D%28title%3AString%3F%29-instance-method" class="signature"><strong>#title=</strong>(title : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#type:String-instance-method" class="signature"><strong>#type</strong> : String</a>
+        <a href="#type%3AString-instance-method" class="signature"><strong>#type</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#type=(type:String)-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
+        <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#url:String?-instance-method" class="signature"><strong>#url</strong> : String?</a>
+        <a href="#url%3AString%3F-instance-method" class="signature"><strong>#url</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#url=(url:String?)-instance-method" class="signature"><strong>#url=</strong>(url : String?)</a>
+        <a href="#url%3D%28url%3AString%3F%29-instance-method" class="signature"><strong>#url=</strong>(url : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#video:EmbedVideo?-instance-method" class="signature"><strong>#video</strong> : EmbedVideo?</a>
+        <a href="#video%3AEmbedVideo%3F-instance-method" class="signature"><strong>#video</strong> : EmbedVideo?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#video=(video:EmbedVideo?)-instance-method" class="signature"><strong>#video=</strong>(video : EmbedVideo?)</a>
+        <a href="#video%3D%28video%3AEmbedVideo%3F%29-instance-method" class="signature"><strong>#video=</strong>(video : EmbedVideo?)</a>
         
       </li>
     
@@ -1114,13 +1134,13 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L240" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L291" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1130,13 +1150,13 @@
         
         def self.<strong>new</strong>(title : String? = <span class="n">nil</span>, type : String = <span class="s">&quot;rich&quot;</span>, description : String? = <span class="n">nil</span>, url : String? = <span class="n">nil</span>, timestamp : Time? = <span class="n">nil</span>, colour : UInt32? = <span class="n">nil</span>, footer : <a href="../Discord/EmbedFooter.html">EmbedFooter</a>? = <span class="n">nil</span>, image : <a href="../Discord/EmbedImage.html">EmbedImage</a>? = <span class="n">nil</span>, thumbnail : <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>? = <span class="n">nil</span>, author : <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>? = <span class="n">nil</span>, fields : Array(<a href="../Discord/EmbedField.html">EmbedField</a>)? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(title:String?=nil,type:String=&quot;rich&quot;,description:String?=nil,url:String?=nil,timestamp:Time?=nil,colour:UInt32?=nil,footer:EmbedFooter?=nil,image:EmbedImage?=nil,thumbnail:EmbedThumbnail?=nil,author:EmbedAuthor?=nil,fields:Array(EmbedField)?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28title%3AString%3F%3Dnil%2Ctype%3AString%3D%22rich%22%2Cdescription%3AString%3F%3Dnil%2Curl%3AString%3F%3Dnil%2Ctimestamp%3ATime%3F%3Dnil%2Ccolour%3AUInt32%3F%3Dnil%2Cfooter%3AEmbedFooter%3F%3Dnil%2Cimage%3AEmbedImage%3F%3Dnil%2Cthumbnail%3AEmbedThumbnail%3F%3Dnil%2Cauthor%3AEmbedAuthor%3F%3Dnil%2Cfields%3AArray%28EmbedField%29%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L258" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L309" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1160,13 +1180,13 @@
         
         def <strong>author</strong> : <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>?
 
-        <a class="method-permalink" href="#author:EmbedAuthor?-instance-method">#</a>
+        <a class="method-permalink" href="#author%3AEmbedAuthor%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L255" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L306" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1176,13 +1196,13 @@
         
         def <strong>author=</strong>(author : <a href="../Discord/EmbedAuthor.html">EmbedAuthor</a>?)
 
-        <a class="method-permalink" href="#author=(author:EmbedAuthor?)-instance-method">#</a>
+        <a class="method-permalink" href="#author%3D%28author%3AEmbedAuthor%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L255" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L306" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1198,7 +1218,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L266" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L317" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1208,13 +1228,13 @@
         
         def <strong>colour</strong> : UInt32?
 
-        <a class="method-permalink" href="#colour:UInt32?-instance-method">#</a>
+        <a class="method-permalink" href="#colour%3AUInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L249" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L300" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1224,13 +1244,13 @@
         
         def <strong>colour=</strong>(colour : UInt32?)
 
-        <a class="method-permalink" href="#colour=(colour:UInt32?)-instance-method">#</a>
+        <a class="method-permalink" href="#colour%3D%28colour%3AUInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L249" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L300" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1240,13 +1260,13 @@
         
         def <strong>description</strong> : String?
 
-        <a class="method-permalink" href="#description:String?-instance-method">#</a>
+        <a class="method-permalink" href="#description%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L244" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L295" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1256,13 +1276,13 @@
         
         def <strong>description=</strong>(description : String?)
 
-        <a class="method-permalink" href="#description=(description:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#description%3D%28description%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L244" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L295" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1272,13 +1292,13 @@
         
         def <strong>fields</strong> : Array(<a href="../Discord/EmbedField.html">EmbedField</a>)?
 
-        <a class="method-permalink" href="#fields:Array(EmbedField)?-instance-method">#</a>
+        <a class="method-permalink" href="#fields%3AArray%28EmbedField%29%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L256" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L307" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1288,13 +1308,13 @@
         
         def <strong>fields=</strong>(fields : Array(<a href="../Discord/EmbedField.html">EmbedField</a>)?)
 
-        <a class="method-permalink" href="#fields=(fields:Array(EmbedField)?)-instance-method">#</a>
+        <a class="method-permalink" href="#fields%3D%28fields%3AArray%28EmbedField%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L256" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L307" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1304,13 +1324,13 @@
         
         def <strong>footer</strong> : <a href="../Discord/EmbedFooter.html">EmbedFooter</a>?
 
-        <a class="method-permalink" href="#footer:EmbedFooter?-instance-method">#</a>
+        <a class="method-permalink" href="#footer%3AEmbedFooter%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L250" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L301" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1320,13 +1340,13 @@
         
         def <strong>footer=</strong>(footer : <a href="../Discord/EmbedFooter.html">EmbedFooter</a>?)
 
-        <a class="method-permalink" href="#footer=(footer:EmbedFooter?)-instance-method">#</a>
+        <a class="method-permalink" href="#footer%3D%28footer%3AEmbedFooter%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L250" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L301" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1336,13 +1356,13 @@
         
         def <strong>image</strong> : <a href="../Discord/EmbedImage.html">EmbedImage</a>?
 
-        <a class="method-permalink" href="#image:EmbedImage?-instance-method">#</a>
+        <a class="method-permalink" href="#image%3AEmbedImage%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L251" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L302" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1352,13 +1372,13 @@
         
         def <strong>image=</strong>(image : <a href="../Discord/EmbedImage.html">EmbedImage</a>?)
 
-        <a class="method-permalink" href="#image=(image:EmbedImage?)-instance-method">#</a>
+        <a class="method-permalink" href="#image%3D%28image%3AEmbedImage%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L251" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L302" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1368,13 +1388,13 @@
         
         def <strong>provider</strong> : <a href="../Discord/EmbedProvider.html">EmbedProvider</a>?
 
-        <a class="method-permalink" href="#provider:EmbedProvider?-instance-method">#</a>
+        <a class="method-permalink" href="#provider%3AEmbedProvider%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L254" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L305" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1384,13 +1404,13 @@
         
         def <strong>provider=</strong>(provider : <a href="../Discord/EmbedProvider.html">EmbedProvider</a>?)
 
-        <a class="method-permalink" href="#provider=(provider:EmbedProvider?)-instance-method">#</a>
+        <a class="method-permalink" href="#provider%3D%28provider%3AEmbedProvider%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L254" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L305" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1400,13 +1420,13 @@
         
         def <strong>thumbnail</strong> : <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>?
 
-        <a class="method-permalink" href="#thumbnail:EmbedThumbnail?-instance-method">#</a>
+        <a class="method-permalink" href="#thumbnail%3AEmbedThumbnail%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L252" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L303" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1416,13 +1436,13 @@
         
         def <strong>thumbnail=</strong>(thumbnail : <a href="../Discord/EmbedThumbnail.html">EmbedThumbnail</a>?)
 
-        <a class="method-permalink" href="#thumbnail=(thumbnail:EmbedThumbnail?)-instance-method">#</a>
+        <a class="method-permalink" href="#thumbnail%3D%28thumbnail%3AEmbedThumbnail%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L252" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L303" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1432,13 +1452,13 @@
         
         def <strong>timestamp</strong> : Time?
 
-        <a class="method-permalink" href="#timestamp:Time?-instance-method">#</a>
+        <a class="method-permalink" href="#timestamp%3ATime%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L247" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L298" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1448,13 +1468,13 @@
         
         def <strong>timestamp=</strong>(timestamp : Time?)
 
-        <a class="method-permalink" href="#timestamp=(timestamp:Time?)-instance-method">#</a>
+        <a class="method-permalink" href="#timestamp%3D%28timestamp%3ATime%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L247" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L298" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1464,13 +1484,13 @@
         
         def <strong>title</strong> : String?
 
-        <a class="method-permalink" href="#title:String?-instance-method">#</a>
+        <a class="method-permalink" href="#title%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L242" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L293" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1480,13 +1500,13 @@
         
         def <strong>title=</strong>(title : String?)
 
-        <a class="method-permalink" href="#title=(title:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#title%3D%28title%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L242" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L293" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1496,13 +1516,13 @@
         
         def <strong>type</strong> : String
 
-        <a class="method-permalink" href="#type:String-instance-method">#</a>
+        <a class="method-permalink" href="#type%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L243" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L294" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1512,13 +1532,13 @@
         
         def <strong>type=</strong>(type : String)
 
-        <a class="method-permalink" href="#type=(type:String)-instance-method">#</a>
+        <a class="method-permalink" href="#type%3D%28type%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L243" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L294" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1528,13 +1548,13 @@
         
         def <strong>url</strong> : String?
 
-        <a class="method-permalink" href="#url:String?-instance-method">#</a>
+        <a class="method-permalink" href="#url%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L245" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L296" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1544,13 +1564,13 @@
         
         def <strong>url=</strong>(url : String?)
 
-        <a class="method-permalink" href="#url=(url:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#url%3D%28url%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L245" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L296" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1560,13 +1580,13 @@
         
         def <strong>video</strong> : <a href="../Discord/EmbedVideo.html">EmbedVideo</a>?
 
-        <a class="method-permalink" href="#video:EmbedVideo?-instance-method">#</a>
+        <a class="method-permalink" href="#video%3AEmbedVideo%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L253" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L304" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1576,13 +1596,13 @@
         
         def <strong>video=</strong>(video : <a href="../Discord/EmbedVideo.html">EmbedVideo</a>?)
 
-        <a class="method-permalink" href="#video=(video:EmbedVideo?)-instance-method">#</a>
+        <a class="method-permalink" href="#video%3D%28video%3AEmbedVideo%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/channel.cr#L253" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L304" target="_blank">View source</a>]
         
       </div>
     </div>

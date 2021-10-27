@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -866,7 +886,7 @@ sent. There should be no reason to manually use this class: use
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L187" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L187" target="_blank">
         discordcr/voice.cr
       </a>
     
@@ -909,39 +929,39 @@ sent. There should be no reason to manually use this class: use
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#connect(endpoint:String,port:UInt32,ssrc:UInt32)-instance-method" class="signature"><strong>#connect</strong>(endpoint : String, port : UInt32, ssrc : UInt32)</a>
+        <a href="#connect%28endpoint%3AString%2Cport%3AUInt32%2Cssrc%3AUInt32%29-instance-method" class="signature"><strong>#connect</strong>(endpoint : String, port : UInt32, ssrc : UInt32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mode:String?-instance-method" class="signature"><strong>#mode</strong> : String?</a>
+        <a href="#mode%3AString%3F-instance-method" class="signature"><strong>#mode</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mode=(mode)-instance-method" class="signature"><strong>#mode=</strong>(mode)</a>
+        <a href="#mode%3D%28mode%29-instance-method" class="signature"><strong>#mode=</strong>(mode)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#receive_discovery_reply:Tuple(String,UInt16)-instance-method" class="signature"><strong>#receive_discovery_reply</strong> : Tuple(String, UInt16)</a>
+        <a href="#receive_discovery_reply%3ATuple%28String%2CUInt16%29-instance-method" class="signature"><strong>#receive_discovery_reply</strong> : Tuple(String, UInt16)</a>
         
           <div class="summary"><p>Awaits a response to the discovery request and returns our local IP and port once the response is received</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#secret_key:Slice(UInt8)?-instance-method" class="signature"><strong>#secret_key</strong> : Slice(UInt8)?</a>
+        <a href="#secret_key%3ASlice%28UInt8%29%3F-instance-method" class="signature"><strong>#secret_key</strong> : Slice(UInt8)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#secret_key=(secret_key)-instance-method" class="signature"><strong>#secret_key=</strong>(secret_key)</a>
+        <a href="#secret_key%3D%28secret_key%29-instance-method" class="signature"><strong>#secret_key=</strong>(secret_key)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#send_audio(buf,sequence,time)-instance-method" class="signature"><strong>#send_audio</strong>(buf, sequence, time)</a>
+        <a href="#send_audio%28buf%2Csequence%2Ctime%29-instance-method" class="signature"><strong>#send_audio</strong>(buf, sequence, time)</a>
         
           <div class="summary"><p>Sends 20 ms of opus audio data to Discord, with the specified sequence and time (used on the receiving client to synchronise packets)</p></div>
         
@@ -955,7 +975,7 @@ sent. There should be no reason to manually use this class: use
       </li>
     
       <li class="entry-summary">
-        <a href="#socket:UDPSocket-instance-method" class="signature"><strong>#socket</strong> : UDPSocket</a>
+        <a href="#socket%3AUDPSocket-instance-method" class="signature"><strong>#socket</strong> : UDPSocket</a>
         
       </li>
     
@@ -1010,7 +1030,7 @@ sent. There should be no reason to manually use this class: use
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L196" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L196" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1034,13 +1054,13 @@ sent. There should be no reason to manually use this class: use
         
         def <strong>connect</strong>(endpoint : String, port : UInt32, ssrc : UInt32)
 
-        <a class="method-permalink" href="#connect(endpoint:String,port:UInt32,ssrc:UInt32)-instance-method">#</a>
+        <a class="method-permalink" href="#connect%28endpoint%3AString%2Cport%3AUInt32%2Cssrc%3AUInt32%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1050,13 +1070,13 @@ sent. There should be no reason to manually use this class: use
         
         def <strong>mode</strong> : String?
 
-        <a class="method-permalink" href="#mode:String?-instance-method">#</a>
+        <a class="method-permalink" href="#mode%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L193" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1066,13 +1086,13 @@ sent. There should be no reason to manually use this class: use
         
         def <strong>mode=</strong>(mode)
 
-        <a class="method-permalink" href="#mode=(mode)-instance-method">#</a>
+        <a class="method-permalink" href="#mode%3D%28mode%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L193" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1082,7 +1102,7 @@ sent. There should be no reason to manually use this class: use
         
         def <strong>receive_discovery_reply</strong> : Tuple(String, UInt16)
 
-        <a class="method-permalink" href="#receive_discovery_reply:Tuple(String,UInt16)-instance-method">#</a>
+        <a class="method-permalink" href="#receive_discovery_reply%3ATuple%28String%2CUInt16%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1094,7 +1114,7 @@ port once the response is received</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L215" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L215" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1104,13 +1124,13 @@ port once the response is received</p>
         
         def <strong>secret_key</strong> : Slice(UInt8)?
 
-        <a class="method-permalink" href="#secret_key:Slice(UInt8)?-instance-method">#</a>
+        <a class="method-permalink" href="#secret_key%3ASlice%28UInt8%29%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L192" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L192" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1120,13 +1140,13 @@ port once the response is received</p>
         
         def <strong>secret_key=</strong>(secret_key)
 
-        <a class="method-permalink" href="#secret_key=(secret_key)-instance-method">#</a>
+        <a class="method-permalink" href="#secret_key%3D%28secret_key%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L192" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L192" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1136,7 +1156,7 @@ port once the response is received</p>
         
         def <strong>send_audio</strong>(buf, sequence, time)
 
-        <a class="method-permalink" href="#send_audio(buf,sequence,time)-instance-method">#</a>
+        <a class="method-permalink" href="#send_audio%28buf%2Csequence%2Ctime%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1148,7 +1168,7 @@ time (used on the receiving client to synchronise packets)</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L229" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L229" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1170,7 +1190,7 @@ IP so we can select the protocol on the VWS</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L207" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L207" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1180,13 +1200,13 @@ IP so we can select the protocol on the VWS</p>
         
         def <strong>socket</strong> : UDPSocket
 
-        <a class="method-permalink" href="#socket:UDPSocket-instance-method">#</a>
+        <a class="method-permalink" href="#socket%3AUDPSocket-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L194" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L194" target="_blank">View source</a>]
         
       </div>
     </div>

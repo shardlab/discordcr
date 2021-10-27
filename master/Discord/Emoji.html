@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -867,7 +887,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L194" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L194" target="_blank">
         discordcr/mappings/guild.cr
       </a>
     
@@ -889,7 +909,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -910,46 +930,46 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#animated:Bool?-instance-method" class="signature"><strong>#animated</strong> : Bool?</a>
+        <a href="#animated%3ABool%3F-instance-method" class="signature"><strong>#animated</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#animated=(animated:Bool?)-instance-method" class="signature"><strong>#animated=</strong>(animated : Bool?)</a>
+        <a href="#animated%3D%28animated%3ABool%3F%29-instance-method" class="signature"><strong>#animated=</strong>(animated : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id:Snowflake?-instance-method" class="signature"><strong>#id</strong> : Snowflake?</a>
+        <a href="#id%3ASnowflake%3F-instance-method" class="signature"><strong>#id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id=(id:Snowflake?)-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake?)</a>
+        <a href="#id%3D%28id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image_url(size:Int32=128)-instance-method" class="signature"><strong>#image_url</strong>(size : Int32 = <span class="n">128</span>)</a>
+        <a href="#image_url%28size%3AInt32%3D128%29-instance-method" class="signature"><strong>#image_url</strong>(size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL to this emoji's image in the given <code>size</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image_url(format:CDN::CustomEmojiFormat,size:Int32=128)-instance-method" class="signature"><strong>#image_url</strong>(format : CDN::CustomEmojiFormat, size : Int32 = <span class="n">128</span>)</a>
+        <a href="#image_url%28format%3ACDN%3A%3ACustomEmojiFormat%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#image_url</strong>(format : CDN::CustomEmojiFormat, size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL to this emoji's image in the given <code>format</code> and <code>size</code> or <code>nil</code> if the emoji has no id.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#managed:Bool?-instance-method" class="signature"><strong>#managed</strong> : Bool?</a>
+        <a href="#managed%3ABool%3F-instance-method" class="signature"><strong>#managed</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#managed=(managed:Bool?)-instance-method" class="signature"><strong>#managed=</strong>(managed : Bool?)</a>
+        <a href="#managed%3D%28managed%3ABool%3F%29-instance-method" class="signature"><strong>#managed=</strong>(managed : Bool?)</a>
         
       </li>
     
@@ -961,32 +981,32 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        <a href="#name%3AString-instance-method" class="signature"><strong>#name</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#name=(name:String)-instance-method" class="signature"><strong>#name=</strong>(name : String)</a>
+        <a href="#name%3D%28name%3AString%29-instance-method" class="signature"><strong>#name=</strong>(name : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#require_colons:Bool?-instance-method" class="signature"><strong>#require_colons</strong> : Bool?</a>
+        <a href="#require_colons%3ABool%3F-instance-method" class="signature"><strong>#require_colons</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#require_colons=(require_colons:Bool?)-instance-method" class="signature"><strong>#require_colons=</strong>(require_colons : Bool?)</a>
+        <a href="#require_colons%3D%28require_colons%3ABool%3F%29-instance-method" class="signature"><strong>#require_colons=</strong>(require_colons : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#roles:Array(Snowflake)?-instance-method" class="signature"><strong>#roles</strong> : Array(Snowflake)?</a>
+        <a href="#roles%3AArray%28Snowflake%29%3F-instance-method" class="signature"><strong>#roles</strong> : Array(Snowflake)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#roles=(roles:Array(Snowflake)?)-instance-method" class="signature"><strong>#roles=</strong>(roles : Array(Snowflake)?)</a>
+        <a href="#roles%3D%28roles%3AArray%28Snowflake%29%3F%29-instance-method" class="signature"><strong>#roles=</strong>(roles : Array(Snowflake)?)</a>
         
       </li>
     
@@ -1055,13 +1075,13 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L195" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L195" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1085,13 +1105,13 @@
         
         def <strong>animated</strong> : Bool?
 
-        <a class="method-permalink" href="#animated:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#animated%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L202" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L202" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1101,13 +1121,13 @@
         
         def <strong>animated=</strong>(animated : Bool?)
 
-        <a class="method-permalink" href="#animated=(animated:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#animated%3D%28animated%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L202" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L202" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1117,13 +1137,13 @@
         
         def <strong>id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#id:Snowflake?-instance-method">#</a>
+        <a class="method-permalink" href="#id%3ASnowflake%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L197" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1133,13 +1153,13 @@
         
         def <strong>id=</strong>(id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#id=(id:Snowflake?)-instance-method">#</a>
+        <a class="method-permalink" href="#id%3D%28id%3ASnowflake%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L197" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1149,7 +1169,7 @@
         
         def <strong>image_url</strong>(size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#image_url(size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#image_url%28size%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1161,7 +1181,7 @@ a PNG, or GIF if the emoji is animated.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L206" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L206" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1171,7 +1191,7 @@ a PNG, or GIF if the emoji is animated.</p>
         
         def <strong>image_url</strong>(format : <a href="../Discord/CDN/CustomEmojiFormat.html">CDN::CustomEmojiFormat</a>, size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#image_url(format:CDN::CustomEmojiFormat,size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#image_url%28format%3ACDN%3A%3ACustomEmojiFormat%2Csize%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1183,7 +1203,7 @@ or <code>nil</code> if the emoji has no id.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L216" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L216" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1193,13 +1213,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>managed</strong> : Bool?
 
-        <a class="method-permalink" href="#managed:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#managed%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L201" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L201" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1209,13 +1229,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>managed=</strong>(managed : Bool?)
 
-        <a class="method-permalink" href="#managed=(managed:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#managed%3D%28managed%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L201" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L201" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1236,7 +1256,7 @@ or <code>nil</code> if the emoji has no id.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L223" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L223" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1246,13 +1266,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>name</strong> : String
 
-        <a class="method-permalink" href="#name:String-instance-method">#</a>
+        <a class="method-permalink" href="#name%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L198" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L198" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1262,13 +1282,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>name=</strong>(name : String)
 
-        <a class="method-permalink" href="#name=(name:String)-instance-method">#</a>
+        <a class="method-permalink" href="#name%3D%28name%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L198" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L198" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1278,13 +1298,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>require_colons</strong> : Bool?
 
-        <a class="method-permalink" href="#require_colons:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#require_colons%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1294,13 +1314,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>require_colons=</strong>(require_colons : Bool?)
 
-        <a class="method-permalink" href="#require_colons=(require_colons:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#require_colons%3D%28require_colons%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1310,13 +1330,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>roles</strong> : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?
 
-        <a class="method-permalink" href="#roles:Array(Snowflake)?-instance-method">#</a>
+        <a class="method-permalink" href="#roles%3AArray%28Snowflake%29%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L199" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L199" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1326,13 +1346,13 @@ or <code>nil</code> if the emoji has no id.</p>
         
         def <strong>roles=</strong>(roles : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?)
 
-        <a class="method-permalink" href="#roles=(roles:Array(Snowflake)?)-instance-method">#</a>
+        <a class="method-permalink" href="#roles%3D%28roles%3AArray%28Snowflake%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/guild.cr#L199" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L199" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="discordcr">
-  <title>Discord::GuildEmbed - discordcr master</title>
+  <title>Discord::VideoQualityMode - discordcr master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -486,7 +486,7 @@
       
     </li>
   
-  <li class=" current" data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+  <li class=" " data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
       <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
       
     </li>
@@ -786,7 +786,7 @@
       
     </li>
   
-  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+  <li class=" current" data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
       <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
@@ -840,33 +840,17 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Discord::GuildEmbed
+  <span class="kind">enum</span> Discord::VideoQualityMode
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/GuildEmbed.html">Discord::GuildEmbed</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
 
 
 
-
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type">JSON::Serializable</li>
-    
-  </ul>
 
 
 
@@ -887,14 +871,38 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L85" target="_blank">
-        discordcr/mappings/guild.cr
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L166" target="_blank">
+        discordcr/mappings/channel.cr
       </a>
     
     <br/>
   
 
 
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Auto">
+        <strong>Auto</strong> = <code><span class="n">1_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Full">
+        <strong>Full</strong> = <code><span class="n">2_u8</span></code>
+      </dt>
+      
+    
+  </dl>
 
 
 
@@ -930,22 +938,19 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#channel_id%3ASnowflake%3F-instance-method" class="signature"><strong>#channel_id</strong> : Snowflake?</a>
+        <a href="#auto%3F-instance-method" class="signature"><strong>#auto?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#channel_id=</strong>(channel_id : Snowflake?)</a>
+        <a href="#full%3F-instance-method" class="signature"><strong>#full?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled%3ABool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
+        <a href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
         
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#enabled%3D%28enabled%3ABool%29-instance-method" class="signature"><strong>#enabled=</strong>(enabled : Bool)</a>
+          <div class="summary"><p>Serializes this enum member by name.</p></div>
         
       </li>
     
@@ -1020,7 +1025,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L170" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1039,66 +1044,84 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="channel_id:Snowflake?-instance-method">
+    <div class="entry-detail" id="auto?-instance-method">
       <div class="signature">
         
-        def <strong>channel_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
+        def <strong>auto?</strong>
 
-        <a class="method-permalink" href="#channel_id%3ASnowflake%3F-instance-method">#</a>
+        <a class="method-permalink" href="#auto%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L167" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="channel_id=(channel_id:Snowflake?)-instance-method">
+    <div class="entry-detail" id="full?-instance-method">
       <div class="signature">
         
-        def <strong>channel_id=</strong>(channel_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
+        def <strong>full?</strong>
 
-        <a class="method-permalink" href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#full%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L168" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="enabled:Bool-instance-method">
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
       <div class="signature">
         
-        def <strong>enabled</strong> : Bool
+        def <strong>to_json</strong>(json : JSON::Builder)
 
-        <a class="method-permalink" href="#enabled%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct Enum
+            </div>
+          
+          <p>Serializes this enum member by name.</p>
+<p>For non-flags enums, the serialization is a JSON string. The value is the
+member name (see <code>#to_s</code>) transformed with <code>String#underscore</code>.</p>
+<pre><code class="language-crystal"><span class="k">enum</span> <span class="t">Stages</span>
+  <span class="t">INITIAL</span>
+  <span class="t">SECOND_STAGE</span>
+<span class="k">end</span>
+
+<span class="t">Stages</span><span class="t">::</span><span class="t">INITIAL</span>.to_json      <span class="c"># =&gt; %(&quot;initial&quot;)</span>
+<span class="t">Stages</span><span class="t">::</span><span class="t">SECOND_STAGE</span>.to_json <span class="c"># =&gt; %(&quot;second_stage&quot;)</span></code></pre>
+<p>For flags enums, the serialization is a JSON array including every flagged
+member individually serialized in the same way as a member of a non-flags enum.
+<code>None</code> is serialized as an empty array, <code>All</code> as an array containing
+all members.</p>
+<pre><code class="language-crystal">@[<span class="t">Flags</span>]
+<span class="k">enum</span> <span class="t">Sides</span>
+  <span class="t">LEFT</span>
+  <span class="t">RIGHT</span>
+<span class="k">end</span>
+
+<span class="t">Sides</span><span class="t">::</span><span class="t">LEFT</span>.to_json                  <span class="c"># =&gt; %([&quot;left&quot;])</span>
+(<span class="t">Sides</span><span class="t">::</span><span class="t">LEFT</span> <span class="o">|</span> <span class="t">Sides</span><span class="t">::</span><span class="t">RIGHT</span>).to_json <span class="c"># =&gt; %([&quot;left&quot;,&quot;right&quot;])</span>
+<span class="t">Sides</span><span class="t">::</span><span class="t">All</span>.to_json                   <span class="c"># =&gt; %([&quot;left&quot;,&quot;right&quot;])</span>
+<span class="t">Sides</span><span class="t">::</span><span class="t">None</span>.to_json                  <span class="c"># =&gt; %([])</span></code></pre>
+<p><code>ValueConverter.to_json</code> offers a different serialization strategy based on the
+member value.</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="enabled=(enabled:Bool)-instance-method">
-      <div class="signature">
-        
-        def <strong>enabled=</strong>(enabled : Bool)
-
-        <a class="method-permalink" href="#enabled%3D%28enabled%3ABool%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L174" target="_blank">View source</a>]
         
       </div>
     </div>

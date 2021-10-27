@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="Discord/Snowflake.html">Snowflake</a>
       
@@ -771,6 +786,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="Discord/VideoQualityMode.html">VideoQualityMode</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/VoiceClient" data-name="discord::voiceclient">
       <a href="Discord/VoiceClient.html">VoiceClient</a>
       
@@ -818,40 +838,32 @@
 
 
 <div class="main-content">
-<p><a href="https://dcr.shardlab.dev/v0.4.0/"><img src="https://img.shields.io/badge/docs-v0.4.0-green.svg?style=flat-square" alt="docs"/></a> <a href="https://dcr.shardlab.dev/master/"><img src="https://img.shields.io/badge/docs-master-red.svg?style=flat-square" alt="docs"/></a></p>
-
+<p><a href="https://dcr.shardlab.dev/v0.4.0/"><img src="https://img.shields.io/badge/docs-v0.4.0-green.svg?style=flat-square" alt="docs" /></a> <a href="https://dcr.shardlab.dev/master/"><img src="https://img.shields.io/badge/docs-master-red.svg?style=flat-square" alt="docs" /></a></p>
 <h3><a id="important-notice" class="anchor" href="#important-notice">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Important Notice</h3>
-
-<p>This is the <strong>new official source of discordcr</strong>!\
+<p>This is the <strong>new official source of discordcr</strong>!<br />
 The <a href="https://github.com/discordcr/discordcr">old repo</a> has not been updated for countless months
-and new features, along with library breaking changes, are coming fast.\
-There is no guarantee any code/updates will be pushed to the old repo again, so as it stands,\
+and new features, along with library breaking changes, are coming fast.<br />
+There is no guarantee any code/updates will be pushed to the old repo again, so as it stands,<br />
 this will be where all new code will be pushed and where all new PRs and Issues should be created.</p>
-
 <p>Thanks!</p>
-
 <h1><a id="discordcr" class="anchor" href="#discordcr">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>discordcr</h1>
-
-<p>(The "cr" stands for "creative name".)</p>
-
+<p>(The &quot;cr&quot; stands for &quot;creative name&quot;.)</p>
 <p>discordcr is a minimalist <a href="https://discord.com/">Discord</a> API library for
 <a href="https://crystal-lang.org/">Crystal</a>, designed to be a complement to
 <a href="https://github.com/shardlab/discordrb">discordrb</a> for users who want more control
 and performance and who care less about ease-of-use.</p>
-
 <p>discordcr isn't designed for beginners to the Discord API - while experience
 with making bots isn't <em>required</em>, it's certainly recommended. If you feel
 overwhelmed by the complex documentation, try
 <a href="https://github.com/shardlab/discordrb">discordrb</a> first and then check back.</p>
-
 <p>Unlike many other libs which handle a lot of stuff, like caching or resolving,
 themselves automatically, discordcr requires the user to do such things
 manually. It also doesn't provide any advanced abstractions for REST calls;
@@ -859,79 +871,71 @@ the methods perform the HTTP request with the given data but nothing else.
 This means that the user has full control over them, but also full
 responsibility. discordcr does not support user accounts; it may work but
 likely doesn't.</p>
-
 <h2><a id="installation" class="anchor" href="#installation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Installation</h2>
-
 <p>Add this to your application's <code>shard.yml</code>:</p>
-
 <pre><code class="language-yaml">dependencies:
   discordcr:
     github: shardlab/discordcr</code></pre>
-
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h2>
-
 <p>An example bot can be found
 <a href="https://github.com/shardlab/discordcr/blob/master/examples/ping.cr">here</a>. More
 examples will come in the future.</p>
-
 <p>A short overview of library structure: the <code>Client</code> class includes the <code>REST</code>
 module, which handles the REST parts of Discord's API; the <code>Client</code> itself
 handles the gateway, i. e. the interactive parts such as receiving messages. It
 is possible to use only the REST parts by never calling the <code>#run</code> method on a
 <code>Client</code>, which is what does the actual gateway connection.</p>
-
 <p>The example linked above has an example of an event (<code>on_message_create</code>) that
 is called through the gateway, and of a REST call (<code>client.create_message</code>).
 Other gateway events and REST calls work much in the same way - see the
 documentation for what specific events and REST calls do.</p>
-
 <p>Caching is done using a separate <code>Cache</code> class that needs to be added into
 clients manually:</p>
-
 <pre><code class="language-crystal">client <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span> <span class="c"># ...</span>
 cache <span class="o">=</span> <span class="t">Discord</span><span class="t">::</span><span class="t">Cache</span>.<span class="k">new</span>(client)
 client.cache <span class="o">=</span> cache</code></pre>
-
 <p>Resolution requests for objects can now be done on the <code>cache</code> object instead of
 directly over REST, this ensures that if an object is needed more than once
 there will still only be one request to Discord. (There may even be no request
 at all, if the requested data has already been obtained over the gateway.)
 An example of how to use the cache once it has been instantiated:</p>
-
 <pre><code class="language-crystal"><span class="c"># Get the username of the user with ID 66237334693085184</span>
 user <span class="o">=</span> cache.resolve_user(<span class="n">66237334693085184_u64</span>)
 user <span class="o">=</span> cache.resolve_user(<span class="n">66237334693085184_u64</span>) <span class="c"># won&#39;t do a request to Discord</span>
 puts user.username</code></pre>
-
 <p>Apart from this, API documentation is also available, at</p>
-
 <p>https://dcr.shardlab.dev/v0.4.0 for v0.4.0</p>
-
 <p>https://dcr.shardlab.dev/master for latest</p>
-
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Contributing</h2>
-
-<ol><li>Fork it (https://github.com/shardlab/discordcr/fork)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
-
+<ol>
+<li>Fork it (https://github.com/shardlab/discordcr/fork)</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
 <h2><a id="contributors" class="anchor" href="#contributors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Contributors</h2>
-
-<ul><li><a href="https://github.com/meew0">meew0</a> - creator, maintainer</li><li><a href="https://github.com/RX14">RX14</a> - Crystal expert, maintainer</li><li><a href="https://github.com/PixelInc">PixeL</a> - Maintainer</li></ul>
+<ul>
+<li><a href="https://github.com/meew0">meew0</a> - creator, maintainer</li>
+<li><a href="https://github.com/RX14">RX14</a> - Crystal expert, maintainer</li>
+<li><a href="https://github.com/PixelInc">PixeL</a> - Maintainer</li>
+</ul>
 </div>
 </body>
 </html>

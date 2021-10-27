@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -867,7 +887,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L36" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L36" target="_blank">
         discordcr/mappings/gateway.cr
       </a>
     
@@ -889,12 +909,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(token,properties,compress,large_threshold,shard,intents)-class-method" class="signature"><strong>.new</strong>(token, properties, compress, large_threshold, shard, intents)</a>
+        <a href="#new%28token%2Cproperties%2Ccompress%2Clarge_threshold%2Cshard%2Cintents%29-class-method" class="signature"><strong>.new</strong>(token, properties, compress, large_threshold, shard, intents)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -915,62 +935,62 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#compress:Bool-instance-method" class="signature"><strong>#compress</strong> : Bool</a>
+        <a href="#compress%3ABool-instance-method" class="signature"><strong>#compress</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#compress=(compress:Bool)-instance-method" class="signature"><strong>#compress=</strong>(compress : Bool)</a>
+        <a href="#compress%3D%28compress%3ABool%29-instance-method" class="signature"><strong>#compress=</strong>(compress : Bool)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#intents:Intents?-instance-method" class="signature"><strong>#intents</strong> : Intents?</a>
+        <a href="#intents%3AIntents%3F-instance-method" class="signature"><strong>#intents</strong> : Intents?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#intents=(intents:Intents?)-instance-method" class="signature"><strong>#intents=</strong>(intents : Intents?)</a>
+        <a href="#intents%3D%28intents%3AIntents%3F%29-instance-method" class="signature"><strong>#intents=</strong>(intents : Intents?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#large_threshold:Int32-instance-method" class="signature"><strong>#large_threshold</strong> : Int32</a>
+        <a href="#large_threshold%3AInt32-instance-method" class="signature"><strong>#large_threshold</strong> : Int32</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#large_threshold=(large_threshold:Int32)-instance-method" class="signature"><strong>#large_threshold=</strong>(large_threshold : Int32)</a>
+        <a href="#large_threshold%3D%28large_threshold%3AInt32%29-instance-method" class="signature"><strong>#large_threshold=</strong>(large_threshold : Int32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#properties:IdentifyProperties-instance-method" class="signature"><strong>#properties</strong> : IdentifyProperties</a>
+        <a href="#properties%3AIdentifyProperties-instance-method" class="signature"><strong>#properties</strong> : IdentifyProperties</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#properties=(properties:IdentifyProperties)-instance-method" class="signature"><strong>#properties=</strong>(properties : IdentifyProperties)</a>
+        <a href="#properties%3D%28properties%3AIdentifyProperties%29-instance-method" class="signature"><strong>#properties=</strong>(properties : IdentifyProperties)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#shard:Tuple(Int32,Int32)?-instance-method" class="signature"><strong>#shard</strong> : Tuple(Int32, Int32)?</a>
+        <a href="#shard%3ATuple%28Int32%2CInt32%29%3F-instance-method" class="signature"><strong>#shard</strong> : Tuple(Int32, Int32)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#shard=(shard:Tuple(Int32,Int32)?)-instance-method" class="signature"><strong>#shard=</strong>(shard : Tuple(Int32, Int32)?)</a>
+        <a href="#shard%3D%28shard%3ATuple%28Int32%2CInt32%29%3F%29-instance-method" class="signature"><strong>#shard=</strong>(shard : Tuple(Int32, Int32)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#token:String-instance-method" class="signature"><strong>#token</strong> : String</a>
+        <a href="#token%3AString-instance-method" class="signature"><strong>#token</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#token=(token:String)-instance-method" class="signature"><strong>#token=</strong>(token : String)</a>
+        <a href="#token%3D%28token%3AString%29-instance-method" class="signature"><strong>#token=</strong>(token : String)</a>
         
       </li>
     
@@ -1039,13 +1059,13 @@
         
         def self.<strong>new</strong>(token, properties, compress, large_threshold, shard, intents)
 
-        <a class="method-permalink" href="#new(token,properties,compress,large_threshold,shard,intents)-class-method">#</a>
+        <a class="method-permalink" href="#new%28token%2Cproperties%2Ccompress%2Clarge_threshold%2Cshard%2Cintents%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1055,13 +1075,13 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1085,13 +1105,13 @@
         
         def <strong>compress</strong> : Bool
 
-        <a class="method-permalink" href="#compress:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#compress%3ABool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1101,13 +1121,13 @@
         
         def <strong>compress=</strong>(compress : Bool)
 
-        <a class="method-permalink" href="#compress=(compress:Bool)-instance-method">#</a>
+        <a class="method-permalink" href="#compress%3D%28compress%3ABool%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1117,13 +1137,13 @@
         
         def <strong>intents</strong> : <a href="../../Discord/Gateway/Intents.html">Intents</a>?
 
-        <a class="method-permalink" href="#intents:Intents?-instance-method">#</a>
+        <a class="method-permalink" href="#intents%3AIntents%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1133,13 +1153,13 @@
         
         def <strong>intents=</strong>(intents : <a href="../../Discord/Gateway/Intents.html">Intents</a>?)
 
-        <a class="method-permalink" href="#intents=(intents:Intents?)-instance-method">#</a>
+        <a class="method-permalink" href="#intents%3D%28intents%3AIntents%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1149,13 +1169,13 @@
         
         def <strong>large_threshold</strong> : Int32
 
-        <a class="method-permalink" href="#large_threshold:Int32-instance-method">#</a>
+        <a class="method-permalink" href="#large_threshold%3AInt32-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1165,13 +1185,13 @@
         
         def <strong>large_threshold=</strong>(large_threshold : Int32)
 
-        <a class="method-permalink" href="#large_threshold=(large_threshold:Int32)-instance-method">#</a>
+        <a class="method-permalink" href="#large_threshold%3D%28large_threshold%3AInt32%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1181,13 +1201,13 @@
         
         def <strong>properties</strong> : <a href="../../Discord/Gateway/IdentifyProperties.html">IdentifyProperties</a>
 
-        <a class="method-permalink" href="#properties:IdentifyProperties-instance-method">#</a>
+        <a class="method-permalink" href="#properties%3AIdentifyProperties-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1197,13 +1217,13 @@
         
         def <strong>properties=</strong>(properties : <a href="../../Discord/Gateway/IdentifyProperties.html">IdentifyProperties</a>)
 
-        <a class="method-permalink" href="#properties=(properties:IdentifyProperties)-instance-method">#</a>
+        <a class="method-permalink" href="#properties%3D%28properties%3AIdentifyProperties%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1213,13 +1233,13 @@
         
         def <strong>shard</strong> : Tuple(Int32, Int32)?
 
-        <a class="method-permalink" href="#shard:Tuple(Int32,Int32)?-instance-method">#</a>
+        <a class="method-permalink" href="#shard%3ATuple%28Int32%2CInt32%29%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1229,13 +1249,13 @@
         
         def <strong>shard=</strong>(shard : Tuple(Int32, Int32)?)
 
-        <a class="method-permalink" href="#shard=(shard:Tuple(Int32,Int32)?)-instance-method">#</a>
+        <a class="method-permalink" href="#shard%3D%28shard%3ATuple%28Int32%2CInt32%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1245,13 +1265,13 @@
         
         def <strong>token</strong> : String
 
-        <a class="method-permalink" href="#token:String-instance-method">#</a>
+        <a class="method-permalink" href="#token%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1261,13 +1281,13 @@
         
         def <strong>token=</strong>(token : String)
 
-        <a class="method-permalink" href="#token=(token:String)-instance-method">#</a>
+        <a class="method-permalink" href="#token%3D%28token%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/gateway.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/gateway.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>

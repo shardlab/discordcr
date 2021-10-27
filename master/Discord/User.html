@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -867,7 +887,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L4" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L4" target="_blank">
         discordcr/mappings/user.cr
       </a>
     
@@ -889,7 +909,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -910,86 +930,86 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#avatar:String?-instance-method" class="signature"><strong>#avatar</strong> : String?</a>
+        <a href="#avatar%3AString%3F-instance-method" class="signature"><strong>#avatar</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#avatar=(avatar:String?)-instance-method" class="signature"><strong>#avatar=</strong>(avatar : String?)</a>
+        <a href="#avatar%3D%28avatar%3AString%3F%29-instance-method" class="signature"><strong>#avatar=</strong>(avatar : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#avatar_url(format:CDN::UserAvatarFormat,size:Int32=128)-instance-method" class="signature"><strong>#avatar_url</strong>(format : CDN::UserAvatarFormat, size : Int32 = <span class="n">128</span>)</a>
-        
-          <div class="summary"><p>Produces a CDN URL to this user's avatar, in the given <code>format</code> and <code>size</code>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#avatar_url(size:Int32=128)-instance-method" class="signature"><strong>#avatar_url</strong>(size : Int32 = <span class="n">128</span>)</a>
+        <a href="#avatar_url%28size%3AInt32%3D128%29-instance-method" class="signature"><strong>#avatar_url</strong>(size : Int32 = <span class="n">128</span>)</a>
         
           <div class="summary"><p>Produces a CDN URL to this user's avatar in the given <code>size</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bot:Bool?-instance-method" class="signature"><strong>#bot</strong> : Bool?</a>
+        <a href="#avatar_url%28format%3ACDN%3A%3AUserAvatarFormat%2Csize%3AInt32%3D128%29-instance-method" class="signature"><strong>#avatar_url</strong>(format : CDN::UserAvatarFormat, size : Int32 = <span class="n">128</span>)</a>
+        
+          <div class="summary"><p>Produces a CDN URL to this user's avatar, in the given <code>format</code> and <code>size</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bot=(bot:Bool?)-instance-method" class="signature"><strong>#bot=</strong>(bot : Bool?)</a>
+        <a href="#bot%3ABool%3F-instance-method" class="signature"><strong>#bot</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#discriminator:String-instance-method" class="signature"><strong>#discriminator</strong> : String</a>
+        <a href="#bot%3D%28bot%3ABool%3F%29-instance-method" class="signature"><strong>#bot=</strong>(bot : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#discriminator=(discriminator:String)-instance-method" class="signature"><strong>#discriminator=</strong>(discriminator : String)</a>
+        <a href="#discriminator%3AString-instance-method" class="signature"><strong>#discriminator</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#email:String?-instance-method" class="signature"><strong>#email</strong> : String?</a>
+        <a href="#discriminator%3D%28discriminator%3AString%29-instance-method" class="signature"><strong>#discriminator=</strong>(discriminator : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#email=(email:String?)-instance-method" class="signature"><strong>#email=</strong>(email : String?)</a>
+        <a href="#email%3AString%3F-instance-method" class="signature"><strong>#email</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#flags:UserFlags?-instance-method" class="signature"><strong>#flags</strong> : UserFlags?</a>
+        <a href="#email%3D%28email%3AString%3F%29-instance-method" class="signature"><strong>#email=</strong>(email : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#flags=(flags:UserFlags?)-instance-method" class="signature"><strong>#flags=</strong>(flags : UserFlags?)</a>
+        <a href="#flags%3AUserFlags%3F-instance-method" class="signature"><strong>#flags</strong> : UserFlags?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id:Snowflake-instance-method" class="signature"><strong>#id</strong> : Snowflake</a>
+        <a href="#flags%3D%28flags%3AUserFlags%3F%29-instance-method" class="signature"><strong>#flags=</strong>(flags : UserFlags?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id=(id:Snowflake)-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake)</a>
+        <a href="#id%3ASnowflake-instance-method" class="signature"><strong>#id</strong> : Snowflake</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#member:PartialGuildMember?-instance-method" class="signature"><strong>#member</strong> : PartialGuildMember?</a>
+        <a href="#id%3D%28id%3ASnowflake%29-instance-method" class="signature"><strong>#id=</strong>(id : Snowflake)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#member=(member:PartialGuildMember?)-instance-method" class="signature"><strong>#member=</strong>(member : PartialGuildMember?)</a>
+        <a href="#member%3APartialGuildMember%3F-instance-method" class="signature"><strong>#member</strong> : PartialGuildMember?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#member%3D%28member%3APartialGuildMember%3F%29-instance-method" class="signature"><strong>#member=</strong>(member : PartialGuildMember?)</a>
         
       </li>
     
@@ -1001,42 +1021,42 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#mfa_enabled:Bool?-instance-method" class="signature"><strong>#mfa_enabled</strong> : Bool?</a>
+        <a href="#mfa_enabled%3ABool%3F-instance-method" class="signature"><strong>#mfa_enabled</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mfa_enabled=(mfa_enabled:Bool?)-instance-method" class="signature"><strong>#mfa_enabled=</strong>(mfa_enabled : Bool?)</a>
+        <a href="#mfa_enabled%3D%28mfa_enabled%3ABool%3F%29-instance-method" class="signature"><strong>#mfa_enabled=</strong>(mfa_enabled : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#system:Bool?-instance-method" class="signature"><strong>#system</strong> : Bool?</a>
+        <a href="#system%3ABool%3F-instance-method" class="signature"><strong>#system</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#system=(system:Bool?)-instance-method" class="signature"><strong>#system=</strong>(system : Bool?)</a>
+        <a href="#system%3D%28system%3ABool%3F%29-instance-method" class="signature"><strong>#system=</strong>(system : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#username:String-instance-method" class="signature"><strong>#username</strong> : String</a>
+        <a href="#username%3AString-instance-method" class="signature"><strong>#username</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#username=(username:String)-instance-method" class="signature"><strong>#username=</strong>(username : String)</a>
+        <a href="#username%3D%28username%3AString%29-instance-method" class="signature"><strong>#username=</strong>(username : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#verified:Bool?-instance-method" class="signature"><strong>#verified</strong> : Bool?</a>
+        <a href="#verified%3ABool%3F-instance-method" class="signature"><strong>#verified</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#verified=(verified:Bool?)-instance-method" class="signature"><strong>#verified=</strong>(verified : Bool?)</a>
+        <a href="#verified%3D%28verified%3ABool%3F%29-instance-method" class="signature"><strong>#verified=</strong>(verified : Bool?)</a>
         
       </li>
     
@@ -1105,13 +1125,13 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1135,13 +1155,13 @@
         
         def <strong>avatar</strong> : String?
 
-        <a class="method-permalink" href="#avatar:String?-instance-method">#</a>
+        <a class="method-permalink" href="#avatar%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1151,35 +1171,13 @@
         
         def <strong>avatar=</strong>(avatar : String?)
 
-        <a class="method-permalink" href="#avatar=(avatar:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#avatar%3D%28avatar%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L10" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="avatar_url(format:CDN::UserAvatarFormat,size:Int32=128)-instance-method">
-      <div class="signature">
-        
-        def <strong>avatar_url</strong>(format : <a href="../Discord/CDN/UserAvatarFormat.html">CDN::UserAvatarFormat</a>, size : Int32 = <span class="n">128</span>)
-
-        <a class="method-permalink" href="#avatar_url(format:CDN::UserAvatarFormat,size:Int32=128)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Produces a CDN URL to this user's avatar, in the given <code>format</code> and
-<code>size</code>. If the user has no avatar, a default avatar URL is returned.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1189,7 +1187,7 @@
         
         def <strong>avatar_url</strong>(size : Int32 = <span class="n">128</span>)
 
-        <a class="method-permalink" href="#avatar_url(size:Int32=128)-instance-method">#</a>
+        <a class="method-permalink" href="#avatar_url%28size%3AInt32%3D128%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1203,7 +1201,29 @@ avatar URL is returned.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="avatar_url(format:CDN::UserAvatarFormat,size:Int32=128)-instance-method">
+      <div class="signature">
+        
+        def <strong>avatar_url</strong>(format : <a href="../Discord/CDN/UserAvatarFormat.html">CDN::UserAvatarFormat</a>, size : Int32 = <span class="n">128</span>)
+
+        <a class="method-permalink" href="#avatar_url%28format%3ACDN%3A%3AUserAvatarFormat%2Csize%3AInt32%3D128%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Produces a CDN URL to this user's avatar, in the given <code>format</code> and
+<code>size</code>. If the user has no avatar, a default avatar URL is returned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1213,13 +1233,13 @@ avatar URL is returned.</p>
         
         def <strong>bot</strong> : Bool?
 
-        <a class="method-permalink" href="#bot:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#bot%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1229,13 +1249,13 @@ avatar URL is returned.</p>
         
         def <strong>bot=</strong>(bot : Bool?)
 
-        <a class="method-permalink" href="#bot=(bot:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#bot%3D%28bot%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1245,13 +1265,13 @@ avatar URL is returned.</p>
         
         def <strong>discriminator</strong> : String
 
-        <a class="method-permalink" href="#discriminator:String-instance-method">#</a>
+        <a class="method-permalink" href="#discriminator%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1261,13 +1281,13 @@ avatar URL is returned.</p>
         
         def <strong>discriminator=</strong>(discriminator : String)
 
-        <a class="method-permalink" href="#discriminator=(discriminator:String)-instance-method">#</a>
+        <a class="method-permalink" href="#discriminator%3D%28discriminator%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1277,13 +1297,13 @@ avatar URL is returned.</p>
         
         def <strong>email</strong> : String?
 
-        <a class="method-permalink" href="#email:String?-instance-method">#</a>
+        <a class="method-permalink" href="#email%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1293,13 +1313,13 @@ avatar URL is returned.</p>
         
         def <strong>email=</strong>(email : String?)
 
-        <a class="method-permalink" href="#email=(email:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#email%3D%28email%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1309,13 +1329,13 @@ avatar URL is returned.</p>
         
         def <strong>flags</strong> : <a href="../Discord/UserFlags.html">UserFlags</a>?
 
-        <a class="method-permalink" href="#flags:UserFlags?-instance-method">#</a>
+        <a class="method-permalink" href="#flags%3AUserFlags%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1325,13 +1345,13 @@ avatar URL is returned.</p>
         
         def <strong>flags=</strong>(flags : <a href="../Discord/UserFlags.html">UserFlags</a>?)
 
-        <a class="method-permalink" href="#flags=(flags:UserFlags?)-instance-method">#</a>
+        <a class="method-permalink" href="#flags%3D%28flags%3AUserFlags%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1341,13 +1361,13 @@ avatar URL is returned.</p>
         
         def <strong>id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>
 
-        <a class="method-permalink" href="#id:Snowflake-instance-method">#</a>
+        <a class="method-permalink" href="#id%3ASnowflake-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1357,13 +1377,13 @@ avatar URL is returned.</p>
         
         def <strong>id=</strong>(id : <a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#id=(id:Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#id%3D%28id%3ASnowflake%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1373,13 +1393,13 @@ avatar URL is returned.</p>
         
         def <strong>member</strong> : <a href="../Discord/PartialGuildMember.html">PartialGuildMember</a>?
 
-        <a class="method-permalink" href="#member:PartialGuildMember?-instance-method">#</a>
+        <a class="method-permalink" href="#member%3APartialGuildMember%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1389,13 +1409,13 @@ avatar URL is returned.</p>
         
         def <strong>member=</strong>(member : <a href="../Discord/PartialGuildMember.html">PartialGuildMember</a>?)
 
-        <a class="method-permalink" href="#member=(member:PartialGuildMember?)-instance-method">#</a>
+        <a class="method-permalink" href="#member%3D%28member%3APartialGuildMember%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1416,7 +1436,7 @@ avatar URL is returned.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1426,13 +1446,13 @@ avatar URL is returned.</p>
         
         def <strong>mfa_enabled</strong> : Bool?
 
-        <a class="method-permalink" href="#mfa_enabled:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#mfa_enabled%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1442,13 +1462,13 @@ avatar URL is returned.</p>
         
         def <strong>mfa_enabled=</strong>(mfa_enabled : Bool?)
 
-        <a class="method-permalink" href="#mfa_enabled=(mfa_enabled:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#mfa_enabled%3D%28mfa_enabled%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1458,13 +1478,13 @@ avatar URL is returned.</p>
         
         def <strong>system</strong> : Bool?
 
-        <a class="method-permalink" href="#system:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#system%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1474,13 +1494,13 @@ avatar URL is returned.</p>
         
         def <strong>system=</strong>(system : Bool?)
 
-        <a class="method-permalink" href="#system=(system:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#system%3D%28system%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1490,13 +1510,13 @@ avatar URL is returned.</p>
         
         def <strong>username</strong> : String
 
-        <a class="method-permalink" href="#username:String-instance-method">#</a>
+        <a class="method-permalink" href="#username%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1506,13 +1526,13 @@ avatar URL is returned.</p>
         
         def <strong>username=</strong>(username : String)
 
-        <a class="method-permalink" href="#username=(username:String)-instance-method">#</a>
+        <a class="method-permalink" href="#username%3D%28username%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1522,13 +1542,13 @@ avatar URL is returned.</p>
         
         def <strong>verified</strong> : Bool?
 
-        <a class="method-permalink" href="#verified:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#verified%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1538,13 +1558,13 @@ avatar URL is returned.</p>
         
         def <strong>verified=</strong>(verified : Bool?)
 
-        <a class="method-permalink" href="#verified=(verified:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#verified%3D%28verified%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/mappings/user.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/user.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -853,7 +873,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L9" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L9" target="_blank">
         discordcr/voice.cr
       </a>
     
@@ -943,7 +963,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(payload:Discord::Gateway::VoiceServerUpdatePayload,session:Discord::Gateway::Session,user_id:UInt64%7CSnowflake)-class-method" class="signature"><strong>.new</strong>(payload : Discord::Gateway::VoiceServerUpdatePayload, session : Discord::Gateway::Session, user_id : UInt64 | Snowflake)</a>
+        <a href="#new%28payload%3ADiscord%3A%3AGateway%3A%3AVoiceServerUpdatePayload%2Csession%3ADiscord%3A%3AGateway%3A%3ASession%2Cuser_id%3AUInt64%7CSnowflake%29-class-method" class="signature"><strong>.new</strong>(payload : Discord::Gateway::VoiceServerUpdatePayload, session : Discord::Gateway::Session, user_id : UInt64 | Snowflake)</a>
         
           <div class="summary"><p>Creates a new voice client.</p></div>
         
@@ -973,14 +993,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#on_ready(&ready_handler:-%3E)-instance-method" class="signature"><strong>#on_ready</strong>(&ready_handler :  -> )</a>
+        <a href="#on_ready%28%26ready_handler%3A-%3E%29-instance-method" class="signature"><strong>#on_ready</strong>(&ready_handler :  -> )</a>
         
           <div class="summary"><p>Sets the handler that should be run once the voice client has connected successfully.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#play_opus(buf:Bytes)-instance-method" class="signature"><strong>#play_opus</strong>(buf : Bytes)</a>
+        <a href="#play_opus%28buf%3ABytes%29-instance-method" class="signature"><strong>#play_opus</strong>(buf : Bytes)</a>
         
           <div class="summary"><p>Plays a single opus packet</p></div>
         
@@ -994,7 +1014,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#send_speaking(speaking:Bool,delay:Int32=0)-instance-method" class="signature"><strong>#send_speaking</strong>(speaking : Bool, delay : Int32 = <span class="n">0</span>)</a>
+        <a href="#send_speaking%28speaking%3ABool%2Cdelay%3AInt32%3D0%29-instance-method" class="signature"><strong>#send_speaking</strong>(speaking : Bool, delay : Int32 = <span class="n">0</span>)</a>
         
           <div class="summary"><p>Sends a packet to indicate to Discord whether or not we are speaking right now</p></div>
         
@@ -1045,7 +1065,7 @@
         
         def self.<strong>new</strong>(payload : <a href="../Discord/Gateway/VoiceServerUpdatePayload.html">Discord::Gateway::VoiceServerUpdatePayload</a>, session : <a href="../Discord/Gateway/Session.html">Discord::Gateway::Session</a>, user_id : <a href="../UInt64.html">UInt64</a> | <a href="../Discord/Snowflake.html">Snowflake</a>)
 
-        <a class="method-permalink" href="#new(payload:Discord::Gateway::VoiceServerUpdatePayload,session:Discord::Gateway::Session,user_id:UInt64%7CSnowflake)-class-method">#</a>
+        <a class="method-permalink" href="#new%28payload%3ADiscord%3A%3AGateway%3A%3AVoiceServerUpdatePayload%2Csession%3ADiscord%3A%3AGateway%3A%3ASession%2Cuser_id%3AUInt64%7CSnowflake%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1062,7 +1082,7 @@ received as part of the gateway READY dispatch, for example)</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1097,17 +1117,17 @@ received as part of the gateway READY dispatch, for example)</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="on_ready(&ready_handler:->)-instance-method">
+    <div class="entry-detail" id="on_ready(&amp;ready_handler:-&gt;)-instance-method">
       <div class="signature">
         
         def <strong>on_ready</strong>(&ready_handler :  -> )
 
-        <a class="method-permalink" href="#on_ready(&ready_handler:-%3E)-instance-method">#</a>
+        <a class="method-permalink" href="#on_ready%28%26ready_handler%3A-%3E%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1119,7 +1139,7 @@ successfully.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1129,7 +1149,7 @@ successfully.</p>
         
         def <strong>play_opus</strong>(buf : Bytes)
 
-        <a class="method-permalink" href="#play_opus(buf:Bytes)-instance-method">#</a>
+        <a class="method-permalink" href="#play_opus%28buf%3ABytes%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1140,7 +1160,7 @@ successfully.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L97" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1161,7 +1181,7 @@ successfully.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1171,7 +1191,7 @@ successfully.</p>
         
         def <strong>send_speaking</strong>(speaking : Bool, delay : Int32 = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#send_speaking(speaking:Bool,delay:Int32=0)-instance-method">#</a>
+        <a class="method-permalink" href="#send_speaking%28speaking%3ABool%2Cdelay%3AInt32%3D0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1183,7 +1203,7 @@ right now</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/voice.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/voice.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>

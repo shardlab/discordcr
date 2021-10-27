@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -867,7 +887,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L59" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L59" target="_blank">
         discordcr/snowflake.cr
       </a>
     
@@ -893,7 +913,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#(snowflake:Discord::Snowflake)-instance-method" class="signature"><strong>#<=></strong>(snowflake : Discord::Snowflake)</a>
+        <a href="#%3C%3D%3E%28snowflake%3ADiscord%3A%3ASnowflake%29-instance-method" class="signature"><strong>#<=></strong>(snowflake : Discord::Snowflake)</a>
         
           <div class="summary"><p>The comparison operator.</p></div>
         
@@ -906,6 +926,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -983,12 +1013,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="(snowflake:Discord::Snowflake)-instance-method">
+    <div class="entry-detail" id="&lt;=&gt;(snowflake:Discord::Snowflake)-instance-method">
       <div class="signature">
         
         def <strong><=></strong>(snowflake : <a href="Discord/Snowflake.html">Discord::Snowflake</a>)
 
-        <a class="method-permalink" href="#(snowflake:Discord::Snowflake)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%3E%28snowflake%3ADiscord%3A%3ASnowflake%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1001,11 +1031,8 @@
 a negative number if this object is considered less than <em>other</em>,
 a positive number if this object is considered greater than <em>other</em>,
 or <code>nil</code> if the two objects are not comparable.</p>
-
 <p>Subclasses define this method to provide class-specific ordering.</p>
-
 <p>The comparison operator is usually used to sort values:</p>
-
 <pre><code class="language-crystal"><span class="c"># Sort in a descending way:</span>
 [<span class="n">3</span>, <span class="n">1</span>, <span class="n">2</span>].sort { <span class="o">|</span>x, y<span class="o">|</span> y <span class="o">&lt;=&gt;</span> x } <span class="c"># =&gt; [3, 2, 1]</span>
 
@@ -1016,7 +1043,7 @@ or <code>nil</code> if the two objects are not comparable.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/snowflake.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/snowflake.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>

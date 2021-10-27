@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="discordcr">
-  <title>Discord::GuildEmbed - discordcr master</title>
+  <title>Discord::RoleTags - discordcr master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -486,7 +486,7 @@
       
     </li>
   
-  <li class=" current" data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+  <li class=" " data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
       <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
       
     </li>
@@ -716,7 +716,7 @@
       
     </li>
   
-  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+  <li class=" current" data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
       <a href="../Discord/RoleTags.html">RoleTags</a>
       
     </li>
@@ -840,12 +840,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Discord::GuildEmbed
+  <span class="kind">struct</span> Discord::RoleTags
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/GuildEmbed.html">Discord::GuildEmbed</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/RoleTags.html">Discord::RoleTags</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -887,7 +887,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L85" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L260" target="_blank">
         discordcr/mappings/guild.cr
       </a>
     
@@ -909,6 +909,11 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#new%28bot_id%3ASnowflake%3F%2Cintegration_id%3ASnowflake%3F%2Cpremium_subscriber%3ABool%3F%29-class-method" class="signature"><strong>.new</strong>(bot_id : Snowflake?, integration_id : Snowflake?, premium_subscriber : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
@@ -916,6 +921,25 @@
   </ul>
 
 
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from_json%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.from_json</strong>(pull : JSON::PullParser)</a>
+        
+          <div class="summary"><p>This struct requires a special parsing routine because Discord decided to send dumb values for it.</p></div>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -930,22 +954,32 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#channel_id%3ASnowflake%3F-instance-method" class="signature"><strong>#channel_id</strong> : Snowflake?</a>
+        <a href="#bot_id%3ASnowflake%3F-instance-method" class="signature"><strong>#bot_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#channel_id=</strong>(channel_id : Snowflake?)</a>
+        <a href="#bot_id%3D%28bot_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#bot_id=</strong>(bot_id : Snowflake?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled%3ABool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
+        <a href="#integration_id%3ASnowflake%3F-instance-method" class="signature"><strong>#integration_id</strong> : Snowflake?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled%3D%28enabled%3ABool%29-instance-method" class="signature"><strong>#enabled=</strong>(enabled : Bool)</a>
+        <a href="#integration_id%3D%28integration_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#integration_id=</strong>(integration_id : Snowflake?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#premium_subscriber%3ABool-instance-method" class="signature"><strong>#premium_subscriber</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#premium_subscriber%3D%28premium_subscriber%3ABool%29-instance-method" class="signature"><strong>#premium_subscriber=</strong>(premium_subscriber : Bool)</a>
         
       </li>
     
@@ -1009,6 +1043,22 @@
     Constructor Detail
   </h2>
   
+    <div class="entry-detail" id="new(bot_id:Snowflake?,integration_id:Snowflake?,premium_subscriber:Bool?)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(bot_id : <a href="../Discord/Snowflake.html">Snowflake</a>?, integration_id : <a href="../Discord/Snowflake.html">Snowflake</a>?, premium_subscriber : Bool?)
+
+        <a class="method-permalink" href="#new%28bot_id%3ASnowflake%3F%2Cintegration_id%3ASnowflake%3F%2Cpremium_subscriber%3ABool%3F%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L267" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
@@ -1020,13 +1070,46 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L261" target="_blank">View source</a>]
         
       </div>
     </div>
   
 
 
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="from_json(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_json</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#from_json%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>This struct requires a special parsing routine because Discord
+decided to send dumb values for it.
+This can be removed whenever premium_subscriber doesnt return only null.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L274" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
@@ -1039,66 +1122,98 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="channel_id:Snowflake?-instance-method">
+    <div class="entry-detail" id="bot_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>channel_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
+        def <strong>bot_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#channel_id%3ASnowflake%3F-instance-method">#</a>
+        <a class="method-permalink" href="#bot_id%3ASnowflake%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L263" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="channel_id=(channel_id:Snowflake?)-instance-method">
+    <div class="entry-detail" id="bot_id=(bot_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>channel_id=</strong>(channel_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
+        def <strong>bot_id=</strong>(bot_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#bot_id%3D%28bot_id%3ASnowflake%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L263" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="enabled:Bool-instance-method">
+    <div class="entry-detail" id="integration_id:Snowflake?-instance-method">
       <div class="signature">
         
-        def <strong>enabled</strong> : Bool
+        def <strong>integration_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
 
-        <a class="method-permalink" href="#enabled%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#integration_id%3ASnowflake%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L264" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="enabled=(enabled:Bool)-instance-method">
+    <div class="entry-detail" id="integration_id=(integration_id:Snowflake?)-instance-method">
       <div class="signature">
         
-        def <strong>enabled=</strong>(enabled : Bool)
+        def <strong>integration_id=</strong>(integration_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
 
-        <a class="method-permalink" href="#enabled%3D%28enabled%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#integration_id%3D%28integration_id%3ASnowflake%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L264" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="premium_subscriber:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>premium_subscriber</strong> : Bool
+
+        <a class="method-permalink" href="#premium_subscriber%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L265" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="premium_subscriber=(premium_subscriber:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>premium_subscriber=</strong>(premium_subscriber : Bool)
+
+        <a class="method-permalink" href="#premium_subscriber%3D%28premium_subscriber%3ABool%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>

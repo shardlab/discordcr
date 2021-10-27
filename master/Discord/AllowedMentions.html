@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="discordcr">
-  <title>Discord::GuildEmbed - discordcr master</title>
+  <title>Discord::AllowedMentions - discordcr master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -66,7 +66,7 @@
       
     </li>
   
-  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+  <li class=" current" data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
       <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
@@ -486,7 +486,7 @@
       
     </li>
   
-  <li class=" current" data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
+  <li class=" " data-id="discordcr/Discord/GuildEmbed" data-name="discord::guildembed">
       <a href="../Discord/GuildEmbed.html">GuildEmbed</a>
       
     </li>
@@ -840,12 +840,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Discord::GuildEmbed
+  <span class="kind">struct</span> Discord::AllowedMentions
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/GuildEmbed.html">Discord::GuildEmbed</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Discord/AllowedMentions.html">Discord::AllowedMentions</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -887,8 +887,8 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L85" target="_blank">
-        discordcr/mappings/guild.cr
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L113" target="_blank">
+        discordcr/mappings/channel.cr
       </a>
     
     <br/>
@@ -913,6 +913,11 @@
         
       </li>
     
+      <li class="entry-summary">
+        <a href="#new%28parse%3AArray%28String%29%3F%3Dnil%2Croles%3AArray%28Snowflake%29%3F%3Dnil%2Cusers%3AArray%28Snowflake%29%3F%3Dnil%2Creplied_user%3ABool%3Dfalse%29-class-method" class="signature"><strong>.new</strong>(parse : Array(String)? = <span class="n">nil</span>, roles : Array(Snowflake)? = <span class="n">nil</span>, users : Array(Snowflake)? = <span class="n">nil</span>, replied_user : Bool = <span class="n">false</span>)</a>
+        
+      </li>
+    
   </ul>
 
 
@@ -930,22 +935,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#channel_id%3ASnowflake%3F-instance-method" class="signature"><strong>#channel_id</strong> : Snowflake?</a>
+        <a href="#parse%3AArray%28String%29%3F-instance-method" class="signature"><strong>#parse</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method" class="signature"><strong>#channel_id=</strong>(channel_id : Snowflake?)</a>
+        <a href="#parse%3D%28parse%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#parse=</strong>(parse : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled%3ABool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
+        <a href="#replied_user%3ABool-instance-method" class="signature"><strong>#replied_user</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled%3D%28enabled%3ABool%29-instance-method" class="signature"><strong>#enabled=</strong>(enabled : Bool)</a>
+        <a href="#replied_user%3D%28replied_user%3ABool%29-instance-method" class="signature"><strong>#replied_user=</strong>(replied_user : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#roles%3AArray%28Snowflake%29%3F-instance-method" class="signature"><strong>#roles</strong> : Array(Snowflake)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#roles%3D%28roles%3AArray%28Snowflake%29%3F%29-instance-method" class="signature"><strong>#roles=</strong>(roles : Array(Snowflake)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#users%3AArray%28Snowflake%29%3F-instance-method" class="signature"><strong>#users</strong> : Array(Snowflake)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#users%3D%28users%3AArray%28Snowflake%29%3F%29-instance-method" class="signature"><strong>#users=</strong>(users : Array(Snowflake)?)</a>
         
       </li>
     
@@ -1020,7 +1045,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(parse:Array(String)?=nil,roles:Array(Snowflake)?=nil,users:Array(Snowflake)?=nil,replied_user:Bool=false)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(parse : Array(String)? = <span class="n">nil</span>, roles : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)? = <span class="n">nil</span>, users : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)? = <span class="n">nil</span>, replied_user : Bool = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#new%28parse%3AArray%28String%29%3F%3Dnil%2Croles%3AArray%28Snowflake%29%3F%3Dnil%2Cusers%3AArray%28Snowflake%29%3F%3Dnil%2Creplied_user%3ABool%3Dfalse%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L121" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1039,66 +1080,130 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="channel_id:Snowflake?-instance-method">
+    <div class="entry-detail" id="parse:Array(String)?-instance-method">
       <div class="signature">
         
-        def <strong>channel_id</strong> : <a href="../Discord/Snowflake.html">Snowflake</a>?
+        def <strong>parse</strong> : Array(String)?
 
-        <a class="method-permalink" href="#channel_id%3ASnowflake%3F-instance-method">#</a>
+        <a class="method-permalink" href="#parse%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="channel_id=(channel_id:Snowflake?)-instance-method">
+    <div class="entry-detail" id="parse=(parse:Array(String)?)-instance-method">
       <div class="signature">
         
-        def <strong>channel_id=</strong>(channel_id : <a href="../Discord/Snowflake.html">Snowflake</a>?)
+        def <strong>parse=</strong>(parse : Array(String)?)
 
-        <a class="method-permalink" href="#channel_id%3D%28channel_id%3ASnowflake%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#parse%3D%28parse%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="enabled:Bool-instance-method">
+    <div class="entry-detail" id="replied_user:Bool-instance-method">
       <div class="signature">
         
-        def <strong>enabled</strong> : Bool
+        def <strong>replied_user</strong> : Bool
 
-        <a class="method-permalink" href="#enabled%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#replied_user%3ABool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="enabled=(enabled:Bool)-instance-method">
+    <div class="entry-detail" id="replied_user=(replied_user:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>enabled=</strong>(enabled : Bool)
+        def <strong>replied_user=</strong>(replied_user : Bool)
 
-        <a class="method-permalink" href="#enabled%3D%28enabled%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#replied_user%3D%28replied_user%3ABool%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/guild.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L119" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="roles:Array(Snowflake)?-instance-method">
+      <div class="signature">
+        
+        def <strong>roles</strong> : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?
+
+        <a class="method-permalink" href="#roles%3AArray%28Snowflake%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="roles=(roles:Array(Snowflake)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>roles=</strong>(roles : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?)
+
+        <a class="method-permalink" href="#roles%3D%28roles%3AArray%28Snowflake%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="users:Array(Snowflake)?-instance-method">
+      <div class="signature">
+        
+        def <strong>users</strong> : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?
+
+        <a class="method-permalink" href="#users%3AArray%28Snowflake%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L118" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="users=(users:Array(Snowflake)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>users=</strong>(users : Array(<a href="../Discord/Snowflake.html">Snowflake</a>)?)
+
+        <a class="method-permalink" href="#users%3D%28users%3AArray%28Snowflake%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/mappings/channel.cr#L118" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="discordcr">
 
@@ -63,6 +63,11 @@
   
   <li class=" " data-id="discordcr/Discord/ActivityType" data-name="discord::activitytype">
       <a href="../Discord/ActivityType.html">ActivityType</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/AllowedMentions" data-name="discord::allowedmentions">
+      <a href="../Discord/AllowedMentions.html">AllowedMentions</a>
       
     </li>
   
@@ -571,6 +576,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/MessageFlags" data-name="discord::messageflags">
+      <a href="../Discord/MessageFlags.html">MessageFlags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/MessageReference" data-name="discord::messagereference">
       <a href="../Discord/MessageReference.html">MessageReference</a>
       
@@ -706,6 +716,11 @@
       
     </li>
   
+  <li class=" " data-id="discordcr/Discord/RoleTags" data-name="discord::roletags">
+      <a href="../Discord/RoleTags.html">RoleTags</a>
+      
+    </li>
+  
   <li class=" " data-id="discordcr/Discord/Snowflake" data-name="discord::snowflake">
       <a href="../Discord/Snowflake.html">Snowflake</a>
       
@@ -768,6 +783,11 @@
   
   <li class=" " data-id="discordcr/Discord/UserGuild" data-name="discord::userguild">
       <a href="../Discord/UserGuild.html">UserGuild</a>
+      
+    </li>
+  
+  <li class=" " data-id="discordcr/Discord/VideoQualityMode" data-name="discord::videoqualitymode">
+      <a href="../Discord/VideoQualityMode.html">VideoQualityMode</a>
       
     </li>
   
@@ -839,7 +859,7 @@
     Overview
   </h2>
 
-  <p>This exception is raised in <code><a href="../Discord/REST.html#request(route_key:Symbol,major_parameter:Snowflake%7CUInt64%7CNil,method:String,path:String,headers:HTTP::Headers,body:String?)-instance-method">REST#request</a></code> when a request fails with an
+  <p>This exception is raised in <code><a href="../Discord/REST.html#request%28route_key%3ASymbol%2Cmajor_parameter%3ASnowflake%7CUInt64%7CNil%2Cmethod%3AString%2Cpath%3AString%2Cheaders%3AHTTP%3A%3AHeaders%2Cbody%3AString%3F%29-instance-method">REST#request</a></code> when a request fails with an
 API error response that has a code and a descriptive message.</p>
 
 
@@ -865,7 +885,7 @@ API error response that has a code and a descriptive message.</p>
   </h2>
   
     
-      <a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/errors.cr#L44" target="_blank">
+      <a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/errors.cr#L44" target="_blank">
         discordcr/errors.cr
       </a>
     
@@ -887,7 +907,7 @@ API error response that has a code and a descriptive message.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(response:HTTP::Client::Response,error:APIError)-class-method" class="signature"><strong>.new</strong>(response : HTTP::Client::Response, error : APIError)</a>
+        <a href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%2Cerror%3AAPIError%29-class-method" class="signature"><strong>.new</strong>(response : HTTP::Client::Response, error : APIError)</a>
         
       </li>
     
@@ -908,21 +928,21 @@ API error response that has a code and a descriptive message.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#error:APIError-instance-method" class="signature"><strong>#error</strong> : APIError</a>
+        <a href="#error%3AAPIError-instance-method" class="signature"><strong>#error</strong> : APIError</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#error_code:Int32-instance-method" class="signature"><strong>#error_code</strong> : Int32</a>
+        <a href="#error_code%3AInt32-instance-method" class="signature"><strong>#error_code</strong> : Int32</a>
         
           <div class="summary"><p>The API error code that was returned by Discord, for example 20001 or 50016.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#error_message:String-instance-method" class="signature"><strong>#error_message</strong> : String</a>
+        <a href="#error_message%3AString-instance-method" class="signature"><strong>#error_message</strong> : String</a>
         
-          <div class="summary"><p>The API error message that was returned by Discord, for example "Bots cannot use this endpoint" or "Provided too few or too many messages to delete.</p></div>
+          <div class="summary"><p>The API error message that was returned by Discord, for example &quot;Bots cannot use this endpoint&quot; or &quot;Provided too few or too many messages to delete.</p></div>
         
       </li>
     
@@ -932,7 +952,7 @@ API error response that has a code and a descriptive message.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#to_s(io)-instance-method" class="signature"><strong>#to_s</strong>(io)</a>
+        <a href="#to_s%28io%29-instance-method" class="signature"><strong>#to_s</strong>(io)</a>
         
       </li>
     
@@ -954,22 +974,22 @@ API error response that has a code and a descriptive message.</p>
     message</a>, 
     
   
-    <a href="../Discord/StatusException.html#response:HTTP::Client::Response-instance-method" class="tooltip">
+    <a href="../Discord/StatusException.html#response%3AHTTP%3A%3AClient%3A%3AResponse-instance-method" class="tooltip">
       <span>response : HTTP::Client::Response</span>
     response</a>, 
     
   
-    <a href="../Discord/StatusException.html#status_code:Int32-instance-method" class="tooltip">
+    <a href="../Discord/StatusException.html#status_code%3AInt32-instance-method" class="tooltip">
       <span>status_code : Int32</span>
     status_code</a>, 
     
   
-    <a href="../Discord/StatusException.html#status_message:String-instance-method" class="tooltip">
+    <a href="../Discord/StatusException.html#status_message%3AString-instance-method" class="tooltip">
       <span>status_message : String</span>
     status_message</a>, 
     
   
-    <a href="../Discord/StatusException.html#to_s(io)-instance-method" class="tooltip">
+    <a href="../Discord/StatusException.html#to_s%28io%29-instance-method" class="tooltip">
       <span>to_s(io)</span>
     to_s</a>
     
@@ -981,7 +1001,7 @@ API error response that has a code and a descriptive message.</p>
   <h3>Constructor methods inherited from class <code><a href="../Discord/StatusException.html">Discord::StatusException</a></code></h3>
   
   
-    <a href="../Discord/StatusException.html#new(response:HTTP::Client::Response)-class-method" class="tooltip">
+    <a href="../Discord/StatusException.html#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%29-class-method" class="tooltip">
       <span>new(response : HTTP::Client::Response)</span>
     new</a>
     
@@ -1039,13 +1059,13 @@ API error response that has a code and a descriptive message.</p>
         
         def self.<strong>new</strong>(response : HTTP::Client::Response, error : <a href="../Discord/APIError.html">APIError</a>)
 
-        <a class="method-permalink" href="#new(response:HTTP::Client::Response,error:APIError)-class-method">#</a>
+        <a class="method-permalink" href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%2Cerror%3AAPIError%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/errors.cr#L47" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/errors.cr#L47" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1069,13 +1089,13 @@ API error response that has a code and a descriptive message.</p>
         
         def <strong>error</strong> : <a href="../Discord/APIError.html">APIError</a>
 
-        <a class="method-permalink" href="#error:APIError-instance-method">#</a>
+        <a class="method-permalink" href="#error%3AAPIError-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/errors.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/errors.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1085,20 +1105,19 @@ API error response that has a code and a descriptive message.</p>
         
         def <strong>error_code</strong> : Int32
 
-        <a class="method-permalink" href="#error_code:Int32-instance-method">#</a>
+        <a class="method-permalink" href="#error_code%3AInt32-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>The API error code that was returned by Discord, for example 20001 or</p>
-
-<ol><li></li></ol>
+          <p>The API error code that was returned by Discord, for example 20001 or
+50016.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/errors.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/errors.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1108,20 +1127,20 @@ API error response that has a code and a descriptive message.</p>
         
         def <strong>error_message</strong> : String
 
-        <a class="method-permalink" href="#error_message:String-instance-method">#</a>
+        <a class="method-permalink" href="#error_message%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>The API error message that was returned by Discord, for example "Bots
-cannot use this endpoint" or "Provided too few or too many messages to
-delete. Must provide at least 2 and fewer than 100 messages to delete.".</p>
+          <p>The API error message that was returned by Discord, for example &quot;Bots
+cannot use this endpoint&quot; or &quot;Provided too few or too many messages to
+delete. Must provide at least 2 and fewer than 100 messages to delete.&quot;.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/errors.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/errors.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1137,7 +1156,7 @@ delete. Must provide at least 2 and fewer than 100 messages to delete.".</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/errors.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/errors.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1147,13 +1166,13 @@ delete. Must provide at least 2 and fewer than 100 messages to delete.".</p>
         
         def <strong>to_s</strong>(io)
 
-        <a class="method-permalink" href="#to_s(io)-instance-method">#</a>
+        <a class="method-permalink" href="#to_s%28io%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/discordcr/blob/916709535028811fc959744c88a1514716b9a11c/src/discordcr/errors.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/discordcr/blob/06fd9bd63d49dbb4b52adb26fb22fa9c257f7597/src/discordcr/errors.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
