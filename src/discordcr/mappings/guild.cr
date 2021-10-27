@@ -241,6 +241,8 @@ module Discord
     property position : Int32
     property managed : Bool
     property mentionable : Bool
+
+    @[JSON::Field(converter: Discord::RoleTags)]
     property tags : RoleTags?
 
     {% unless flag?(:correct_english) %}
@@ -260,17 +262,33 @@ module Discord
 
     property bot_id : Snowflake?
     property integration_id : Snowflake?
+    property premium_subscriber : Bool = false
 
-    # Due to discord being bad, this field is either null or missing.
-    # so the only way to get any use out of this is to use a field presence indicator.
-    @[JSON::Field(presence: true)]
-    property premium_subscriber : Nil
+    def initialize(@bot_id : Snowflake?, @integration_id : Snowflake?,
+                   @premium_subscriber : Bool?)
+    end
 
-    @[JSON::Field(ignore: true)]
-    getter? premium_subscriber_present : Bool
+    # This struct requires a special parsing routine because Discord
+    # decided to send dumb values for it.
+    # This can be removed whenever premium_subscriber doesnt return only null.
+    def self.from_json(pull : JSON::PullParser)
+      bot_id = nil
+      integration_id = nil
+      premium_subscriber = false
 
-    def premium_subscriber : Bool
-      premium_subscriber_present?
+      pull.read_object do |key|
+        case key
+        when "bot_id"         then bot_id = Snowflake.new(pull)
+        when "integration_id" then integration_id = Snowflake.new(pull)
+        when "premium_subscriber"
+          premium_subscriber = true
+          pull.skip
+        else
+          pull.skip
+        end
+      end
+
+      RoleTags.new(bot_id, integration_id, premium_subscriber)
     end
   end
 
