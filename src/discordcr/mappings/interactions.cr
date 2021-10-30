@@ -2,9 +2,10 @@ require "./converters"
 
 module Discord
   enum InteractionType : UInt8
-    Ping               = 1
-    ApplicationCommand = 2
-    MessageComponent   = 3
+    Ping                           = 1
+    ApplicationCommand             = 2
+    MessageComponent               = 3
+    ApplicationCommandAutocomplete = 4
   end
 
   struct Interaction
@@ -86,11 +87,12 @@ module Discord
   end
 
   enum InteractionCallbackType : UInt8
-    Pong                             = 1
-    ChannelMessageWithSource         = 4
-    DeferredChannelMessageWithSource = 5
-    DeferredUpdateMessage            = 6
-    UpdateMessage                    = 7
+    Pong                                 = 1
+    ChannelMessageWithSource             = 4
+    DeferredChannelMessageWithSource     = 5
+    DeferredUpdateMessage                = 6
+    UpdateMessage                        = 7
+    ApplicationCommandAutocompleteResult = 8
   end
 
   struct InteractionResponse
@@ -98,7 +100,7 @@ module Discord
 
     @[JSON::Field(converter: Enum::ValueConverter(Discord::InteractionCallbackType))]
     property type : InteractionCallbackType
-    property data : InteractionCallbackData
+    property data : InteractionCallbackMessageData | InteractionCallbackAutocompleteData
 
     def initialize(@type, @data = nil)
     end
@@ -107,14 +109,14 @@ module Discord
       self.new(InteractionCallbackType::Pong)
     end
 
-    def self.message(data : InteractionCallbackData)
+    def self.message(data : InteractionCallbackMessageData)
       self.new(InteractionCallbackType::ChannelMessageWithSource, data)
     end
 
     def self.message(content : String? = nil, embeds : Array(Embed)? = nil,
                      components : Array(ActionRow)? = nil,
                      flags : InteractionCallbackDataFlags? = nil, tts : Bool? = nil)
-      data = InteractionCallbackData.new(content, embeds, components, flags, tts)
+      data = InteractionCallbackMessageData.new(content, embeds, components, flags, tts)
       self.message(data)
     end
 
@@ -126,15 +128,24 @@ module Discord
       self.new(InteractionCallbackType::DeferredUpdateMessage)
     end
 
-    def self.update_message(data : InteractionCallbackData)
+    def self.update_message(data : InteractionCallbackMessageData)
       self.new(InteractionCallbackType::UpdateMessage, data)
     end
 
     def self.update_message(content : String? = nil, embeds : Array(Embed)? = nil,
                             components : Array(ActionRow)? = nil,
                             flags : InteractionCallbackDataFlags? = nil, tts : Bool? = nil)
-      data = InteractionCallbackData.new(content, embeds, components, flags, tts)
+      data = InteractionCallbackMessageData.new(content, embeds, components, flags, tts)
       self.update_message(data)
+    end
+
+    def self.autocomplete_result(data : InteractionCallbackAutocompleteData)
+      self.new(InteractionCallbackType::ApplicationCommandAutocompleteResult, data)
+    end
+
+    def self.autocomplete_result(choices : Array(ApplicationCommandOptionChoice))
+      data = InteractionCallbackAutocompleteData.new(choices)
+      self.new(InteractionCallbackType::ApplicationCommandAutocompleteResult, data)
     end
   end
 
@@ -147,7 +158,7 @@ module Discord
     end
   end
 
-  struct InteractionCallbackData
+  struct InteractionCallbackMessageData
     include JSON::Serializable
 
     property tts : Bool?
@@ -159,6 +170,15 @@ module Discord
     property components : Array(ActionRow)?
 
     def initialize(@content = nil, @embeds = nil, @components = nil, @flags = nil, @tts = nil)
+    end
+  end
+
+  struct InteractionCallbackAutocompleteData
+    include JSON::Serializable
+
+    property choices : Array(ApplicationCommandOptionChoice)
+
+    def initialize(@choices)
     end
   end
 end
