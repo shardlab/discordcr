@@ -21,7 +21,6 @@ module Discord
     property guild_id : Snowflake?
     property name : String
     property description : String
-    property autocomplete : Bool?
     property options : Array(ApplicationCommandOption)?
     property default_permission : Bool?
     property version : Snowflake
@@ -66,6 +65,7 @@ module Discord
     property choices : Array(ApplicationCommandOptionChoice)?
     property options : Array(ApplicationCommandOption)?
     property channel_types : Array(ChannelType)?
+    property autocomplete : Bool?
 
     def initialize(@type, @name, @description, @required = nil, @choices = nil, @options = nil, @channel_types = nil)
     end
