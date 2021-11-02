@@ -65,54 +65,126 @@ module Discord
     property choices : Array(ApplicationCommandOptionChoice)?
     property options : Array(ApplicationCommandOption)?
     property channel_types : Array(ChannelType)?
+    property min_value : Int64 | Float64?
+    property max_value : Int64 | Float64?
     property autocomplete : Bool?
 
-    def initialize(@type, @name, @description, @required = nil, @choices = nil, @options = nil, @channel_types = nil)
+    def initialize(@type, @name, @description, @required = nil,
+                   @choices = nil, @options = nil, @channel_types = nil,
+                   @min_value = nil, @max_value = nil, @autocomplete = nil)
     end
 
     def self.sub_command(name : String, description : String, required : Bool? = nil,
                          options : Array(ApplicationCommandOption)? = nil)
-      self.new(ApplicationCommandOptionType::SubCommand, name, description, required, nil, options, nil)
+      self.new(
+        ApplicationCommandOptionType::SubCommand,
+        name,
+        description,
+        required,
+        options: options
+      )
     end
 
     def self.sub_command_group(name : String, description : String, required : Bool? = nil,
                                options : Array(ApplicationCommandOption)? = nil)
-      self.new(ApplicationCommandOptionType::SubCommandGroup, name, description, required, nil, options, nil)
+      self.new(
+        ApplicationCommandOptionType::SubCommandGroup,
+        name,
+        description,
+        required,
+        options: options
+      )
     end
 
     def self.string(name : String, description : String, required : Bool? = nil,
-                    choices : Array(ApplicationCommandOptionChoice)? = nil)
-      self.new(ApplicationCommandOptionType::String, name, description, required, choices, nil, nil)
+                    choices : Array(ApplicationCommandOptionChoice)? = nil,
+                    autocomplete : Bool? = nil)
+      self.new(
+        ApplicationCommandOptionType::String,
+        name,
+        description,
+        required,
+        choices: choices,
+        autocomplete: autocomplete
+      )
     end
 
     def self.integer(name : String, description : String, required : Bool? = nil,
-                     choices : Array(ApplicationCommandOptionChoice)? = nil)
-      self.new(ApplicationCommandOptionType::Integer, name, description, required, choices, nil, nil)
+                     choices : Array(ApplicationCommandOptionChoice)? = nil,
+                     min_value : Int64? = nil, max_value : Int64? = nil,
+                     autocomplete : Bool? = nil)
+      self.new(
+        ApplicationCommandOptionType::Integer,
+        name,
+        description,
+        required,
+        choices: choices,
+        min_value: min_value,
+        max_value: max_value,
+        autocomplete: autocomplete
+      )
     end
 
     def self.boolean(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::Boolean, name, description, required, nil, nil, nil)
+      self.new(
+        ApplicationCommandOptionType::Boolean,
+        name,
+        description,
+        required
+      )
     end
 
     def self.user(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::User, name, description, required, nil, nil, nil)
+      self.new(
+        ApplicationCommandOptionType::User,
+        name,
+        description,
+        required
+      )
     end
 
     def self.channel(name : String, description : String, required : Bool? = nil, channel_types : Array(ChannelType)? = nil)
-      self.new(ApplicationCommandOptionType::Channel, name, description, required, nil, nil, channel_types)
+      self.new(
+        ApplicationCommandOptionType::Channel,
+        name,
+        description,
+        required,
+        channel_types: channel_types
+      )
     end
 
     def self.role(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::Role, name, description, required, nil, nil, nil)
+      self.new(
+        ApplicationCommandOptionType::Role,
+        name,
+        description,
+        required
+      )
     end
 
     def self.mentionalble(name : String, description : String, required : Bool? = nil)
-      self.new(ApplicationCommandOptionType::Mentionable, name, description, required, nil, nil, nil)
+      self.new(
+        ApplicationCommandOptionType::Mentionable,
+        name,
+        description,
+        required
+      )
     end
 
     def self.number(name : String, description : String, required : Bool? = nil,
-                    choices : Array(ApplicationCommandOptionChoice)? = nil)
-      self.new(ApplicationCommandOptionType::Number, name, description, required, choices, nil, nil)
+                   choices : Array(ApplicationCommandOptionChoice)? = nil,
+                   min_value : Float64? = nil, max_value : Float64? = nil,
+                   autocomplete : Bool? = nil)
+      self.new(
+        ApplicationCommandOptionType::Number,
+        name,
+        description,
+        required,
+        choices: choices,
+        min_value: min_value,
+        max_value: max_value,
+        autocomplete: autocomplete
+      )
     end
   end
 
