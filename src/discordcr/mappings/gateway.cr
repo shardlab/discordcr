@@ -233,6 +233,7 @@ module Discord
       property system_channel_id : Snowflake?
       property stage_instances : Array(StageInstance)
       property threads : Array(Channel)
+      property guild_scheduled_events : Array(GuildScheduledEvent)?
 
       {% unless flag?(:correct_english) %}
         def emojis

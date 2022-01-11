@@ -28,6 +28,7 @@ module Discord
     property default_message_notifications : UInt8
     property explicit_content_filter : UInt8
     property system_channel_id : Snowflake?
+    property guild_scheduled_events : Array(GuildScheduledEvent)?
 
     # :nodoc:
     def initialize(payload : Gateway::GuildCreatePayload)
@@ -48,6 +49,7 @@ module Discord
       @default_message_notifications = payload.default_message_notifications
       @explicit_content_filter = payload.explicit_content_filter
       @system_channel_id = payload.system_channel_id
+      @guild_scheduled_events = payload.guild_scheduled_events
     end
 
     {% unless flag?(:correct_english) %}
@@ -335,5 +337,53 @@ module Discord
     property game : GamePlaying?
     property status : String
     property activities : Array(GamePlaying)
+  end
+
+  struct GuildScheduledEvent
+    include JSON::Serializable
+
+    enum PrivacyLevel : UInt8
+      GUILD_ONLY = 2
+    end
+
+    enum Status : UInt8
+      SCHEDULED = 1
+      ACTIVE    = 2
+      COMPLETED = 3
+      CANCELLED = 4
+    end
+
+    enum EntityType : UInt8
+      STAGE_INSTANCE = 1
+      VOICE          = 2
+      EXTERNAL       = 3
+    end
+
+    struct EntityMetadata
+      include JSON::Serializable
+
+      property location : String?
+    end
+
+    property id : Snowflake
+    property guild_id : Snowflake
+    property channel_id : Snowflake?
+    property creator_id : Snowflake?
+    property name : String
+    property description : String?
+    @[JSON::Field(converter: Discord::TimestampConverter)]
+    property scheduled_start_time : Time
+    @[JSON::Field(converter: Discord::MaybeTimestampConverter)]
+    property scheduled_end_time : Time?
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::GuildScheduledEvent::PrivacyLevel))]
+    property privacy_level : PrivacyLevel
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::GuildScheduledEvent::Status))]
+    property status : Status
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::GuildScheduledEvent::EntityType))]
+    property entity_type : EntityType
+    property entity_id : Snowflake?
+    property entity_metadata : EntityMetadata
+    property creator : User?
+    property user_count : Int32?
   end
 end
