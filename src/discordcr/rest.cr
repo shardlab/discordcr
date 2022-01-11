@@ -2197,7 +2197,7 @@ module Discord
       )
 
       params = URI::Params.build do |form|
-        form.add "wait", wait if wait
+        form.add "wait", wait.to_s if wait
         form.add "thread_id", thread_id if thread_id
       end
 
