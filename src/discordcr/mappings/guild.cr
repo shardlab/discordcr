@@ -344,6 +344,10 @@ module Discord
 
     enum PrivacyLevel : UInt8
       GUILD_ONLY = 2
+
+      def to_json(json : JSON::Builder)
+        json.number(value)
+      end
     end
 
     enum Status : UInt8
@@ -351,18 +355,37 @@ module Discord
       ACTIVE    = 2
       COMPLETED = 3
       CANCELLED = 4
+
+      def to_json(json : JSON::Builder)
+        json.number(value)
+      end
     end
 
     enum EntityType : UInt8
       STAGE_INSTANCE = 1
       VOICE          = 2
       EXTERNAL       = 3
+
+      def to_json(json : JSON::Builder)
+        json.number(value)
+      end
     end
 
     struct EntityMetadata
       include JSON::Serializable
 
       property location : String?
+
+      def initialize(@location)
+      end
+    end
+
+    struct EventUser
+      include JSON::Serializable
+
+      property guild_scheduled_event_id : Snowflake
+      property user : User
+      property member : GuildMember?
     end
 
     property id : Snowflake

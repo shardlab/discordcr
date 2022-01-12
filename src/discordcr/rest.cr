@@ -2213,5 +2213,191 @@ module Discord
       # Expecting response
       Message.from_json(response.body) if wait
     end
+
+    # Returns a list of guild scheduled event objects for the given guild.
+    # Requires permission VIEW_CHANNEL for channel_id associated with events with entity_type: VOICE or STAGE_INSTANCE
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild-scheduled-event#list-scheduled-events-for-guild)
+    def list_guild_scheduled_events(guild_id : UInt64 | Snowflake)
+      response = request(
+        :guilds_gid_scheduled_events,
+        guild_id,
+        "GET",
+        "/guilds/#{guild_id}/scheduled-events",
+        HTTP::Headers.new,
+        nil
+      )
+      Array(GuildScheduledEvent).from_json(response.body)
+    end
+
+    # Create a guild scheduled event in the guild.
+    # For events with entity_type: EXTERNAL, requires MANAGE_EVENTS at the guild level.
+    # Requires MANAGE_EVENTS at the guild level or MANAGE_EVENTS for the channel_id associated with the event otherwise.
+    # For events with entity_type: STAGE_INSTANCE, requires permissions MANAGE_CHANNELS, MUTE_MEMBERS, MOVE_MEMBERS.
+    # For events with entity_type: VOICE, requires permissions VIEW_CHANNEL for channel_id associated with event,
+    # CONNECT for channel_id associated with event.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild-scheduled-event#create-guild-scheduled-event)
+    def create_guild_scheduled_event(guild_id : UInt64 | Snowflake, name : String, scheduled_start_time : Time,
+                                     channel_id : UInt64 | Snowflake | Nil = nil,
+                                     entity_metadata : GuildScheduledEvent::EntityMetadata? = nil,
+                                     privacy_level : GuildScheduledEvent::PrivacyLevel = GuildScheduledEvent::PrivacyLevel::GUILD_ONLY,
+                                     scheduled_end_time : Time? = nil, description : String? = nil,
+                                     entity_type : GuildScheduledEvent::EntityType = GuildScheduledEvent::EntityType::STAGE_INSTANCE,
+                                     reason : String? = nil)
+      json = encode_tuple(
+        name: name,
+        channel_id: channel_id,
+        entity_metadata: entity_metadata,
+        privacy_level: privacy_level,
+        scheduled_start_time: scheduled_start_time,
+        scheduled_end_time: scheduled_end_time,
+        description: description,
+        entity_type: entity_type
+      )
+
+      headers = HTTP::Headers{"Content-Type" => "application/json"}
+      headers["X-Audit-Log-Reason"] = reason if reason
+
+      response = request(
+        :guilds_gid_scheduled_events,
+        guild_id,
+        "POST",
+        "/guilds/#{guild_id}/scheduled-events",
+        headers,
+        json
+      )
+
+      GuildScheduledEvent.from_json(response.body)
+    end
+
+    # Get a guild scheduled event.
+    # Requires permission VIEW_CHANNEL for channel_id associated with events with entity_type: VOICE or STAGE_INSTANCE
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild-scheduled-event#get-guild-scheduled-event)
+    def get_guild_scheduled_event(guild_id : UInt64 | Snowflake, scheduled_event_id : UInt64 | Snowflake, with_user_count : Bool? = nil)
+      path = "/guilds/#{guild_id}/scheduled-events/#{scheduled_event_id}?#{"with_user_count=#{with_user_count}" if with_user_count}"
+
+      response = request(
+        :guilds_gid_scheduled_events_gseid,
+        guild_id,
+        "GET",
+        path,
+        HTTP::Headers.new,
+        nil
+      )
+
+      GuildScheduledEvent.from_json(response.body)
+    end
+
+    # Modify a guild scheduled event.
+    # For events with entity_type: EXTERNAL, requires MANAGE_EVENTS at the guild level.
+    # Requires MANAGE_EVENTS at the guild level or MANAGE_EVENTS for the channel_id associated with the event otherwise.
+    # For events with entity_type: STAGE_INSTANCE, requires permissions MANAGE_CHANNELS, MUTE_MEMBERS, MOVE_MEMBERS.
+    # For events with entity_type: VOICE, requires permissions VIEW_CHANNEL for channel_id associated with event,
+    # CONNECT for channel_id associated with event.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild-scheduled-event#modify-guild-scheduled-event)
+    def modify_guild_scheduled_event(guild_id : UInt64 | Snowflake, scheduled_event_id : UInt64 | Snowflake,
+                                     name : String? = nil, channel_id : UInt64 | Snowflake | Nil = nil,
+                                     entity_metadata : GuildScheduledEvent::EntityMetadata? = nil,
+                                     privacy_level : GuildScheduledEvent::PrivacyLevel? = nil,
+                                     scheduled_start_time : Time? = nil, scheduled_end_time : Time? = nil, description : String? = nil,
+                                     entity_type : GuildScheduledEvent::EntityType? = nil, status : GuildScheduledEvent::Status? = nil,
+                                     reason : String? = nil)
+      json = encode_tuple(
+        name: name,
+        channel_id: channel_id,
+        entity_metadata: entity_metadata,
+        privacy_level: privacy_level,
+        scheduled_start_time: scheduled_start_time,
+        scheduled_end_time: scheduled_end_time,
+        description: description,
+        entity_type: entity_type,
+        status: status
+      )
+
+      headers = HTTP::Headers{"Content-Type" => "application/json"}
+      headers["X-Audit-Log-Reason"] = reason if reason
+
+      response = request(
+        :guilds_gid_scheduled_events_gseid,
+        guild_id,
+        "PATCH",
+        "/guilds/#{guild_id}/scheduled-events/#{scheduled_event_id}",
+        headers,
+        json
+      )
+
+      GuildScheduledEvent.from_json(response.body)
+    end
+
+    # Delete a guild scheduled event. Returns a 204 No Content on success.
+    # For events with entity_type: EXTERNAL, requires MANAGE_EVENTS at the guild level.
+    # Requires MANAGE_EVENTS at the guild level or MANAGE_EVENTS for the channel_id associated with the event otherwise.
+    # For events with entity_type: STAGE_INSTANCE, requires permissions MANAGE_CHANNELS, MUTE_MEMBERS, MOVE_MEMBERS.
+    # For events with entity_type: VOICE, requires permissions VIEW_CHANNEL for channel_id associated with event,
+    # CONNECT for channel_id associated with event.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild-scheduled-event#delete-guild-scheduled-event)
+    def delete_guild_scheduled_event(guild_id : UInt64 | Snowflake, scheduled_event_id : UInt64 | Snowflake)
+      request(
+        :guilds_gid_scheduled_events_gseid,
+        guild_id,
+        "DELETE",
+        "/guilds/#{guild_id}/scheduled-events/#{scheduled_event_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Get a list of guild scheduled event users subscribed to a guild scheduled event.
+    # Guild member data, if it exists, is included if the with_member query parameter is set.
+    # Requires permission VIEW_CHANNEL for channel_id associated with events with entity_type: VOICE or STAGE_INSTANCE
+    #
+    # [API docs for this method](https://discord.com/developers/docs/resources/guild-scheduled-event#get-guild-scheduled-event-users)
+    def get_guild_scheduled_event_users(guild_id : UInt64 | Snowflake, scheduled_event_id : UInt64 | Snowflake,
+                                        limit : Int32? = 100, with_member : Bool? = nil,
+                                        before : UInt64 | Snowflake = 0_u64, after : UInt64 | Snowflake = 0_u64)
+      params = URI::Params.build do |form|
+        form.add "limit", limit.to_s if limit
+        form.add "with_member", with_member.to_s if with_member
+        form.add "before", before.to_s if before > 0_u64
+        form.add "after", after.to_s if after > 0_u64
+      end
+
+      path = "/guilds/#{guild_id}/scheduled-events/#{scheduled_event_id}/users?#{params}"
+
+      response = request(
+        :guilds_gid_scheduled_events_gseid_users,
+        guild_id,
+        "GET",
+        path,
+        HTTP::Headers.new,
+        nil
+      )
+
+      Array(GuildScheduledEvent::EventUser).from_json(response.body)
+    end
+
+    # Returns a `Paginator` over the subscribed users on a guild scheduled event.
+    #
+    # Will yield guild scheduled event users in the given `direction` starting at `start_id` until
+    # `limit` number of users are observed, or there are no more subscribed users.
+    # Setting `limit` to `nil` will have the paginator continue to make requests
+    # until all users are fetched in the given `direction`.
+    def page_guild_scheduled_event_users(guild_id : UInt64 | Snowflake, scheduled_event_id : UInt64 | Snowflake,
+                                         start_id : UInt64 | Snowflake = 0_u64, limit : Int32? = 100, with_member : Bool? = nil,
+                                         direction : Paginator::Direction = Paginator::Direction::Down, page_size : Int32 = 100)
+      Paginator(GuildScheduledEvent::EventUser).new(limit, direction) do |last_page|
+        if direction.up?
+          next_id = last_page.try &.first.user.id || start_id
+          get_guild_scheduled_event_users(guild_id, scheduled_event_id, page_size, with_member: with_member, before: next_id)
+        else
+          next_id = last_page.try &.last.user.id || start_id
+          get_guild_scheduled_event_users(guild_id, scheduled_event_id, page_size, with_member: with_member, after: next_id)
+        end
+      end
+    end
   end
 end
