@@ -23,6 +23,8 @@ module Discord
     property token : String
     property version : Int32
     property message : Message?
+    property locale : String?
+    property guild_locale : String?
   end
 
   abstract struct InteractionData
