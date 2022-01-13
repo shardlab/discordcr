@@ -48,7 +48,7 @@ module Discord
     getter guilds
 
     # A map of cached stage instances, i. e. all stage instances on all servers
-    # the bot is on.
+    # the bot is on, represented as {channel ID => Stage instance}.
     getter stage_instances
 
     # A double map of members on servers, represented as {guild ID => {user ID
@@ -73,8 +73,8 @@ module Discord
     # [channel IDs]}.
     getter guild_channels
 
-    # Mapping of guilds to the Stage instances on them, represented as {guild ID =>
-    # [stage instance IDs]}.
+    # Mapping of guilds to the channels with Stage instances on them, represented as {guild ID =>
+    # [channel IDs]}.
     getter guild_stage_instances
 
     # Mapping of users in guild to voice states, represented as {guild ID =>
@@ -138,11 +138,16 @@ module Discord
       @roles[id.to_u64] # There is no endpoint for getting an individual role, so we will have to ignore that case for now.
     end
 
-    # Resolves a Stage instance by its *ID*.
+    # Resolves a Stage instance by the *channel ID* it is on.
     # An API request will be performed if the object is not cached.
-    def resolve_stage_instance(id : UInt64 | Snowflake) : StageInstance
-      id = id.to_u64
-      @stage_instances.fetch(id) { @stage_instances[id] = @client.get_stage_instance(id) }
+    def resolve_stage_instance(channel_id : UInt64 | Snowflake) : StageInstance
+      channel_id = channel_id.to_u64
+      @stage_instances.fetch(channel_id) do
+        stage_instance = @client.get_stage_instance(channel_id)
+        cache(stage_instance)
+        add_guild_stage_instance(stage_instance.guild_id, stage_instance.channel_id)
+        stage_instance
+      end
     end
 
     # Resolves the ID of a DM channel with a particular user by the recipient's
@@ -185,9 +190,9 @@ module Discord
       @guilds.delete(id.to_u64)
     end
 
-    # Deletes a stage instance from the cache given its *ID*.
-    def delete_stage_instance(id : UInt64 | Snowflake)
-      @stage_instances.delete(id.to_u64)
+    # Deletes a stage instance from the cache given the *channel_id* it belongs to.
+    def delete_stage_instance(channel_id : UInt64 | Snowflake)
+      @stage_instances.delete(channel_id.to_u64)
     end
 
     # Deletes a member from the cache given its *user_id* and the *guild_id* it
@@ -249,7 +254,7 @@ module Discord
 
     # Adds a specific *Stage instance* to the cache.
     def cache(stage_instance : StageInstance)
-      @stage_instances[stage_instance.id.to_u64] = stage_instance
+      @stage_instances[stage_instance.channel_id.to_u64] = stage_instance
     end
 
     # Adds a specific *voice state* to the cache.
@@ -329,20 +334,21 @@ module Discord
       @guild_stage_instances[guild_id.to_u64]
     end
 
-    # Marks a Stage instance, identified by the *instance_id*, as belonging to a particular
+    # Marks a Stage instance, identified by the *channel_id* it is on, as belonging to a particular
     # guild, identified by the *guild_id*.
-    def add_guild_stage_instance(guild_id : UInt64 | Snowflake, instance_id : UInt64 | Snowflake)
+    def add_guild_stage_instance(guild_id : UInt64 | Snowflake, channel_id : UInt64 | Snowflake)
       guild_id = guild_id.to_u64
-      instance_id = instance_id.to_u64
+      channel_id = channel_id.to_u64
       local_instances = @guild_stage_instances[guild_id] ||= [] of UInt64
-      local_instances << instance_id
+      local_instances << channel_id
     end
 
-    # Marks a Stage instance as not belonging to a particular guild anymore.
-    def remove_guild_stage_instance(guild_id : UInt64 | Snowflake, instance_id : UInt64 | Snowflake)
+    # Marks a Stage instance, identified by the *channel_id* it is on, as not belonging to a particular
+    # guild, identified by the *guild_id*, anymore.
+    def remove_guild_stage_instance(guild_id : UInt64 | Snowflake, channel_id : UInt64 | Snowflake)
       guild_id = guild_id.to_u64
-      instance_id = instance_id.to_u64
-      @guild_stage_instances[guild_id]?.try { |local_instances| local_instances.delete(instance_id) }
+      channel_id = channel_id.to_u64
+      @guild_stage_instances[guild_id]?.try { |local_instances| local_instances.delete(channel_id) }
     end
   end
 end
