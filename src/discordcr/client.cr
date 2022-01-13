@@ -592,6 +592,26 @@ module Discord
         @cache.try &.remove_guild_role(payload.guild_id, payload.role_id)
 
         call_event guild_role_delete, payload
+      when "GUILD_SCHEDULED_EVENT_CREATE"
+        payload = GuildScheduledEvent.from_json(data)
+
+        call_event guild_scheduled_event_create, payload
+      when "GUILD_SCHEDULED_EVENT_UPDATE"
+        payload = GuildScheduledEvent.from_json(data)
+
+        call_event guild_scheduled_event_update, payload
+      when "GUILD_SCHEDULED_EVENT_DELETE"
+        payload = GuildScheduledEvent.from_json(data)
+
+        call_event guild_scheduled_event_delete, payload
+      when "GUILD_SCHEDULED_EVENT_USER_ADD"
+        payload = Gateway::GuildScheduledEventUserPayload.from_json(data)
+
+        call_event guild_scheduled_event_user_add, payload
+      when "GUILD_SCHEDULED_EVENT_USER_REMOVE"
+        payload = Gateway::GuildScheduledEventUserPayload.from_json(data)
+
+        call_event guild_scheduled_event_user_remove, payload
       when "INVITE_CREATE"
         payload = Gateway::InviteCreatePayload.from_json(data)
 
@@ -894,6 +914,31 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-role-delete)
     event guild_role_delete, Gateway::GuildRoleDeletePayload
+
+    # Called when a guild scheduled event is created.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-create)
+    event guild_scheduled_event_create, GuildScheduledEvent
+
+    # Called when a guild scheduled event is updated.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-update)
+    event guild_scheduled_event_update, GuildScheduledEvent
+
+    # Called when a guild scheduled event is deleted.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-delete)
+    event guild_scheduled_event_delete, GuildScheduledEvent
+
+    # Called when a user subscribes to a guild scheduled event
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-user-add)
+    event guild_scheduled_event_user_add, Gateway::GuildScheduledEventUserPayload
+
+    # Called when a user unsubscribes from a guild scheduled event
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-user-remove)
+    event guild_scheduled_event_user_remove, Gateway::GuildScheduledEventUserPayload
 
     # Called when an invite is created on a guild.
     #
