@@ -510,6 +510,13 @@ module Discord
           cache voice_state
         end
 
+        payload.guild_scheduled_events.try &.each do |guild_scheduled_event|
+          cache guild_scheduled_event
+          @cache.try &.add_guild_scheduled_event(guild_scheduled_event.guild_id, guild_scheduled_event.id)
+          # Reset user cache in the case of servers returning from an outage
+          @cache.try &.guild_scheduled_event_users.delete(guild_scheduled_event.guild_id)
+        end
+
         payload.stage_instances.each do |stage_instance|
           cache stage_instance
           @cache.try &.add_guild_stage_instance(guild.id, stage_instance.id)
@@ -595,21 +602,32 @@ module Discord
       when "GUILD_SCHEDULED_EVENT_CREATE"
         payload = GuildScheduledEvent.from_json(data)
 
+        cache payload
+        @cache.try &.create_guild_scheduled_event(payload.guild_id, payload.id)
+
         call_event guild_scheduled_event_create, payload
       when "GUILD_SCHEDULED_EVENT_UPDATE"
         payload = GuildScheduledEvent.from_json(data)
+
+        cache payload
 
         call_event guild_scheduled_event_update, payload
       when "GUILD_SCHEDULED_EVENT_DELETE"
         payload = GuildScheduledEvent.from_json(data)
 
+        @cache.try &.remove_guild_scheduled_event(payload.guild_id, payload.id)
+
         call_event guild_scheduled_event_delete, payload
       when "GUILD_SCHEDULED_EVENT_USER_ADD"
         payload = Gateway::GuildScheduledEventUserPayload.from_json(data)
 
+        @cache.try &.add_guild_scheduled_event_user(payload.guild_scheduled_event_id, payload.user_id)
+
         call_event guild_scheduled_event_user_add, payload
       when "GUILD_SCHEDULED_EVENT_USER_REMOVE"
         payload = Gateway::GuildScheduledEventUserPayload.from_json(data)
+
+        @cache.try &.remove_guild_scheduled_event_user(payload.guild_scheduled_event_id, payload.user_id)
 
         call_event guild_scheduled_event_user_remove, payload
       when "INVITE_CREATE"
