@@ -24,10 +24,8 @@ module Discord
 
     property id : String
     property name : String
-    property sample_hostname : String
-    property sample_port : UInt16
-    property custom : Bool?
-    property vip : Bool
+    property custom : Bool
+    property deprecated : Bool
     property optimal : Bool
   end
 end
