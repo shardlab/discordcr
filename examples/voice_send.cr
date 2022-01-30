@@ -49,6 +49,18 @@ client.on_message_create do |payload|
       "No voice state"
     end
     client.create_message(payload.channel_id, reply)
+  elsif payload.content.starts_with? "!vr"
+    # Used as:
+    # !vr [guild ID]
+
+    regions : Array(Discord::VoiceRegion) = if payload.content.size > 4
+      id = payload.content[4..-1]
+      client.get_guild_voice_regions(id.to_u64)
+    else
+      client.list_voice_regions
+    end
+
+    client.create_message(payload.channel_id, "Voice Regions: #{regions.map(&.name).join(", ")}")
   elsif payload.content.starts_with? "!play_dca "
     # Used as:
     # !play_dca <filename>
