@@ -52,6 +52,7 @@ module Discord
     Role            =  8
     Mentionable     =  9
     Number          = 10
+    Attachment      = 11
   end
 
   struct ApplicationCommandOption
@@ -184,6 +185,15 @@ module Discord
         min_value: min_value,
         max_value: max_value,
         autocomplete: autocomplete
+      )
+    end
+
+    def self.attachment(name : String, description : String, required : Bool? = nil)
+      self.new(
+        ApplicationCommandOptionType::Attachment,
+        name,
+        description,
+        required
       )
     end
   end
