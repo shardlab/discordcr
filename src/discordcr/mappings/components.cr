@@ -5,14 +5,20 @@ module Discord
     ActionRow  = 1
     Button     = 2
     SelectMenu = 3
+    TextInput  = 4
   end
 
   enum ButtonStyle : UInt8
-    Primary = 1
+    Primary   = 1
     Secondary = 2
-    Success = 3
-    Danger = 4
-    Link = 5
+    Success   = 3
+    Danger    = 4
+    Link      = 5
+  end
+
+  enum TextInputStyle : UInt8
+    Short     = 1
+    Paragraph = 2
   end
 
   abstract struct Component
@@ -21,7 +27,8 @@ module Discord
     use_json_discriminator "type", {
       ComponentType::ActionRow => ActionRow,
       ComponentType::Button => Button,
-      ComponentType::SelectMenu => SelectMenu
+      ComponentType::SelectMenu => SelectMenu,
+      ComponentType::TextInput => TextInput
     }
 
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ComponentType))]
@@ -31,10 +38,10 @@ module Discord
   struct ActionRow < Component
     @type : ComponentType = ComponentType::ActionRow
 
-    property components : Array(Button | SelectMenu)
+    property components : Array(Button | SelectMenu | TextInput)
 
-    def initialize(*components : Button | SelectMenu)
-      @components = [*components] of Button | SelectMenu
+    def initialize(*components : Button | SelectMenu | TextInput)
+      @components = [*components] of Button | SelectMenu | TextInput
     end
   end
 
@@ -56,15 +63,32 @@ module Discord
   struct SelectMenu < Component
     @type : ComponentType = ComponentType::SelectMenu
 
-    property custom_id : String?
+    property custom_id : String
     property options : Array(SelectOption)
     property placeholder : String?
     property min_values : UInt8?
     property max_values : UInt8?
     property disabled : Bool?
 
-    def initialize(@options, @custom_id = nil, @placeholder = nil, @min_values = nil, @max_values = nil, @disabled = nil)
+    def initialize(@custom_id, @options, @placeholder = nil, @min_values = nil, @max_values = nil, @disabled = nil)
     end
+  end
+
+  struct TextInput < Component
+    @type : ComponentType = ComponentType::TextInput
+
+    property custom_id : String
+    @[JSON::Field(converter: Enum::ValueConverter(Discord::TextInputStyle))]
+    property style : TextInputStyle?
+    property label : String?
+    property min_length : UInt16?
+    property max_length : UInt16?
+    property required : Bool?
+    property value : String?
+    property placeholder : String?
+
+    def initialize(@custom_id, @style, @label, @min_length = nil, @max_length = nil, @required = nil, @value = nil, @placeholder = nil)
+    end 
   end
 
   struct SelectOption
