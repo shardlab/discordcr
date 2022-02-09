@@ -43,9 +43,34 @@ commands.push(
     options: [
       Discord::ApplicationCommandOption.integer(
         name: "step",
-        description: "Increase/decrease per step (Default: 1)"
+        description: "Increase/decrease per step (Default: 1)",
+        min_value: 1,
+        max_value: 10
       )
     ]
+  )
+)
+
+commands.push(
+  Discord::PartialApplicationCommand.new(
+    name: "Greet",
+    description: "",
+    type: Discord::ApplicationCommandType::User
+  )
+)
+
+commands.push(
+  Discord::PartialApplicationCommand.new(
+    name: "Upcase",
+    description: "",
+    type: Discord::ApplicationCommandType::Message
+  )
+)
+
+commands.push(
+  Discord::PartialApplicationCommand.new(
+    name: "modal_test",
+    description: "Show a sample modal"
   )
 )
 
@@ -75,6 +100,44 @@ client.on_interaction_create do |interaction|
         ]
       )
       client.create_interaction_response(interaction.id, interaction.token, response)
+    when "Greet"
+      response = begin
+        user = data.resolved.not_nil!.users.not_nil![data.target_id.not_nil!]
+        Discord::InteractionResponse.message(
+          ":wave: #{user.mention}"
+        )
+      rescue
+        Discord::InteractionResponse.message(
+          "Who am I supposed to greet!?"
+        )
+      end
+      client.create_interaction_response(interaction.id, interaction.token, response)
+    when "Upcase"
+      response = begin
+        message = data.resolved.not_nil!.messages.not_nil![data.target_id.not_nil!]
+        Discord::InteractionResponse.message(
+          message.content.upcase
+        )
+      rescue
+        Discord::InteractionResponse.message(
+          "What am I supposed to upcase!?"
+        )
+      end
+      client.create_interaction_response(interaction.id, interaction.token, response)
+    when "modal_test"
+      response = Discord::InteractionResponse.modal(
+        custom_id: "sample_modal",
+        title: "Sample Modal",
+        components: [
+          Discord::ActionRow.new(
+            Discord::TextInput.new("short", Discord::TextInputStyle::Short, "Short text field")
+          ),
+          Discord::ActionRow.new(
+            Discord::TextInput.new("paragraph", Discord::TextInputStyle::Paragraph, "Long text field")
+          )
+        ]
+      )
+      client.create_interaction_response(interaction.id, interaction.token, response)
     end
   elsif interaction.type.message_component?
     data = interaction.data.as(Discord::MessageComponentInteractionData)
@@ -90,6 +153,20 @@ client.on_interaction_create do |interaction|
 
     response = Discord::InteractionResponse.update_message(
       count.to_s
+    )
+    client.create_interaction_response(interaction.id, interaction.token, response)
+  elsif interaction.type.modal_submit?
+    data = interaction.data.as(Discord::ModalSubmitInteractionData)
+    
+    response_text = String.build do |str|
+      data.components.each do |row|
+        row.components.each do |component|
+          str << "#{component.custom_id}: #{component.value}\n" if component.is_a?(Discord::TextInput)
+        end
+      end
+    end
+    response = Discord::InteractionResponse.message(
+      response_text
     )
     client.create_interaction_response(interaction.id, interaction.token, response)
   end
