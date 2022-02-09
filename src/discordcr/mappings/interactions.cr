@@ -6,6 +6,7 @@ module Discord
     ApplicationCommand             = 2
     MessageComponent               = 3
     ApplicationCommandAutocomplete = 4
+    ModalSubmit                    = 5
   end
 
   struct Interaction
@@ -40,6 +41,8 @@ module Discord
               type = ApplicationCommandInteractionData
             elsif key == "custom_id"
               type = MessageComponentInteractionData
+            elsif key == "components"
+              type = ModalSubmitInteractionData
             end
             builder.field(key) { pull.read_raw(builder) }
           end
@@ -68,6 +71,10 @@ module Discord
     property values : Array(String)?
   end
 
+  struct ModalSubmitInteractionData < InteractionData
+    property components : Array(ActionRow)
+  end
+
   struct ResolvedInteractionData
     include JSON::Serializable
 
@@ -76,6 +83,7 @@ module Discord
     property roles : Hash(Snowflake, Role)?
     property channels : Hash(Snowflake, Channel)?
     property messages : Hash(Snowflake, Message)?
+    property attachments : Hash(Snowflake, Attachment)?
   end
 
   struct MessageInteraction
@@ -95,6 +103,7 @@ module Discord
     DeferredUpdateMessage                = 6
     UpdateMessage                        = 7
     ApplicationCommandAutocompleteResult = 8
+    Modal                                = 9
   end
 
   struct InteractionResponse
@@ -102,7 +111,7 @@ module Discord
 
     @[JSON::Field(converter: Enum::ValueConverter(Discord::InteractionCallbackType))]
     property type : InteractionCallbackType
-    property data : InteractionCallbackMessageData | InteractionCallbackAutocompleteData
+    property data : InteractionCallbackMessageData | InteractionCallbackAutocompleteData | InteractionCallbackModalData
 
     def initialize(@type, @data = nil)
     end
@@ -149,11 +158,21 @@ module Discord
       data = InteractionCallbackAutocompleteData.new(choices)
       self.new(InteractionCallbackType::ApplicationCommandAutocompleteResult, data)
     end
+
+    def self.modal(data : InteractionCallbackModalData)
+      self.new(InteractionCallbackType::Modal, data)
+    end
+
+    def self.modal(custom_id : String, title : String, components : Array(ActionRow))
+      data = InteractionCallbackModalData.new(custom_id, title, components)
+      self.new(InteractionCallbackType::Modal, data)
+    end
   end
 
   @[Flags]
   enum InteractionCallbackDataFlags
-    Ephemeral = 1 << 6
+    SuppressEmbeds = 1 << 2
+    Ephemeral      = 1 << 6
 
     def to_json(json : JSON::Builder)
       json.number(value)
@@ -181,6 +200,17 @@ module Discord
     property choices : Array(ApplicationCommandOptionChoice)
 
     def initialize(@choices)
+    end
+  end
+
+  struct InteractionCallbackModalData
+    include JSON::Serializable
+
+    property custom_id : String
+    property title : String
+    property components : Array(ActionRow)
+
+    def initialize(@custom_id, @title, @components)
     end
   end
 end
