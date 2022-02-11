@@ -72,6 +72,7 @@ module Discord
   end
 
   struct ModalSubmitInteractionData < InteractionData
+    property custom_id : String
     property components : Array(ActionRow)
   end
 
