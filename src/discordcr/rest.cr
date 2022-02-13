@@ -708,14 +708,21 @@ module Discord
     # sent by the bot itself - you can't edit others' messages.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#edit-message)
-    def edit_message(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, content : String, embed : Embed? = nil)
+    def edit_message(channel_id : UInt64 | Snowflake, message_id : UInt64 | Snowflake, content : String,
+                     embed : Embed? = nil, allowed_mentions : AllowedMentions? = nil)
+      json = encode_tuple(
+        content: content,
+        embed: embed,
+        allowed_mentions: allowed_mentions
+      )
+
       response = request(
         :channels_cid_messages_mid,
         channel_id,
         "PATCH",
         "/channels/#{channel_id}/messages/#{message_id}",
         HTTP::Headers{"Content-Type" => "application/json"},
-        {content: content, embed: embed}.to_json
+        json
       )
 
       Message.from_json(response.body)
