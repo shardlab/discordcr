@@ -2531,6 +2531,8 @@ module Discord
         HTTP::Headers{"Content-Type" => "application/json"},
         {permissions: permissions}.to_json
       )
+
+      GuildApplicationCommandPermissions.from_json(response.body)
     end
 
     # Batch edits permissions for all commands in a guild. Takes an array of partial GuildApplicationCommandPermissions objects including id and permissions. You can only add up to 10 permission overwrites for a command.
@@ -2552,6 +2554,8 @@ module Discord
         HTTP::Headers{"Content-Type" => "application/json"},
         json
       )
+
+      Array(GuildApplicationCommandPermissions).from_json(response.body)
     end
 
     # Create a response to an Interaction from the gateway.
@@ -2567,6 +2571,8 @@ module Discord
         HTTP::Headers{"Content-Type" => "application/json"},
         response.to_json
       )
+
+      Message.from_json(response.body)
     end
 
     # Returns the initial Interaction response.
@@ -2583,6 +2589,8 @@ module Discord
         HTTP::Headers.new,
         nil
       )
+
+      Message.from_json(response.body)
     end
 
     # Edits the initial Interaction response.
@@ -2600,6 +2608,8 @@ module Discord
         HTTP::Headers{"Content-Type" => "application/json"},
         {content: content, embeds: embeds}.to_json
       )
+
+      Message.from_json(response.body)
     end
 
     # Deletes the initial Interaction response.
@@ -2703,6 +2713,8 @@ module Discord
         HTTP::Headers{"Content-Type" => "application/json"},
         {content: content, embeds: embeds}.to_json
       )
+
+      Message.from_json(response.body)
     end
 
     # Deletes a followup message for an Interaction.
