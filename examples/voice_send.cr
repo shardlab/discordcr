@@ -44,7 +44,11 @@ client.on_message_create do |payload|
     reply = begin
       vs = cache.resolve_voice_state(payload.guild_id.not_nil!, payload.author.id)
       vc = cache.resolve_channel(vs.channel_id.not_nil!)
-      "You are connected to channel #{vs.channel_id} (region: #{vc.rtc_region}) at guild #{vs.guild_id}"
+
+      # The voice region will be nil if the channel is set to automatically determine it.
+      rtc_region = vc.rtc_region || "Automatic"
+
+      "You are connected to channel #{vs.channel_id} (region: #{rtc_region}) at guild #{vs.guild_id}"
     rescue
       "No voice state"
     end
