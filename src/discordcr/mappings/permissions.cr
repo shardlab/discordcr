@@ -42,7 +42,7 @@ module Discord
     end
 
     def to_json(json : JSON::Builder)
-      json.number(value)
+      json.string(value)
     end
   end
 end
