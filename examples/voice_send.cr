@@ -43,11 +43,28 @@ client.on_message_create do |payload|
 
     reply = begin
       vs = cache.resolve_voice_state(payload.guild_id.not_nil!, payload.author.id)
-      "You are connected to channel #{vs.channel_id} at guild #{vs.guild_id}"
+      vc = cache.resolve_channel(vs.channel_id.not_nil!)
+
+      # The voice region will be nil if the channel is set to automatically determine it.
+      rtc_region = vc.rtc_region || "Automatic"
+
+      "You are connected to channel #{vs.channel_id} (region: #{rtc_region}) at guild #{vs.guild_id}"
     rescue
       "No voice state"
     end
     client.create_message(payload.channel_id, reply)
+  elsif payload.content.starts_with? "!vr"
+    # Used as:
+    # !vr [guild ID]
+
+    regions : Array(Discord::VoiceRegion) = if payload.content.size > 4
+      id = payload.content[4..-1]
+      client.get_guild_voice_regions(id.to_u64)
+    else
+      client.list_voice_regions
+    end
+
+    client.create_message(payload.channel_id, "Voice Regions: #{regions.map(&.name).join(", ")}")
   elsif payload.content.starts_with? "!play_dca "
     # Used as:
     # !play_dca <filename>

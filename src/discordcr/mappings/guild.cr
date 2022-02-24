@@ -242,6 +242,9 @@ module Discord
     property managed : Bool
     property mentionable : Bool
 
+    @[JSON::Field(converter: Discord::RoleTags)]
+    property tags : RoleTags?
+
     {% unless flag?(:correct_english) %}
       def color
         colour
@@ -251,6 +254,41 @@ module Discord
     # Produces a string to mention this role in a message
     def mention
       "<@&#{id}>"
+    end
+  end
+
+  struct RoleTags
+    include JSON::Serializable
+
+    property bot_id : Snowflake?
+    property integration_id : Snowflake?
+    property premium_subscriber : Bool = false
+
+    def initialize(@bot_id : Snowflake?, @integration_id : Snowflake?,
+                   @premium_subscriber : Bool?)
+    end
+
+    # This struct requires a special parsing routine because Discord
+    # decided to send dumb values for it.
+    # This can be removed whenever premium_subscriber doesnt return only null.
+    def self.from_json(pull : JSON::PullParser)
+      bot_id = nil
+      integration_id = nil
+      premium_subscriber = false
+
+      pull.read_object do |key|
+        case key
+        when "bot_id"         then bot_id = Snowflake.new(pull)
+        when "integration_id" then integration_id = Snowflake.new(pull)
+        when "premium_subscriber"
+          premium_subscriber = true
+          pull.skip
+        else
+          pull.skip
+        end
+      end
+
+      RoleTags.new(bot_id, integration_id, premium_subscriber)
     end
   end
 

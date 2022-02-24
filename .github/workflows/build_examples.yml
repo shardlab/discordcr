@@ -8,20 +8,20 @@ on:
       - v*
     paths-ignore:
       - "**.md"
-    pull_request:
-      branches:
-        - master
-      paths-ignore:
-        - "**.md"
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - "**.md"
 jobs:
   deploy:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: MeilCli/setup-crystal-action@v4.0.1
+      - uses: MeilCli/setup-crystal-action@v4
         with:
-          crystal_version: 1.0.0
-          shards_version: 0.14.1
+          crystal_version: 1.2.1
+          shards_version: 0.16.0
       - name: Install dependencies
         run: shards install
       - name: Run tests
