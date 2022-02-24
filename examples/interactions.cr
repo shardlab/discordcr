@@ -29,9 +29,9 @@ commands.push(
           ),
           Discord::ApplicationCommandOptionChoice.new(
             "cat", "meow"
-          )
+          ),
         ]
-      )
+      ),
     ]
   )
 )
@@ -46,7 +46,7 @@ commands.push(
         description: "Increase/decrease per step (Default: 1)",
         min_value: 1,
         max_value: 10
-      )
+      ),
     ]
   )
 )
@@ -96,7 +96,7 @@ client.on_interaction_create do |interaction|
           Discord::ActionRow.new(
             Discord::Button.new(Discord::ButtonStyle::Primary, "-", custom_id: "sub:#{step}"),
             Discord::Button.new(Discord::ButtonStyle::Primary, "+", custom_id: "add:#{step}")
-          )
+          ),
         ]
       )
       client.create_interaction_response(interaction.id, interaction.token, response)
@@ -134,7 +134,7 @@ client.on_interaction_create do |interaction|
           ),
           Discord::ActionRow.new(
             Discord::TextInput.new("paragraph", Discord::TextInputStyle::Paragraph, "Long text field")
-          )
+          ),
         ]
       )
       client.create_interaction_response(interaction.id, interaction.token, response)
@@ -157,7 +157,7 @@ client.on_interaction_create do |interaction|
     client.create_interaction_response(interaction.id, interaction.token, response)
   elsif interaction.type.modal_submit?
     data = interaction.data.as(Discord::ModalSubmitInteractionData)
-    
+
     response_text = String.build do |str|
       data.components.each do |row|
         row.components.each do |component|

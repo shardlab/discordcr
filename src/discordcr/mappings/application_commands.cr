@@ -173,9 +173,9 @@ module Discord
     end
 
     def self.number(name : String, description : String, required : Bool? = nil,
-                   choices : Array(ApplicationCommandOptionChoice)? = nil,
-                   min_value : Float64? = nil, max_value : Float64? = nil,
-                   autocomplete : Bool? = nil)
+                    choices : Array(ApplicationCommandOptionChoice)? = nil,
+                    min_value : Float64? = nil, max_value : Float64? = nil,
+                    autocomplete : Bool? = nil)
       self.new(
         ApplicationCommandOptionType::Number,
         name,
@@ -242,22 +242,22 @@ module Discord
           end
         end
       end
-      
+
       value = case type
-      when ApplicationCommandOptionType::String
-        String.from_json(value_raw)
-      when ApplicationCommandOptionType::Integer
-        Int64.from_json(value_raw)
-      when ApplicationCommandOptionType::Boolean
-        Bool.from_json(value_raw)
-      when ApplicationCommandOptionType::User,
-           ApplicationCommandOptionType::Channel,
-           ApplicationCommandOptionType::Role,
-           ApplicationCommandOptionType::Mentionable
-        Snowflake.from_json(value_raw)
-      when ApplicationCommandOptionType::Number
-        Float64.from_json(value_raw)
-      end
+              when ApplicationCommandOptionType::String
+                String.from_json(value_raw)
+              when ApplicationCommandOptionType::Integer
+                Int64.from_json(value_raw)
+              when ApplicationCommandOptionType::Boolean
+                Bool.from_json(value_raw)
+              when ApplicationCommandOptionType::User,
+                   ApplicationCommandOptionType::Channel,
+                   ApplicationCommandOptionType::Role,
+                   ApplicationCommandOptionType::Mentionable
+                Snowflake.from_json(value_raw)
+              when ApplicationCommandOptionType::Number
+                Float64.from_json(value_raw)
+              end
 
       self.new(name || "", type || ApplicationCommandOptionType.new(0), value, options)
     end

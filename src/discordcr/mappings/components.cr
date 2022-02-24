@@ -25,10 +25,10 @@ module Discord
     include JSON::Serializable
 
     use_json_discriminator "type", {
-      ComponentType::ActionRow => ActionRow,
-      ComponentType::Button => Button,
+      ComponentType::ActionRow  => ActionRow,
+      ComponentType::Button     => Button,
       ComponentType::SelectMenu => SelectMenu,
-      ComponentType::TextInput => TextInput
+      ComponentType::TextInput  => TextInput,
     }
 
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ComponentType))]
@@ -88,7 +88,7 @@ module Discord
     property placeholder : String?
 
     def initialize(@custom_id, @style, @label, @min_length = nil, @max_length = nil, @required = nil, @value = nil, @placeholder = nil)
-    end 
+    end
   end
 
   struct SelectOption

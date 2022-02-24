@@ -2246,12 +2246,12 @@ module Discord
     # NOTE: Creating a command with the same name as an existing command for your application will overwrite the old command.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-global-application-command)
-    def create_global_application_command(name : String, description : String, 
-                                          options : Array(ApplicationCommandOption)? = nil, 
+    def create_global_application_command(name : String, description : String,
+                                          options : Array(ApplicationCommandOption)? = nil,
                                           default_permission : Bool? = nil,
                                           type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
       application_id = client_id
-      
+
       json = encode_tuple(
         name: name,
         description: description,
@@ -2294,8 +2294,8 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-global-application-command)
     def edit_global_application_command(command_id : UInt64 | Snowflake,
-                                        name : String? = nil, description : String? = nil, 
-                                        options : Array(ApplicationCommandOption)? = nil, 
+                                        name : String? = nil, description : String? = nil,
+                                        options : Array(ApplicationCommandOption)? = nil,
                                         default_permission : Bool? = nil)
       application_id = client_id
 
@@ -2377,12 +2377,12 @@ module Discord
     # NOTE: Creating a command with the same name as an existing command for your application will overwrite the old command.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-guild-application-commands)
-    def create_guild_application_command(guild_id : UInt64 | Snowflake, name : String, description : String, 
-                                         options : Array(ApplicationCommandOption)? = nil, 
+    def create_guild_application_command(guild_id : UInt64 | Snowflake, name : String, description : String,
+                                         options : Array(ApplicationCommandOption)? = nil,
                                          default_permission : Bool? = nil,
                                          type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
       application_id = client_id
-      
+
       json = encode_tuple(
         name: name,
         description: description,
@@ -2547,7 +2547,7 @@ module Discord
     # NOTE: This endpoint will overwrite all existing permissions for all commands in a guild, including slash commands, user commands, and message commands.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#batch-edit-application-command-permissions)
-    def batch_edit_application_command_permissions(guild_id : UInt64 | Snowflake, 
+    def batch_edit_application_command_permissions(guild_id : UInt64 | Snowflake,
                                                    permissions : Hash(UInt64 | Snowflake, Array(ApplicationCommandPermissions)))
       application_id = client_id
 
@@ -2568,7 +2568,7 @@ module Discord
     # Create a response to an Interaction from the gateway.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#create-interaction-response)
-    def create_interaction_response(interaction_id : UInt64 | Snowflake, interaction_token : String, 
+    def create_interaction_response(interaction_id : UInt64 | Snowflake, interaction_token : String,
                                     response : InteractionResponse)
       response = request(
         :interactions_iid_itk_callback,
@@ -2653,27 +2653,27 @@ module Discord
         username: username,
         flags: flags
       )
-      
+
       body, content_type = if file
-        io = IO::Memory.new
+                             io = IO::Memory.new
 
-        unless filename
-          if file.is_a? File
-            filename = File.basename(file.path)
-          else
-            filename = ""
-          end
-        end
+                             unless filename
+                               if file.is_a? File
+                                 filename = File.basename(file.path)
+                               else
+                                 filename = ""
+                               end
+                             end
 
-        builder = HTTP::FormData::Builder.new(io)
-        builder.file("file", file, HTTP::FormData::FileMetadata.new(filename: filename))
-        builder.field("payload_json", json)
-        builder.finish
+                             builder = HTTP::FormData::Builder.new(io)
+                             builder.file("file", file, HTTP::FormData::FileMetadata.new(filename: filename))
+                             builder.field("payload_json", json)
+                             builder.finish
 
-        {io.to_s, builder.content_type}
-      else
-        {json, "application/json"}
-      end
+                             {io.to_s, builder.content_type}
+                           else
+                             {json, "application/json"}
+                           end
 
       response = request(
         :webhooks_aid_itk,
