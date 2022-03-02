@@ -2578,8 +2578,6 @@ module Discord
         HTTP::Headers{"Content-Type" => "application/json"},
         response.to_json
       )
-
-      Message.from_json(response.body)
     end
 
     # Returns the initial Interaction response.
