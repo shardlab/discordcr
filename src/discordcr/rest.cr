@@ -2226,15 +2226,19 @@ module Discord
     # Fetch all of the global commands for your application.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-global-application-commands)
-    def get_global_application_commands
+    def get_global_application_commands(locale : String? = nil, with_localizations : Bool? = false)
       application_id = client_id
+      path = "/applications/#{application_id}/commands"
+      path += "?with_localizations=#{with_localizations}" if with_localizations
+      headers = HTTP::Headers.new
+      headers["X-Discord-Locale"] = locale if locale
 
       response = request(
         :applications_aid_commands,
         application_id,
         "GET",
-        "/applications/#{application_id}/commands",
-        HTTP::Headers.new,
+        path,
+        headers,
         nil
       )
 
@@ -2247,6 +2251,7 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-global-application-command)
     def create_global_application_command(name : String, description : String,
+                                          name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
                                           options : Array(ApplicationCommandOption)? = nil,
                                           default_permission : Bool? = nil,
                                           type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
@@ -2255,6 +2260,8 @@ module Discord
       json = encode_tuple(
         name: name,
         description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
         options: options,
         default_permission: default_permission,
         type: type
@@ -2357,15 +2364,19 @@ module Discord
     # Fetch all of the guild commands for your application for a specific guild.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-guild-application-commands)
-    def get_guild_application_commands(guild_id : UInt64 | Snowflake)
+    def get_guild_application_commands(guild_id : UInt64 | Snowflake, locale : String? = nil, with_localizations : Bool? = false)
       application_id = client_id
+      path = "/applications/#{application_id}/guilds/#{guild_id}/commands"
+      path += "?with_localizations=#{with_localizations}" if with_localizations
+      headers = HTTP::Headers.new
+      headers["X-Discord-Locale"] = locale if locale
 
       response = request(
         :applications_aid_guilds_gid_commands,
         application_id,
         "GET",
-        "/applications/#{application_id}/guilds/#{guild_id}/commands",
-        HTTP::Headers.new,
+        path,
+        headers,
         nil
       )
 
@@ -2378,6 +2389,7 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-guild-application-commands)
     def create_guild_application_command(guild_id : UInt64 | Snowflake, name : String, description : String,
+                                         name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
                                          options : Array(ApplicationCommandOption)? = nil,
                                          default_permission : Bool? = nil,
                                          type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
@@ -2386,6 +2398,8 @@ module Discord
       json = encode_tuple(
         name: name,
         description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
         options: options,
         default_permission: default_permission,
         type: type
