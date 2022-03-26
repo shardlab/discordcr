@@ -33,6 +33,7 @@ module Discord
     ManageEmojis           = 1 << 30
     UseApplicationCommands = 1 << 31
     RequestToSpeak         = 1 << 32
+    ManageEvents           = 1 << 33
     ManageThreads          = 1 << 34
     UsePrivateThreads      = 1 << 36
     UseExternalStickers    = 1 << 37

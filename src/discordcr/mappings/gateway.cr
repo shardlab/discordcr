@@ -84,6 +84,7 @@ module Discord
       DirectMessages         = 1 << 12
       DirectMessageReactions = 1 << 13
       DirectMessageTyping    = 1 << 14
+      GuildScheduledEvents   = 1 << 16
 
       # Generates an Unprivileged intents constant, removing GuildMembers and GuildPresences.
       {% begin %}
@@ -233,6 +234,7 @@ module Discord
       property system_channel_id : Snowflake?
       property stage_instances : Array(StageInstance)
       property threads : Array(Channel)
+      property guild_scheduled_events : Array(GuildScheduledEvent)?
 
       {% unless flag?(:correct_english) %}
         def emojis
@@ -325,6 +327,14 @@ module Discord
 
       property guild_id : Snowflake
       property role_id : Snowflake
+    end
+
+    struct GuildScheduledEventUserPayload
+      include JSON::Serializable
+
+      property guild_scheduled_event_id : Snowflake
+      property user_id : Snowflake
+      property guild_id : Snowflake
     end
 
     struct InviteCreatePayload

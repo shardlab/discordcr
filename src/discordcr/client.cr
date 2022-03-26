@@ -510,6 +510,13 @@ module Discord
           cache voice_state
         end
 
+        payload.guild_scheduled_events.try &.each do |guild_scheduled_event|
+          cache guild_scheduled_event
+          @cache.try &.add_guild_scheduled_event(guild_scheduled_event.guild_id, guild_scheduled_event.id)
+          # Reset user cache in the case of servers returning from an outage
+          @cache.try &.guild_scheduled_event_users.delete(guild_scheduled_event.guild_id)
+        end
+
         payload.stage_instances.each do |stage_instance|
           cache stage_instance
           @cache.try &.add_guild_stage_instance(guild.id, stage_instance.channel_id)
@@ -592,6 +599,37 @@ module Discord
         @cache.try &.remove_guild_role(payload.guild_id, payload.role_id)
 
         call_event guild_role_delete, payload
+      when "GUILD_SCHEDULED_EVENT_CREATE"
+        payload = GuildScheduledEvent.from_json(data)
+
+        cache payload
+        @cache.try &.create_guild_scheduled_event(payload.guild_id, payload.id)
+
+        call_event guild_scheduled_event_create, payload
+      when "GUILD_SCHEDULED_EVENT_UPDATE"
+        payload = GuildScheduledEvent.from_json(data)
+
+        cache payload
+
+        call_event guild_scheduled_event_update, payload
+      when "GUILD_SCHEDULED_EVENT_DELETE"
+        payload = GuildScheduledEvent.from_json(data)
+
+        @cache.try &.remove_guild_scheduled_event(payload.guild_id, payload.id)
+
+        call_event guild_scheduled_event_delete, payload
+      when "GUILD_SCHEDULED_EVENT_USER_ADD"
+        payload = Gateway::GuildScheduledEventUserPayload.from_json(data)
+
+        @cache.try &.add_guild_scheduled_event_user(payload.guild_scheduled_event_id, payload.user_id)
+
+        call_event guild_scheduled_event_user_add, payload
+      when "GUILD_SCHEDULED_EVENT_USER_REMOVE"
+        payload = Gateway::GuildScheduledEventUserPayload.from_json(data)
+
+        @cache.try &.remove_guild_scheduled_event_user(payload.guild_scheduled_event_id, payload.user_id)
+
+        call_event guild_scheduled_event_user_remove, payload
       when "INVITE_CREATE"
         payload = Gateway::InviteCreatePayload.from_json(data)
 
@@ -894,6 +932,31 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-role-delete)
     event guild_role_delete, Gateway::GuildRoleDeletePayload
+
+    # Called when a guild scheduled event is created.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-create)
+    event guild_scheduled_event_create, GuildScheduledEvent
+
+    # Called when a guild scheduled event is updated.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-update)
+    event guild_scheduled_event_update, GuildScheduledEvent
+
+    # Called when a guild scheduled event is deleted.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-delete)
+    event guild_scheduled_event_delete, GuildScheduledEvent
+
+    # Called when a user subscribes to a guild scheduled event
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-user-add)
+    event guild_scheduled_event_user_add, Gateway::GuildScheduledEventUserPayload
+
+    # Called when a user unsubscribes from a guild scheduled event
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-user-remove)
+    event guild_scheduled_event_user_remove, Gateway::GuildScheduledEventUserPayload
 
     # Called when an invite is created on a guild.
     #
