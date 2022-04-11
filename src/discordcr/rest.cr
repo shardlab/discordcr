@@ -2615,8 +2615,8 @@ module Discord
     # Edits the initial Interaction response.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response)
-    def edit_original_interaction_response(interaction_token : String,
-                                           content : String? = nil, embeds : Array(Embed)? = nil)
+    def edit_original_interaction_response(interaction_token : String, content : String? = nil,
+                                           embeds : Array(Embed)? = nil)
       application_id = client_id
 
       response = request(
@@ -2654,7 +2654,7 @@ module Discord
                                 file : IO? = nil, filename : String? = nil,
                                 embeds : Array(Embed)? = nil, tts : Bool? = nil,
                                 avatar_url : String? = nil, username : String? = nil,
-                                flags : InteractionCallbackDataFlags? = nil)
+                                flags : MessageFlags? = nil)
       application_id = client_id
 
       json = encode_tuple(

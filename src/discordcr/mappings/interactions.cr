@@ -112,7 +112,7 @@ module Discord
 
     @[JSON::Field(converter: Enum::ValueConverter(Discord::InteractionCallbackType))]
     property type : InteractionCallbackType
-    property data : InteractionCallbackMessageData | InteractionCallbackAutocompleteData | InteractionCallbackModalData
+    property data : (InteractionCallbackMessageData | InteractionCallbackAutocompleteData | InteractionCallbackModalData)?
 
     def initialize(@type, @data = nil)
     end
@@ -132,8 +132,9 @@ module Discord
       self.message(data)
     end
 
-    def self.deferred_message
-      self.new(InteractionCallbackType::DeferredChannelMessageWithSource)
+    def self.deferred_message(flags : InteractionCallbackDataFlags? = nil)
+      data = InteractionCallbackMessageData.new(flags: flags)
+      self.new(InteractionCallbackType::DeferredChannelMessageWithSource, data)
     end
 
     def self.deferred_update_message
