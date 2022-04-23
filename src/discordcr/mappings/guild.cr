@@ -101,6 +101,7 @@ module Discord
     property premium_since : Time?
     property deaf : Bool?
     property mute : Bool?
+    property communication_disabled_until : Time?
 
     # :nodoc:
     def initialize(user : User, partial_member : PartialGuildMember)
@@ -111,6 +112,7 @@ module Discord
       @premium_since = partial_member.premium_since
       @mute = partial_member.mute
       @deaf = partial_member.deaf
+      @communication_disabled_until = partial_member.communication_disabled_until
     end
 
     # :nodoc:
@@ -158,6 +160,7 @@ module Discord
     property premium_since : Time?
     property deaf : Bool
     property mute : Bool
+    property communication_disabled_until : Time?
   end
 
   struct Integration

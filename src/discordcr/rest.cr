@@ -1348,18 +1348,22 @@ module Discord
     #  - and the "Move Members" permission as well as the "Connect" permission
     #    to the new channel when changing voice channel ID.
     #
-    # NOTE: To remove a member's nickname, you can send an empty string for the `nick` argument.
+    # To remove a member's nickname, you can send an empty string for the `nick` argument.
+    # To set or remove a timeout, you must have the `MANAGE_MEMBERS` permission.
+    # The `communication_disabled_until` argument takes a time up to 28 days in the future, or nil to remove.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#modify-guild-member)
     def modify_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, nick : String? = nil,
                             roles : Array(UInt64 | Snowflake)? = nil, mute : Bool? = nil, deaf : Bool? = nil,
-                            channel_id : UInt64 | Snowflake | Nil = nil, reason : String? = nil)
+                            channel_id : UInt64 | Snowflake | Nil = nil, communication_disabled_until : Time? = nil,
+                            reason : String? = nil)
       json = encode_tuple(
         nick: nick,
         roles: roles,
         mute: mute,
         deaf: deaf,
-        channel_id: channel_id
+        channel_id: channel_id,
+        communication_disabled_until: communication_disabled_until
       )
 
       headers = HTTP::Headers{
