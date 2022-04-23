@@ -36,6 +36,8 @@ module Discord
     ManageThreads          = 1 << 34
     UsePrivateThreads      = 1 << 36
     UseExternalStickers    = 1 << 37
+    SendMessagesInThreads  = 1 << 38
+    UseEmbeddedActivities  = 1 << 39
     ModerateMembers        = 1 << 40
 
     def self.new(pull : JSON::PullParser)
