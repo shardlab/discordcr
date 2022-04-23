@@ -2211,7 +2211,8 @@ module Discord
         form.add "thread_id", thread_id.to_s if thread_id
       end
 
-      body, content_type = if file
+      body, content_type = nil, nil
+      if file
         io = IO::Memory.new
 
         unless filename
@@ -2227,9 +2228,11 @@ module Discord
         builder.field("payload_json", json)
         builder.finish
 
-        {io.to_s, builder.content_type}
+        body = io.to_s
+        content_type = builder.content_type
       else
-        {json, "application/json"}
+        body = json
+        content_type = "application/json"
       end
 
       response = request(
