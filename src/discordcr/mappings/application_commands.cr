@@ -24,7 +24,8 @@ module Discord
     property description : String
     property description_localizations : Hash(String, String)?
     property options : Array(ApplicationCommandOption)?
-    property default_permission : Bool?
+    property default_member_permissions : Permissions?
+    property dm_permission : Bool?
     property version : Snowflake
     property name_localized : String?
     property description_localized : String?
@@ -39,11 +40,12 @@ module Discord
     property description : String
     property description_localizations : Hash(String, String)?
     property options : Array(ApplicationCommandOption)?
-    property default_permission : Bool?
+    property default_member_permissions : Permissions?
+    property dm_permission : Bool?
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ApplicationCommandType))]
     property type : ApplicationCommandType?
 
-    def initialize(@name, @description = "", @name_localizations = nil, @description_localizations = nil, @options = nil, @default_permission = nil, @type = nil)
+    def initialize(@name, @description = "", @name_localizations = nil, @description_localizations = nil, @options = nil, @default_member_permissions = nil, @dm_permission = nil, @type = nil)
     end
   end
 
@@ -319,13 +321,15 @@ module Discord
   end
 
   enum ApplicationCommandPermissionType : UInt8
-    Role = 1
-    User = 2
+    Role    = 1
+    User    = 2
+    Channel = 3
   end
 
   struct ApplicationCommandPermissions
     include JSON::Serializable
 
+    # `guild_id` responds to `@everyone` and `guild_id - 1` responds to all channels in the guild.
     property id : Snowflake
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ApplicationCommandPermissionType))]
     property type : ApplicationCommandPermissionType
@@ -342,6 +346,11 @@ module Discord
     def self.user(id : UInt64 | Snowflake, permissions : Bool)
       id = Snowflake.new(id) unless id.is_a?(Snowflake)
       self.new(id, ApplicationCommandPermissionType::User, permissions)
+    end
+
+    def self.channel(id : UInt64 | Snowflake, permissions : Bool)
+      id = Snowflake.new(id) unless id.is_a?(Snowflake)
+      self.new(id, ApplicationCommandPermissionType::Channel, permissions)
     end
   end
 end

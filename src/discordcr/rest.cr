@@ -2279,9 +2279,8 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-global-application-command)
     def create_global_application_command(name : String, description : String,
                                           name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
-                                          options : Array(ApplicationCommandOption)? = nil,
-                                          default_permission : Bool? = nil,
-                                          type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
+                                          options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil,
+                                          dm_permission : Bool? = nil, type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
       application_id = client_id
 
       json = encode_tuple(
@@ -2290,7 +2289,8 @@ module Discord
         name_localizations: name_localizations,
         description_localizations: description_localizations,
         options: options,
-        default_permission: default_permission,
+        default_member_permissions: default_member_permissions,
+        dm_permission: dm_permission,
         type: type
       )
 
@@ -2327,17 +2327,20 @@ module Discord
     # Edit a global command. Updates will be available in all guilds after 1 hour.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-global-application-command)
-    def edit_global_application_command(command_id : UInt64 | Snowflake,
-                                        name : String? = nil, description : String? = nil,
-                                        options : Array(ApplicationCommandOption)? = nil,
-                                        default_permission : Bool? = nil)
+    def edit_global_application_command(name : String, description : String,
+                                        name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
+                                        options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil,
+                                        dm_permission : Bool? = nil)
       application_id = client_id
 
       json = encode_tuple(
         name: name,
         description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
         options: options,
-        default_permission: default_permission,
+        default_member_permissions: default_member_permissions,
+        dm_permission: dm_permission
       )
 
       response = request(
@@ -2417,8 +2420,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-guild-application-commands)
     def create_guild_application_command(guild_id : UInt64 | Snowflake, name : String, description : String,
                                          name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
-                                         options : Array(ApplicationCommandOption)? = nil,
-                                         default_permission : Bool? = nil,
+                                         options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil,
                                          type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
       application_id = client_id
 
@@ -2428,7 +2430,7 @@ module Discord
         name_localizations: name_localizations,
         description_localizations: description_localizations,
         options: options,
-        default_permission: default_permission,
+        default_member_permission: default_member_permission,
         type: type
       )
 
@@ -2465,17 +2467,18 @@ module Discord
     # Edit a guild command. Updates for guild commands will be available immediately.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#edit-guild-application-command)
-    def edit_guild_application_command(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake,
-                                       name : String? = nil, description : String? = nil,
-                                       options : Array(ApplicationCommandOption)? = nil,
-                                       default_permission : Bool? = nil)
+    def edit_guild_application_command(guild_id : UInt64 | Snowflake, name : String, description : String,
+                                       name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
+                                       options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil)
       application_id = client_id
 
       json = encode_tuple(
         name: name,
         description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
         options: options,
-        default_permission: default_permission,
+        default_member_permission: default_member_permission
       )
 
       response = request(
@@ -2547,7 +2550,7 @@ module Discord
     # Fetches command permissions for a specific command for your application in a guild.
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-application-command-permissions)
-    def get_guild_application_command_permissions(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake)
+    def get_application_command_permissions(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake)
       application_id = client_id
 
       response = request(
@@ -2567,8 +2570,8 @@ module Discord
     # NOTE: This endpoint will overwrite existing permissions for the command in that guild
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#edit-application-command-permissions)
-    def edit_guild_application_command_permissions(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake,
-                                                   permissions : Array(ApplicationCommandPermissions))
+    def edit_application_command_permissions(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake,
+                                             permissions : Array(ApplicationCommandPermissions))
       application_id = client_id
 
       response = request(
@@ -2581,29 +2584,6 @@ module Discord
       )
 
       GuildApplicationCommandPermissions.from_json(response.body)
-    end
-
-    # Batch edits permissions for all commands in a guild. Takes an array of partial GuildApplicationCommandPermissions objects including id and permissions. You can only add up to 10 permission overwrites for a command.
-    #
-    # NOTE: This endpoint will overwrite all existing permissions for all commands in a guild, including slash commands, user commands, and message commands.
-    #
-    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#batch-edit-application-command-permissions)
-    def batch_edit_application_command_permissions(guild_id : UInt64 | Snowflake,
-                                                   permissions : Hash(UInt64 | Snowflake, Array(ApplicationCommandPermissions)))
-      application_id = client_id
-
-      json = permissions.map { |cid, perm| {"id" => cid, "permissions" => perm} }.to_json
-
-      response = request(
-        :applications_aid_guilds_gid_commands_permissions,
-        application_id,
-        "PUT",
-        "/applications/#{application_id}/guilds/#{guild_id}/commands/permissions",
-        HTTP::Headers{"Content-Type" => "application/json"},
-        json
-      )
-
-      Array(GuildApplicationCommandPermissions).from_json(response.body)
     end
 
     # Create a response to an Interaction from the gateway.
