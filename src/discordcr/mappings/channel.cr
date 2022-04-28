@@ -31,18 +31,19 @@ module Discord
   end
 
   @[Flags]
-  enum MessageFlags : UInt8
-    Crossposted          = 1 << 0
-    IsCrosspost          = 1 << 1
-    SuppressEmbeds       = 1 << 2
-    SourceMessageDeleted = 1 << 3
-    Urgent               = 1 << 4
-    HasThread            = 1 << 5
-    Ephemeral            = 1 << 6
-    Loading              = 1 << 7
+  enum MessageFlags : UInt32
+    Crossposted                      = 1 << 0
+    IsCrosspost                      = 1 << 1
+    SuppressEmbeds                   = 1 << 2
+    SourceMessageDeleted             = 1 << 3
+    Urgent                           = 1 << 4
+    HasThread                        = 1 << 5
+    Ephemeral                        = 1 << 6
+    Loading                          = 1 << 7
+    FailedToMentionSomeRolesInThread = 1 << 8
 
     def self.new(pull : JSON::PullParser)
-      MessageFlags.new(pull.read_int.to_u8)
+      MessageFlags.new(pull.read_int.to_u32)
     end
   end
 

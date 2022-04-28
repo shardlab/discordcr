@@ -69,6 +69,8 @@ module Discord
     BugHunterLevel2           = 1 << 14
     VerifiedBot               = 1 << 16
     EarlyVerifiedBotDeveloper = 1 << 17
+    CertifiedModerator        = 1 << 18
+    BotHttpInteractions       = 1 << 19
 
     def self.new(pull : JSON::PullParser)
       UserFlags.new(pull.read_int.to_u32)

@@ -482,7 +482,7 @@ module Discord
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#list-active-threads)
     def list_active_threads(guild_id : UInt64 | Snowflake)
       response = request(
-        :guild_gid_threads,
+        :guilds_gid_threads,
         guild_id,
         "GET",
         "/guilds/#{guild_id}/threads/active",
@@ -505,7 +505,7 @@ module Discord
       path += "&limit=#{limit}" if limit
 
       response = request(
-        :channel_cid_threads,
+        :channels_cid_threads,
         channel_id,
         "GET",
         path,
@@ -528,7 +528,7 @@ module Discord
       path += "&limit=#{limit}" if limit
 
       response = request(
-        :channel_cid_threads,
+        :channels_cid_threads,
         channel_id,
         "GET",
         path,
@@ -548,7 +548,7 @@ module Discord
       path += "&limit=#{limit}" if limit
 
       response = request(
-        :channel_cid_threads,
+        :channels_cid_threads,
         channel_id,
         "GET",
         path,
@@ -1350,18 +1350,22 @@ module Discord
     #  - and the "Move Members" permission as well as the "Connect" permission
     #    to the new channel when changing voice channel ID.
     #
-    # NOTE: To remove a member's nickname, you can send an empty string for the `nick` argument.
+    # To remove a member's nickname, you can send an empty string for the `nick` argument.
+    # To set or remove a timeout, you must have the `MANAGE_MEMBERS` permission.
+    # The `communication_disabled_until` argument takes a time up to 28 days in the future, or nil to remove.
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/guild#modify-guild-member)
     def modify_guild_member(guild_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake, nick : String? = nil,
                             roles : Array(UInt64 | Snowflake)? = nil, mute : Bool? = nil, deaf : Bool? = nil,
-                            channel_id : UInt64 | Snowflake | Nil = nil, reason : String? = nil)
+                            channel_id : UInt64 | Snowflake | Nil = nil, communication_disabled_until : Time? = nil,
+                            reason : String? = nil)
       json = encode_tuple(
         nick: nick,
         roles: roles,
         mute: mute,
         deaf: deaf,
-        channel_id: channel_id
+        channel_id: channel_id,
+        communication_disabled_until: communication_disabled_until
       )
 
       headers = HTTP::Headers{
@@ -2191,13 +2195,12 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/webhook#execute-webhook)
     def execute_webhook(webhook_id : UInt64 | Snowflake, token : String, content : String? = nil,
-                        file : String? = nil, embeds : Array(Embed)? = nil,
+                        file : IO? = nil, filename : String? = nil, embeds : Array(Embed)? = nil,
                         tts : Bool? = nil, avatar_url : String? = nil,
                         username : String? = nil, allowed_mentions : AllowedMentions? = nil,
                         wait : Bool? = false, thread_id : UInt64 | Snowflake? = nil)
       json = encode_tuple(
         content: content,
-        file: file,
         embeds: embeds,
         tts: tts,
         avatar_url: avatar_url,
@@ -2210,13 +2213,37 @@ module Discord
         form.add "thread_id", thread_id.to_s if thread_id
       end
 
+      body, content_type = nil, nil
+      if file
+        io = IO::Memory.new
+
+        unless filename
+          if file.is_a? File
+            filename = File.basename(file.path)
+          else
+            filename = ""
+          end
+        end
+
+        builder = HTTP::FormData::Builder.new(io)
+        builder.file("file", file, HTTP::FormData::FileMetadata.new(filename: filename))
+        builder.field("payload_json", json)
+        builder.finish
+
+        body = io.to_s
+        content_type = builder.content_type
+      else
+        body = json
+        content_type = "application/json"
+      end
+
       response = request(
         :webhooks_wid,
         webhook_id,
         "POST",
         "/webhooks/#{webhook_id}/#{token}?#{params}",
-        HTTP::Headers{"Content-Type" => "application/json"},
-        json
+        HTTP::Headers{"Content-Type" => content_type},
+        body
       )
 
       # Expecting response
