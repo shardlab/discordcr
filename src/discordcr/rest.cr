@@ -22,7 +22,9 @@ module Discord
       mutexes = (@mutexes ||= Hash(RateLimitKey, Mutex).new)
       global_mutex = (@global_mutex ||= Mutex.new)
 
-      headers["Authorization"] = @token
+      unless headers["Authorization"]?
+        headers["Authorization"] = @token
+      end
       headers["User-Agent"] = USER_AGENT
       headers["X-RateLimit-Precision"] = "millisecond"
 
@@ -2567,11 +2569,12 @@ module Discord
 
     # Edits command permissions for a specific command for your application in a guild. You can only add up to 10 permission overwrites for a command.
     #
+    # NOTE: This endpoint requires authentication with a Bearer token that has permission to manage the guild and its roles. For more information, read above about [application command permissions](https://discord.com/developers/docs/interactions/application-commands#permissions).
     # NOTE: This endpoint will overwrite existing permissions for the command in that guild
     #
     # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#edit-application-command-permissions)
     def edit_application_command_permissions(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake,
-                                             permissions : Array(ApplicationCommandPermissions))
+                                             permissions : Array(ApplicationCommandPermissions), token : String)
       application_id = client_id
 
       response = request(
@@ -2579,7 +2582,7 @@ module Discord
         application_id,
         "PUT",
         "/applications/#{application_id}/guilds/#{guild_id}/commands/#{command_id}/permissions",
-        HTTP::Headers{"Content-Type" => "application/json"},
+        HTTP::Headers{"Content-Type" => "application/json", "Authorization" => token},
         {permissions: permissions}.to_json
       )
 
