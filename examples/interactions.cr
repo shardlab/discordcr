@@ -10,7 +10,7 @@ require "../src/discordcr"
 client = Discord::Client.new(token: "Bot MjI5NDU5NjgxOTU1NjUyMzM3.Cpnz31.GQ7K9xwZtvC40y8MPY3eTqjEIXm", client_id: 229459681955652337_u64)
 
 # Making an array of commands with `PartialApplicationCommand`
-# to register multiple commands altogether.
+# to register multiple commands all together.
 
 commands = [] of Discord::PartialApplicationCommand
 
