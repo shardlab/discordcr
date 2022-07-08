@@ -119,7 +119,7 @@ module Discord
     def self.string(name : String, description : String, name_localizations : Hash(String, String)? = nil,
                     description_localizations : Hash(String, String)? = nil, required : Bool? = nil,
                     choices : Array(ApplicationCommandOptionChoice)? = nil,
-                    autocomplete : Bool? = nil)
+                    min_value : Int64? = nil, max_value : Int64? = nil, autocomplete : Bool? = nil)
       self.new(
         ApplicationCommandOptionType::String,
         name,
@@ -128,6 +128,8 @@ module Discord
         description_localizations,
         required,
         choices: choices,
+        min_value: min_value,
+        max_value: max_value,
         autocomplete: autocomplete
       )
     end
