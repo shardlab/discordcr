@@ -13,6 +13,7 @@ module Discord
       property private_channels : Array(PrivateChannel)
       property guilds : Array(UnavailableGuild)
       property session_id : String
+      property resume_gateway_url : String
     end
 
     struct ResumedPayload
