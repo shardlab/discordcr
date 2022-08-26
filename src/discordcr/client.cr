@@ -173,7 +173,11 @@ module Discord
     end
 
     private def initialize_websocket : Discord::WebSocket
-      url = URI.parse(get_gateway.url)
+      if @session.try(&.should_resume?) && (resume_url = @session.try(&.resume_url))
+        url = URI.parse(resume_url)
+      else
+        url = URI.parse(get_gateway.url)
+      end
 
       if @compress.stream?
         path = "#{url.path}/?encoding=json&v=9&compress=zlib-stream"
@@ -419,7 +423,7 @@ module Discord
       when "READY"
         payload = Gateway::ReadyPayload.from_json(data)
 
-        @session = Gateway::Session.new(payload.session_id)
+        @session = Gateway::Session.new(payload.session_id, payload.resume_gateway_url)
 
         # Reset the backoff, because READY means we successfully achieved a
         # connection and don't have to wait next time
@@ -1050,8 +1054,9 @@ module Discord
     class Session
       getter session_id
       property sequence
+      property resume_url
 
-      def initialize(@session_id : String)
+      def initialize(@session_id : String, @resume_url : String)
         @sequence = 0_i64
 
         @suspended = false
