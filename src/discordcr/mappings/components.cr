@@ -29,14 +29,14 @@ module Discord
     include JSON::Serializable
 
     use_json_discriminator "type", {
-      ComponentType::ActionRow  => ActionRow,
-      ComponentType::Button     => Button,
-      ComponentType::StringSelect => SelectMenu,
-      ComponentType::TextInput  => TextInput,
-      ComponentType::UserSelect => SelectMenu,
-      ComponentType::RoleSelect => SelectMenu,
+      ComponentType::ActionRow         => ActionRow,
+      ComponentType::Button            => Button,
+      ComponentType::StringSelect      => SelectMenu,
+      ComponentType::TextInput         => TextInput,
+      ComponentType::UserSelect        => SelectMenu,
+      ComponentType::RoleSelect        => SelectMenu,
       ComponentType::MentionableSelect => SelectMenu,
-      ComponentType::ChannelSelect => SelectMenu,
+      ComponentType::ChannelSelect     => SelectMenu,
     }
 
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ComponentType))]
