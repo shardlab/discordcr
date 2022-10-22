@@ -2,10 +2,14 @@ require "./converters"
 
 module Discord
   enum ComponentType : UInt8
-    ActionRow  = 1
-    Button     = 2
-    SelectMenu = 3
-    TextInput  = 4
+    ActionRow         = 1
+    Button            = 2
+    StringSelect      = 3
+    TextInput         = 4
+    UserSelect        = 5
+    RoleSelect        = 6
+    MentionableSelect = 7
+    ChannelSelect     = 8
   end
 
   enum ButtonStyle : UInt8
@@ -27,8 +31,12 @@ module Discord
     use_json_discriminator "type", {
       ComponentType::ActionRow  => ActionRow,
       ComponentType::Button     => Button,
-      ComponentType::SelectMenu => SelectMenu,
+      ComponentType::StringSelect => SelectMenu,
       ComponentType::TextInput  => TextInput,
+      ComponentType::UserSelect => SelectMenu,
+      ComponentType::RoleSelect => SelectMenu,
+      ComponentType::MentionableSelect => SelectMenu,
+      ComponentType::ChannelSelect => SelectMenu,
     }
 
     @[JSON::Field(converter: Enum::ValueConverter(Discord::ComponentType))]
@@ -61,16 +69,35 @@ module Discord
   end
 
   struct SelectMenu < Component
-    @type : ComponentType = ComponentType::SelectMenu
-
     property custom_id : String
-    property options : Array(SelectOption)
+    property options : Array(SelectOption)?
+    property channel_types : Array(ChannelType)?
     property placeholder : String?
     property min_values : UInt8?
     property max_values : UInt8?
     property disabled : Bool?
 
-    def initialize(@custom_id, @options, @placeholder = nil, @min_values = nil, @max_values = nil, @disabled = nil)
+    def initialize(@type, @custom_id, @options = nil, @channel_types = nil, @placeholder = nil, @min_values = nil, @max_values = nil, @disabled = nil)
+    end
+
+    def self.string(custom_id, options, placeholder = nil, min_values = nil, max_values = nil, disabled = nil)
+      self.new(ComponentType::StringSelect, custom_id, options, nil, placeholder, min_values, max_values, disabled)
+    end
+
+    def self.user(custom_id, placeholder = nil, min_values = nil, max_values = nil, disabled = nil)
+      self.new(ComponentType::UserSelect, custom_id, nil, nil, placeholder, min_values, max_values, disabled)
+    end
+
+    def self.role(custom_id, placeholder = nil, min_values = nil, max_values = nil, disabled = nil)
+      self.new(ComponentType::RoleSelect, custom_id, nil, nil, placeholder, min_values, max_values, disabled)
+    end
+
+    def self.mentionable(custom_id, placeholder = nil, min_values = nil, max_values = nil, disabled = nil)
+      self.new(ComponentType::MentionableSelect, custom_id, nil, nil, placeholder, min_values, max_values, disabled)
+    end
+
+    def self.channel(custom_id, channel_types, placeholder = nil, min_values = nil, max_values = nil, disabled = nil)
+      self.new(ComponentType::ChannelSelect, custom_id, nil, channel_types, placeholder, min_values, max_values, disabled)
     end
   end
 
