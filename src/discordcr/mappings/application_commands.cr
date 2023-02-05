@@ -203,7 +203,7 @@ module Discord
     end
 
     def self.mentionable(name : String, description : String, name_localizations : Hash(String, String)? = nil,
-                          description_localizations : Hash(String, String)? = nil, required : Bool? = nil)
+                         description_localizations : Hash(String, String)? = nil, required : Bool? = nil)
       self.new(
         ApplicationCommandOptionType::Mentionable,
         name,
