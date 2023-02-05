@@ -70,7 +70,7 @@ module Discord
 
   struct SelectMenu < Component
     property custom_id : String
-    property options : Array(SelectOption)?
+    property options : Array(StringSelectOption)?
     property channel_types : Array(ChannelType)?
     property placeholder : String?
     property min_values : UInt8?
@@ -118,7 +118,7 @@ module Discord
     end
   end
 
-  struct SelectOption
+  struct StringSelectOption
     include JSON::Serializable
 
     property label : String
