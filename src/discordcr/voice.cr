@@ -206,7 +206,7 @@ module Discord
     # IP so we can select the protocol on the VWS
     def send_discovery
       data = Bytes.new(74)
-      IO::ByteFormat::BigEndian.encode(1_u16, data[0, 2]) # Mark as request
+      IO::ByteFormat::BigEndian.encode(1_u16, data[0, 2])  # Mark as request
       IO::ByteFormat::BigEndian.encode(70_u16, data[2, 2]) # Message size
       IO::ByteFormat::BigEndian.encode(@ssrc.not_nil!, data[4, 4])
       @socket.write(data)
