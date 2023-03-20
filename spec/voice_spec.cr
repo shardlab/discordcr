@@ -15,16 +15,16 @@ describe Discord::VoiceUDP do
   it "sends discovery" do
     with_voice_udp do |server, client|
       client.send_discovery
-      data = Bytes.new(70)
+      data = Bytes.new(74)
       server.receive(data)
-      data[0, 4].should eq Bytes[0, 0, 0, 1]
+      data[4, 4].should eq Bytes[0, 0, 0, 1]
     end
   end
 
   it "receives discovery reply" do
     with_voice_udp do |server, client|
       io = IO::Memory.new
-      io.write Bytes.new(4)
+      io.write Bytes.new(8)
       io.print("ip address".ljust(64, '\0'))
       io.write_bytes(2_u16, IO::ByteFormat::BigEndian)
       data = io.to_slice
