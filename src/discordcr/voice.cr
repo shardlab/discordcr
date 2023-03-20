@@ -205,19 +205,21 @@ module Discord
     # Sends a discovery packet to Discord, telling them that we want to know our
     # IP so we can select the protocol on the VWS
     def send_discovery
-      data = Bytes.new(70)
-      IO::ByteFormat::BigEndian.encode(@ssrc.not_nil!, data[0, 4])
+      data = Bytes.new(74)
+      IO::ByteFormat::BigEndian.encode(1_u16, data[0, 2]) # Mark as request
+      IO::ByteFormat::BigEndian.encode(70_u16, data[2, 2]) # Message size
+      IO::ByteFormat::BigEndian.encode(@ssrc.not_nil!, data[4, 4])
       @socket.write(data)
     end
 
     # Awaits a response to the discovery request and returns our local IP and
     # port once the response is received
     def receive_discovery_reply : {String, UInt16}
-      buf = Bytes.new(70)
+      buf = Bytes.new(74)
       @socket.receive(buf)
 
-      # The first four bytes are just the SSRC again, we don't care about that
-      data = buf[4, buf.size - 4]
+      # The first 8 bytes are utility and the SSRC again, we don't care about that
+      data = buf[8, buf.size - 8]
       ip = String.new(data[0, 64]).delete("\0")
       port = IO::ByteFormat::BigEndian.decode(UInt16, data[64, 2])
 
