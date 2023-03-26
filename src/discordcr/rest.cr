@@ -22,9 +22,7 @@ module Discord
       mutexes = (@mutexes ||= Hash(RateLimitKey, Mutex).new)
       global_mutex = (@global_mutex ||= Mutex.new)
 
-      unless headers["Authorization"]?
-        headers["Authorization"] = @token
-      end
+      headers["Authorization"] ||= @token
       headers["User-Agent"] = USER_AGENT
       headers["X-RateLimit-Precision"] = "millisecond"
 
