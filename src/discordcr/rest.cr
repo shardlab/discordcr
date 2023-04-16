@@ -22,7 +22,7 @@ module Discord
       mutexes = (@mutexes ||= Hash(RateLimitKey, Mutex).new)
       global_mutex = (@global_mutex ||= Mutex.new)
 
-      headers["Authorization"] = @token
+      headers["Authorization"] ||= @token
       headers["User-Agent"] = USER_AGENT
       headers["X-RateLimit-Precision"] = "millisecond"
 
@@ -315,14 +315,16 @@ module Discord
     # For more details on the format of the `embed` object, look at the
     # [relevant documentation](https://discord.com/developers/docs/resources/channel#embed-object).
     def create_message(channel_id : UInt64 | Snowflake, content : String, embed : Embed? = nil, tts : Bool = false,
-                       nonce : Int64 | String? = nil, allowed_mentions : AllowedMentions? = nil, message_reference : MessageReference? = nil)
+                       nonce : Int64 | String? = nil, allowed_mentions : AllowedMentions? = nil,
+                       message_reference : MessageReference? = nil, components : Array(Component)? = nil)
       json = encode_tuple(
         content: content,
         embed: embed,
         tts: tts,
         nonce: nonce,
         allowed_mentions: allowed_mentions,
-        message_reference: message_reference
+        message_reference: message_reference,
+        components: components
       )
 
       response = request(
@@ -2246,6 +2248,516 @@ module Discord
 
       # Expecting response
       Message.from_json(response.body) if wait
+    end
+
+    # Fetch all of the global commands for your application.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-global-application-commands)
+    def get_global_application_commands(locale : String? = nil, with_localizations : Bool? = false)
+      application_id = client_id
+      path = "/applications/#{application_id}/commands"
+      path += "?with_localizations=#{with_localizations}" if with_localizations
+      headers = HTTP::Headers.new
+      headers["X-Discord-Locale"] = locale if locale
+
+      response = request(
+        :applications_aid_commands,
+        application_id,
+        "GET",
+        path,
+        headers,
+        nil
+      )
+
+      Array(ApplicationCommand).from_json(response.body)
+    end
+
+    # Create a new global command. New global commands will be available in all guilds after 1 hour.
+    #
+    # NOTE: Creating a command with the same name as an existing command for your application will overwrite the old command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-global-application-command)
+    def create_global_application_command(name : String, description : String,
+                                          name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
+                                          options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil,
+                                          dm_permission : Bool? = nil, type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
+      application_id = client_id
+
+      json = encode_tuple(
+        name: name,
+        description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
+        options: options,
+        default_member_permissions: default_member_permissions,
+        dm_permission: dm_permission,
+        type: type
+      )
+
+      response = request(
+        :applications_aid_commands,
+        application_id,
+        "POST",
+        "/applications/#{application_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Fetch a global command for your application.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-global-application-command)
+    def get_global_application_command(command_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :applications_aid_commands,
+        application_id,
+        "GET",
+        "/applications/#{application_id}/commands/#{command_id}",
+        HTTP::Headers.new,
+        nil
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Edit a global command. Updates will be available in all guilds after 1 hour.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-global-application-command)
+    def edit_global_application_command(name : String, description : String,
+                                        name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
+                                        options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil,
+                                        dm_permission : Bool? = nil)
+      application_id = client_id
+
+      json = encode_tuple(
+        name: name,
+        description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
+        options: options,
+        default_member_permissions: default_member_permissions,
+        dm_permission: dm_permission
+      )
+
+      response = request(
+        :applications_aid_commands,
+        application_id,
+        "PATCH",
+        "/applications/#{application_id}/commands/#{command_id}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Deletes a global command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#delete-global-application-command)
+    def delete_global_application_command(command_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :applications_aid_commands,
+        application_id,
+        "DELETE",
+        "/applications/#{application_id}/commands/#{command_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Takes a list of application commands, overwriting the existing global command list for this application. Updates will be available in all guilds after 1 hour. Commands that do not already exist will count toward daily application command create limits.
+    #
+    # NOTE: This will overwrite all types of application commands: slash commands, user commands, and message commands.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-global-application-commands)
+    def bulk_overwrite_global_application_commands(commands : Array(PartialApplicationCommand))
+      application_id = client_id
+
+      response = request(
+        :applications_aid_commands,
+        application_id,
+        "PUT",
+        "/applications/#{application_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        commands.to_json
+      )
+
+      Array(ApplicationCommand).from_json(response.body)
+    end
+
+    # Fetch all of the guild commands for your application for a specific guild.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-guild-application-commands)
+    def get_guild_application_commands(guild_id : UInt64 | Snowflake, locale : String? = nil, with_localizations : Bool? = false)
+      application_id = client_id
+      path = "/applications/#{application_id}/guilds/#{guild_id}/commands"
+      path += "?with_localizations=#{with_localizations}" if with_localizations
+      headers = HTTP::Headers.new
+      headers["X-Discord-Locale"] = locale if locale
+
+      response = request(
+        :applications_aid_guilds_gid_commands,
+        application_id,
+        "GET",
+        path,
+        headers,
+        nil
+      )
+
+      Array(ApplicationCommand).from_json(response.body)
+    end
+
+    # Create a new guild command. New guild commands will be available in the guild immediately. If the command did not already exist, it will count toward daily application command create limits.
+    #
+    # NOTE: Creating a command with the same name as an existing command for your application will overwrite the old command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#create-guild-application-commands)
+    def create_guild_application_command(guild_id : UInt64 | Snowflake, name : String, description : String,
+                                         name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
+                                         options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil,
+                                         type : ApplicationCommandType? = ApplicationCommandType::ChatInput)
+      application_id = client_id
+
+      json = encode_tuple(
+        name: name,
+        description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
+        options: options,
+        default_member_permission: default_member_permission,
+        type: type
+      )
+
+      response = request(
+        :applications_aid_guilds_gid_commands,
+        application_id,
+        "POST",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Fetch a guild command for your application.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-guild-application-command)
+    def get_global_application_command(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :applications_aid_guilds_gid_commands_cid,
+        application_id,
+        "GET",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands/#{command_id}",
+        HTTP::Headers.new,
+        nil
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Edit a guild command. Updates for guild commands will be available immediately.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#edit-guild-application-command)
+    def edit_guild_application_command(guild_id : UInt64 | Snowflake, name : String, description : String,
+                                       name_localizations : Hash(String, String)?, description_localizations : Hash(String, String)?,
+                                       options : Array(ApplicationCommandOption)? = nil, default_member_permissions : Permissions? = nil)
+      application_id = client_id
+
+      json = encode_tuple(
+        name: name,
+        description: description,
+        name_localizations: name_localizations,
+        description_localizations: description_localizations,
+        options: options,
+        default_member_permission: default_member_permission
+      )
+
+      response = request(
+        :applications_aid_guilds_gid_commands_cid,
+        application_id,
+        "PATCH",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands/#{command_id}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        json
+      )
+
+      ApplicationCommand.from_json(response.body)
+    end
+
+    # Delete a guild command.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#delete-guild-application-command)
+    def delete_guild_application_command(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :applications_aid_guilds_gid_commands_cid,
+        application_id,
+        "DELETE",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands/#{command_id}",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Takes a list of application commands, overwriting existing commands for the guild.
+    #
+    # NOTE: This will overwrite all types of application commands: slash commands, user commands, and message commands.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/slash-commands#bulk-overwrite-guild-application-commands)
+    def bulk_overwrite_guild_application_commands(guild_id : UInt64 | Snowflake, commands : Array(PartialApplicationCommand))
+      application_id = client_id
+
+      response = request(
+        :applications_aid_guilds_gid_commands,
+        application_id,
+        "PUT",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        commands.to_json
+      )
+
+      Array(ApplicationCommand).from_json(response.body)
+    end
+
+    # Fetches command permissions for all commands for your application in a guild.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-guild-application-command-permissions)
+    def get_guild_application_command_permissions(guild_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :applications_aid_guilds_gid_commands_permissions,
+        application_id,
+        "GET",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands/permissions",
+        HTTP::Headers.new,
+        nil
+      )
+
+      Array(GuildApplicationCommandPermissions).from_json(response.body)
+    end
+
+    # Fetches command permissions for a specific command for your application in a guild.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#get-application-command-permissions)
+    def get_application_command_permissions(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :applications_aid_guilds_gid_commands_cid_permissions,
+        application_id,
+        "GET",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands/#{command_id}/permissions",
+        HTTP::Headers.new,
+        nil
+      )
+
+      GuildApplicationCommandPermissions.from_json(response.body)
+    end
+
+    # Edits command permissions for a specific command for your application in a guild. You can only add up to 10 permission overwrites for a command.
+    #
+    # NOTE: This endpoint requires authentication with a Bearer token that has permission to manage the guild and its roles. For more information, read above about [application command permissions](https://discord.com/developers/docs/interactions/application-commands#permissions).
+    # NOTE: This endpoint will overwrite existing permissions for the command in that guild
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/application-commands#edit-application-command-permissions)
+    def edit_application_command_permissions(guild_id : UInt64 | Snowflake, command_id : UInt64 | Snowflake,
+                                             permissions : Array(ApplicationCommandPermissions), token : String)
+      application_id = client_id
+
+      response = request(
+        :applications_aid_guilds_gid_commands_cid_permissions,
+        application_id,
+        "PUT",
+        "/applications/#{application_id}/guilds/#{guild_id}/commands/#{command_id}/permissions",
+        HTTP::Headers{"Content-Type" => "application/json", "Authorization" => token},
+        {permissions: permissions}.to_json
+      )
+
+      GuildApplicationCommandPermissions.from_json(response.body)
+    end
+
+    # Create a response to an Interaction from the gateway.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#create-interaction-response)
+    def create_interaction_response(interaction_id : UInt64 | Snowflake, interaction_token : String,
+                                    response : InteractionResponse)
+      response = request(
+        :interactions_iid_itk_callback,
+        interaction_id,
+        "POST",
+        "/interactions/#{interaction_id}/#{interaction_token}/callback",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        response.to_json
+      )
+    end
+
+    # Returns the initial Interaction response.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#get-original-interaction-response)
+    def get_original_interaction_response(interaction_token : String)
+      application_id = client_id
+
+      response = request(
+        :webhooks_aid_itk_messages_original,
+        application_id,
+        "GET",
+        "/webhooks/#{application_id}/#{interaction_token}/messages/@original",
+        HTTP::Headers.new,
+        nil
+      )
+
+      Message.from_json(response.body)
+    end
+
+    # Edits the initial Interaction response.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response)
+    def edit_original_interaction_response(interaction_token : String, content : String? = nil,
+                                           embeds : Array(Embed)? = nil)
+      application_id = client_id
+
+      response = request(
+        :webhooks_aid_itk_messages_original,
+        application_id,
+        "PATCH",
+        "/webhooks/#{application_id}/#{interaction_token}/messages/@original",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        {content: content, embeds: embeds}.to_json
+      )
+
+      Message.from_json(response.body)
+    end
+
+    # Deletes the initial Interaction response.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#delete-original-interaction-response)
+    def delete_original_interaction_response(interaction_token : String)
+      application_id = client_id
+
+      response = request(
+        :webhooks_aid_itk_messages_original,
+        application_id,
+        "DELETE",
+        "/webhooks/#{application_id}/#{interaction_token}/messages/@original",
+        HTTP::Headers.new,
+        nil
+      )
+    end
+
+    # Create a followup message for an Interaction. Functions the same as `#execute_webhook`, but `wait` is always true.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#create-followup-message)
+    def create_followup_message(interaction_token : String, content : String? = nil,
+                                file : IO? = nil, filename : String? = nil,
+                                embeds : Array(Embed)? = nil, tts : Bool? = nil,
+                                avatar_url : String? = nil, username : String? = nil,
+                                flags : MessageFlags? = nil)
+      application_id = client_id
+
+      json = encode_tuple(
+        content: content,
+        embeds: embeds,
+        tts: tts,
+        avatar_url: avatar_url,
+        username: username,
+        flags: flags
+      )
+
+      body, content_type = if file
+                             io = IO::Memory.new
+
+                             unless filename
+                               if file.is_a? File
+                                 filename = File.basename(file.path)
+                               else
+                                 filename = ""
+                               end
+                             end
+
+                             builder = HTTP::FormData::Builder.new(io)
+                             builder.file("file", file, HTTP::FormData::FileMetadata.new(filename: filename))
+                             builder.field("payload_json", json)
+                             builder.finish
+
+                             {io.to_s, builder.content_type}
+                           else
+                             {json, "application/json"}
+                           end
+
+      response = request(
+        :webhooks_aid_itk,
+        application_id,
+        "POST",
+        "/webhooks/#{application_id}/#{interaction_token}",
+        HTTP::Headers{"Content-Type" => content_type},
+        body
+      )
+
+      Message.from_json(response.body)
+    end
+
+    # Returns a followup message for an Interaction.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#get-followup-message)
+    def get_followup_message(interaction_token : String, message_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :webhooks_aid_itk_messages_mid,
+        application_id,
+        "GET",
+        "/webhooks/#{application_id}/#{interaction_token}/messages/#{message_id}",
+        HTTP::Headers.new,
+        nil
+      )
+
+      Message.from_json(response.body)
+    end
+
+    # Edits a followup message for an Interaction.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#edit-followup-message)
+    def edit_followup_message(interaction_token : String, message_id : UInt64 | Snowflake,
+                              content : String? = nil, embeds : Array(Embed)? = nil)
+      application_id = client_id
+
+      response = request(
+        :webhooks_aid_itk_messages_original,
+        application_id,
+        "PATCH",
+        "/webhooks/#{application_id}/#{interaction_token}/messages/#{message_id}",
+        HTTP::Headers{"Content-Type" => "application/json"},
+        {content: content, embeds: embeds}.to_json
+      )
+
+      Message.from_json(response.body)
+    end
+
+    # Deletes a followup message for an Interaction.
+    #
+    # [API docs for this method](https://discord.com/developers/docs/interactions/receiving-and-responding#delete-followup-message)
+    def delete_followup_message(interaction_token : String, message_id : UInt64 | Snowflake)
+      application_id = client_id
+
+      response = request(
+        :webhooks_aid_itk_messages_original,
+        application_id,
+        "DELETE",
+        "/webhooks/#{application_id}/#{interaction_token}/messages/#{message_id}",
+        HTTP::Headers.new,
+        nil
+      )
     end
   end
 end

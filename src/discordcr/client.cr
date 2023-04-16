@@ -451,6 +451,10 @@ module Discord
 
         payload = Gateway::ResumedPayload.from_json(data)
         call_event resumed, payload
+      when "APPLICATION_COMMAND_PERMISSIONS_UPDATE"
+        payload = ApplicationCommandPermissions.from_json(data)
+
+        call_event application_command_permissions_update, payload
       when "CHANNEL_CREATE"
         payload = Channel.from_json(data)
 
@@ -596,6 +600,10 @@ module Discord
         @cache.try &.remove_guild_role(payload.guild_id, payload.role_id)
 
         call_event guild_role_delete, payload
+      when "INTERACTION_CREATE"
+        payload = Interaction.from_json(data)
+
+        call_event interaction_create, payload
       when "INVITE_CREATE"
         payload = Gateway::InviteCreatePayload.from_json(data)
 
@@ -794,6 +802,11 @@ module Discord
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#resumed)
     event resumed, Gateway::ResumedPayload
 
+    # Called when an application command permission has been updated.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#application-commands-permissions-update)
+    event application_command_permissions_update, ApplicationCommandPermissions
+
     # Called when a channel has been created on a server the bot has access to,
     # or when somebody has started a DM channel with the bot.
     #
@@ -898,6 +911,11 @@ module Discord
     #
     # [API docs for this event](https://discord.com/developers/docs/topics/gateway#guild-role-delete)
     event guild_role_delete, Gateway::GuildRoleDeletePayload
+
+    # Called when a user in a guild uses an Application Command.
+    #
+    # [API docs for this event](https://discord.com/developers/docs/topics/gateway#interaction-create)
+    event interaction_create, Interaction
 
     # Called when an invite is created on a guild.
     #
