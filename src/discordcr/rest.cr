@@ -288,9 +288,13 @@ module Discord
     #
     # [API docs for this method](https://discord.com/developers/docs/resources/channel#create-message)
     #
-    # The `embed` parameter can be used to append a rich embed to the message
-    # which allows for displaying certain kinds of data in a more structured
-    # way. An example:
+    # The `embeds` parameter can be used to display up to 10 rich embeds to a message,
+    # which allows for displaying certain kinds of data in a more structured way.
+    #
+    # The `embed` field can be used to display only one rich embed, but this is deprecated
+    # and will be removed in a later version. Use `embeds` instead.
+    #
+    # An example:
     #
     # ```
     # embed = Discord::Embed.new(
@@ -309,16 +313,20 @@ module Discord
     #   ],
     # )
     #
-    # client.create_message(channel_id, "The content of the message. This will display separately above the embed. This string can be empty.", embed)
+    # client.create_message(channel_id, "The content of the message. This will display separately above the embed. This string can be empty.", embeds: [embed])
     # ```
     #
     # For more details on the format of the `embed` object, look at the
     # [relevant documentation](https://discord.com/developers/docs/resources/channel#embed-object).
     def create_message(channel_id : UInt64 | Snowflake, content : String, embed : Embed? = nil, tts : Bool = false,
-                       nonce : Int64 | String? = nil, allowed_mentions : AllowedMentions? = nil, message_reference : MessageReference? = nil)
+                       nonce : Int64 | String? = nil, allowed_mentions : AllowedMentions? = nil, message_reference : MessageReference? = nil, embeds : Array(Embed)? = nil)
+      embed_value = embeds
+      if embed_value.nil? && embed
+        embed_value = [embed]
+      end
       json = encode_tuple(
         content: content,
-        embed: embed,
+        embeds: embed_value,
         tts: tts,
         nonce: nonce,
         allowed_mentions: allowed_mentions,
