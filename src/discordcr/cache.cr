@@ -47,6 +47,10 @@ module Discord
     # affected guilds would be missing here too.
     getter guilds
 
+    # A map of cached scheduled events, i.e. all scheduled events on all servers
+    # the bot is on.
+    getter scheduled_events
+
     # A map of cached stage instances, i. e. all stage instances on all servers
     # the bot is on, represented as {channel ID => Stage instance}.
     getter stage_instances
@@ -73,6 +77,14 @@ module Discord
     # [channel IDs]}.
     getter guild_channels
 
+    # Mapping of guilds to the scheduled events on them, represented as {guild ID =>
+    # [scheduled event IDs]}.
+    getter guild_scheduled_events
+
+    # Mapping of guild scheduled event to the users subscribed to them, represented as
+    # {guild scheduled event ID => [user IDs]}.
+    getter guild_scheduled_event_users
+
     # Mapping of guilds to the channels with Stage instances on them, represented as {guild ID =>
     # [channel IDs]}.
     getter guild_stage_instances
@@ -89,12 +101,15 @@ module Discord
       @guilds = Hash(UInt64, Guild).new
       @members = Hash(UInt64, Hash(UInt64, GuildMember)).new
       @roles = Hash(UInt64, Role).new
+      @scheduled_events = Hash(UInt64, GuildScheduledEvent).new
       @stage_instances = Hash(UInt64, StageInstance).new
 
       @dm_channels = Hash(UInt64, UInt64).new
 
       @guild_roles = Hash(UInt64, Array(UInt64)).new
       @guild_channels = Hash(UInt64, Array(UInt64)).new
+      @guild_scheduled_events = Hash(UInt64, Array(UInt64)).new
+      @guild_scheduled_event_users = Hash(UInt64, Array(UInt64)).new
       @guild_stage_instances = Hash(UInt64, Array(UInt64)).new
 
       @voice_states = Hash(UInt64, Hash(UInt64, VoiceState)).new
@@ -136,6 +151,43 @@ module Discord
     # all roles should be cached at all times so it won't be a problem.
     def resolve_role(id : UInt64 | Snowflake) : Role
       @roles[id.to_u64] # There is no endpoint for getting an individual role, so we will have to ignore that case for now.
+    end
+
+    # Resolves a guild scheduled event by the *guild_id* of the guild the scheduled
+    # event is on, and the *event_id* of the event itself. An API request will be performed
+    # if the object is not cached.
+    def resolve_guild_scheduled_event(guild_id : UInt64 | Snowflake, event_id : UInt64 | Snowflake) : GuildScheduledEvent
+      guild_id = guild_id.to_u64
+      event_id = event_id.to_u64
+      @scheduled_events.fetch(event_id) do
+        event = @client.get_guild_scheduled_event(guild_id, event_id)
+        cache(event)
+        add_guild_scheduled_event(event.guild_id, event.id)
+        event
+      end
+    end
+
+    # Resolves an array of users by the *guild_id* of the guild the  guild scheduled event
+    # is on, and the *event_id* of the event itself. API requests will be performed
+    # if the object is not cached. If a limit is provided, the subscribed users will
+    # only be cached if the number of users is below the limit, to ensure it remains synced.
+    # User and member data is cached regardless. Member data is included if *with_member* is true.
+    def resolve_guild_scheduled_event_users(guild_id : UInt64 | Snowflake, event_id : UInt64 | Snowflake,
+                                            with_member : Bool? = nil, limit : Int32? = nil) : Array(UInt64)
+      guild_id = guild_id.to_u64
+      event_id = event_id.to_u64
+      @guild_scheduled_event_users.fetch(event_id) do
+        users = @client.page_guild_scheduled_event_users(guild_id, event_id, with_member: with_member, limit: limit).to_a
+
+        users.each do |user|
+          cache user.user
+          if member = user.member
+            cache member, guild_id
+          end
+        end
+        return users.map &.user.id.to_u64 if users.size == limit
+        @guild_scheduled_event_users[event_id] = users.map &.user.id.to_u64
+      end
     end
 
     # Resolves a Stage instance by the *channel ID* it is on.
@@ -188,6 +240,10 @@ module Discord
     # Deletes a guild from the cache given its *ID*.
     def delete_guild(id : UInt64 | Snowflake)
       @guilds.delete(id.to_u64)
+    end
+
+    def delete_scheduled_event(id : UInt64 | Snowflake)
+      @scheduled_events.delete(id.to_u64)
     end
 
     # Deletes a stage instance from the cache given the *channel_id* it belongs to.
@@ -250,6 +306,11 @@ module Discord
     # Adds a specific *role* to the cache.
     def cache(role : Role)
       @roles[role.id.to_u64] = role
+    end
+
+    # Adds a specific *guild scheduled event* to the cache.
+    def cache(guild_scheduled_event : GuildScheduledEvent)
+      @scheduled_events[guild_scheduled_event.id.to_u64] = guild_scheduled_event
     end
 
     # Adds a specific *Stage instance* to the cache.
@@ -327,6 +388,49 @@ module Discord
       guild_id = guild_id.to_u64
       channel_id = channel_id.to_u64
       @guild_channels[guild_id]?.try { |local_channels| local_channels.delete(channel_id) }
+    end
+
+    # Returns all guild scheduled events, identified by the guild's *guild_id*.
+    def guild_scheduled_events(guild_id : UInt64 | Snowflake) : Array(UInt64)
+      @guild_scheduled_events[guild_id.to_u64]
+    end
+
+    # Marks a guild scheduled event, identified by the *event_id*, as belonging to a particular
+    # guild, identified by the *guild_id*.
+    def add_guild_scheduled_event(guild_id : UInt64 | Snowflake, event_id : UInt64 | Snowflake)
+      local_events = @guild_scheduled_events[guild_id.to_u64] ||= [] of UInt64
+      local_events << event_id.to_u64
+    end
+
+    # Marks a guild scheduled event, identified by the *event_id*, as belonging to a particular
+    # guild, identified by the *guild_id*. This should only be called when the event is created
+    # during a websocket connection, not a GUILD_CREATE, otherwise the event users cache will be out of sync.
+    def create_guild_scheduled_event(guild_id : UInt64 | Snowflake, event_id : UInt64 | Snowflake)
+      add_guild_scheduled_event(guild_id, event_id)
+      @guild_scheduled_event_users[event_id.to_u64] = [] of UInt64
+    end
+
+    # Marks a guild scheduled event, identified by the *event_id*, as not belonging to a particular guild,
+    # identified by its *guild_id*, anymore.
+    def remove_guild_scheduled_event(guild_id : UInt64 | Snowflake, event_id : UInt64 | Snowflake)
+      @guild_scheduled_events[guild_id.to_u64]?.try { |local_events| local_events.delete(event_id.to_u64) }
+    end
+
+    # Returns all guild scheduled event users, identified by its *event_id*.
+    def guild_scheduled_event_users(event_id : UInt64 | Snowflake) : Array(UInt64)
+      @guild_scheduled_event_users[event_id.to_u64]
+    end
+
+    # Marks a user, identified by the *user_id*, as subscribed to a particular guild scheduled event,
+    # identified by the *event_id*.
+    def add_guild_scheduled_event_user(event_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+      @guild_scheduled_event_users[event_id.to_u64]?.try { |local_event_users| local_event_users << user_id.to_u64 }
+    end
+
+    # Marks a user, identified by the *user_id*, as unsubscribed to a particular guild scheduled event,
+    # identified by the *event_id*.
+    def remove_guild_scheduled_event_user(event_id : UInt64 | Snowflake, user_id : UInt64 | Snowflake)
+      @guild_scheduled_event_users[event_id.to_u64]?.try { |local_event_users| local_event_users.delete(user_id.to_u64) }
     end
 
     # Returns all Stage instances of a guild, identified by its *guild_id*.
